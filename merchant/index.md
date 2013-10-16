@@ -10,7 +10,7 @@ description: SEQR Merchant, webshop, POS integration
 
 1. Point your smart phone to developer.seqr.com/app and install the developer app.
 2. Install the demo-shop-example: 
-        [demo-shop.zip](/download/demo-shop.zip), [wsdl](http://extdev2.seqr.se:8913/extclientproxy/service?wsdl)
+        [demo-shop.zip](/download/demo-shop.zip), [wsdl](http://extdev4.seqr.se:8913/extclientproxy/service?wsdl)
 3. Get a merchant id and password via
         [integrations@seamless.se](mailto:integrations@seamless.se) 
 4. Go on a shopping spree and change the looks and products.
@@ -62,7 +62,7 @@ Creating a point of sale access-context (java):
 Creating a new terminal-id using your reseller-id (python):  
 
     from suds.client import Client
-    client = Client('http://extdev2.seqr.se:8913/extclientproxy/service?wsdl')
+    client = Client('http://extdev4.seqr.se:8913/extclientproxy/service?wsdl')
     context = client.factory.create("ns0:clientContext")
     context.channel="ws"
     context.clientId="client"

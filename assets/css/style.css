@@ -258,3 +258,8 @@ blockquote {
     *zoom: 1;
 }
 
+img[alt=AddAccount] {
+    width: 200px;
+    display:block;
+    padding-top: 10px;
+}

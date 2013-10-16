@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Developer App
+title: Developer Mobile App
 description: A demo and developer app for trying things out. 
 ---
 
-Developer app
+Developer Mobile App
 =============
 
 For testing purposes we have a test server and test app that you can play with. 
 
-Our android developer app can be installed if you enable "other sources" for in settings and then browse this page in your phone.  
+Our android developer app can be installed if you enable "other sources" for in settings and then browse to this page on your phone.  
 
-* [install android developer app](/downloads/se-qr-androidapp-dev-2.1.3.7.jar)
+* [install android developer app](/downloads/se-qr-androidapp-demo-2.1.5.3.apk)
  (For iphone or other apps, please contact: integrations at seamless.se)
 
-* Once installed you select the exdev-2 as server and complete the OTP
+* Once installed you select the "Exdev 4" as server, choose a PIN, and enter your phone number in full format, eg "+46738966XXX". Then complete the activation.
 
-* Add a test account by scanning this QR code (todo). 
+* You should add a "Payment account", and you are ready to pay! ![AddAccount](/assets/images/add_account.png "Adding a Payment Account")
