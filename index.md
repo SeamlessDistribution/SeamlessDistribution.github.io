@@ -10,7 +10,6 @@ Paying with SEQR is super easy, so we would like to be integration firendly too:
  
 * [Paying with SEQR](/app)
 * [Getting SEQR payments to you](/merchant) 
-* [Provide accounts for payment](/bank)
 * [SEQR consumer site](https://SEQR.COM)
 
 Feedback appriciated!
