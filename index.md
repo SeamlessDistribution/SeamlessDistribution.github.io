@@ -14,6 +14,5 @@ start sending invoices and pay them to see the magic:
 * [Getting SEQR payments to you](/merchant) 
 * [SEQR consumer site](https://SEQR.COM)
 
-Feedback appriciated!
+Feedbacks appriciated!
 
-/SEQR deveoper-team
