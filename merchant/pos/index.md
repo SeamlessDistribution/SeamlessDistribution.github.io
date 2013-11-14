@@ -17,5 +17,5 @@ we assign a fixed QR code to each POS. A POS SEQR sticker looks like this:
 To register a SEQR sticker, please take a look at the following sample:
 
 {% highlight python %}
-{% include registerTerminal.py %}
+{% include registerterminal.py %}
 {% endhighlight %}
