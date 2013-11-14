@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Merchant API
+title: First SEQR Payment
 description: SEQR Merchant, webshop, POS integration
 ---
 
@@ -15,7 +15,7 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 
 ## SEQR Payment in Python
 
-Create a a bill and publish it to the app (java): 
+Create a a bill and publish it to the app (python): 
 
 {% highlight python %}
 # create an invoice
@@ -53,10 +53,5 @@ Putting it all together, following is a basic sample for a payment:
 {% endhighlight %}
  
 ### Try more functions
-Please contact us to get APIs and examples for: 
-
-- Kiosk, web purchase trough the app. (TV commercials, Ads, Parking)
-
-- Signing up new SEQR users and getting a kick-back. 
-
-- Loyalty/Membership managment
+So this is the core of SEQR payments. The same flow, more or less, can be used
+in all the payment scenarios you see in the next section.
