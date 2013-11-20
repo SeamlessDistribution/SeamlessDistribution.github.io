@@ -31,7 +31,7 @@ Feel hungry for real payments now? Just make sure you have the following in plac
     "App->SEQR: ask for invoice at QR-code\n" +
     "SEQR->App: retry until you get SUCCESS\n" +
     "App->SEQR: payment\n"+
-    "SEQR->Cashregister: PAID (money is cleared and drawn from customer)\n"+
+    "SEQR->Cashregister: PAID (payment cleared)\n"+
     "SEQR->App: Done (show receipt)\n"
   );
   diagram.drawSVG("diagram", {theme: 'hand'});
