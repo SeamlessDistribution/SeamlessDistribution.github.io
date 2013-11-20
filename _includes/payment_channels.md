@@ -1,3 +1,4 @@
+
   * [E-commerce: in a webshop](/merchant/ecommerce)
   * [Physical Point-Of-Sale (POS): in a physical store](/merchant/pos)
   * [In-app Payments: in my smartphone app](/merchant/inapp)
