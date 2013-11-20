@@ -127,12 +127,24 @@ The SEQR third-party service interface provides merchants and service providers 
 **SEQR user**
 The consumer paying goods with SEQR.
 
+**SOAP**
+Simple Object Access Protocol
 
+**SSL**
+Secure Sockets Layer
 
+**Subscriber System**
+ERS component for storing subscriber accounts, ers-subscribersystem
 
+**SupportSystem**
+ERS component responsible generating receipts, through searches in the transaction log, ers-supportsystem
 
 ### T
+**Terminal**
+Seamless uses the word “terminal” for registered handsets or point of sale terminals used by a reseller for selling products
 
+**Terminal Proxy**
+ERS component communicating with point of sales terminals
 
 ### U
 
