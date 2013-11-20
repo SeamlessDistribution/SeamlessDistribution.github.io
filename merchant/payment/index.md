@@ -12,7 +12,7 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 1. [the SEQR app installed](../app/) before following.
 2. For python sample, you will need PIL and qrpython library (pip install qrcode PIL)
 
-## Simplified sequence
+## Sequence (simplified)
 
 <script src="/assets/javascripts/raphael-min.js">
 </script>
@@ -31,8 +31,10 @@ Feel hungry for real payments now? Just make sure you have the following in plac
     "App->SEQR: ask for invoice at QR-code\n" +
     "SEQR->App: retry until you get SUCCESS\n" +
     "App->SEQR: payment\n"+
-    "SEQR->Cashregister: PAID (payment cleared)\n"+
-    "SEQR->App: Done (show receipt)\n"
+    "SEQR->Cashregister: PAID\n"+
+    "Note right of Cashregister: Payment cleared!\n"+
+    "SEQR->App: Done (show receipt)\n"+
+    "Cashregsiter-->App: Happy!"
   );
   diagram.drawSVG("diagram", {theme: 'hand'});
 </script>
