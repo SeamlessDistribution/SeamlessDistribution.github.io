@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: firstpage
 title: SEQR Developer Site
 description: News and examples for SEQR cashregister integrations
 ---
