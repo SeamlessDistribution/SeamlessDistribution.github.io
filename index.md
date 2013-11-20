@@ -22,7 +22,7 @@ start sending invoices and pay them to see the magic:
 Now you can start exploring different ways of using payments 
 
 * [Webshop](/merchant/webshop)
-   * [In-app Payments: in my smartphone app](/merchant/inapp)
+** [In-app Payments: in my smartphone app](/merchant/inapp)
 * [Physical Point-Of-Sale (POS): in a physical store](/merchant/pos)
 * [Service, web purchase through the app: through TV commercials, Ads or even parking places!](/merchant/externalservices)
 
