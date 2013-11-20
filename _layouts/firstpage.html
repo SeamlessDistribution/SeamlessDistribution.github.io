@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ page.title }}</title>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/css/pygments.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+	<script src="/assets/javascripts/modernizr-2.6.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="/assets/javascripts/raphael-min.js"></script>
+	<script src="/assets/javascripts/underscore-min.js"></script>	
+	<script src="/assets/javascripts/sequence-diagram-min.js"></script>
+</head>
+<body>
+
+	<header id="header">
+		<div class="inner clearfix">
+			<a href="/" class="logo"><img src="/assets/images/logo-seqrdeveloper-black.png"></a>
+		</div>
+	</header>
+	<div class="header-clearfix"></div>
+	
+	<section id="slide" class="inner">
+	<img src="/assets/images/developer-slide.png">
+	</section>
+	
+	<section id="content">
+		<div class="inner clearfix">
+			{{ content }}
+		</div>
+	</section>
+	
+	<footer id="footer">
+		<div class="inner">
+			<nav class="footer-nav">
+				<ul>
+					<li><a href="">Legal</a></li>
+					<li><a href="">Help</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>
