@@ -64,23 +64,23 @@ clientComment Client comment included within the request. The field is optional.
 ## Payment and loyalty membership
 
 Payment is created with the following calls: 
-# sendInvoice - Sends an invoice to SEQR service.
-# updateInvoice - Updates an already sent invoice with new set of invoice rows or attributes, for example loyalty.
-# cancelInvoice - Cancels an unpaid invoice.
-# getPaymentStatus - Obtains status of a previously submitted invoice. When fetching the payment status, SEQR may communicate a set of customer tokens to the merchant that are applicable for the payment. The merchant must then decide which tokens are applied (such as for loyalty) and send them back with the updateInvoice call.
-# commitReservation - Commits the payment for an invoice that is in RESERVED state.
-# submitPaymentReceipt - Sends a receipt for a payment or refund which is shown on the buyer’s mobile device.
-# refundPayment - Refunds a previous payment. 
+- sendInvoice - Sends an invoice to SEQR service.
+- updateInvoice - Updates an already sent invoice with new set of invoice rows or attributes, for example loyalty.
+- cancelInvoice - Cancels an unpaid invoice.
+- getPaymentStatus - Obtains status of a previously submitted invoice. When fetching the payment status, SEQR may communicate a set of customer tokens to the merchant that are applicable for the payment. The merchant must then decide which tokens are applied (such as for loyalty) and send them back with the updateInvoice call.
+- commitReservation - Commits the payment for an invoice that is in RESERVED state.
+- submitPaymentReceipt - Sends a receipt for a payment or refund which is shown on the buyer’s mobile device.
+- refundPayment - Refunds a previous payment. 
 
 For complete details, refer to the API documentation, and for information on configuration for webshop, refer to sections Create QR code and Get payment status.
 
 Parameter Description
-# context  Used in all requests. The ClientContext object.
-# resultCode Response from all requests. Request result code.
-# resultDescription Response from all requests. A textual description of resultCode.
+- context  Used in all requests. The ClientContext object.
+- resultCode Response from all requests. Request result code.
+- resultDescription Response from all requests. A textual description of resultCode.
 
 invoice
-sendInvoice and updateInvoice request. Invoice data, which contains the amount and other invoice information.
+sendInvoice and updateInvoice request. Invoice data, which contains the amount and other invoice information.
 
 refundPayment request: contains the data after products have been removed from original invoice.
 
