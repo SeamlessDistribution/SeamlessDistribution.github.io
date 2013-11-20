@@ -84,10 +84,13 @@ One-time password
 ### P
 **P2P**
 Peer to Peer, used for example when sending money from a SEQR subscriber to another person
+
 **Payment Broker**
 SEQR component communicating with smart phones for matching invoices
+
 **POS**
 Point of Sale in a physical store, also the POS protocol is a SOAP based protocol using HTTPS
+
 **PKI**
 Public-key infrastructure
 
