@@ -16,7 +16,7 @@ start sending invoices and pay them to see the magic:
 
 ## Payment scenarios
 
-Now you can start exploring differnt ways of using payments 
+Now you can start exploring different ways of using payments 
 
 * [Webshop](/merchant/ecommerce)
    * [In-app Payments: in my smartphone app](/merchant/inapp)
