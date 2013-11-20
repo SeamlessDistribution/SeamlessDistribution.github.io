@@ -236,7 +236,9 @@ blockquote {
 	font-weight: bold;
 	margin-left: 20px;
 }
-
+.header-clearfix {
+	padding-top: 80px;
+}
 #footer {
 	padding: 10px;
 	color: #00a391;
@@ -256,15 +258,18 @@ blockquote {
 	color: #00a391 !important;
 }
 #content {
-	padding-top: 80px;
-		width: 850px;
-		margin: 0 auto;
+	width: 850px;
+	margin: 0 auto;
 }
 #content .inner {
 	background: #ffffff;
 	padding: 30px;
 	border: 1px solid #f1f1f1;
 	width: auto;
+}
+#slide img {
+	width: 100%;
+	border: 1px solid #f1f1f1;
 }
 /* Misc Styles
 /*---------------------------------------------*/
@@ -286,7 +291,7 @@ img[alt=AddAccount] {
     padding-top: 10px;
 }
 .logo img {
-	width: 180px;
+	width: 160px;
 }
 a.logo {
 	display: block;
