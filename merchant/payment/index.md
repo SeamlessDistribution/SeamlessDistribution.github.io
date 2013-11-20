@@ -12,7 +12,7 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 1. [the SEQR app installed](../app/) before following.
 2. For python sample, you will need PIL and qrpython library (pip install qrcode PIL)
 
-## Simplified sequence
+## Sequence (simplified)
 
 <script src="/assets/javascripts/raphael-min.js">
 </script>
@@ -25,14 +25,17 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 </div>
 <script>
   var diagram = Diagram.parse(
+    // "participant Cashregister\nparticipant SEQR\nparicipant App\n"+
     "Cashregister->SEQR: sendInvoice\n" + 
     "Cashregister->SEQR: poll customer actions\n" +
     "SEQR->Cashregister: wait until you get PAID\n" +
     "App->SEQR: ask for invoice at QR-code\n" +
     "SEQR->App: retry until you get SUCCESS\n" +
     "App->SEQR: payment\n"+
-    "SEQR->Cashregister: PAID (money is cleared and drawn from customer)\n"+
-    "SEQR->App: Done (show receipt)\n"
+    "SEQR->Cashregister: PAID\n"+
+    "Note right of Cashregister: Payment cleared!\n"+
+    "SEQR->App: Done (show receipt)\n"+
+    "Cashregsiter-->App: Happy!"
   );
   diagram.drawSVG("diagram", {theme: 'hand'});
 </script>
