@@ -43,7 +43,7 @@ caption, th, td {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: "";
+	cont: "";
 }
 
 blockquote, q {
@@ -246,6 +246,9 @@ blockquote {
 #footer a { color: #ddd; }
 #footer a:hover { color: #fff; }
 
+#content {
+	padding-top: 80px;
+}
 /* Misc Styles
 /*---------------------------------------------*/
 .clearfix:before,
