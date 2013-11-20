@@ -4,8 +4,8 @@ title: SEQR Developer Site
 description: News and examples for SEQR cashregister integrations
 ---
 
-**Paying with SEQR is super easy, so we would like it to be integration friendly too.**
-Please contact integrations@seamless.se for help and getting payments for real. 
+**Paying with SEQR is super easy and getting paid is almost as easy with our integration**
+Contact integrations @ seamless . se for help or finally getting payments though for real. 
 
 <div class="boxes">
  <div class="box">
