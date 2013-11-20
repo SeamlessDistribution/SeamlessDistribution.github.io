@@ -16,10 +16,16 @@ start sending invoices and pay them to see the magic:
 
 ## Payment scenarios
 
+Now you can start exploring differnt ways of using payments 
 
 * [E-commerce: in a webshop](/merchant/ecommerce)
 * [Physical Point-Of-Sale (POS): in a physical store](/merchant/pos)
 * [In-app Payments: in my smartphone app](/merchant/inapp)
 * [Service, web purchase through the app: through TV commercials, Ads or even parking places!](/merchant/externalservices)
 
+## References 
 
+* API
+* Glossary
+
+## Contact
