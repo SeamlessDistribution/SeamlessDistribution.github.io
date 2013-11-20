@@ -13,6 +13,9 @@ start sending invoices and pay them to see the magic:
 * [Getting SEQR mobile application](app)
 * [Making the first SEQR payment](merchant/payment) 
 * [How can I get paid?](merchant)
+
+## Payment scenarios
+
 {% include payment_channels.md %}
 
 
