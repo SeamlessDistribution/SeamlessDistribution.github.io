@@ -207,11 +207,13 @@ blockquote {
 }
 
 #header {
-    background: #00A391; /* SEQR TURQUSE */
-	padding: 30px 0;
+    	background: #00A391; /* SEQR TURQUSE */
+	padding: 15px 0;
 	margin-bottom: 80px;
 	color: #afe1da;
-    text-shadow: 2px 2px #004000; 
+    	text-shadow: 2px 2px #004000;
+    	position: fixed;
+    	width: 100%;
 }
 
 #header a { color: #afe1da; }
