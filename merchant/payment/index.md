@@ -64,12 +64,10 @@ while response.resultCode == 0 and response.status == "ISSUED":
                 invoiceResponse.invoiceReference)
 {% endhighlight %}
 
-Putting it all together, following is a basic sample for a payment:
 
-{% highlight python %}
-{% include payment.py %}
-{% endhighlight %}
- 
+* [Putting it all together](python-script) 
+
+
 ### Try more functions
 So this is the core of SEQR payments. The same flow, more or less, can be used
 in all the payment scenarios you see in the next section.
