@@ -368,6 +368,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 	float: left;
 	height: 1000px;
 	clear: left;
+	position: fixed;
 }
 .content {
 	float: right;
