@@ -54,6 +54,8 @@ Electronic Recharge System 360, Seamless payment platform
 
 
 ### I
+**Invoice**
+Seamless uses the word “Invoice” for defining the bill sent to the SEQR user 
 
 
 ### J
@@ -119,7 +121,7 @@ SEQR system provides a merchant batch transfer file each day for the aggregated 
 SEQR is a system for mobile payments where to pay with your phone instead of using cash or cards.
 
 **SEQR server**
-Seamless backend performing the service and the API:s
+SEQR backend performing the service and the API:s
 
 **SEQR Services**
 The SEQR third-party service interface provides merchants and service providers possibilities to deliver services and shopping experiences directly into the SEQR app.
@@ -146,6 +148,9 @@ Seamless uses the word “terminal” for registered handsets or point of sale t
 **Terminal Proxy**
 ERS component communicating with point of sales terminals
 
+**TXE**
+Transaction Engine, is the core job and transaction handler in ERS (for payments, adding accounts, etc).
+
 ### U
 
 
@@ -153,4 +158,6 @@ ERS component communicating with point of sales terminals
 
 
 ### W
+**Web server**
+Hosts the ERS web application
 
