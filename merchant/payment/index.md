@@ -24,7 +24,7 @@ App->SEQR: payment
 SEQR->Cashregister: PAID
 Note right of Cashregister: Payment cleared!
 SEQR->App: Done (show receipt)
-Cashregsiter-->App: Happy!
+Cashregister-->App: Happy!
 </div>
 
 <script>
