@@ -99,7 +99,7 @@ select:focus {
 body {
 	font: 14px/1.8em 'Droid Sans','Open Sans', Helvetica, Arial, Helvetica, sans-serif;
 	color: #444;
-	background: #fff;
+	background: #F9F9F9;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -179,17 +179,16 @@ sup {
 
 code {
 	font-family: Courier, "Courier New", Monaco, Tahoma;
-	background: #eee;
 	color: #333;
 	padding: 0px 2px;
 }
 
 pre {
-	background: #eee;
+	background: #f1f1f1;
 	padding: 20px;
 	margin-bottom: 1em;
 	overflow: auto;
-    box-shadow: 3px 3px 2px #A0A0A0; 
+	border: 1px solid #ccc;
 }
 
 blockquote {
@@ -207,13 +206,15 @@ blockquote {
 }
 
 #header {
-    	background: #00A391; /* SEQR TURQUSE */
-	padding: 15px 0;
-	margin-bottom: 80px;
-	color: #afe1da;
+    	background: #ffffff; /* SEQR TURQUSE */
+		padding: 15px 0;
+		margin-bottom: 80px;
+		color: #afe1da;
     	text-shadow: 2px 2px #004000;
     	position: fixed;
     	width: 100%;
+    	z-index: 999;
+		border-bottom: 1px solid #f1f1f1;
 }
 
 #header a { color: #afe1da; }
@@ -237,17 +238,33 @@ blockquote {
 }
 
 #footer {
-    background: #F0F0F0;
-	padding: 60px 0;
-	margin-top: 80px;
-	color: #C0C0C0;
-    box-shadow: 0px 5px 3px #808080; 
+	padding: 10px;
+	color: #00a391;
 }
 #footer a { color: #ddd; }
 #footer a:hover { color: #fff; }
-
+.footer-nav ul li {
+	list-style: none;
+	float: left;
+}
+.footer-nav ul {
+	padding-left: 0px;
+	margin-bottom: 0;
+}
+.footer-nav ul li a {
+	padding: 10px 20px;
+	color: #00a391 !important;
+}
 #content {
 	padding-top: 80px;
+		width: 850px;
+		margin: 0 auto;
+}
+#content .inner {
+	background: #ffffff;
+	padding: 30px;
+	border: 1px solid #f1f1f1;
+	width: auto;
 }
 /* Misc Styles
 /*---------------------------------------------*/
@@ -267,4 +284,11 @@ img[alt=AddAccount] {
     width: 200px;
     display:block;
     padding-top: 10px;
+}
+.logo img {
+	width: 180px;
+}
+a.logo {
+	display: block;
+	line-height: 0px;
 }
