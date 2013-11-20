@@ -40,7 +40,7 @@ Mobile example in the Module pictures above)
 
 <div id="qr-code-frame-wrapper">
     <iframe id="qr-code-frame"
-      src="/downloads/module1/seqr-payment-module1.html"></iframe>
+      src="/downloads/webshop_modules/module1/seqr-payment-module1.html"></iframe>
 </div>
 <script>
 $("#qr-code-frame-wrapper").resizable({

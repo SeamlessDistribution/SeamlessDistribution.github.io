@@ -1,0 +1,51 @@
+<!--
+SEQR ONLINE PAYMENT MODULE 2
+Version: 1.0
+Author: Seamless Payments - SEQR
+-->
+
+<link rel="stylesheet" href="css/style-module2.css" type="text/css">
+
+<div id="seqr-module2">
+	<div id="seqr-module2-header">
+		The Mobile Wallet
+		<img src="images/seqr-logo.png" height="30" id="seqr-module2-logo">
+	</div>
+	
+	<div id="seqr-module2-content">
+		<!-- QR CODE -->		
+		<div id="seqr-module2-qrcode"> 
+			<!-- ADD SEQR QR CODE LINK -->
+			<img src="images/qrcode.png">
+			<div id="seqr-module2-label">SCAN TO PAY WITH SEQR</div>
+		</div>
+		
+		<!-- LINK -->
+		<div id="seqr-module2-link">
+			<!-- ADD SEQR LINK -->
+			<a href="" id="seqr-module2-label">PRESS TO PAY WITH SEQR</a>
+		</div>
+
+		<div id="seqr-module2-header2">
+			<img src="images/seqr-logo.png" height="25" id="seqr-module2-logo">
+			The Mobile Wallet
+		</div>
+		
+		<div id="seqr-module2-description">
+			<ul id="seqr-module2-download">
+				<strong>Download SEQR now</strong><br>
+				<li><a href="http://www.seqr.com/app" target="_blank"><img src="images/iphone.png">iPhone</a></li>
+				<li><a href="http://www.seqr.com/app" target="_blank"><img src="images/android.png">Android</a></li>
+			</ul>
+			<div id="tagline">SEQR is the most convenient mobile payment solution. Paying is as easy online as in stores.</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/jqueryTranslator.min.js"></script>
+<script>
+(function(){
+	$("[data-translate]").jqTranslate('index',{defaultLang: 'sv', path: 'lang', /* forceLang: 'sv' */});
+})();
+</script>
