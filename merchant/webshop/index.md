@@ -18,7 +18,7 @@ payment](/merchant/payment).
 The difference is in how the SEQR QR code is presented to the SEQR
 user. To integrate SEQR, follow these steps:
 1. Integrate the payment view 
-2. Present the QR code 
+2. Present the QR code and wait for payment
 3. Present the receipt
 
 ### 1. Integrate the Payment View
@@ -34,7 +34,7 @@ Embed the HTML file in your webshop checkout and replace the dynamic parts with
 the responses you get from SEQR service.
 
 
-### 2. Present the QR Code
+### 2. Present the QR Code and Wait for Payment
 
 The payment method for SEQR is displayed with the SEQR logotype and when 
 selecting SEQR, the QR code to scan is displayed, or if the 
