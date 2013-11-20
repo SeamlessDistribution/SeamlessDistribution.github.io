@@ -27,7 +27,7 @@ There are two payment views that you can choose from:
 * Standard Payment View
 <img src="/assets/images/webshop_module1.png" />
 
-* Slim Payment View
+* Small Payment View
 <img src="/assets/images/webshop_module2.png" />
 
 Embed the HTML file in your webshop checkout and replace the dynamic parts with
