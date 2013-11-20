@@ -60,12 +60,6 @@ the specified place in the payment view
     </iframe>
 </div>
 
-<script>
-$("#qr-code-frame-wrapper1").resizable({
-alsoResize : '#qr-code-frame1'
-});
-</script>
-
 Each module contains three different sizes to be used depending on type (size) of device 
 that is used for payment (smartphone, tablet, etc.). Two of the sizes contain a QR code to 
 scan, whilst the third contains a link that forwards the payer to SEQR app.
