@@ -24,7 +24,16 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 <div id="diagram">
 </div>
 <script>
-  var diagram = Diagram.parse("A->B: Message");
+  var diagram = Diagram.parse(
+    "Cashregister->SEQR: sendInvoice\n" + 
+    "Cashregister->SEQR: poll customer actions\n" +
+    "SEQR->Cashregister: wait until you get PAID\n" +
+    "App->SEQR: ask for invoice at QR-code\n" +
+    "SEQR->App: retry until you get SUCCESS\n" +
+    "App->SEQR: payment\n"+
+    "SEQR->App: OK\n"+
+    "SEQR->Cashregister: PAID\n"
+  );
   diagram.drawSVG("diagram", {theme: 'hand'});
 </script>
 
