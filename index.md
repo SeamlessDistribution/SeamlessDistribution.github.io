@@ -10,35 +10,40 @@ Paying with SEQR is super easy, so we would like it to be integration friendly t
 To get started, you need an app connected to the test servers, and then you can
 start sending invoices and pay them to see the magic:
 
-### Getting Started
- 
-* [Getting SEQR mobile application](app)
-* [Making the first SEQR payment](merchant/payment) 
 
-### Payment Scenarios
-
+<div class="boxes">
+<div class="box">
+ Getting Started
+ <ul>
+ <li><a href="app/">Getting SEQR mobile application</a></li>
+ <li><a href="merchant/payment">Making the first SEQR payment</a></li>
+ </ul>
+</div>
+<div class="box">
+Payment Scenarios<br/>
 Now you can start exploring different ways of using payments 
+<ul>
+ <li><a href="/merchant/webshop">Webshop</a></li>
+ <li>Point-Of-Sale (POS): in a physical store</li>
+ <li>In-app: in an smartphone app</li>
+ <li>Service: through TV commercials, Ads or even parking places!</li>
+</li>
+</div>
 
-* [Webshop](/merchant/webshop)
-* Point-Of-Sale (POS): in a physical store
-* In-app: in an smartphone app
-* Service: through TV commercials, Ads or even parking places!
+<div class="box">
+References 
+<ul>
+<li>[API](merchant/reference/api)
+<li>[Glossary](/merchant/reference/glossary)
+</ul>
+</div>
 
-<!---
-* [Physical Point-Of-Sale (POS): in a physical store](/merchant/pos)
-* [In-app Payments: in an smartphone app](/merchant/inapp)
-* [Services: through TV commercials, Ads or even parking places!](/merchant/externalservices)
--->
-
-### References 
-
-* [API](merchant/reference/api)
-* [Glossary](/merchant/reference/glossary)
-
-### Contact
-
+<div class="box">
+Contact<br/>
 Please contact integrations@seamless.se for help and 
 eventually using our cashregister for real money. 
 
+</div>
+</div>
 
 
