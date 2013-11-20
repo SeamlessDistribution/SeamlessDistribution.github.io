@@ -297,3 +297,14 @@ a.logo {
 	display: block;
 	line-height: 0px;
 }
+.download {
+	background: #F9F9F9;
+	border: 1px solid #f1f1f1;
+	padding: 20px;
+}
+.download span {
+	float: left;
+	color: #00a391 !important;
+	text-transform: uppercase;
+	margin-right: 10px;
+}
