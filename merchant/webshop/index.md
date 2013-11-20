@@ -28,7 +28,7 @@ There are two payment views that you can choose from:
 <img src="/assets/images/webshop_module1.png" />
 
 * Slim Payment View
-<img src="/assets/images/webshop_module1.png" />
+<img src="/assets/images/webshop_module2.png" />
 
 Embed the HTML file in your webshop checkout and replace the dynamic parts with
 the responses you get from SEQR service.
@@ -59,6 +59,12 @@ the specified place in the payment view
         src="/downloads/webshop_modules/module1/seqr-payment-module1.html">
     </iframe>
 </div>
+
+<script>
+$("#qr-code-frame-wrapper1").resizable({
+alsoResize : '#qr-code-frame1'
+});
+</script>
 
 Each module contains three different sizes to be used depending on type (size) of device 
 that is used for payment (smartphone, tablet, etc.). Two of the sizes contain a QR code to 
