@@ -23,8 +23,9 @@ The SEQR applications: se-qr-iphoneapp se-qr-androidapp
 Main SEQR server hosting the SEQR components
 ### C
 
-**Cashier register**
-The register machine of receiving payments with SEQR
+**Cash register**
+The register machine of receiving payments with SEQR and also the API within SEQR system
+
 
 **Clearing**
 Is done in real time before the transaction is accepted. SEQR expects this money to be available at a holding account by the time of settlement.
@@ -62,19 +63,33 @@ Electronic Recharge System 360, Seamless payment platform
 
 
 ### L
+**Loyalty**
 
 
 ### M
+**Merchant**
+The company selling goods and is waiting for an invoice to be paid (can be vendor and/or cashier)
 
 
 ### N
+**NFC**
+Near Field Communication, a standard based communication technology enabling the device to be used for authorizing payments. SEQR provides payments with NFC through a thin RFID circuit is embedded in the QR code sticker.
 
 
 ### O
+**OTP**
+One-time password
 
 
 ### P
-
+**P2P**
+Peer to Peer, used for example when sending money from a SEQR subscriber to another person
+**Payment Broker**
+SEQR component communicating with smart phones for matching invoices
+**POS**
+Point of Sale in a physical store, also the POS protocol is a SOAP based protocol using HTTPS
+**PKI**
+Public-key infrastructure
 
 ### Q
 
@@ -83,6 +98,8 @@ Electronic Recharge System 360, Seamless payment platform
 
 
 ### S
+**SDK**
+
 
 
 ### T
