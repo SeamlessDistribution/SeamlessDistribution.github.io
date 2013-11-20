@@ -11,7 +11,7 @@ To get started, you need an app connected to the test servers, and then you can
 start sending invoices and pay them to see the magic:
 
 <div class="boxes">
-<div class="box">
+<span>
 
 ### Walkthrough
  
@@ -19,8 +19,8 @@ start sending invoices and pay them to see the magic:
 * [Making the first SEQR payment](merchant/payment) 
 * [How can I get paid?](merchant)
 
-</div>
-<div class="box">
+</span>
+<span class="box">
 
 ### Payment scenarios
 
@@ -31,23 +31,24 @@ Now you can start exploring different ways of using payments
 * [Physical Point-Of-Sale (POS): in a physical store](/merchant/pos)
 * [Service, web purchase through the app: through TV commercials, Ads or even parking places!](/merchant/externalservices)
 
-</div>
-<div class="box">
+</span>
+<span class="box">
 
 ### References 
 
 * [API](merchant/reference/api)
 * [Glossary](/merchant/reference/glossary)
 
-</div>
-<div class="box">
+</span>
+<span class="box">
 
 ### Contact
 
 Please contact integrations <at> seamless <dot> se for for help and 
 eventually using our cashregister for real money. 
 
-</div>
+</span>
+
 </div>
 
 
