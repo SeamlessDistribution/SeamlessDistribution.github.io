@@ -33,7 +33,7 @@ Cashregister-->App: Happy!
 
 ## SEQR Payment in Python
 
-Create a a bill and publish it to the app (python): 
+Create a bill and publish it to the app (python): 
 
 {% highlight python %}
 # create an invoice
