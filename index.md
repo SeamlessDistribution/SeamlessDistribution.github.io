@@ -10,13 +10,12 @@ Paying with SEQR is super easy, so we would like it to be integration friendly t
 To get started, you need an app connected to the test servers, and then you can
 start sending invoices and pay them to see the magic:
 
-### Walkthrough
+### Getting Started
  
 * [Getting SEQR mobile application](app)
 * [Making the first SEQR payment](merchant/payment) 
-* [How can I get paid?](merchant)
 
-### Payment scenarios
+### Payment Scenarios
 
 Now you can start exploring different ways of using payments 
 
