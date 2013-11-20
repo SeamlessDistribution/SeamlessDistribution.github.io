@@ -66,6 +66,7 @@ Seamless uses the word “Invoice” for defining the bill sent to the SEQR user
 
 ### L
 **Loyalty**
+Links merchant's loyalty cards with SEQR and have the rebates/bonus points automatically added to the point of sales
 
 
 ### M
@@ -113,6 +114,7 @@ ERS component supporting interactive and scheduled reports, used for POS reconci
 
 ### S
 **SDK**
+Software Developer Kit, providing a set of software development tools for creation of applications.
 
 **Settlement**
 SEQR system provides a merchant batch transfer file each day for the aggregated transfers that are to be settled.
