@@ -47,16 +47,16 @@ The ClientContext structure is used in all requests to identify, authenticate an
 <tr><td>clientRequestTimeout </td>
     <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td></tr>
 <tr><td>initiatorPrincipalId </td>
-    <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. </td></tr>
+    <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. 
+         Recommended: Use TERMINALID as type and the user that has been given to you by Customer Service.
+    </td></tr>
+<tr><td>password</td>
+    <td>The password used to authenticate the initiator principal.</td></tr>
+<tr><td>clientReference </td>
+    <td>The client reference for the transaction.
+        Recommended: the clientReference should be unique at least for the specific client id.</td></tr>
 
 </table>
-
-Recommended: Use TERMINALID as type and the user that has been given to you by Customer Service.
-
-password The password used to authenticate the initiator principal.
-clientReference The client reference for the transaction. 
-
-Recommended: the clientReference should be unique at least for the specific client id.
 
 Note: SEQR service does not check this field. The field has a maximum length of 32 characters. The field is mandatory for troubleshooting purposes.
 clientComment Client comment included within the request. The field is optional.
@@ -75,9 +75,9 @@ Payment is created with the following calls:
 For complete details, refer to the API documentation, and for information on configuration for webshop, refer to sections Create QR code and Get payment status.
 
 Parameter Description
-context  Used in all requests. The ClientContext object.
-resultCode Response from all requests. Request result code.
-resultDescription Response from all requests. A textual description of resultCode.
+# context  Used in all requests. The ClientContext object.
+# resultCode Response from all requests. Request result code.
+# resultDescription Response from all requests. A textual description of resultCode.
 
 invoice
 sendInvoice and updateInvoice request. Invoice data, which contains the amount and other invoice information.
