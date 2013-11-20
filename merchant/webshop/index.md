@@ -76,6 +76,7 @@ __Click and drag the grey field to the left to see how the Payment View adapts t
     </iframe>
 </div>
 
+
 Each module contains three different sizes to be used depending on type (size) of device 
 that is used for payment (smartphone, tablet, etc.). Two of the sizes contain a QR code to 
 scan, whilst the third contains a link that forwards the payer to SEQR app.
