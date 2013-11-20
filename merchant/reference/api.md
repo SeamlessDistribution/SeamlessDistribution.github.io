@@ -11,29 +11,44 @@ that has the following methods:
 
 ## Methods used for webshop integration 
 
-
-**Method** | **Description** 
-sendInvoice | Sends an invoice to the SEQR service 
-updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty programme
-getPaymentStatus | Obtains status of a previously submitted invoice
-cancelInvoice | Cancels an unpaid invoice
-commitReservation | Commits a payment
-submitPaymentReceipt | Sends the receipt document of a payment or refund
-refundPayment | Refunds a previous payment
-markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting
-executeReport | Executes a report on the SEQR service.
+<table>
+<tr><th>Method</th><th>Description</th></tr>
+<tr><td>sendInvoice</td>
+    <td>Sends an invoice to the SEQR service </td></tr>
+<tr><td>updateInvoice</td>
+    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty programme</td></tr>
+<tr><td>getPaymentStatus</td>
+     <td>Obtains status of a previously submitted invoice</td></tr>
+<tr><td>cancelInvoice</td>
+    <td>Cancels an unpaid invoice</td></tr>
+<tr><td>commitReservation</td>
+    <td>Commits a payment</td></tr>
+<tr><td>submitPaymentReceipt</td>
+    <td>Sends the receipt document of a payment or refund</td></tr>
+<tr><td>refundPayment</td>
+    <td>Refunds a previous payment</td></tr>
+<tr><td>markTransactionPeriod</td>
+    <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
+<tr><td>executeReport</td>
+    <td>Executes a report on the SEQR service.</td></tr>
+</table>
 
 ## Context parameter used in all calls
 
 A principal is the main actor in each request to the SEQR service and represents either a seller or a buyer. Each request has at least an initiator principal.
 The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
 
-| ClientContext fields | Description |
-|----------------------|------------+|
-| clientId | Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.|
-| channel | The channel used to send a request. Always use ClientWS or WS. |
-| clientRequestTimeout | The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. |
-| initiatorPrincipalId | Used for authentication of the principal and contains the id and type, as well as an optional user id. |
+<table>
+<tr><th>ClientContext fields</th><th>Description</th></tr>
+<tr><td>clientId </td>
+    <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.</td></tr>
+<tr><td>channel </td>
+    <td> The channel used to send a request. Always use ClientWS or WS. </td></tr>
+<tr><td>clientRequestTimeout </td>
+    <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td></tr>
+<tr><td>initiatorPrincipalId </td>
+    <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. </td></tr>
+</table>
 
 Recommended: Use TERMINALID as type and the user that has been given to you by Customer Service.
 password
