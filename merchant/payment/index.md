@@ -14,9 +14,9 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 
 ## The flow
 
-<script src="/assets/scripts/raphael-min.js"></script>
-<script src="/assets/scripts/underscore-min.js"></script>
-<script src="/assets/scripts/sequence-diagram-min.js"></script>
+<script src="/assets/javascripts/raphael-min.js"></script>
+<script src="/assets/javascripts/underscore-min.js"></script>
+<script src="/assets/javascripts/sequence-diagram-min.js"></script>
 
 <div id="diagram"></div>
 <script>
