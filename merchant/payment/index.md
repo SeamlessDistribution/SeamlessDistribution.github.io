@@ -14,11 +14,15 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 
 ## The flow
 
-<script src="/assets/javascripts/raphael-min.js"></script>
-<script src="/assets/javascripts/underscore-min.js"></script>
-<script src="/assets/javascripts/sequence-diagram-min.js"></script>
+<script src="/assets/javascripts/raphael-min.js">
+</script>
+<script src="/assets/javascripts/underscore-min.js">
+</script>
+<script src="/assets/javascripts/sequence-diagram-min.js">
+</script>
 
-<div id="diagram"></div>
+<div id="diagram">
+</div>
 <script>
   var diagram = Diagram.parse("A->B: Message");
   diagram.drawSVG("diagram", {theme: 'hand'});
