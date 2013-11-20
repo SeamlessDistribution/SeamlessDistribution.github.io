@@ -13,7 +13,7 @@ checkout that supports SEQR:
 
 <img src="/assets/images/seqr_webshop.png" />
 
-The flow for a webshop SEQR payment is very similar to the [Making your first SEQR
+The flow for a webshop SEQR payment is very similar to [Making your first SEQR
 payment](/merchant/payment).
 The difference is in how the SEQR QR code is presented to the SEQR
 user. To integrate SEQR, follow these steps:
