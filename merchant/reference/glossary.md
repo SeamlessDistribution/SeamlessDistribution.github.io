@@ -68,7 +68,7 @@ Electronic Recharge System 360, Seamless payment platform
 
 ### M
 **Merchant**
-The company selling goods and is waiting for an invoice to be paid (can be vendor and/or cashier)
+The company selling goods and is waiting for a bill to be paid (can be vendor and/or cashier)
 
 
 ### N
@@ -95,13 +95,39 @@ Point of Sale in a physical store, also the POS protocol is a SOAP based protoco
 Public-key infrastructure
 
 ### Q
+**QR code**
+Quick Response Code, a matrix (2D) barcode
 
 
 ### R
+**Reconciliation**
+Ensures that the balances match at the end of a particular accounting period, performed on a regular and ongoing basis.
 
+**Reconciliation reports**
+SEQR reports about transaction date, account number, total sum of the transactions and number of transactions.
+
+**Report Engine**
+ERS component supporting interactive and scheduled reports, used for POS reconciliation reports through workstation.
 
 ### S
 **SDK**
+
+**Settlement**
+SEQR system provides a merchant batch transfer file each day for the aggregated transfers that are to be settled.
+
+**SEQR Mobile Wallet**
+SEQR is a system for mobile payments where to pay with your phone instead of using cash or cards.
+
+**SEQR server**
+Seamless backend performing the service and the API:s
+
+**SEQR Services**
+The SEQR third-party service interface provides merchants and service providers possibilities to deliver services and shopping experiences directly into the SEQR app.
+
+**SEQR user**
+The consumer paying goods with SEQR.
+
+
 
 
 
