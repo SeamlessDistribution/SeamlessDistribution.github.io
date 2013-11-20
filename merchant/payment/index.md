@@ -25,7 +25,7 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 </div>
 <script>
   var diagram = Diagram.parse(
-    "participant Cashregister\nparticipant SEQR\nparicipant App\n"+
+    // "participant Cashregister\nparticipant SEQR\nparicipant App\n"+
     "Cashregister->SEQR: sendInvoice\n" + 
     "Cashregister->SEQR: poll customer actions\n" +
     "SEQR->Cashregister: wait until you get PAID\n" +
