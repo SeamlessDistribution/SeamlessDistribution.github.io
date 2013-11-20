@@ -18,7 +18,7 @@ description: News and examples for SEQR cashregister integrations
  <div class="box">
   <h3>Scenarios</h3>
   <ul>
-   <li><a href="/merchant/webshop">Webshop</a></li>
+   <li><a href="merchant/webshop">Webshop</a></li>
    <li>Point-Of-Sale (POS): in a physical store</li>
    <li>In-app: in an smartphone app</li>
    <li>Service: through TV commercials, Ads or even parking places!</li>
@@ -28,8 +28,8 @@ description: News and examples for SEQR cashregister integrations
  <div class="box">
   <h3>References</h3> 
   <ul>
-   <li>[API](merchant/reference/api)</li>
-   <li>[Glossary](/merchant/reference/glossary)</li>
+   <li><a href="merchant/reference/api">API</a></li>
+   <li><a href="merchant/reference/glossary">Glossary</a></li>
   </ul>
  </div>
 
