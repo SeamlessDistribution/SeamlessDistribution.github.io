@@ -9,6 +9,7 @@ description: SEQR Merchant, webshop, POS integration
 ## Get SEQR Payments
 
 Feel hungry for real payments now? Just make sure you have the following in place:
+
 1. [The SEQR app installed](../../app/).
 2. For python sample, you will need PIL and qrpython library (pip install qrcode PIL)
 
