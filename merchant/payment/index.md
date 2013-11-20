@@ -12,6 +12,17 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 1. [the SEQR app installed](../app/) before following.
 2. For python sample, you will need PIL and qrpython library (pip install qrcode PIL)
 
+## The flow
+
+<script src="../assets/javascript/raphael-min.js"></script>
+<script src="../assets/javascript/underscore-min.js"></script>
+<script src="../assets/javascript/sequence-diagram-min.js"></script>
+
+<div id="diagram"></div>
+<script>
+  var diagram = Diagram.parse("A->B: Message");
+  diagram.drawSVG("diagram", {theme: 'hand'});
+</script>
 
 ## SEQR Payment in Python
 
