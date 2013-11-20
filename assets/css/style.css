@@ -308,3 +308,36 @@ a.logo {
 	text-transform: uppercase;
 	margin-right: 10px;
 }
+iframe {
+    display: block;
+    position:relative !important;
+    width: 100%;
+    max-width: 788px;
+    height: 500px !important;
+    min-width: 330px; 
+    padding: 0;
+    border: none;
+    background-color: green;
+}
+.outer {
+    position: relative !important;
+    width: 100%;
+    max-width: 788px;
+    height: 500px !important;
+    min-width: 330px;
+    display:block;
+    background-color:#ccc;
+    margin: 20px 0px;
+}
+div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se {
+	height: 20px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	background: #ccc;
+	float: right;
+	cursor: pointer;
+}

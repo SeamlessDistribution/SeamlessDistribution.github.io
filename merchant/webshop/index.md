@@ -54,7 +54,23 @@ and put it in the specified place in the payment view
 of invoiceQRCode with SEQR, for example: SEQR://SEQR.SE/R12345 , and put it in
 the specified place in the payment view
 
-<div id="qrcode-frame-wrapper1">
+
+
+<script type="text/javascript">//<![CDATA[ 
+$(function(){
+$(".outer").resizable({
+    resize: function (event, ui) {
+        var newWd = ui.size.width - 20;
+        var newHt = ui.size.height - 20;
+        $("iframe").width(newWd).height(newHt);
+    }
+});
+});//]]>  
+</script>
+
+__Click and drag the grey field to the left to see how the Payment View adapts to the width.__
+
+<div id="qrcode-frame-wrapper1" class="outer">
     <iframe id="qr-code-frame1" width="100%" height="450px"
         src="/downloads/webshop_modules/module1/seqr-payment-module1.html">
     </iframe>
