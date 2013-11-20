@@ -20,14 +20,13 @@ start sending invoices and pay them to see the magic:
   </ul>
  </div>
  <div class="box">
- Payment Scenarios<br/>
- Now you can start exploring different ways of using payments 
- <ul>
-  <li><a href="/merchant/webshop">Webshop</a></li>
-  <li>Point-Of-Sale (POS): in a physical store</li>
-  <li>In-app: in an smartphone app</li>
-  <li>Service: through TV commercials, Ads or even parking places!</li>
- </ul>
+  Scenarios<br/>
+  <ul>
+   <li><a href="/merchant/webshop">Webshop</a></li>
+   <li>Point-Of-Sale (POS): in a physical store</li>
+   <li>In-app: in an smartphone app</li>
+   <li>Service: through TV commercials, Ads or even parking places!</li>
+  </ul>
  </div>
  
  <div class="box">
@@ -43,6 +42,7 @@ start sending invoices and pay them to see the magic:
   Please contact integrations@seamless.se for help and 
   eventually using our cashregister for real money. 
  </div>
+ 
 </div>
 
 
