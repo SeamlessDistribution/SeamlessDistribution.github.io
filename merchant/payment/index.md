@@ -14,30 +14,21 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 
 ## Sequence (simplified)
 
-<script src="/assets/javascripts/raphael-min.js">
-</script>
-<script src="/assets/javascripts/underscore-min.js">
-</script>
-<script src="/assets/javascripts/sequence-diagram-min.js">
-</script>
-
-<div id="diagram">
+<div class="diagram">
+Cashregister->SEQR: sendInvoice
+Cashregister->SEQR: poll customer actions
+SEQR->Cashregister: wait until you get PAID
+App->SEQR: ask for invoice at QR-code
+SEQR->App: retry until you get SUCCESS
+App->SEQR: payment
+SEQR->Cashregister: PAID
+Note right of Cashregister: Payment cleared!
+SEQR->App: Done (show receipt)
+Cashregsiter-->App: Happy!
 </div>
+
 <script>
-  var diagram = Diagram.parse(
-    // "participant Cashregister\nparticipant SEQR\nparicipant App\n"+
-    "Cashregister->SEQR: sendInvoice\n" + 
-    "Cashregister->SEQR: poll customer actions\n" +
-    "SEQR->Cashregister: wait until you get PAID\n" +
-    "App->SEQR: ask for invoice at QR-code\n" +
-    "SEQR->App: retry until you get SUCCESS\n" +
-    "App->SEQR: payment\n"+
-    "SEQR->Cashregister: PAID\n"+
-    "Note right of Cashregister: Payment cleared!\n"+
-    "SEQR->App: Done (show receipt)\n"+
-    "Cashregsiter-->App: Happy!"
-  );
-  diagram.drawSVG("diagram", {theme: 'hand'});
+ $(".diagram").sequenceDiagram({theme: 'hand'});
 </script>
 
 ## SEQR Payment in Python
