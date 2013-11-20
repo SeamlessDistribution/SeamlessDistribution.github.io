@@ -341,3 +341,20 @@ div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se {
 	float: right;
 	cursor: pointer;
 }
+
+/* TABLES */
+table {
+	margin: 10px 0px;
+	font-size: 15px;
+	border-collapse:collapse;
+}
+th, td {
+	padding: 6px 13px;
+	border: 1px solid #e7e7e7;
+}
+table th {
+	font-weight: bold;
+	text-align: center;
+}
+tr:nth-child(even)	{ background-color:#f4f4f4; }
+tr:nth-child(odd)	{ background-color:#fff; }
