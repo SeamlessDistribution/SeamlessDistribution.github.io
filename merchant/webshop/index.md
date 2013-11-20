@@ -95,7 +95,6 @@ will improve your webshop’s server performance.
 
 
 
-
 ### 3. Present the Receipt
 
 Once the payment is completed a reference number (ersReference) is obtained from 
