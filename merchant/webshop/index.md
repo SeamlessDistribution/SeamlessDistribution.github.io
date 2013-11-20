@@ -7,18 +7,18 @@ description: SEQR Merchant, webshop, POS integration
 
 ## SEQR in a WebShop
 
-Add SEQR as a new payment method in the “Check out” process where the 
-customer selects between different methods of payment. This is an example of a 
+Add SEQR payment in your “Check out” process where your 
+customer normally selects between payment methods. This is an example of a 
 checkout that supports SEQR:
 
 <img src="/assets/images/seqr_webshop.png" />
 
-The flow for a webshop SEQR payment is very similar to the [basic SEQR
+The flow for a webshop SEQR payment is very similar to [Making your first SEQR
 payment](/merchant/payment).
 The difference is in how the SEQR QR code is presented to the SEQR
 user. To integrate SEQR, follow these steps:
 1. Integrate the payment view 
-2. Present the QR code 
+2. Present the QR code and wait for payment
 3. Present the receipt
 
 ### 1. Integrate the Payment View
@@ -27,14 +27,14 @@ There are two payment views that you can choose from:
 * Standard Payment View
 <img src="/assets/images/webshop_module1.png" />
 
-* Slim Payment View
-<img src="/assets/images/webshop_module1.png" />
+* Small Payment View
+<img src="/assets/images/webshop_module2.png" />
 
 Embed the HTML file in your webshop checkout and replace the dynamic parts with
 the responses you get from SEQR service.
 
 
-### 2. Present the QR Code
+### 2. Present the QR Code and Wait for Payment
 
 The payment method for SEQR is displayed with the SEQR logotype and when 
 selecting SEQR, the QR code to scan is displayed, or if the 
