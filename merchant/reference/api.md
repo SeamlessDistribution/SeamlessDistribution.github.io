@@ -6,21 +6,22 @@ description: API reference
 
 # Payment API / WSDL
 
-For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl) that has the following methods: 
+For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl) 
+that has the following methods: 
 
 ## Methods used for webshop integration 
 
-| Method | Description |
-|--------|-------------+|
-| sendInvoice | Sends an invoice to the SEQR service |
-| updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty programme |
-| getPaymentStatus | Obtains status of a previously submitted invoice |
-| cancelInvoice | Cancels an unpaid invoice |
-| commitReservation | Commits a payment |
-|submitPaymentReceipt | Sends the receipt document of a payment or refund|
-| refundPayment | Refunds a previous payment |
-| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
-| executeReport | Executes a report on the SEQR service. |
+
+**Method** | **Description** 
+sendInvoice | Sends an invoice to the SEQR service 
+updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty programme
+getPaymentStatus | Obtains status of a previously submitted invoice
+cancelInvoice | Cancels an unpaid invoice
+commitReservation | Commits a payment
+submitPaymentReceipt | Sends the receipt document of a payment or refund
+refundPayment | Refunds a previous payment
+markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting
+executeReport | Executes a report on the SEQR service.
 
 ## Context parameter used in all calls
 
