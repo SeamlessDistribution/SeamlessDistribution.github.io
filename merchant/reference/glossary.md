@@ -161,3 +161,6 @@ Transaction Engine, is the core job and transaction handler in ERS (for payments
 **Web server**
 Hosts the ERS web application
 
+**WebShop**
+The SEQR webshop interface provides merchants and service providers the possibility to deliver services and shopping experiences in a webshop solution.
+
