@@ -32,7 +32,7 @@ Now you can start exploring different ways of using payments
 
 ### Contact
 
-Please contact integrations@seamless.se for for help and 
+Please contact integrations@seamless.se for help and 
 eventually using our cashregister for real money. 
 
 
