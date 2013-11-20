@@ -104,7 +104,7 @@ body {
 }
 
 a, a:visited {
-	color: #2EAE9B;
+	color: #333;
 	text-decoration: none;
 	-webkit-transition: all 0.4s linear;
 	-moz-transition: all 0.4s linear;
@@ -211,7 +211,7 @@ blockquote {
 		margin-bottom: 80px;
 		color: #afe1da;
     	text-shadow: 2px 2px #004000;
-    	position: fixed;
+    	position: relative;
     	width: 100%;
     	z-index: 999;
 		border-bottom: 1px solid #f1f1f1;
@@ -296,15 +296,4 @@ img[alt=AddAccount] {
 a.logo {
 	display: block;
 	line-height: 0px;
-}
-.download {
-	background: #F9F9F9;
-	border: 1px solid #f1f1f1;
-	padding: 20px;
-}
-.download span {
-	float: left;
-	color: #00a391 !important;
-	text-transform: uppercase;
-	margin-right: 10px;
 }
