@@ -109,6 +109,9 @@ Ensures that the balances match at the end of a particular accounting period, pe
 **Reconciliation reports**
 SEQR reports about transaction date, account number, total sum of the transactions and number of transactions.
 
+**Refund**
+The SEQR user has the opportunity to get the money back after a purchase.
+
 **Report Engine**
 ERS component supporting interactive and scheduled reports, used for POS reconciliation reports through workstation.
 
