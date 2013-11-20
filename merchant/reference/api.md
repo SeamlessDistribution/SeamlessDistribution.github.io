@@ -6,8 +6,8 @@ description: API reference
 
 # Payment API / WSDL
 
-For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl) 
-that has the following methods: 
+For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl).
+For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf).
 
 ## Methods used for webshop integration 
 
@@ -63,8 +63,6 @@ The ClientContext structure is used in all requests to identify, authenticate an
 </table>
 
 
-For complete details, refer to the [API documentation](/downloads/), and for information on configuration for webshop,
-refer to sections Create QR code and Get payment status.
 
 
 
