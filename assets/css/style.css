@@ -201,7 +201,7 @@ blockquote {
 /* Structure Styles
 /*---------------------------------------------*/
 .inner {
-	width: 850px;
+	width: 940px;
 	margin: 0 auto;
 }
 
@@ -258,7 +258,7 @@ blockquote {
 	color: #00a391 !important;
 }
 #content {
-	width: 850px;
+	width: 940px;
 	margin: 0 auto;
 }
 #content .inner {
@@ -266,6 +266,9 @@ blockquote {
 	padding: 30px;
 	border: 1px solid #f1f1f1;
 	width: auto;
+}
+#slide {
+	height: 370px;
 }
 #slide img {
 	width: 100%;
@@ -358,3 +361,25 @@ table th {
 }
 tr:nth-child(even)	{ background-color:#f4f4f4; }
 tr:nth-child(odd)	{ background-color:#fff; }
+
+/* NAVIGATION */
+.navigation {
+	width: 20%;
+	float: left;
+	height: 1000px;
+	clear: left;
+}
+.content {
+	float: right;
+	width: 80%;
+}
+.navigation ul {
+	padding: 0px;
+	margin: 0px;
+}
+.navigation ul li {
+	list-style: none;
+}
+.navigation .parent {
+	font-weight: bold;
+}
