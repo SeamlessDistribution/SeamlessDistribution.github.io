@@ -5,7 +5,7 @@ description: News and examples for SEQR cashregister integrations
 ---
 
 **Paying with SEQR is super easy and getting paid is almost as easy with our integration.**
-  Contact integrations @ seamless . se for help or finally getting payments though for real. 
+  Email integrations@seamless.se if you need help or getting payments going for real. 
 
 <div class="boxes">
  <div class="box">
