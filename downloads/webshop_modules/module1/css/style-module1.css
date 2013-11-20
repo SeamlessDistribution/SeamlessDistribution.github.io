@@ -379,3 +379,7 @@ ul#seqr-module1-download li {
 }
 
 }
+
+.qrcode-frame-wrapper1 {
+    float: right;
+}
