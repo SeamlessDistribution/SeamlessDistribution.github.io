@@ -10,28 +10,35 @@ Terminology used include:
 
 ### A
 **Account provider**
-The SEQR user’s bank or credit institution that accepts and processes payment instructions from SEQR
+The SEQR user’s bank or credit institution that accepts and processes payment instructions from SEQR.
 
 **API**
-Application Programming Interface
+Application Programming Interface, interface to other components within or outside the SEQR system.
 
 **App**
-The SEQR applications: se-qr-iphoneapp se-qr-androidapp
+The SEQR applications, se-qr-iphoneapp se-qr-androidapp.
+
+**Authorization service**
+Interface for authorizing and adding accounts to a SEQR user
+
 ### B
 
 **Backend**
-Main SEQR server hosting the SEQR components
+Main SEQR server hosting the SEQR components.
+
+**Banklink**
+The standardized API used for clearing of transactions between SEQR and an account provider.
 ### C
 
 **Cash register**
-The register machine of receiving payments with SEQR and also the API within SEQR system
+The register machine of receiving payments with SEQR and also the API within SEQR system.
 
 
 **Clearing**
 Is done in real time before the transaction is accepted. SEQR expects this money to be available at a holding account by the time of settlement.
 
 **Core**
-ERS component used to be the main transaction engine
+ERS component used to be the main transaction engine.
 
 ### D
 **Device**
@@ -42,7 +49,7 @@ Denial of Service
 
 ### E
 **ERS 360**
-Electronic Recharge System 360, Seamless payment platform  
+Electronic Recharge System 360, Seamless payment platform.
 
 ### F
 
@@ -93,6 +100,12 @@ SEQR component communicating with smart phones for matching invoices
 
 **POS**
 Point of Sale in a physical store, also the POS protocol is a SOAP based protocol using HTTPS
+
+**Provisioning Accounts Service**
+Interface for listing and removing accounts.
+
+**Provisioning Devices Service**
+Interface for managing devices for example in case of theft.
 
 **PKI**
 Public-key infrastructure
