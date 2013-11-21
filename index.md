@@ -11,7 +11,7 @@ description: News and examples for SEQR cashregister integrations
  <div class="box">
   <h3>Getting Started</h3>
   <ul>
-   <li><a href="app/">Get the SEQR app</a></li>
+   <li><a href="app/">Get SEQR app</a></li>
    <li><a href="merchant/payment">First SEQR payment</a></li>
   </ul>
  </div>
