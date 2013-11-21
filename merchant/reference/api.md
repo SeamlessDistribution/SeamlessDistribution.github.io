@@ -20,16 +20,16 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
        <ul>
         <li>ClientContext context</li>
         <li>Invoice invoice</li>
-        <li>java.util.List<CustomerToken> tokens</li>
+        <li>List<CustomerToken> tokens</li>
        </ul>
     </td>
-    <td>Sends an invoice to the SEQR service 
+    <td>Sends an invoice to the SEQR service. Tokens are optional and only for loyalty.
     </td></tr>
 <tr><td>updateInvoice
        <ul>
         <li>ClientContext context</li>
         <li>Invoice invoice</li>
-        <li>java.util.List<CustomerToken> tokens</li>    
+        <li>List<CustomerToken> tokens</li>    
        </ul>
     </td>
     <td>Updates an already sent invoice with new set of invoice rows and amount; used support loyalty
@@ -73,7 +73,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 <tr><td>refundPayment
         <ul>
          <li>ClientContext context</li>
-         <li>java.lang.String ersReference</li>
+         <li>String ersReference</li>
          <li>Invoice invoice</li>
         </ul> 
     </td>
@@ -81,7 +81,10 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
     </td></tr>
 </table>
 
+
+
 ### Methods for registration and reporting 
+
 
 
 | Method | Description |
@@ -90,7 +93,9 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 | executeReport | Executes a report on the SEQR service |
 
 
+
 ## Context parameter used in all calls
+
 
 
 A principal is the main actor in each request to the SEQR service and represents either a seller or a buyer. Each request has at least an initiator principal.
@@ -128,7 +133,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 
 | Field | Description |
 | --- | --- |
-| acknowledgementMode | Should be set to NOACKNOWLEDGEMENT |
+| acknowledgementMode | Needs to be set to NO_ACKNOWLEDGEMENT unless you provide loyalty flow |
 | backURL | used in app-to-app or web shopping |
 | cashierId | "Alice" will show on receipt |
 | clientInvoiceId | Your purchase reference |
@@ -136,7 +141,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | invoiceRows | See invoiceRow description |
 | issueDate | cashregsister Date  |
 | notificationURL | optional notification/confirmation url |
-| paymentMode | use DIRECT_DEBIT |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED/RESERVATION_REQUIRED are limited in use  |
 | title | title displayed on bill and receipt |
 | totalAmount | full amount of invoice/bill |
 
