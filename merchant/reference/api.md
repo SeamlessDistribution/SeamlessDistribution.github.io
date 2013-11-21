@@ -99,15 +99,11 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 <tr><th>Field</th><th>Description</th></tr>
 <tr><td>Context</td>
     <td>The ClientContext object  
-        <li>Invoice</li>
-        <li>Invoice data, which contains the amount and other invoice information.</li>
-        <li>java.util.List<CustomerToken> tokens</li>
+        
     </td></tr>
-<tr><td>updateInvoice</td>
-    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty
-        <li>ClientContext context</li>
-        <li>Invoice invoice</li>
-        <li>java.util.List<CustomerToken> tokens</li>    
+<tr><td>invoice</td>
+    <td>Invoice data, which contains the amount and other invoice information.
+           
     </td></tr>
 <tr><td>getPaymentStatus</td>
      <td>Obtains status of a previously submitted invoice
