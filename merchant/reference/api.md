@@ -12,7 +12,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 
 ## Methods
 
-### Payment
+For payments
 
 <table>
 <tr><th>Method</th><th>Description</th></tr>
@@ -83,7 +83,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 
 
 
-### Methods for registration and reporting 
+Methods for registration and reporting:
 
 
 
@@ -131,6 +131,7 @@ The ClientContext structure is used in all requests to identify, authenticate an
 
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
+
 | Field | Description |
 | --- | --- |
 | acknowledgementMode | Needs to be set to NO_ACKNOWLEDGEMENT unless you provide loyalty flow |
@@ -148,7 +149,9 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 
 ## InvoiceRow data 
 
+
 Used to present the payment in the app. 
+
 
 | Field | Description |
 | --- | --- |
@@ -163,6 +166,7 @@ Used to present the payment in the app.
 
 
 ## sendInvoice response fields
+
 
 | Field | Description |
 | --- | --- |
@@ -180,6 +184,6 @@ Used to present the payment in the app.
 | context | The ClientContext object |
 | invoice | Invoice data, which contains the amount and other invoice information |
 | invoiceReference | The SEQR service reference to the registered invoice. |
-| tokens |The customer tokens applied to this invoice. |
+| tokens | The customer tokens applied to this invoice. |
 
 
