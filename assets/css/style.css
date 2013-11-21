@@ -98,7 +98,7 @@ select:focus {
 /* Main Styles
 /*---------------------------------------------*/
 body {
-	font: 14px/1.8em 'Droid Sans','Open Sans', Helvetica, Arial, Helvetica, sans-serif;
+	font: 13px/1.8em 'Droid Sans','Open Sans', Helvetica, Arial, Helvetica, sans-serif;
 	color: #444;
 	background: #F9F9F9;
 	-webkit-font-smoothing: antialiased;
