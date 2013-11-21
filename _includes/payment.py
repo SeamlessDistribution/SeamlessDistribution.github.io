@@ -43,7 +43,8 @@ if invoiceResponse.resultCode != 0:
 
 qr = qrcode.QRCode()
 qr.add_data(invoiceResponse.invoiceQRCode)
-print "Invoice created, scan this QR code to pay the invoice:"
+print ("Invoice created with id %s, scan this QR code to pay the invoice:"%
+    invoiceResponse.invoiceReference)
 qr.print_tty()
 
 # wait for payment
