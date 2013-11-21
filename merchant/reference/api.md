@@ -15,21 +15,47 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 <table>
 <tr><th>Method</th><th>Description</th></tr>
 <tr><td>sendInvoice</td>
-    <td>Sends an invoice to the SEQR service </td></tr>
+    <td>Sends an invoice to the SEQR service 
+        <li>ClientContext context</li>
+        <li>Invoice invoice</li>
+        <li>java.util.List<CustomerToken> tokens</li>
+    </td></tr>
 <tr><td>updateInvoice</td>
-    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty</td></tr>
+    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty
+        <li>ClientContext context</li>
+        <li>Invoice invoice</li>
+        <li>java.util.List<CustomerToken> tokens</li>    
+    </td></tr>
 <tr><td>getPaymentStatus</td>
-     <td>Obtains status of a previously submitted invoice</td></tr>
+     <td>Obtains status of a previously submitted invoice
+        <li>ClientContext context</li>
+        <li>String invoiceReference</li>
+        <li>int invoiceVersion</li>
+     </td></tr>
 <tr><td>cancelInvoice</td>
-    <td>Cancels an unpaid invoice</td></tr>
+    <td>Cancels an unpaid invoice
+        <li>ClientContext context</li>
+        <li>String invoiceReference</li>
+    </td></tr>
 <tr><td>commitReservation</td>
     <td>Commits a payment, if a payment reservation successfully executed.
-        We are working on support for reservations in cooperation with more banks</td></tr>
+        We are working on support for reservations in cooperation with more banks
+        <li>ClientContext context</li>
+        <li>String invoiceReference</li>
+    </td></tr>
 <tr><td>submitPaymentReceipt</td>
     <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
-        receipt document to a payment or refund</td></tr>
+        receipt document to a payment or refund
+        <li>ClientContext context</li>
+        <li>String ersReferenc</li>
+        <li>ReceiptDocument receiptDocument</li>
+    </td></tr>
 <tr><td>refundPayment</td>
-    <td>Refunds a previous payment (Available in production from 2014)</td></tr>
+    <td>Refunds a previous payment (Available in production from 2014)
+        <li>ClientContext context</li>
+        <li>java.lang.String ersReference</li>
+        <li>Invoice invoice</li>
+    </td></tr>
 <tr><td>markTransactionPeriod</td>
     <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
 <tr><td>executeReport</td>
@@ -64,6 +90,13 @@ The ClientContext structure is used in all requests to identify, authenticate an
 <tr><td>clientComment </td>
     <td>Client comment included within the request. Optional.</td></tr>
 </table>
+
+## Invoice data 
+
+Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
+
+| Field | Description |
+| --- | --- |
 
 
 
