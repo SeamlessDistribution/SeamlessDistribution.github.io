@@ -10,17 +10,20 @@ For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/servic
 For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf)
 and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/). 
 
-## Methods used for webshop integration 
+## Methods
+
+### Payment
 
 <table>
 <tr><th>Method</th><th>Description</th></tr>
-<tr><td>sendInvoice</td>
-    <td>Sends an invoice to the SEQR service 
-        <ul>
+<tr><td>sendInvoice
+       <ul>
         <li>ClientContext context</li>
         <li>Invoice invoice</li>
         <li>java.util.List<CustomerToken> tokens</li>
-        </ul>
+       </ul>
+    </td>
+    <td>Sends an invoice to the SEQR service 
     </td></tr>
 <tr><td>updateInvoice
        <ul>
@@ -29,7 +32,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
         <li>java.util.List<CustomerToken> tokens</li>    
        </ul>
     </td>
-    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty
+    <td>Updates an already sent invoice with new set of invoice rows and amount; used support loyalty
     </td></tr>
 <tr><td>getPaymentStatus
         <ul>
@@ -76,11 +79,15 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
     </td>
     <td>Refunds a previous payment (Available in production from 2014)
     </td></tr>
-<tr><td>markTransactionPeriod</td>
-    <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
-<tr><td>executeReport</td>
-    <td>Executes a report on the SEQR service</td></tr>
 </table>
+
+### Methods for registration and reporting 
+
+
+| Method | Description |
+| --- | --- |
+| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
+| executeReport | Executes a report on the SEQR service |
 
 
 ## Context parameter used in all calls
