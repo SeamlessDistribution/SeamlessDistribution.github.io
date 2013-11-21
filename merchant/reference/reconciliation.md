@@ -30,10 +30,10 @@ SEQR-->Cashregister: XML report contents
  $(".diagram").sequenceDiagram({theme: 'hand'});
 </script>
 
-The following are steps to perform reconciliation against SEQR from cashregisters
+The following are steps to perform reconciliation against SEQR from cash registers
 
 1. At the end of a working shift or shop hour, a cashier presses a button 'Close & Reconcile' on a cash register.
-The cash registers application send markTransactionPeriod request to SEQR to mark end of transactions list
+The cash register sends markTransactionPeriod request to SEQR to mark end of transactions list
 for this period. SEQR returns with a unique reference number, ersReference.
 2. The cash register waits for a couple of seconds (around 3 seconds) in order to make sure that all
 transactions are ready to process for reconciliation report.
