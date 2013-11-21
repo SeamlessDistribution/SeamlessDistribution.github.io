@@ -7,7 +7,7 @@ description: A demo and developer app for trying things out.
 Developer Mobile App
 =============
 
-For testing purposes we have a test server and test app that you can play with on your phone. The instructions below are valid for Android phones, for iPhone and other apps, please contact integration responsible in Seamless for more information.
+For testing purposes we have a test server and test app that you can play with on your phone. It is recommended to download the app using an Android phone. For iPhone and other apps, please contact integration responsible in Seamless for more information.
 
 * Our Android developer app can be installed if you enable "other sources" in settings and then browse to this page on your phone [install android developer app](/downloads/se-qr-androidapp-demo-2.1.5.3.apk).
 
