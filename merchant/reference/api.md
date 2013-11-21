@@ -15,82 +15,113 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 ### Payment
 
 <table>
-<tr><th>Method</th><th>Description</th></tr>
-<tr><td>sendInvoice
-       <ul>
-        <li>ClientContext context</li>
-        <li>Invoice invoice</li>
-        <li>List<CustomerToken> tokens</li>
-       </ul>
-    </td>
-    <td>Sends an invoice to the SEQR service. Tokens are optional and only for loyalty.
-    </td></tr>
-<tr><td>updateInvoice
-       <ul>
-        <li>ClientContext context</li>
-        <li>Invoice invoice</li>
-        <li>List<CustomerToken> tokens</li>    
-       </ul>
-    </td>
-    <td>Updates an already sent invoice with new set of invoice rows and amount; used support loyalty
-    </td></tr>
-<tr><td>getPaymentStatus
-        <ul>
-        <li>ClientContext context</li>
-        <li>String invoiceReference</li>
-        <li>int invoiceVersion</li>
-        </ul>
-     </td>
-     <td>Obtains status of a previously submitted invoice
-     </td></tr>
-<tr><td>cancelInvoice
-      <ul>
-        <li>ClientContext context</li>
-        <li>String invoiceReference</li>
-      </ul>
-    </td>
-    <td>Cancels an unpaid invoice
-    </td></tr>
-<tr><td>commitReservation
-        <ul>
-          <li>ClientContext context</li>
-          <li>String invoiceReference</li>
-        </ul> 
-    </td>
-    <td>Commits a payment, if a payment reservation successfully executed.
-        We are working on support for reservations in cooperation with more banks
-    </td></tr>
-<tr><td>submitPaymentReceipt
-        <ul>
-         <li>ClientContext context</li>
-         <li>String ersReferenc</li>
-         <li>ReceiptDocument receiptDocument</li>
-        </ul>
-    </td>
-    <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
-        receipt document to a payment or refund
-    </td></tr>
-<tr><td>refundPayment
-        <ul>
-         <li>ClientContext context</li>
-         <li>String ersReference</li>
-         <li>Invoice invoice</li>
-        </ul> 
-    </td>
-    <td>Refunds a previous payment (Available in production from 2014)
-    </td></tr>
+   <tbody>
+      <tr>
+         <th>Method</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td>
+            sendInvoice
+            <ul>
+               <li>ClientContext context</li>
+               <li>Invoice invoice</li>
+               <li>
+                  List
+                  <customertoken> tokens</customertoken>
+               </li>
+            </ul>
+         </td>
+         <td>Sends an invoice to the SEQR service. Tokens are optional and only for loyalty.
+         </td>
+      </tr>
+      <tr>
+         <td>
+            updateInvoice
+            <ul>
+               <li>ClientContext context</li>
+               <li>Invoice invoice</li>
+               <li>
+                  List
+                  <customertoken> tokens</customertoken>
+               </li>
+            </ul>
+         </td>
+         <td>Updates an already sent invoice with new set of invoice rows and amount; used support loyalty
+         </td>
+      </tr>
+      <tr>
+         <td>
+            getPaymentStatus
+            <ul>
+               <li>ClientContext context</li>
+               <li>String invoiceReference</li>
+               <li>int invoiceVersion</li>
+            </ul>
+         </td>
+         <td>Obtains status of a previously submitted invoice
+         </td>
+      </tr>
+      <tr>
+         <td>
+            cancelInvoice
+            <ul>
+               <li>ClientContext context</li>
+               <li>String invoiceReference</li>
+            </ul>
+         </td>
+         <td>Cancels an unpaid invoice
+         </td>
+      </tr>
+      <tr>
+         <td>
+            commitReservation
+            <ul>
+               <li>ClientContext context</li>
+               <li>String invoiceReference</li>
+            </ul>
+         </td>
+         <td>Commits a payment, if a payment reservation successfully executed.
+            We are working on support for reservations in cooperation with more banks
+         </td>
+      </tr>
+      <tr>
+         <td>
+            submitPaymentReceipt
+            <ul>
+               <li>ClientContext context</li>
+               <li>String ersReferenc</li>
+               <li>ReceiptDocument receiptDocument</li>
+            </ul>
+         </td>
+         <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
+            receipt document to a payment or refund
+         </td>
+      </tr>
+      <tr>
+         <td>
+            refundPayment
+            <ul>
+               <li>ClientContext context</li>
+               <li>String ersReference</li>
+               <li>Invoice invoice</li>
+            </ul>
+         </td>
+         <td>Refunds a previous payment (Available in production from 2014)
+         </td>
+      </tr>
+   </tbody>
 </table>
-
 
 
 ### Methods for registration and reporting 
 
-
-
-| Method | Description |
-| --- | --- |
+|--- | --- |
+|  Method | Description |
+|--- | --- |
 | markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
 | executeReport | Executes a report on the SEQR service |
+| --- | --- |
 
 
 

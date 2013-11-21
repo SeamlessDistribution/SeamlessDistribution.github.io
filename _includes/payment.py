@@ -37,8 +37,8 @@ print "Sending the invoice to SEQR..."
 
 invoiceResponse = client.service.sendInvoice(context, invoice)
 if invoiceResponse.resultCode != 0:
-    print "Oops... sendInvoice failed! error: %s(%d)"%
-	(invoiceResponse.resultDescription, invoiceResponse.resultCode)
+    print ("Oops... sendInvoice failed! error: %s(%d)"%
+	(invoiceResponse.resultDescription, invoiceResponse.resultCode))
     exit(1)
 
 qr = qrcode.QRCode()
@@ -58,8 +58,8 @@ while response.resultCode == 0 and response.status == "ISSUED":
 
 print
 if response.resultCode != 0:
-    print "Oops... getPaymentStatus failed! error: %s(%d)"%
-	(invoiceResponse.resultDescription, invoiceResponse.resultCode)
+    print ("Oops... getPaymentStatus failed! error: %s(%d)"%
+	(invoiceResponse.resultDescription, invoiceResponse.resultCode))
     exit(1)
 
 if response.status == "PAID":
