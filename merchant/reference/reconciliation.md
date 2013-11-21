@@ -44,6 +44,10 @@ period.
 (REPORT_NOT_READY). The cashier should wait for couple seconds (around 3 seconds) more and repeat
 step 3 again.
 
+If the reconciliation list does in any way differ from the transactions SEQR have issued, 
+automated settlement will be cancelled and a full transaction list is requested and a manual handling of the 
+process will begin in order to identify the error.
+
 In executeReport, any of the following reports can be specified:
 
 
@@ -89,4 +93,5 @@ should be provided when calling markTransactionPeriod.
 
 Please refer to the above table to check which reports can be used for per terminal
 or per shop reconciliations.
+
 
