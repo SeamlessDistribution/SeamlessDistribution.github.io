@@ -96,11 +96,11 @@ The ClientContext structure is used in all requests to identify, authenticate an
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
 <table>
-<tr><th>Method</th><th>Description</th></tr>
-<tr><td>sendInvoice</td>
-    <td>Sends an invoice to the SEQR service 
-        <li>Context</li>
-        <li>Invoice invoice</li>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Context</td>
+    <td>The ClientContext object  
+        <li>Invoice</li>
+        <li>Invoice data, which contains the amount and other invoice information.</li>
         <li>java.util.List<CustomerToken> tokens</li>
     </td></tr>
 <tr><td>updateInvoice</td>
