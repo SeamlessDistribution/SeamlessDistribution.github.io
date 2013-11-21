@@ -95,9 +95,54 @@ The ClientContext structure is used in all requests to identify, authenticate an
 
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
-| Field | Description |
+<table>
+<tr><th>Method</th><th>Description</th></tr>
+<tr><td>sendInvoice</td>
+    <td>Sends an invoice to the SEQR service 
+        <li>Context</li>
+        <li>Invoice invoice</li>
+        <li>java.util.List<CustomerToken> tokens</li>
+    </td></tr>
+<tr><td>updateInvoice</td>
+    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty
+        <li>ClientContext context</li>
+        <li>Invoice invoice</li>
+        <li>java.util.List<CustomerToken> tokens</li>    
+    </td></tr>
+<tr><td>getPaymentStatus</td>
+     <td>Obtains status of a previously submitted invoice
+        <li>ClientContext context</li>
+        <li>String invoiceReference</li>
+        <li>int invoiceVersion</li>
+     </td></tr>
+<tr><td>cancelInvoice</td>
+    <td>Cancels an unpaid invoice
+        <li>ClientContext context</li>
+        <li>String invoiceReference</li>
+
+
+sendInvoice request fields
+
+Field           Description 
+Context         The ClientContext object 
+Invoice         Invoice data, which contains the amount and other invoice information. |
 | --- | --- |
 
+sendInvoice response fields
+| Field | Description |
+| ersReference | Not used by this method (will be null after this method). |
+| resultCode | Request result code |
+| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for cash registers) |
+| resultDescription | A textual description of resultCode  |
+|invoiceReference  | The SEQR service reference to the registered invoice.
+
+ |
+updateInvoice request fields
+| Field | Description |
+| context | The ClientContext object |
+| invoice | Invoice data, which contains the amount and other invoice information |
+| invoiceReference | The SEQR service reference to the registered invoice. |
+| tokens |The customer tokens applied to this invoice. |
 
 
 
