@@ -210,37 +210,40 @@ blockquote {
 		padding: 15px 0;
 		margin-bottom: 80px;
 		color: #afe1da;
-    	text-shadow: 2px 2px #004000;
     	position: fixed;
     	width: 100%;
     	z-index: 999;
 		border-bottom: 1px solid #f1f1f1;
 }
 
-#header a { color: #afe1da; }
+#header a { color: #474747; }
 #header h1 a,
-#header a:hover { color: #fff; }
+#header a:hover { color: #474747; }
 #header h1 { 
 	font-weight: bold;
 	margin: 0; 
 	float: left;
 }
-#header .nav {
+#header nav {
 	float: right;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-#header .nav li { display: inline; }
-#header .nav a {
-	font-weight: bold;
-	margin-left: 20px;
+#header nav ul {
+	margin: 0px;
+}
+#header nav li { display: inline; list-style: none;}
+#header nav a {
+	text-transform: uppercase;
+	padding: 20px 20px;
 }
 .header-clearfix {
 	padding-top: 80px;
 }
 #footer {
 	padding: 10px;
+	margin-bottom: 50px;
 	color: #00a391;
 }
 #footer a { color: #ddd; }
@@ -266,6 +269,7 @@ blockquote {
 	padding: 30px;
 	border: 1px solid #f1f1f1;
 	width: auto;
+	min-height: 400px;
 }
 #slide {
 	height: 370px;
@@ -298,6 +302,7 @@ img[alt=AddAccount] {
 }
 a.logo {
 	display: block;
+	float:left;
 	line-height: 0px;
 }
 .download {
@@ -344,7 +349,11 @@ div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se {
 	float: right;
 	cursor: pointer;
 }
-
+.rights {
+	float: right !important;
+	padding-right: 20px;
+	color: #333;
+}
 /* TABLES */
 table {
 	margin: 20px 0px;
@@ -364,7 +373,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 
 /* NAVIGATION */
 .navigation {
-	width: 20%;
+	width: 10%;
 	float: left;
 	min-height: 500px;
 	clear: left;
@@ -383,4 +392,9 @@ tr:nth-child(odd)	{ background-color:#fff; }
 }
 .navigation .parent {
 	font-weight: bold;
+}
+.box {
+	float: left;
+    width: 26%;
+	padding: 1em;
 }
