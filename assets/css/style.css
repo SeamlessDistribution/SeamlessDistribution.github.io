@@ -71,6 +71,7 @@ button {
 /* Sharper Thumbnails */
 img {
 	-ms-interpolation-mode: bicubic;
+	max-width: 100%;
 }
 
 /* Input Styles
@@ -269,7 +270,7 @@ blockquote {
 	padding: 30px;
 	border: 1px solid #f1f1f1;
 	width: auto;
-	min-height: 400px;
+	min-height: 350px;
 }
 #slide {
 	height: 370px;
@@ -373,7 +374,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 
 /* NAVIGATION */
 .navigation {
-	width: 10%;
+	width: 15%;
 	float: left;
 	min-height: 500px;
 	clear: left;
@@ -381,7 +382,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 }
 .content {
 	float: right;
-	width: 80%;
+	width: 75%;
 }
 .navigation ul {
 	padding: 0px;
