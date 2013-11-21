@@ -22,7 +22,8 @@ For complete details, refer to the [API documentation](/downloads/ersifextclient
 <tr><td>cancelInvoice</td>
     <td>Cancels an unpaid invoice</td></tr>
 <tr><td>commitReservation</td>
-    <td>Commits a payment</td></tr>
+    <td>Commits a payment, if a payment reservation successfully executed.
+        We are woring on support for reservations in cooperation with more banks.</td></tr>
 <tr><td>submitPaymentReceipt</td>
     <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
         receipt document to a payment or refund</td></tr>
