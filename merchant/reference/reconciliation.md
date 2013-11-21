@@ -40,7 +40,7 @@ transactions are ready to process for reconciliation report.
 3. The cash register calls executeReport using ersReference from step 1 to fetch reconciliation report
 representing transaction summary since the previous reconciliation until the end of transaction list for this
 period.
-4. In case the reconciliation report is not ready , SEQR will return with result code 2
+4. In case the reconciliation report is not ready, SEQR will return with result code 2
 (REPORT_NOT_READY). The cashier should wait for couple seconds (around 3 seconds) more and repeat
 step 3 again.
 
@@ -81,10 +81,10 @@ id and amounts for each transaction in the period.
 
 There are two ways of reconciliation against SEQR service:
 
-* Per shop reconciliation: Only one master cashregister perform reconciliation process. The reconciliation
-report will show transactions summary for every cashregisters in the shop.
-* Per terminal reconciliation: Every cashregister in a shop perform reconciliation process. The reconciliation
-report will show transactions summary only for the specific cashregister. In this case, terminalId
+* Per shop reconciliation: Only one master cash register perform reconciliation process. The reconciliation
+report will show transactions summary for every cash register in the shop.
+* Per terminal reconciliation: Every cash register in a shop perform reconciliation process. The reconciliation
+report will show transactions summary only for the specific cash register. In this case, terminalId
 should be provided when calling markTransactionPeriod.
 
 Please refer to the above table to check which reports can be used for per terminal
