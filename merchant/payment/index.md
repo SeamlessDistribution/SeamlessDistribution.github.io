@@ -17,12 +17,14 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 
 <div class="diagram">
 Cashregister->SEQR: sendInvoice
-Cashregister->SEQR: poll customer actions
-SEQR->Cashregister: wait until you get PAID
+SEQR-->Cashregister: (invoice reference)
+Cashregister->SEQR: getPaymentStatus
+SEQR-->Cashregister: ISSUED
 App->SEQR: ask for invoice at QR-code
 SEQR->App: retry until you get SUCCESS
 App->SEQR: payment
-SEQR->Cashregister: PAID
+Cashregister->SEQR: getPaymentStatus
+SEQR-->Cashregister: PAID
 Note right of Cashregister: Payment cleared!
 SEQR->App: Done (show receipt)
 Cashregister-->App: Happy!
