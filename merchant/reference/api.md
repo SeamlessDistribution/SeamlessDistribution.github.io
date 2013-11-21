@@ -97,9 +97,9 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 
 sendInvoice request fields
 
-| Field | Description |
-|Context | The ClientContext object |
-|Invoice | Invoice data, which contains the amount and other invoice information. |
+Field           Description 
+Context         The ClientContext object 
+Invoice         Invoice data, which contains the amount and other invoice information. |
 | --- | --- |
 
 sendInvoice response fields
