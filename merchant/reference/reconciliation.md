@@ -37,7 +37,7 @@ The cashregisters application send markTransactionPeriod request to SEQR to mark
 for this period. SEQR returns with a unique reference number, ersReference.
 2. The cashregister waits for a couple of seconds (around 3 seconds) in order to make sure that all
 transactions are ready to process for reconciliation report.
-3. The cashregister application calls executeReport using ersReference from step 1 to fetch reconciliation report
+3. The cash register calls executeReport using ersReference from step 1 to fetch reconciliation report
 representing transaction summary since the previous reconciliation until the end of transaction list for this
 period.
 4. In case the reconciliation report is not ready , SEQR will return with result code 2
