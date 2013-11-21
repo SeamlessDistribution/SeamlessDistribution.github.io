@@ -10,9 +10,7 @@ For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/servic
 For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf)
 and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/). 
 
-## Methods
-
-For payments
+## Methods for Payments
 
 <table>
    <tbody>
@@ -47,7 +45,7 @@ For payments
                </li>
             </ul>
          </td>
-         <td>Updates an already sent invoice with new set of invoice rows and amount; used support loyalty
+         <td>Updates an already sent invoice with new set of invoice rows and amount; used in loyalty.
          </td>
       </tr>
       <tr>
@@ -82,9 +80,10 @@ For payments
             </ul>
          </td>
          <td>Commits a payment, if a payment reservation successfully executed.
-            We are working on support for reservations in cooperation with more banks
+            We are working on support for reservations in cooperation with more banks.
          </td>
       </tr>
+<!--
       <tr>
          <td>
             submitPaymentReceipt
@@ -94,10 +93,11 @@ For payments
                <li>ReceiptDocument receiptDocument</li>
             </ul>
          </td>
-         <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
+         <td>Adds an optional 
             receipt document to a payment or refund
          </td>
       </tr>
+-->
       <tr>
          <td>
             refundPayment
@@ -114,7 +114,7 @@ For payments
 </table>
 
 
-### Methods for registration and reporting 
+### Methods for Registration and Reporting 
 
 
 |--- | --- |
@@ -126,7 +126,7 @@ For payments
 
 
 
-## Context parameter used in all calls
+## Context Parameter Used in All Calls
 
 
 
