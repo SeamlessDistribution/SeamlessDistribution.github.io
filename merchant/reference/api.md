@@ -16,45 +16,59 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 <tr><th>Method</th><th>Description</th></tr>
 <tr><td>sendInvoice</td>
     <td>Sends an invoice to the SEQR service 
+        <ul>
         <li>ClientContext context</li>
         <li>Invoice invoice</li>
         <li>java.util.List<CustomerToken> tokens</li>
+        </ul>
     </td></tr>
 <tr><td>updateInvoice</td>
     <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty
+        <ul>
         <li>ClientContext context</li>
         <li>Invoice invoice</li>
         <li>java.util.List<CustomerToken> tokens</li>    
+        </ul>
     </td></tr>
 <tr><td>getPaymentStatus</td>
      <td>Obtains status of a previously submitted invoice
+        <ul>
         <li>ClientContext context</li>
         <li>String invoiceReference</li>
         <li>int invoiceVersion</li>
+        </ul>
      </td></tr>
 <tr><td>cancelInvoice</td>
     <td>Cancels an unpaid invoice
+        <ul>
         <li>ClientContext context</li>
         <li>String invoiceReference</li>
+        </ul>
     </td></tr>
 <tr><td>commitReservation</td>
     <td>Commits a payment, if a payment reservation successfully executed.
         We are working on support for reservations in cooperation with more banks
-        <li>ClientContext context</li>
-        <li>String invoiceReference</li>
+        <ul>
+          <li>ClientContext context</li>
+          <li>String invoiceReference</li>
+        </ul> 
     </td></tr>
 <tr><td>submitPaymentReceipt</td>
     <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
         receipt document to a payment or refund
-        <li>ClientContext context</li>
-        <li>String ersReferenc</li>
-        <li>ReceiptDocument receiptDocument</li>
+        <ul>
+         <li>ClientContext context</li>
+         <li>String ersReferenc</li>
+         <li>ReceiptDocument receiptDocument</li>
+        </ul>
     </td></tr>
 <tr><td>refundPayment</td>
     <td>Refunds a previous payment (Available in production from 2014)
-        <li>ClientContext context</li>
-        <li>java.lang.String ersReference</li>
-        <li>Invoice invoice</li>
+        <ul>
+         <li>ClientContext context</li>
+         <li>java.lang.String ersReference</li>
+         <li>Invoice invoice</li>
+        </ul>
     </td></tr>
 <tr><td>markTransactionPeriod</td>
     <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
@@ -97,6 +111,38 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 
 | Field | Description |
 | --- | --- |
+| acknowledgementMode | Should be set to NOACKNOWLEDGEMENT |
+| backURL | used in app-to-app or web shopping |
+| cashierId | "Alice" will show on receipt |
+| clientInvoiceId | Your purchase reference |
+| footer | receipt footer text |
+| invoiceRows | See invoiceRow description |
+| issueDate | cashregsister Date  |
+| notificationURL | optional notification/confirmation url |
+| paymentMode | use DIRECT_DEBIT |
+| title | title displayed on bill and receipt |
+| totalAmount | full amount of invoice/bill |
+
+
+## InvoiceRow data 
+
+Used to present the payment in the app. 
+
+| Field | Description |
+| --- | --- |
+| itemDescription | optional |
+| itemDiscount | optional |
+| itemEAN | optional |
+| itemQuantity | should be 1 or more |
+| itemTaxRate | optional VAT line like "0.25" |
+| itemTotalAmount | required total amount for this row |
+| itemUnit | optional "dl" |
+| itemUnitPrice | optional  |
+
+
+
+
+
 
 
 
