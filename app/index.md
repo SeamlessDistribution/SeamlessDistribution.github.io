@@ -13,7 +13,7 @@ For testing purposes we have a test server and test app that you can play with o
 
 * Once installed you select the "Exdev 4" as server, choose a PIN, and enter your phone number in full format, eg "+46738966XXX". Then complete the activation.
 
-* You should add a "Payment account", and you are ready to pay! ![AddAccount](/assets/images/add_account.png "Adding a Payment Account")
+* You should add a "Payment account", and you are ready to try how it works to pay with SEQR! ![AddAccount](/assets/images/add_account.png "Adding a Payment Account")
 
 <div class="download">
 <span>Read more</span>
