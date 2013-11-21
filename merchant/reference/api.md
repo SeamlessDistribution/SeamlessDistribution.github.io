@@ -22,53 +22,59 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
         <li>java.util.List<CustomerToken> tokens</li>
         </ul>
     </td></tr>
-<tr><td>updateInvoice</td>
-    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty
-        <ul>
+<tr><td>updateInvoice
+       <ul>
         <li>ClientContext context</li>
         <li>Invoice invoice</li>
         <li>java.util.List<CustomerToken> tokens</li>    
-        </ul>
+       </ul>
+    </td>
+    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty
     </td></tr>
-<tr><td>getPaymentStatus</td>
-     <td>Obtains status of a previously submitted invoice
+<tr><td>getPaymentStatus
         <ul>
         <li>ClientContext context</li>
         <li>String invoiceReference</li>
         <li>int invoiceVersion</li>
         </ul>
+     </td>
+     <td>Obtains status of a previously submitted invoice
      </td></tr>
-<tr><td>cancelInvoice</td>
-    <td>Cancels an unpaid invoice
-        <ul>
+<tr><td>cancelInvoice
+      <ul>
         <li>ClientContext context</li>
         <li>String invoiceReference</li>
-        </ul>
+      </ul>
+    </td>
+    <td>Cancels an unpaid invoice
     </td></tr>
-<tr><td>commitReservation</td>
-    <td>Commits a payment, if a payment reservation successfully executed.
-        We are working on support for reservations in cooperation with more banks
+<tr><td>commitReservation
         <ul>
           <li>ClientContext context</li>
           <li>String invoiceReference</li>
         </ul> 
+    </td>
+    <td>Commits a payment, if a payment reservation successfully executed.
+        We are working on support for reservations in cooperation with more banks
     </td></tr>
-<tr><td>submitPaymentReceipt</td>
-    <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
-        receipt document to a payment or refund
+<tr><td>submitPaymentReceipt
         <ul>
          <li>ClientContext context</li>
          <li>String ersReferenc</li>
          <li>ReceiptDocument receiptDocument</li>
         </ul>
+    </td>
+    <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
+        receipt document to a payment or refund
     </td></tr>
-<tr><td>refundPayment</td>
-    <td>Refunds a previous payment (Available in production from 2014)
+<tr><td>refundPayment
         <ul>
          <li>ClientContext context</li>
          <li>java.lang.String ersReference</li>
          <li>Invoice invoice</li>
-        </ul>
+        </ul> 
+    </td>
+    <td>Refunds a previous payment (Available in production from 2014)
     </td></tr>
 <tr><td>markTransactionPeriod</td>
     <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
