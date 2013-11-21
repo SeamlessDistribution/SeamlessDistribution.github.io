@@ -95,16 +95,16 @@ The ClientContext structure is used in all requests to identify, authenticate an
 
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
+sendInvoice request:
 <table>
 <tr><th>Field</th><th>Description</th></tr>
 <tr><td>Context</td>
     <td>The ClientContext object  
         
-    </td></tr>
 <tr><td>invoice</td>
     <td>Invoice data, which contains the amount and other invoice information.
            
-    </td></tr>
+ 
 <tr><td>getPaymentStatus</td>
      <td>Obtains status of a previously submitted invoice
         <li>ClientContext context</li>
