@@ -1,12 +1,12 @@
 ---
 layout: default
-title: SEQR Reconciliation
-description: SEQR Reconciliation
+title: SEQR Reporting and Reconciliation
+description: SEQR Reporting Reconciliation
 ---
 
-## Reconciliation
+## Reporting anad Reconciliation
 
-To check and confirm that cashregister/shop has the same number of transactions
+To check and confirm that cash register/shop has the same number of transactions
 as SEQR service, merchants can integrate towards the reconciliation feature of
 SEQR service.
 
@@ -30,19 +30,23 @@ SEQR-->Cashregister: XML report contents
  $(".diagram").sequenceDiagram({theme: 'hand'});
 </script>
 
-The following are steps to perform reconciliation against SEQR from cashregisters
+The following are steps to perform reconciliation against SEQR from cash registers
 
-1. At the end of a working shift or shop hour, a cashier presses a button 'Close & Reconcile' on a cashregister.
-The cashregisters application send markTransactionPeriod request to SEQR to mark end of transactions list
+1. At the end of a working shift or shop hour, a cashier presses a button 'Close & Reconcile' on a cash register.
+The cash register sends markTransactionPeriod request to SEQR to mark end of transactions list
 for this period. SEQR returns with a unique reference number, ersReference.
-2. The cashregister waits for a couple of seconds (around 3 seconds) in order to make sure that all
+2. The cash register waits for a couple of seconds (around 3 seconds) in order to make sure that all
 transactions are ready to process for reconciliation report.
-3. The cashregister application calls executeReport using ersReference from step 1 to fetch reconciliation report
+3. The cash register calls executeReport using ersReference from step 1 to fetch reconciliation report
 representing transaction summary since the previous reconciliation until the end of transaction list for this
 period.
-4. In case the reconciliation report is not ready , SEQR will return with result code 2
+4. In case the reconciliation report is not ready, SEQR will return with result code 2
 (REPORT_NOT_READY). The cashier should wait for couple seconds (around 3 seconds) more and repeat
 step 3 again.
+
+If the reconciliation list does in any way differ from the transactions SEQR have issued, 
+automated settlement will be cancelled and a full transaction list is requested and a manual handling of the 
+process will begin in order to identify the error.
 
 In executeReport, any of the following reports can be specified:
 
@@ -55,7 +59,7 @@ In executeReport, any of the following reports can be specified:
     <td>Merchant Transactions</td>
     <td>Transaction summary for a shop representing number 
 of transactions and summary amount done for the 
-period 
+period. 
 </td></tr>
 
 
@@ -63,7 +67,7 @@ period
     <td>Merchant Transactions Details</td><td>Transaction details for a shop
 showing ersReference, cashier,
 cash register and amount for the
-period
+period.
 </td></tr>
 
 <tr><td>STD_RECON_006</td>
@@ -81,12 +85,13 @@ id and amounts for each transaction in the period.
 
 There are two ways of reconciliation against SEQR service:
 
-* Per shop reconciliation: Only one master cashregister perform reconciliation process. The reconciliation
-report will show transactions summary for every cashregisters in the shop.
-* Per terminal reconciliation: Every cashregister in a shop perform reconciliation process. The reconciliation
-report will show transactions summary only for the specific cashregister. In this case, terminalId
+* Per shop reconciliation: Only one master cash register perform reconciliation process. The reconciliation
+report will show transactions summary for every cash register in the shop.
+* Per terminal reconciliation: Every cash register in a shop perform reconciliation process. The reconciliation
+report will show transactions summary only for the specific cash register. In this case, terminalId
 should be provided when calling markTransactionPeriod.
 
 Please refer to the above table to check which reports can be used for per terminal
 or per shop reconciliations.
+
 

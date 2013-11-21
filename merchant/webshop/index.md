@@ -17,9 +17,11 @@ The flow for a webshop SEQR payment is very similar to [Making your first SEQR
 payment](/merchant/payment).
 The difference is in how the SEQR QR code is presented to the SEQR
 user. To integrate SEQR, follow these steps:
+
 1. Integrate the payment view 
 2. Present the QR code and wait for payment
 3. Present the receipt
+3. Go live!
 
 ### 1. Integrate the Payment View
 There are two payment views that you can choose from:
@@ -102,5 +104,8 @@ Once the payment is completed a reference number (ersReference) is obtained from
 SEQR. Save the reference number for follow-ups and for print on the customer 
 online confirmation receipt.
 
+### 4. Go Live!
 
-
+To go live with your integration, you can [contact](/contact) Seamless to get
+the credentials for your webshop (terminal ID and password). You can also
+[certificate](/merchant/reference/certification.html) your integration, if you want.

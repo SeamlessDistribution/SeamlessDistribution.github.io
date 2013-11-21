@@ -8,35 +8,127 @@ description: API reference
 
 For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl).
 For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf)
-and to the [javadoc](javadoc/). 
+and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/). 
 
-## Methods used for webshop integration 
+## Methods
+
+For payments
 
 <table>
-<tr><th>Method</th><th>Description</th></tr>
-<tr><td>sendInvoice</td>
-    <td>Sends an invoice to the SEQR service </td></tr>
-<tr><td>updateInvoice</td>
-    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty</td></tr>
-<tr><td>getPaymentStatus</td>
-     <td>Obtains status of a previously submitted invoice</td></tr>
-<tr><td>cancelInvoice</td>
-    <td>Cancels an unpaid invoice</td></tr>
-<tr><td>commitReservation</td>
-    <td>Commits a payment, if a payment reservation successfully executed.
-        We are woring on support for reservations in cooperation with more banks</td></tr>
-<tr><td>submitPaymentReceipt</td>
-    <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
-        receipt document to a payment or refund</td></tr>
-<tr><td>refundPayment</td>
-    <td>Refunds a previous payment (Available in production from 2014)</td></tr>
-<tr><td>markTransactionPeriod</td>
-    <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
-<tr><td>executeReport</td>
-    <td>Executes a report on the SEQR service</td></tr>
+   <tbody>
+      <tr>
+         <th>Method</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td>
+            sendInvoice
+            <ul>
+               <li>ClientContext context</li>
+               <li>Invoice invoice</li>
+               <li>
+                  List
+                  <customertoken> tokens</customertoken>
+               </li>
+            </ul>
+         </td>
+         <td>Sends an invoice to the SEQR service. Tokens are optional and only for loyalty.
+         </td>
+      </tr>
+      <tr>
+         <td>
+            updateInvoice
+            <ul>
+               <li>ClientContext context</li>
+               <li>Invoice invoice</li>
+               <li>
+                  List
+                  <customertoken> tokens</customertoken>
+               </li>
+            </ul>
+         </td>
+         <td>Updates an already sent invoice with new set of invoice rows and amount; used support loyalty
+         </td>
+      </tr>
+      <tr>
+         <td>
+            getPaymentStatus
+            <ul>
+               <li>ClientContext context</li>
+               <li>String invoiceReference</li>
+               <li>int invoiceVersion</li>
+            </ul>
+         </td>
+         <td>Obtains status of a previously submitted invoice
+         </td>
+      </tr>
+      <tr>
+         <td>
+            cancelInvoice
+            <ul>
+               <li>ClientContext context</li>
+               <li>String invoiceReference</li>
+            </ul>
+         </td>
+         <td>Cancels an unpaid invoice
+         </td>
+      </tr>
+      <tr>
+         <td>
+            commitReservation
+            <ul>
+               <li>ClientContext context</li>
+               <li>String invoiceReference</li>
+            </ul>
+         </td>
+         <td>Commits a payment, if a payment reservation successfully executed.
+            We are working on support for reservations in cooperation with more banks
+         </td>
+      </tr>
+      <tr>
+         <td>
+            submitPaymentReceipt
+            <ul>
+               <li>ClientContext context</li>
+               <li>String ersReferenc</li>
+               <li>ReceiptDocument receiptDocument</li>
+            </ul>
+         </td>
+         <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
+            receipt document to a payment or refund
+         </td>
+      </tr>
+      <tr>
+         <td>
+            refundPayment
+            <ul>
+               <li>ClientContext context</li>
+               <li>String ersReference</li>
+               <li>Invoice invoice</li>
+            </ul>
+         </td>
+         <td>Refunds a previous payment (Available in production from 2014)
+         </td>
+      </tr>
+   </tbody>
 </table>
 
+
+### Methods for registration and reporting 
+
+
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
+| executeReport | Executes a report on the SEQR service |
+| --- | --- |
+
+
+
 ## Context parameter used in all calls
+
+
 
 A principal is the main actor in each request to the SEQR service and represents either a seller or a buyer. Each request has at least an initiator principal.
 The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
@@ -66,8 +158,64 @@ The ClientContext structure is used in all requests to identify, authenticate an
 </table>
 
 
+## Invoice data 
 
 
+Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
+
+| Field | Description |
+| --- | --- |
+| acknowledgementMode | Needs to be set to NO_ACKNOWLEDGEMENT unless you provide loyalty flow |
+| backURL | used in app-to-app or web shopping |
+| cashierId | "Alice" will show on receipt |
+| clientInvoiceId | Your purchase reference |
+| footer | receipt footer text |
+| invoiceRows | See invoiceRow description |
+| issueDate | cashregsister Date  |
+| notificationURL | optional notification/confirmation url |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED/RESERVATION_REQUIRED are limited in use  |
+| title | title displayed on bill and receipt |
+| totalAmount | full amount of invoice/bill |
+
+
+## InvoiceRow data 
+
+
+Used to present the payment in the app. 
+
+
+| Field | Description |
+| --- | --- |
+| itemDescription | optional |
+| itemDiscount | optional |
+| itemEAN | optional |
+| itemQuantity | should be 1 or more |
+| itemTaxRate | optional VAT line like "0.25" |
+| itemTotalAmount | required total amount for this row |
+| itemUnit | optional "dl" |
+| itemUnitPrice | optional  |
+
+
+## sendInvoice response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used by this method (will be null after this method). |
+| resultCode | Request result code |
+| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for cash registers) |
+| resultDescription | A textual description of resultCode  |
+|invoiceReference  | The SEQR service reference to the registered invoice. |
+
+
+## updateInvoice request fields
+
+| Field | Description |
+| --- | --- |
+| context | The ClientContext object |
+| invoice | Invoice data, which contains the amount and other invoice information |
+| invoiceReference | The SEQR service reference to the registered invoice. |
+| tokens | The customer tokens applied to this invoice. |
 
 
