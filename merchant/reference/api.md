@@ -26,7 +26,7 @@ For complete details, refer to the [API documentation](/downloads/ersifextclient
 <tr><td>submitPaymentReceipt</td>
     <td>Sends the receipt document of a payment or refund</td></tr>
 <tr><td>refundPayment</td>
-    <td>Refunds a previous payment</td></tr>
+    <td>Refunds a previous payment (Available in production from 2014)</td></tr>
 <tr><td>markTransactionPeriod</td>
     <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
 <tr><td>executeReport</td>
