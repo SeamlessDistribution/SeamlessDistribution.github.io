@@ -76,7 +76,9 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
     <td>Executes a report on the SEQR service</td></tr>
 </table>
 
+
 ## Context parameter used in all calls
+
 
 A principal is the main actor in each request to the SEQR service and represents either a seller or a buyer. Each request has at least an initiator principal.
 The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
@@ -105,7 +107,9 @@ The ClientContext structure is used in all requests to identify, authenticate an
     <td>Client comment included within the request. Optional.</td></tr>
 </table>
 
+
 ## Invoice data 
+
 
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
@@ -140,7 +144,7 @@ Used to present the payment in the app.
 | itemUnitPrice | optional  |
 
 
-sendInvoice response fields
+## sendInvoice response fields
 
 | Field | Description |
 | --- | --- |
@@ -151,7 +155,8 @@ sendInvoice response fields
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
 
-updateInvoice request fields
+## updateInvoice request fields
+
 | Field | Description |
 | --- | --- |
 | context | The ClientContext object |
