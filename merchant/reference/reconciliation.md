@@ -56,7 +56,7 @@ In executeReport, any of the following reports can be specified:
     <td>Transaction summary for a shop representing number 
 of transactions and summary amount done for the 
 period 
-
+</td></tr>
 
 
 <tr><td>STD_RECON_003</td>
