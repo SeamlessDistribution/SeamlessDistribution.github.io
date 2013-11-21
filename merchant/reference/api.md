@@ -160,7 +160,3 @@ updateInvoice request fields
 | tokens |The customer tokens applied to this invoice. |
 
 
-
-
-
-
