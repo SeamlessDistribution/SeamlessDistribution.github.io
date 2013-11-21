@@ -8,7 +8,7 @@ description: API reference
 
 For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl).
 For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf)
-and to the [javadoc](javadoc/). 
+and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/). 
 
 ## Methods used for webshop integration 
 
