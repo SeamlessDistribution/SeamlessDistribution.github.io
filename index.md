@@ -5,8 +5,7 @@ description: News and examples for SEQR cashregister integrations
 ---
 
 **Paying with SEQR is super easy and getting paid is almost as easy with our integration.**
-  Email integrations@seamless.se if you need help or getting payments going for real. 
-
+**Email integrations@seamless.se for making payments real.**
 <div class="boxes">
  <div class="box">
   <h3>Getting Started</h3>
@@ -28,6 +27,7 @@ description: News and examples for SEQR cashregister integrations
  <div class="box">
   <h3>References</h3> 
   <ul>
+   <li><a href="merchant/reference/reconciliation.html">Reconciliation</a></li>
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
   </ul>

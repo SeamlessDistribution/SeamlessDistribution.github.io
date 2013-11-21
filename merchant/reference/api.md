@@ -26,7 +26,7 @@ For complete details, refer to the [API documentation](/downloads/ersifextclient
 <tr><td>submitPaymentReceipt</td>
     <td>Sends the receipt document of a payment or refund</td></tr>
 <tr><td>refundPayment</td>
-    <td>Refunds a previous payment</td></tr>
+    <td>Refunds a previous payment (Available in production from 2014)</td></tr>
 <tr><td>markTransactionPeriod</td>
     <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
 <tr><td>executeReport</td>
@@ -48,7 +48,7 @@ The ClientContext structure is used in all requests to identify, authenticate an
     <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td></tr>
 <tr><td>initiatorPrincipalId </td>
     <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. 
-         Recommended: Use TERMINALID as type and the user that has been given to you by Customer Service.
+         Use TERMINALID except when you regsister a new terminal, then you need RESELLERUSER (as provided from seamless). 
     </td></tr>
 <tr><td>password</td>
     <td>The password used to authenticate the initiator principal.</td></tr>
