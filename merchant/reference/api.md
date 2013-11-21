@@ -109,7 +109,33 @@ The ClientContext structure is used in all requests to identify, authenticate an
 
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
-| Field | Description |
+sendInvoice request:
+<table>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Context</td>
+    <td>The ClientContext object  
+        
+<tr><td>invoice</td>
+    <td>Invoice data, which contains the amount and other invoice information.
+           
+ 
+<tr><td>getPaymentStatus</td>
+     <td>Obtains status of a previously submitted invoice
+        <li>ClientContext context</li>
+        <li>String invoiceReference</li>
+        <li>int invoiceVersion</li>
+     </td></tr>
+<tr><td>cancelInvoice</td>
+    <td>Cancels an unpaid invoice
+        <li>ClientContext context</li>
+        <li>String invoiceReference</li>
+
+
+sendInvoice request fields
+
+Field           Description 
+Context         The ClientContext object 
+Invoice         Invoice data, which contains the amount and other invoice information. |
 | --- | --- |
 | acknowledgementMode | Should be set to NOACKNOWLEDGEMENT |
 | backURL | used in app-to-app or web shopping |
@@ -144,6 +170,21 @@ Used to present the payment in the app.
 
 
 
+sendInvoice response fields
+| Field | Description |
+| ersReference | Not used by this method (will be null after this method). |
+| resultCode | Request result code |
+| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for cash registers) |
+| resultDescription | A textual description of resultCode  |
+|invoiceReference  | The SEQR service reference to the registered invoice.
+
+ |
+updateInvoice request fields
+| Field | Description |
+| context | The ClientContext object |
+| invoice | Invoice data, which contains the amount and other invoice information |
+| invoiceReference | The SEQR service reference to the registered invoice. |
+| tokens |The customer tokens applied to this invoice. |
 
 
 
