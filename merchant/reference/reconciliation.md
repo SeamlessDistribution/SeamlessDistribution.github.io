@@ -6,7 +6,7 @@ description: SEQR Reconciliation
 
 ## Reconciliation
 
-To check and confirm that cashregister/shop have the same number of transactions
+To check and confirm that cashregister/shop has the same number of transactions
 as SEQR service, merchants can integrate towards the reconciliation feature of
 SEQR service.
 
@@ -35,7 +35,7 @@ The following are steps to perform reconciliation against SEQR from cashregister
 1. At the end of a working shift or shop hour, a cashier presses a button 'Close & Reconcile' on a cashregister.
 The cashregisters application send markTransactionPeriod request to SEQR to mark end of transactions list
 for this period. SEQR returns with a unique reference number, ersReference.
-2. The cashregister application waits for a couple of seconds (around 3 seconds) in order to make sure that all
+2. The cashregister waits for a couple of seconds (around 3 seconds) in order to make sure that all
 transactions are ready to process for reconciliation report.
 3. The cashregister application calls executeReport using ersReference from step 1 to fetch reconciliation report
 representing transaction summary since the previous reconciliation until the end of transaction list for this
