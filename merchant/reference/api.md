@@ -24,7 +24,8 @@ For complete details, refer to the [API documentation](/downloads/ersifextclient
 <tr><td>commitReservation</td>
     <td>Commits a payment</td></tr>
 <tr><td>submitPaymentReceipt</td>
-    <td>Sends the receipt document of a payment or refund</td></tr>
+    <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
+        receipt document to a payment or refund</td></tr>
 <tr><td>refundPayment</td>
     <td>Refunds a previous payment (Available in production from 2014)</td></tr>
 <tr><td>markTransactionPeriod</td>
