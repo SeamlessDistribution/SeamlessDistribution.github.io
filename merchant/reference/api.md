@@ -95,9 +95,28 @@ The ClientContext structure is used in all requests to identify, authenticate an
 
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
+sendInvoice request fields
+
 | Field | Description |
+|Context | The ClientContext object |
+|Invoice | Invoice data, which contains the amount and other invoice information. |
 | --- | --- |
 
+sendInvoice response fields
+| Field | Description |
+| ersReference | Not used by this method (will be null after this method). |
+| resultCode | Request result code |
+| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for cash registers) |
+| resultDescription | A textual description of resultCode  |
+|invoiceReference  | The SEQR service reference to the registered invoice.
+
+ |
+updateInvoice request fields
+| Field | Description |
+| context | The ClientContext object |
+| invoice | Invoice data, which contains the amount and other invoice information |
+| invoiceReference | The SEQR service reference to the registered invoice. |
+| tokens |The customer tokens applied to this invoice. |
 
 
 
