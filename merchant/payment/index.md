@@ -11,7 +11,7 @@ description: SEQR Merchant, webshop, POS integration
 Feel hungry for real payments now? Just make sure you have the following in place:
 
 1. [The SEQR app installed](../../app/).
-2. For python sample, you will need PIL and qrpython library (pip install qrcode PIL)
+2. For python sample, you will need PIL and qrpython library (pip install qrcode PIL suds)
 
 ## Sequence (simplified)
 
@@ -68,7 +68,7 @@ while response.resultCode == 0 and response.status == "ISSUED":
 {% endhighlight %}
 
 
-* [Putting it all together](python-script) 
+* [Putting it all together](python-script.html) 
 
 
 ### Try more functions
