@@ -55,7 +55,7 @@ In executeReport, any of the following reports can be specified:
     <td>Merchant Transactions</td>
     <td>Transaction summary for a shop representing number 
 of transactions and summary amount done for the 
-period 
+period. 
 </td></tr>
 
 
@@ -63,7 +63,7 @@ period
     <td>Merchant Transactions Details</td><td>Transaction details for a shop
 showing ersReference, cashier,
 cash register and amount for the
-period
+period.
 </td></tr>
 
 <tr><td>STD_RECON_006</td>
