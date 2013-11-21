@@ -7,7 +7,8 @@ description: API reference
 # Payment API / WSDL
 
 For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl).
-For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf).
+For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf)
+and to the [javadoc](javadoc/). 
 
 ## Methods used for webshop integration 
 
@@ -16,14 +17,14 @@ For complete details, refer to the [API documentation](/downloads/ersifextclient
 <tr><td>sendInvoice</td>
     <td>Sends an invoice to the SEQR service </td></tr>
 <tr><td>updateInvoice</td>
-    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty programme</td></tr>
+    <td>Updates an already sent invoice with new set of invoice rows or attributes (e.g. total invoice amount); used also to support loyalty</td></tr>
 <tr><td>getPaymentStatus</td>
      <td>Obtains status of a previously submitted invoice</td></tr>
 <tr><td>cancelInvoice</td>
     <td>Cancels an unpaid invoice</td></tr>
 <tr><td>commitReservation</td>
     <td>Commits a payment, if a payment reservation successfully executed.
-        We are woring on support for reservations in cooperation with more banks.</td></tr>
+        We are woring on support for reservations in cooperation with more banks</td></tr>
 <tr><td>submitPaymentReceipt</td>
     <td>Confirm that you have gotten a PAID response from getPaymentStatus, and adds an optional 
         receipt document to a payment or refund</td></tr>
@@ -32,7 +33,7 @@ For complete details, refer to the [API documentation](/downloads/ersifextclient
 <tr><td>markTransactionPeriod</td>
     <td>Marks the end of one and the beginning of a new transaction period; used in reporting</td></tr>
 <tr><td>executeReport</td>
-    <td>Executes a report on the SEQR service.</td></tr>
+    <td>Executes a report on the SEQR service</td></tr>
 </table>
 
 ## Context parameter used in all calls
