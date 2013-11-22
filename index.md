@@ -9,29 +9,34 @@ description: News and examples for SEQR cashregister integrations
 
 <div class="boxes">
  <div class="box">
-  <h3>Getting Started</h3>
+  <h3>Integrate with SEQR</h3>
   <ul>
    <li><a href="app/">Get SEQR app</a></li>
    <li><a href="merchant/payment">First SEQR payment</a></li>
+   <li><a href=>Set up environment</a></li>
+   <li><a href="merchant/reference/certification.html/">Get certified for production</a></li>
   </ul>
  </div>
  <div class="box">
-  <h3>Payment Scenarios</h3>
+ <h3>Configure payment scenario</h3>
   <ul>
    <li><a href="merchant/webshop">Webshop</a></li>
    <li>POS</li>
    <li>In-app</li>
    <li>Service</li>
-  </ul>
- </div>
- 
+  
+  </div>
+
  <div class="box">
   <h3>References</h3> 
   <ul>
-   <li><a href="merchant/reference/reporting.html">Reporting</a></li>
    <li><a href="merchant/reference/api.html">API</a></li>
+   <ul>
+   <li><a href="merchant/reference/reporting.html">Reporting</a></li>
+  </div>
+   <ul>
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
-   <li><a href="merchant/reference/certification.html">Certification</a></li>
+   
   </ul>
  </div>
  
