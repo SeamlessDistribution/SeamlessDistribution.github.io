@@ -18,7 +18,7 @@ description: News and examples for SEQR cashregister integrations
   </ul>
  </div>
  <div class="box">
- <h3>Set up payment scenario</h3>
+ <h3>Set up payment</h3>
   <ul>
    <li><a href="merchant/webshop">Webshop</a></li>
    <li>POS</li>
