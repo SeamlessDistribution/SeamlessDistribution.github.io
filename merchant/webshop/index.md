@@ -53,7 +53,11 @@ View parameters are:
 | invoiceId   | (required) invoice reference that you received from sendInvoice method | - | - |
 | layout      | (optional) layout for the payment view | standard, small | standard |
 | language    | (optional) language for texts in payment view | en, sv, ... | detected from browser, falls back to English if not available |
+| successCallback | (optional) this javascript method is invoked after the payment is successful | - | - |
+| successURL  | (optional) redirect to this URL upon successful payment | - | - |
 
+Note: when your webshop is browsed on mobile phones, you provide the backUrl in
+ sendInvoice method.
 
 ### 2. Present the Receipt
 
