@@ -26,11 +26,14 @@ user. To integrate SEQR, follow these steps:
 ### 1. Integrate the Payment View
 There are two payment views that you can choose from:
 
-* Standard Payment View
-<img src="/assets/images/webshop_module1.png" />
+Standard Payment View
+<img src="/assets/images/paymentview-standard.png" />
 
-* Small Payment View
-<img src="/assets/images/webshop_module2.png" />
+Small Payment View
+<img src="/assets/images/paymentview-small.png" />
+
+Payment View - When SEQR doesn't support the users phone
+<img src="/assets/images/paymentview-nosupport.png" width="50%"/>
 
 Embed the HTML file in your webshop checkout and replace the dynamic parts with
 the responses you get from SEQR service.
@@ -56,27 +59,6 @@ and put it in the specified place in the payment view
 of invoiceQRCode with SEQR, for example: SEQR://SEQR.SE/R12345 , and put it in
 the specified place in the payment view
 
-
-
-<script type="text/javascript">//<![CDATA[ 
-$(function(){
-$(".outer").resizable({
-    resize: function (event, ui) {
-        var newWd = ui.size.width - 20;
-        var newHt = ui.size.height - 20;
-        $("iframe").width(newWd).height(newHt);
-    }
-});
-});//]]>  
-</script>
-
-__Click and drag the grey field to the left to see how the Payment View adapts to the width.__
-
-<div id="qrcode-frame-wrapper1" class="outer">
-    <iframe id="qr-code-frame1" width="100%" height="450px"
-        src="/downloads/webshop_modules/module1/seqr-payment-module1.html">
-    </iframe>
-</div>
 
 
 Each module contains three different sizes to be used depending on type (size) of device 
