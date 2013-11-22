@@ -32,7 +32,6 @@ description: News and examples for SEQR cashregister integrations
    <li><a href="merchant/reference/api.html">API</a></li>
    <ul>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
-   <ul>
  </div>
   <ul>
   <li><a href="merchant/reference/glossary.html">Glossary</a></li>
