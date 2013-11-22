@@ -24,9 +24,8 @@ description: News and examples for SEQR cashregister integrations
    <li>POS</li>
    <li>In-app</li>
    <li>Service</li>
-  
+ </ul> 
   </div>
-
  <div class="box">
   <h3>References</h3> 
   <ul>
