@@ -23,10 +23,10 @@ print "Creating the invoice..."
 invoice = client.factory.create("ns0:invoice")
 invoice.paymentMode = "IMMEDIATE_DEBIT"
 invoice.acknowledgmentMode = "NO_ACKNOWLEDGMENT"
-invoice.title="Thai Massage Center"
+invoice.title="Grand Cinema"
 invoice.invoiceRows = client.factory.create('ns0:invoiceRows')
 row1 = invoice.invoiceRows.invoiceRow = client.factory.create('ns0:invoiceRow')
-row1.itemDescription = "Thai Massage"
+row1.itemDescription = "Movie Tickets"
 row1.itemTotalAmount = client.factory.create('ns0:itemTotalAmount')
 row1.itemTotalAmount.value, row1.itemTotalAmount.currency = "500", "SEK"
 

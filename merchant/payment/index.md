@@ -47,7 +47,7 @@ invoice.title="Thai Massage Center"
 # our invoice has just one row
 invoice.invoiceRows = client.factory.create('ns0:invoiceRows')
 row1 = invoice.invoiceRows.invoiceRow = client.factory.create('ns0:invoiceRow')
-row1.itemDescription = "Thai Massage"
+row1.itemDescription = "Movie Tickets"
 row1.itemTotalAmount = client.factory.create('ns0:itemTotalAmount')
 row1.itemTotalAmount.value, row1.itemTotalAmount.currency = "500", "SEK"
 invoice.totalAmount = client.factory.create('ns0:totalAmount')
