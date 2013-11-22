@@ -34,6 +34,7 @@ description: News and examples for SEQR cashregister integrations
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
  
  </div>
+  <ul>
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
  </div>
  
