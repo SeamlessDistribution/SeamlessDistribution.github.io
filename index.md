@@ -4,7 +4,8 @@ title: SEQR Developer Site
 description: News and examples for SEQR cashregister integrations
 ---
 
-**Paying with SEQR is super easy and getting paid is almost as easy with our integration.**
+**Paying with SEQR is super easy and getting paid is almost as easy with our
+integration process.**
 
 
 <div class="boxes">
@@ -13,8 +14,10 @@ description: News and examples for SEQR cashregister integrations
   <ul>
    <li><a href="app/">Get SEQR app</a></li>
    <li><a href="merchant/payment">First SEQR payment</a></li>
+<!--
    <li>Set up environment</a></li>
-   <li><a href="merchant/reference/certification.html/">Get certified for production</a></li>
+   <li><a href="merchant/reference/certification.html">Get certified for production</a></li>
+-->
   </ul>
  </div>
  <div class="box">
@@ -32,6 +35,7 @@ description: News and examples for SEQR cashregister integrations
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
+   <li><a href="merchant/reference/certification.html">Certification</a></li>
  </div>
 
 
