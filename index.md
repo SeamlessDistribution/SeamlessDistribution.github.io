@@ -14,10 +14,8 @@ integration process.**
   <ul>
    <li><a href="app/">Get SEQR app</a></li>
    <li><a href="merchant/payment">First SEQR payment</a></li>
-<!--
    <li>Set up environment</a></li>
    <li><a href="merchant/reference/certification.html">Get certified for production</a></li>
--->
   </ul>
  </div>
  <div class="box">
@@ -35,7 +33,6 @@ integration process.**
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
-   <li><a href="merchant/reference/certification.html">Certification</a></li>
  </div>
 
 
