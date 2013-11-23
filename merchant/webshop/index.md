@@ -17,8 +17,11 @@ checkout that supports SEQR:
 
 The flow for a webshop SEQR payment is very similar to [Making your first SEQR
 payment](/merchant/payment).
-The difference is in how the SEQR QR code is presented to the SEQR
-user. To integrate SEQR, follow these steps:
+The difference is that polling for payment status is handled by a payment view,
+which also handles showing the QR code to the SEQR user. You still need to request
+the status of the payment after the payment view returns, but only once to find
+out the final status of the invoice.
+To integrate SEQR, follow these steps:
 
 1. Integrate the payment view 
 3. Present the receipt
@@ -56,8 +59,9 @@ View parameters are:
 | successCallback | (optional) this javascript method is invoked after the payment is successful | - | - |
 | successURL  | (optional) redirect to this URL upon successful payment | - | - |
 
-Note: when your webshop is browsed on mobile phones, you provide the backUrl in
- sendInvoice method.
+**Note:** when your webshop is browsed on mobile phones, you provide the backUrl in
+ sendInvoice method. After a successful/cancelled payment, the app will redirect
+the SEQR user to the URL specified in the invoice.
 
 ### 2. Present the Receipt
 
@@ -71,4 +75,4 @@ online confirmation receipt.
 
 To go live with your integration, [contact](/contact) Seamless to get
 the credentials for your webshop (terminal ID and password). You can also
-[certificate](/merchant/reference/certification.html) your integration, if you want.
+[certify](/merchant/reference/certification.html) your integration, if you want.
