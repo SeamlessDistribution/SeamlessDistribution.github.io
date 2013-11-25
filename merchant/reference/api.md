@@ -83,7 +83,6 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
             We are working on support for reservations in cooperation with more banks.
          </td>
       </tr>
-<!--
       <tr>
          <td>
             submitPaymentReceipt
@@ -93,11 +92,11 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
                <li>ReceiptDocument receiptDocument</li>
             </ul>
          </td>
-         <td>Adds an optional 
-            receipt document to a payment or refund
+         <td>
+            Used to confirm that the payment was received by the cashregister. 
+            Adds an optional receipt document to a payment or refund.
          </td>
       </tr>
--->
       <tr>
          <td>
             refundPayment
