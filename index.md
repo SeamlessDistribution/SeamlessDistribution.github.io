@@ -22,7 +22,7 @@ integration process.**
  <h3>Set up payment</h3>
   <ul>
    <li><a href="merchant/webshop">Webshop</a></li>
-   <li><a href="merchant/pos">POS</li>
+   <li>POS</li>
    <li>In-app</li>
    <li>Service</li>
   </ul> 
