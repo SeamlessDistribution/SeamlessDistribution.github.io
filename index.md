@@ -28,7 +28,7 @@ integration process.**
   </ul> 
  </div>
  <div class="box">
-  <h3>References</h3> 
+ <h3>References</h3> 
   <ul>
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
