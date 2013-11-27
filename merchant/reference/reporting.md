@@ -4,7 +4,7 @@ title: SEQR Reporting and Reconciliation
 description: SEQR Reporting Reconciliation
 ---
 
-## Reporting anad Reconciliation
+## Reporting and Reconciliation
 
 To check and confirm that cash register/shop has the same number of transactions
 as SEQR service, merchants can integrate towards the reconciliation feature of
