@@ -382,6 +382,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 	clear: left;
 	position: fixed;
 }
+
 .content {
 	float: right;
 	width: 75%;
@@ -390,6 +391,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 	padding: 0px;
 	margin: 0px;
 }
+
 .navigation ul li {
 	list-style: none;
 }
@@ -398,6 +400,36 @@ tr:nth-child(odd)	{ background-color:#fff; }
 }
 .box {
 	float: left;
-    width: 26%;
+    width: 27%;
+    min-width: 7em;
 	padding: 1em;
+}
+
+@media all and (max-width: 950px) {
+
+    .navigation {
+        display: block;
+	    position: relative; 
+	    width: 90%;
+	    min-height: 50px;
+        clear: both;
+        margin-bottom: 1em; 
+    }
+
+    .navigation .parent {
+        clear: left; 
+        padding-left: 0px; 
+    }
+
+    .navigation ul li {
+        padding-left: 10px; 
+        float:left;
+    }
+
+    .content {
+        clear: left;
+	    float: none;
+	    width: 90%;
+    }
+
 }
