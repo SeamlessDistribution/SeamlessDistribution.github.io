@@ -22,14 +22,13 @@ The SEQR applications for iOS and Android.
 Interface for authorizing and adding accounts to a SEQR user.
 
 ### B
-
 **Backend**
 The backend is the backbone of the SEQR system, consisting of the components that support the frontend services; processing all the transactions and keeping information of all subscribers registered with SEQR, etc.
 
 **Banklink**
 The standardized API used for clearing of transactions between SEQR and an account provider.
-### C
 
+### C
 **Cash register**
 The register machine of receiving payments with SEQR and also the API within SEQR system.
 
