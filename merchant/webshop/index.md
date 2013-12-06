@@ -36,7 +36,7 @@ Standard Payment View
 Small Payment View
 <img src="/assets/images/paymentview-small.png" />
 
-Payment View - When SEQR doesn't support the users phone
+Payment View - When SEQR doesn't support the user's phone
 <img src="/assets/images/paymentview-nosupport.png" width="50%"/>
 
 To integrate with SEQR, insert the following script tag into your checkout
