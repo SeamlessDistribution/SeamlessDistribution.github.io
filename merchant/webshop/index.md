@@ -73,6 +73,5 @@ online confirmation receipt.
 
 ### 3. Go Live!
 
-To go live with your integration, [contact](/contact) Seamless to get
-the credentials for your webshop (terminal ID and password). You can also
-[certify](/merchant/reference/certification.html) your integration, if you want.
+To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and 
+receive the credentials to your webshop.
