@@ -113,7 +113,18 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 </table>
 
 
-### Methods for registration and reporting 
+### Methods specific for POS (terminal) registration 
+
+
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| registerTerminal | Registers a new terminal in the SEQR service |
+| unRegisterTerminal | Unregisters an already registered terminal |
+| assignSeqrId | Assigns a SEQR ID to a terminal |
+| --- | --- |
+
+### Methods for reconciliation and reporting 
 
 
 |--- | --- |
