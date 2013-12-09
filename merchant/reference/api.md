@@ -219,9 +219,11 @@ Used to present the payment in the app.
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
 ## sendInvoice SOAP examples
+To be added!
 
 
 ## updateInvoice request fields
+
 
 | Field | Description |
 | --- | --- |
@@ -230,17 +232,23 @@ Used to present the payment in the app.
 | invoiceReference | The SEQR service reference to the registered invoice. |
 | tokens | The customer tokens applied to this invoice. |
 
+
 ## updateInvoice response fields
+
 
 | Field | Description |
 | --- | --- |
+| ersReference | Not used, will be null. |
 | resultCode | see Result codes |
 | resultDescription | A textual description of resultCode. |
 
+
 ## updateInvoice SOAP examples
+To be added!
 
 
 ## getPaymentStatus request fields
+
 
 | Field | Description |
 | --- | --- |
@@ -259,7 +267,9 @@ the client must use the latest value of invoiceVersion
 as an acknowledgement that it has received the latest
 change. |
 
+
 ## getPaymentStatus response fields
+
 
 | Field | Description |
 | --- | --- |
@@ -283,7 +293,159 @@ acknowledgement
 contains the delivery address to deliver to |
 | resultCode | Receipt of the payment, if the status is PAID |
 
+
 ## getPaymentStatus SOAP examples
+To be added!
+
+
+## cancelInvoice request fields
+
+
+| Field | Description |
+| --- | --- |
+| context | The ClientContext object |
+| invoiceReference | Reference of the invoice to be canceled. |
+
+
+## cancelInvoice response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+## cancelInvoice SOAP examples
+To be added!
+
+
+## registerTerminal request fields
+
+
+| Field | Description |
+| --- | --- |
+| context | The ClientContext object |
+| externalTerminalId | The identifier of the terminal in the client system, e.g.
+"Store 111/Till 4". |
+| password | Password for future communications with the SEQR service. |
+| name | The name to appear on the buyer’s mobile device, e.g.
+"My Restaurant, cash register 2". |
+
+
+## registerTerminal response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+| terminalId | The newly generated unique identifier for this terminal. This identifier should be used in future
+communications of this terminal towards the SEQR service. |
+
+
+## registerTerminal SOAP examples
+To be added!
+
+
+## unregisterTerminal request fields
+
+
+| Field | Description |
+| --- | --- |
+| context | The ClientContext object |
+| TerminalId | The SEQR ID of the terminal to be unregistered. |
+
+
+## unregisterTerminal response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+## unregisterTerminal SOAP examples
+To be added!
+
+
+## assignSeqrId request fields
+
+
+| Field | Description |
+| --- | --- |
+| context | The ClientContext object |
+| SeqrId | The SEQR ID of the terminal. |
+
+
+## assignSeqrId response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+## assignSeqrId SOAP examples
+To be added!
+
+
+## commitReservation request fields
+
+
+| Field | Description |
+| --- | --- |
+| context | The ClientContext object |
+| invoiceReference | Reference of the invoice that is reserved. |
+
+
+## commitReservation response fields
+
+
+| Field | Description |
+| --- | --- |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+## commitReservation SOAP examples
+To be added!
+
+
+## submitPaymentReciept request fields
+
+
+| Field | Description |
+| --- | --- |
+| context | The ClientContext object |
+| ersReference | Reference of the payment for which the receipt is applicable. |
+| receiptDocument | Receipt document, containing the full details of the receipt. 
+NOTES Preferably in ARTS Receipt XML format. |
+
+
+## submitPaymentReceipt response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+## commitReservation SOAP examples
+To be added!
+
+
+
+
+
 
 
 
