@@ -1,21 +1,21 @@
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
 xmlns:ext="http://external.interfaces.ers.seamless.com/">
-<soapenv:Header/>
-<soapenv:Body>
-<ext:markTransactionPeriod>
-<context>
-<channel>WS</channel>
-<clientComment>comment</clientComment>
-<clientId>testClient</clientId>
-<clientReference>12345</clientReference>
-<clientRequestTimeout>0</clientRequestTimeout>
-<initiatorPrincipalId>
-<id>fredellsfisk</id>
-<type>RESELERUSER</type>
-<userId>9900</id>
-</initiatorPrincipalId>
-<password>secret</password>
-</context>
-</ext:markTransactionPeriod>
-</soapenv:Body>
+    <soapenv:Header/>
+    <soapenv:Body>
+      <ext:markTransactionPeriod>
+        <context>
+           <channel>WS</channel>
+           <clientComment>comment</clientComment>
+           <clientId>testClient</clientId>
+           <clientReference>12345</clientReference>
+           <clientRequestTimeout>0</clientRequestTimeout>
+           <initiatorPrincipalId>
+              <id>fredellsfisk</id>
+              <type>RESELERUSER</type>
+              <userId>9900</id>
+           </initiatorPrincipalId>
+           <password>secret</password>
+       </context>
+     </ext:markTransactionPeriod>
+  </soapenv:Body>
 </soapenv:Envelope>
