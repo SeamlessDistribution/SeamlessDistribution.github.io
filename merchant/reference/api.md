@@ -10,7 +10,7 @@ For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/servic
 For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf)
 and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/). 
 
-## Methods for Payments
+## Methods for payments
 
 <table>
    <tbody>
@@ -113,7 +113,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 </table>
 
 
-### Methods for Registration and Reporting 
+### Methods for registration and reporting 
 
 
 |--- | --- |
@@ -125,7 +125,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 
 
 
-## Context Parameter Used in All Calls
+## Context parameter used in all calls
 
 
 
