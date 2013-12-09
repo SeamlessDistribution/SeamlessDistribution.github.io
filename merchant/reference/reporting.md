@@ -47,6 +47,8 @@ step 3 again.
 ### Samples of markTransactionPeriod
 **Per shop reconciliation**
 
+<img src=/assets/images/per_shop_reconcile_request.png">
+
 ###Reports
 
 The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation:
