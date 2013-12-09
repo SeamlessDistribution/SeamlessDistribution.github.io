@@ -79,11 +79,12 @@ should be provided when calling markTransactionPeriod.
     <td>Terminal Transactions Summary</td><td>Contains the number 
 of transactions and summary amount purchased/refunded for the 
 period. </td></tr>
+
 <tr><td>STD_RECON_007</td><td>Terminal Transactions Details</td>
     <td>Transaction details for a terminal showing reference 
 id and amounts for each transaction in the period. 
 </td></tr>
-<table>
+
 
 
 
