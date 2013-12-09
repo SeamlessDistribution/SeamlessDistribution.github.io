@@ -6,7 +6,7 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-## Get SEQR Payments
+## First SEQR payment
 
 Feel hungry for real payments now? Just make sure you have the following in place:
 
