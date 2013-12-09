@@ -4,7 +4,7 @@ title: SEQR Reporting and Reconciliation
 description: SEQR Reporting Reconciliation
 ---
 
-## Reporting and Reconciliation
+## Reporting and reconciliation
 
 To check and confirm that cash register/shop has the same number of transactions
 as SEQR service, merchants can integrate towards the reconciliation feature of
@@ -44,8 +44,10 @@ period.
 (REPORT_NOT_READY). The cashier should wait for couple seconds (around 3 seconds) more and repeat
 step 3 again.
 
-In executeReport, any of the following reports can be specified:
+In executeReport, the report to be specified depend on whether it is per shop or per terminal reconciliation:
 
+* Per shop reconciliation: Only one master cash register perform reconciliation process. The reconciliation
+report will show transactions summary for every cash register in the shop.
 
 <table>
 <tr><th>Report ID</th><th>Report Name</th><th>Description</th></tr>
@@ -65,7 +67,14 @@ showing ersReference, cashier,
 cash register and amount for the
 period.
 </td></tr>
+<table>
 
+
+* Per terminal reconciliation: Every cash register in a shop perform reconciliation process. The reconciliation
+report will show transactions summary only for the specific cash register. In this case, terminalId
+should be provided when calling markTransactionPeriod.
+
+<table>
 <tr><td>STD_RECON_006</td>
     <td>Terminal Transactions Summary</td><td>Contains the number 
 of transactions and summary amount purchased/refunded for the 
@@ -76,18 +85,5 @@ id and amounts for each transaction in the period.
 </td></tr>
 
 
-
-</table>
-
-There are two ways of reconciliation against SEQR service:
-
-* Per shop reconciliation: Only one master cash register perform reconciliation process. The reconciliation
-report will show transactions summary for every cash register in the shop.
-* Per terminal reconciliation: Every cash register in a shop perform reconciliation process. The reconciliation
-report will show transactions summary only for the specific cash register. In this case, terminalId
-should be provided when calling markTransactionPeriod.
-
-Please refer to the above table to check which reports can be used for per terminal
-or per shop reconciliations.
 
 
