@@ -88,7 +88,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
             submitPaymentReceipt
             <ul>
                <li>ClientContext context</li>
-               <li>String ersReferenc</li>
+               <li>String ersReference</li>
                <li>ReceiptDocument receiptDocument</li>
             </ul>
          </td>
@@ -507,6 +507,25 @@ markTransactionPeriod response
 To be added!
 
 
+## Result codes
+
+| Code | Description |
+| --- | --- |
+| 0 | SUCCESS |
+| 11 | REJECTED_AMOUNT |
+| 20 | AUTHENTICATION_FAILED |
+| 29 | INVALID_INITIATOR_PRINCIPAL_ID |
+| 33 | INVALID_INITIATOR_PRINCIPAL_STATE |
+| 37 | INITIATOR_PRINCIPAL_NOT_FOUND |
+| 48 | PAYMENT_IN_PROGRESS |
+| 49 | INVALID_INVOICE_DATA |
+| 50 | CANNOT_CANCEL_PAID_INVOICE |
+| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS |
+| 53 | INVALID_SEQR_ID|
+| 90 | SYSTEM_ERROR |
+| 91 | UNSUPPORTED_OPERATION |
+| 93 | SYSTEM_BUSY |
+| 94 | SERVICE_UNAVAILABLE |
 
 
 
