@@ -68,7 +68,7 @@ cash register and amount for the
 period.
 </td></tr>
 <table>
-</td></tr>
+
 
 **Per terminal reconciliation**: Every cash register in a shop perform reconciliation process. The reconciliation
 report will show transactions summary only for the specific cash register. In this case, terminalId
@@ -83,7 +83,7 @@ period. </td></tr>
     <td>Transaction details for a terminal showing reference 
 id and amounts for each transaction in the period. 
 </td></tr>
-
+<table>
 
 
 
