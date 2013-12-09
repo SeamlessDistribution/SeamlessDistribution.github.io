@@ -75,6 +75,8 @@ report will show transactions summary only for the specific cash register. In th
 should be provided when calling markTransactionPeriod.
 
 <table>
+<tr><th>Report ID</th><th>Report Name</th><th>Description</th></tr>
+
 <tr><td>STD_RECON_006</td>
     <td>Terminal Transactions Summary</td><td>Contains the number 
 of transactions and summary amount purchased/refunded for the 
