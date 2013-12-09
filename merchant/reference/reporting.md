@@ -44,7 +44,12 @@ period.
 (REPORT_NOT_READY). The cashier should wait for couple seconds (around 3 seconds) more and repeat
 step 3 again.
 
-In executeReport, the report to be specified depend on whether it is per shop or per terminal reconciliation:
+### Samples of markTransactionPeriod
+**Per shop reconciliation**
+
+###Reports
+
+The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation:
 
 **Per shop reconciliation**: Only one master cash register perform reconciliation process. The reconciliation
 report will show transactions summary for every cash register in the shop.
@@ -86,7 +91,8 @@ period. </td></tr>
     <td>Transaction details for a terminal showing reference 
 id and amounts for each transaction in the period. 
 </td></tr>
+<table>
 
-
+#### markTransactionPeriod SOAP sample, per shop reconciliation
 
 
