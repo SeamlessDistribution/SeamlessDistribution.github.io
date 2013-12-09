@@ -92,8 +92,8 @@ period. </td></tr>
 id and amounts for each transaction in the period. 
 </td></tr>
 <table>
+</td></tr>
 
-##
 
 
 
