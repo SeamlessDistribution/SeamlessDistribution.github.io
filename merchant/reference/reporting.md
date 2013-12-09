@@ -47,7 +47,7 @@ step 3 again.
 ### Samples of markTransactionPeriod
 **Per shop reconciliation**
 
-<img src=/assets/images/per_shop_reconcile_request.png">
+<img src=/assets/images/per_shop_reconcile_request.png"/>
 
 ###Reports
 
