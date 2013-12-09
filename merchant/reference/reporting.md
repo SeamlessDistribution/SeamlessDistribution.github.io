@@ -47,7 +47,19 @@ step 3 again.
 ### Samples of markTransactionPeriod
 **Per shop reconciliation**
 
+markTransactionPeriod request
 <img src="/assets/images/per_shop_recon_request.png" />
+
+markTransactionPeriod response
+<img src="/assets/images/xxx" />
+
+**Per terminal reconciliation**
+
+markTransactionPeriod request
+<img src="/assets/images/xxx.png" />
+
+markTransactionPeriod response
+<img src="/assets/images/xxx" />
 
 
 ###Reports
