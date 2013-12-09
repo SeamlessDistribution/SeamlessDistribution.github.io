@@ -93,6 +93,5 @@ id and amounts for each transaction in the period.
 </td></tr>
 <table>
 
-#### markTransactionPeriod SOAP sample, per shop reconciliation
 
 
