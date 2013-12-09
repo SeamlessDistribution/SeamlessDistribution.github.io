@@ -4,7 +4,7 @@ title: Developer Mobile App
 description: A demo and developer app for trying things out. 
 ---
 
-Developer Mobile App
+Get SEQR app
 =============
 
 For testing purposes we have a test server and test app that you can play with
