@@ -267,9 +267,7 @@ To be added!
 ### updateInvoice SOAP request
 
 
-
-
-```
+{% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
 xmlns:ext="http://external.interfaces.ers.seamless.com/">
 <soapenv:Header/>
@@ -299,7 +297,9 @@ xmlns:ext="http://external.interfaces.ers.seamless.com/">
 </soapenv:Body>
 </soapenv:Envelope>
 
-```
+{% endhighlight %}
+
+
 
 
 
