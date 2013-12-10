@@ -236,7 +236,7 @@ Used to present the payment in the app.
 | resultDescription | A textual description of resultCode  |
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
-## sendInvoice SOAP request example
+## sendInvoice SOAP request example, for *Webshop* and *POS*
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -284,6 +284,43 @@ Used to present the payment in the app.
             <invoiceReference>1328543027208</invoiceReference>
          </return>
       </ns2:sendInvoiceResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
+## sendInvoice SOAP request example, for *Service*
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:sendInvoice>
+       <context>
+          <channel>service</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>1234</password>
+       </context>
+       <invoice>
+          <title>Some Invoice</title>
+          <cashierId>Bob</cashierId>
+          <totalAmount>
+            <currency>SEK</currency>
+            <value>10.22</value>
+          </totalAmount>
+          <notificationUrl>http://www.thirdparty.com/notifyMeHere</notificationUrl>
+       </invoice>
+     </ext:sendInvoice>
    </soapenv:Body>
 </soapenv:Envelope>
 
