@@ -262,7 +262,38 @@ To be added!
 
 
 ## updateInvoice SOAP examples
-To be added!
+### updateInvoice SOAP request
+```
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:updateInvoice>
+       <context>
+          <channel>extWS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>1234</password>
+       </context>
+       <invoice>
+          <title>Some Invoice</title>
+          <cashierId>Bob</cashierId>
+          <totalAmount>
+             <currency>SEK</currency>
+             <value>10.22</value>
+          </totalAmount>
+       </invoice>
+    </ext:updateInvoice>
+  </soapenv:Body>
+</soapenv:Envelope>
+```
+### updateInvoice SOAP response
 
 
 ## getPaymentStatus request fields
