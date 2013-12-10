@@ -261,10 +261,7 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## updateInvoice SOAP examples
-
-
-### updateInvoice SOAP request
+## updateInvoice SOAP request example
 
 
 {% highlight python %}
@@ -301,9 +298,7 @@ To be added!
 
 
 
-
-
-### updateInvoice SOAP response
+## updateInvoice SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -345,8 +340,53 @@ To be added!
 | resultCode | Receipt of the payment, if the status is PAID |
 
 
-## getPaymentStatus SOAP examples
-To be added!
+## getPaymentStatus SOAP request example
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:getPaymentStatus>
+       <context>
+         <channel>extWS</channel>
+         <clientComment>comment</clientComment>
+         <clientId>testClient</clientId>
+         <clientReference>12345</clientReference>
+         <clientRequestTimeout>0</clientRequestTimeout>
+         <initiatorPrincipalId>
+           <id>87e791f9e24148a6892c52aa85bb0331</id>
+           <type>TERMINALID</type>
+         </initiatorPrincipalId>
+         <password>123456</password>
+       </context>
+       <invoiceVersion>0</invoiceVersion>
+       <invoiceReference>123123</invoiceReference>
+     </ext:getPaymentStatus>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## getPaymentStatus SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getPaymentStatusResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+        <return>
+           <resultCode>0</resultCode>
+           <resultDescription>SUCCESS</resultDescription>
+           <status>ISSUED</status>
+           <version>1</version>
+        </return>
+      </ns2:getPaymentStatusResponse>
+   </soap:Body>
+</soap:Envelope>
+
+{% endhighlight %}
+
 
 
 ## cancelInvoice request fields
