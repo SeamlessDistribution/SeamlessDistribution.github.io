@@ -135,6 +135,8 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 | --- | --- |
 
 
+
+
 ### Method for retrieving user information (valid for Service integration)
 
 
@@ -143,6 +145,8 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 |--- | --- |
 | getClientSessionInfo | Retrieves user information |
 | --- | --- |
+
+
 
 
 
@@ -178,6 +182,8 @@ The ClientContext structure is used in all requests to identify, authenticate an
 </table>
 
 
+
+
 ## Invoice data 
 
 
@@ -197,6 +203,8 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED/RESERVATION_REQUIRED are limited in use  |
 | title | title displayed on bill and receipt |
 | totalAmount | full amount of invoice/bill |
+
+
 
 
 ## InvoiceRow data 
