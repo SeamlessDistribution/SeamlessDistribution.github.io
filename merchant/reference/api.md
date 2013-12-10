@@ -526,8 +526,36 @@ Used to present the payment in the app.
 | terminalId | The newly generated unique identifier for this terminal. This identifier should be used in future communications of this terminal towards the SEQR service. |
 
 
-## registerTerminal SOAP examples
-To be added!
+## registerTerminal SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:registerTerminal>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>fredellsfisk</id>
+            <type>RESELLERUSER</type>
+            <userId>9900</userId>
+          </initiatorPrincipalId>
+          <password>2009</password>
+       </context>
+       <externalTerminalId>Shop 1/POS 2</externalTerminalId>
+       <password>secret</password>
+       <name>My Shop's Name</name>
+     </ext:registerTerminal>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
 
 
 ## unregisterTerminal request fields
