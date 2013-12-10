@@ -6,7 +6,7 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-## SEQR Payments in External Services
+## SEQR payment in your Service
 
 
 Follow these steps to configure your Service for integration with SEQR:
