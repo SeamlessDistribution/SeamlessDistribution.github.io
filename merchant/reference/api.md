@@ -225,7 +225,7 @@ Used to present the payment in the app.
 | itemUnitPrice | optional  |
 
 
-## sendInvoice response fields
+## sendInvoice SOAP response fields
 
 
 | Field | Description |
@@ -291,7 +291,7 @@ Used to present the payment in the app.
 
 
 
-## updateInvoice request fields
+## updateInvoice SOAP request fields
 
 
 | Field | Description |
@@ -302,7 +302,7 @@ Used to present the payment in the app.
 | tokens | The customer tokens applied to this invoice. |
 
 
-## updateInvoice response fields
+## updateInvoice SOAP response fields
 
 
 | Field | Description |
@@ -367,7 +367,7 @@ Used to present the payment in the app.
 
 
 
-## getPaymentStatus request fields
+## getPaymentStatus SOAP request fields
 
 
 | Field | Description |
@@ -377,7 +377,7 @@ Used to present the payment in the app.
 | invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment (invoiceStatus) changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. |
 
 
-## getPaymentStatus response fields
+## getPaymentStatus SOAP response fields
 
 
 | Field | Description |
@@ -440,7 +440,7 @@ Used to present the payment in the app.
 
 
 
-## cancelInvoice request fields
+## cancelInvoice SOAP request fields
 
 
 | Field | Description |
@@ -449,7 +449,7 @@ Used to present the payment in the app.
 | invoiceReference | Reference of the invoice to be canceled. |
 
 
-## cancelInvoice response fields
+## cancelInvoice SOAP response fields
 
 
 | Field | Description |
@@ -504,7 +504,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-## registerTerminal request fields
+## registerTerminal SOAP request fields
 
 
 | Field | Description |
@@ -515,7 +515,7 @@ Used to present the payment in the app.
 | name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". |
 
 
-## registerTerminal response fields
+## registerTerminal SOAP response fields
 
 
 | Field | Description |
@@ -576,7 +576,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-## unregisterTerminal request fields
+## unregisterTerminal SOAP request fields
 
 
 | Field | Description |
@@ -585,7 +585,7 @@ Used to present the payment in the app.
 | TerminalId | The SEQR ID of the terminal to be unregistered. |
 
 
-## unregisterTerminal response fields
+## unregisterTerminal SOAP response fields
 
 
 | Field | Description |
@@ -643,7 +643,7 @@ Used to present the payment in the app.
 
 
 
-## assignSeqrId request fields
+## assignSeqrId SOAP request fields
 
 
 | Field | Description |
@@ -652,7 +652,7 @@ Used to present the payment in the app.
 | SeqrId | The SEQR ID of the terminal. |
 
 
-## assignSeqrId response fields
+## assignSeqrId SOAP response fields
 
 
 | Field | Description |
@@ -711,7 +711,7 @@ Used to present the payment in the app.
 
 
 
-## commitReservation request fields
+## commitReservation SOAP request fields
 
 
 | Field | Description |
@@ -720,7 +720,7 @@ Used to present the payment in the app.
 | invoiceReference | Reference of the invoice that is reserved. |
 
 
-## commitReservation response fields
+## commitReservation SOAP response fields
 
 
 | Field | Description |
@@ -733,7 +733,7 @@ Used to present the payment in the app.
 To be added!
 
 
-## submitPaymentReciept request fields
+## submitPaymentReciept SOAP request fields
 
 
 | Field | Description |
@@ -743,7 +743,7 @@ To be added!
 | receiptDocument | Receipt document, containing the full details of the receipt. NOTES Preferably in ARTS Receipt XML format. |
 
 
-## submitPaymentReceipt response fields
+## submitPaymentReceipt SOAP response fields
 
 
 | Field | Description |
@@ -805,7 +805,7 @@ To be added!
 {% endhighlight %}
 
 
-## refundPayment request fields
+## refundPayment SOAP request fields
 
 
 | Field | Description |
@@ -815,7 +815,7 @@ To be added!
 | invoice | Invoice data, which contains the amount and other invoice information after products has been removed from the original invoice. |
 
 
-## refundPayment response fields
+## refundPayment SOAP response fields
 
 
 | Field | Description |
@@ -825,8 +825,59 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## refundPayment SOAP examples
-To be added!
+## refundPayment SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:refundPayment>
+       <context>
+          <channel>extWS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+       <ersReference>2012050100000000000000001</ersReference>
+       <invoice>
+          <title>Some Invoice</title>
+          <cashierId>Bob</cashierId>
+          <totalAmount>
+            <currency>SEK</currency>
+            <value>10.22</value>
+          </totalAmount>
+       </invoice>
+     </ext:refundPayment>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## refundPayment SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:refundPaymentResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+           <ersReference>2012050100000000000000002</ersReference>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:refundPaymentResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
 
 
 
