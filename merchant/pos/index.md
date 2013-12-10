@@ -162,3 +162,6 @@ ________________________________________
 
 4.	Once the payment is complete a reference number (ersReference) is obtained from SEQR. Save the reference number for follow-ups and print the number on end user receipts.
 
+### 6. Go live!
+
+To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your webshop.
