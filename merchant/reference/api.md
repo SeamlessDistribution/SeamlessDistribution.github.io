@@ -135,6 +135,16 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 | --- | --- |
 
 
+### Method for retrieving user information (valid for Service integration)
+
+
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| getClientSessionInfo | Retrieves user information |
+| --- | --- |
+
+
 
 ## Context parameter used in all calls
 
@@ -437,6 +447,30 @@ To be added!
 
 
 ## refundPayment SOAP examples
+To be added!
+
+
+
+## getClientSessionInfo request fields
+
+
+| Field | Description |
+| --- | --- |
+| context | The ClientContext object |
+| key | Authorization token, provided by SEQR server. |
+
+
+## getClientSessionInfo response fields
+
+
+| Field | Description |
+| --- | --- |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+| parameters | Set of parameters related to the user of the Service. Will always contain the following: msisdn (the msisdn of SEQR user), subscriberKey (unique identifier of SEQR user). May contain any additional parameters embedded in the QR code: ParameterX, ParameterZ. etc. (can be any number of embedded QR code parameters supplied in the list)|
+
+
+## getClientSessionInfo SOAP examples
 To be added!
 
 
