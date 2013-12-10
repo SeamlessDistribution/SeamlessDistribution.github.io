@@ -39,6 +39,7 @@ Picture?
 Both parameters terminalId and password are stored in the local database after successful registration. 
 
 #### How to add a terminal
+
 Preferably done in the back office.
 
 1.	Create a context for administrative tasks using RESELLERUSER as the principal type. You have received your account information in a separate document from Seamless. 
@@ -54,6 +55,7 @@ ________________________________________
 
 
 #### How to remove a terminal
+
 1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
 
 2.	Call unregisterTerminal and the terminal is deleted from the SEQR system.
@@ -133,6 +135,7 @@ ________________________________________
 ________________________________________
 
 
+
 ## 4. Send invoice to SEQR
 
 (Method: **sendInvoice**)
@@ -152,6 +155,7 @@ ________________________________________
 **Note!** The sum of all invoice rows must be equal to the total amount of the invoice. You are allowed to create negative rows just to balance the invoice.
 
 ________________________________________
+
 
 ## 5. Get payment status 
 
