@@ -159,6 +159,7 @@ ________________________________________
 
 This function obtains status of a previously submitted invoice.
 Do the following:
+
 1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
 
 2.	Once each second; call getPaymentStatus for 30 seconds until the method returns that payment has completed. If getPaymentStatus is not queried, payment done by SEQR user will be refunded. 
