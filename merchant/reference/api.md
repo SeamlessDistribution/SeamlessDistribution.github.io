@@ -237,7 +237,7 @@ Used to present the payment in the app.
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
 
-## sendInvoice SOAP request example, for *Webshop* and *POS*
+## sendInvoice SOAP request example, for **Webshop** and **POS**
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -272,7 +272,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-## sendInvoice SOAP request example, for *Service*
+## sendInvoice SOAP request example, for **Service**
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -1024,7 +1024,7 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## markTransationPeriod SOAP request example, per *shop* reconciliation
+## markTransationPeriod SOAP request example, per **shop** reconciliation
 
 
 {% highlight python %}
@@ -1053,7 +1053,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransationPeriod SOAP response example, per *shop* reconciliation
+## markTransationPeriod SOAP response example, per **shop** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1072,7 +1072,7 @@ To be added!
 
 
 
-## markTransationPeriod SOAP request example, per *terminal* reconciliation
+## markTransationPeriod SOAP request example, per **terminal** reconciliation
 
 
 {% highlight python %}
@@ -1105,7 +1105,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransationPeriod SOAP response example, per *terminal* reconciliation
+## markTransationPeriod SOAP response example, per **terminal** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
