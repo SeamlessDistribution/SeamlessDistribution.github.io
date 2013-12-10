@@ -269,14 +269,14 @@ To be added!
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-xmlns:ext="http://external.interfaces.ers.seamless.com/">
-<soapenv:Header/>
-<soapenv:Body>
-<ext:updateInvoice>
-<context>
-<channel>extWS</channel>
-<clientComment>comment</clientComment>
-<clientId>testClient</clientId>
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:updateInvoice>
+       <context>
+          <channel>extWS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
 <clientReference>12345</clientReference>
 <clientRequestTimeout>0</clientRequestTimeout>
 <initiatorPrincipalId>
