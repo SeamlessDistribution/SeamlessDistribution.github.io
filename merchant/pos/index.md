@@ -165,12 +165,14 @@ Do the following:
 
 3.	Add questions for the cashier to select either “try again” or “cancel the payment” if the payment has still not gone through after 30 seconds of polling. When selecting “try again” a new poll of 30 seconds is started, with the same reference number.
 
+
 ________________________________________
 **Note!** The POS must check the status each second, to verify that payment is completed. Otherwise the SEQR server does not receive any notification that transaction is finalized and the purchase will then be reversed!
 ________________________________________
 
 
 4.	Once the payment is complete a reference number (ersReference) is obtained from SEQR. Save the reference number for follow-ups and print the number on end user receipts.
+
 
 ### 6. Go live!
 
