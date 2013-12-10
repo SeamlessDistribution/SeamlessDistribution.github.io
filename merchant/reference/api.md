@@ -900,8 +900,69 @@ To be added!
 | parameters | Set of parameters related to the user of the Service. Will always contain the following: msisdn (the msisdn of SEQR user), subscriberKey (unique identifier of SEQR user). May contain any additional parameters embedded in the QR code: ParameterX, ParameterZ. etc. (can be any number of embedded QR code parameters supplied in the list)|
 
 
-## getClientSessionInfo SOAP examples
-To be added!
+## getClientSessionInfo SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:getClientSessionInfo>
+       <context>
+          <channel>WEBSERVICE</channel>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>987654321</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>1111</password>
+       </context>
+       <key>0000002012-63506374</key>
+     </ext:getClientSessionInfo>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## getClientSessionInfo SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getClientSessionInfoResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <parameters>
+               <entry>
+                  <key>f</key>
+                  <value>6</value>
+               </entry>
+               <entry>
+                  <key>e</key>
+                  <value>5</value>
+               </entry>
+               <entry>
+                  <key>authKey</key>
+                  <value>0000002010-51702372</value>
+               </entry>
+               <entry>
+                  <key>msisdn</key>
+                  <value>46700643933</value>
+               </entry>
+               <entry>
+                  <key>subscriberKey</key>
+                  <value>132</value>
+               </entry>
+            </parameters> 
+         </return>
+      </ns2:getClientSessionInfoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
 
 
 
@@ -1024,24 +1085,7 @@ To be added!
 
 
 
-
-markTransactionPeriod request
-<img src="/assets/images/per_shop_recon_request.png" />
-
-markTransactionPeriod response
-<img src="/assets/images/xxx" />
-
-**Per terminal reconciliation**
-
-markTransactionPeriod request
-<img src="/assets/images/xxx.png" />
-
-markTransactionPeriod response
-<img src="/assets/images/xxx" />
-
-
-
-## executeReport request fields
+## executeReport SOAP request fields
 
 
 | Field | Description |
@@ -1052,7 +1096,7 @@ markTransactionPeriod response
 | parameters | Optional parameters that can be used in processing the request. |
 
 
-## executeReport response fields
+## executeReport SOAP response fields
 
 
 | Field | Description |
@@ -1063,8 +1107,57 @@ markTransactionPeriod response
 | report | The executed/produced report, in binary and plain text form, if available. |
 
 
-## executeReport SOAP examples
-To be added!
+## executeReport SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:executeReport>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>fredellsfisk</id>
+            <type>RESELLERUSER</type>
+            <userId>9900</userId>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+       <reportId>SOME_REPORT</reportId>
+     </ext:executeReport>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## executeReport SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:executeReportResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <report>
+               <content>MTE1Nzky</content>
+               <contentString>115792</contentString>
+               <mimeType>text/plain</mimeType>
+               <title>Number of transfers today</title>
+            </report> 
+         </return>
+      </ns2:executeReportResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
 
 
 ## Result codes
