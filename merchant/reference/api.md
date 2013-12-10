@@ -284,19 +284,19 @@ xmlns:ext="http://external.interfaces.ers.seamless.com/">
 <initiatorPrincipalId>
 <id>87e791f9e24148a6892c52aa85bb0331</id>
 <type>TERMINALID</type>
-          </initiatorPrincipalId>
-          <password>1234</password>
-       </context>
-       <invoice>
-          <title>Some Invoice</title>
-          <cashierId>Bob</cashierId>
-          <totalAmount>
-             <currency>SEK</currency>
-             <value>10.22</value>
-          </totalAmount>
-       </invoice>
-    </ext:updateInvoice>
-  </soapenv:Body>
+</initiatorPrincipalId>
+<password>1234</password>
+</context>
+<invoice>
+<title>Some Invoice</title>
+<cashierId>Bob</cashierId>
+<totalAmount>
+<currency>SEK</currency>
+<value>10.22</value>
+</totalAmount>
+</invoice>
+</ext:updateInvoice>
+</soapenv:Body>
 </soapenv:Envelope>
 
 ```
