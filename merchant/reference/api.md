@@ -924,10 +924,106 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## markTransationPeriod SOAP examples
-To be added:
+## markTransationPeriod SOAP request example, per *shop* reconciliation
 
-**Per shop reconciliation**
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:markTransactionPeriod>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>fredellsfisk</id>
+            <type>RESELLERUSER</type>
+            <userId>9900</userId>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+     </ext:markTransactionPeriod>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## markTransationPeriod SOAP response example, per *shop* reconciliation
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:markTransactionPeriodResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <transactionPeriodId>2012053119463656301000002</transactionPeriodId>
+         </return>
+      </ns2:markTransactionPeriodResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
+## markTransationPeriod SOAP request example, per *terminal* reconciliation
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:markTransactionPeriod>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>fredellsfisk</id>
+            <type>RESELLERUSER</type>
+            <userId>9900</userId>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+   <entry>
+          <key>TERMINALID</key>
+          <value>2469e0bf14214797880cafb0eda1b535</value>
+       </entry>
+     </ext:markTransactionPeriod>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## markTransationPeriod SOAP response example, per *terminal* reconciliation
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:markTransactionPeriodResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <transactionPeriodId>2012053119463656301000002</transactionPeriodId>
+         </return>
+      </ns2:markTransactionPeriodResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
 
 markTransactionPeriod request
 <img src="/assets/images/per_shop_recon_request.png" />
