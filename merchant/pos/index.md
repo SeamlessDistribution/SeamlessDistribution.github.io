@@ -45,7 +45,12 @@ Preferably done in the back office.
 
 2.	Call registerTerminal to add new terminals into the SEQR system. Save the password you generated together with the terminal id received from SEQR system for further usage.
 
+
+________________________________________
 **Note!** The terminal id that is received as response, must hereafter be used in every method that is called, for the particular terminal/POS.
+
+________________________________________
+
 
 
 #### How to remove a terminal
