@@ -17,7 +17,7 @@ Follow these steps to configure your POS for integration with SEQR:
 5. Get payment status
 6. Go live!
 
-### Register POS with SEQR
+### 1. Register POS with SEQR
 
 Features of registerTerminal function:
 * Each POS/cash register in the checkout line is called a "terminal" in SEQR.
@@ -53,7 +53,7 @@ Preferably done in the back office.
 2.	Call unregisterTerminal and the terminal is deleted from the SEQR system.
 
 
-### Assign SEQR id
+### 2. Assign SEQR id
 (Method: **assignSeqrId**)
 
 When getting a payment through the cash register, we cannot show the payment QR code
@@ -80,7 +80,7 @@ The parameter seqrId is stored in the local database after a successful assignme
 
 2.	Call assignSeqrId to assign the SEQR ID currently in use by the cash register.
 
-### Add SEQR as payment in your POS
+### 3. Add SEQR as payment in your POS
 
 SEQR must be added as a new payment method. SEQR payment is enabled when an active receipt has started and the amount to pay is greater than zero. 
 
@@ -127,7 +127,7 @@ ________________________________________
 ________________________________________
 
 
-## Send invoice to SEQR
+## 4. Send invoice to SEQR
 
 (Method: **sendInvoice**)
 The cashier starts a new payment sequence:
@@ -145,7 +145,7 @@ ________________________________________
 **Note!** The sum of all invoice rows must be equal to the total amount of the invoice. You are allowed to create negative rows just to balance the invoice.
 ________________________________________
 
-## Get payment status 
+## 5. Get payment status 
 
 (Method: **getPaymentStatus**)
 
