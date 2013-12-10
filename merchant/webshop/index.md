@@ -23,11 +23,11 @@ the status of the payment after the payment view returns, but only once to find
 out the final status of the invoice.
 To integrate SEQR, follow these steps:
 
-1. Integrate the payment view 
-3. Present the receipt
-4. Go live!
+1. Integrate the payment view
+2. Present the receipt
+3. Go live!
 
-### 1. Integrate the Payment View
+### 1. Integrate the payment view
 There are two payment views that you can choose from:
 
 Standard Payment View
@@ -63,7 +63,7 @@ View parameters are:
  sendInvoice method. After a successful/cancelled payment, the app will redirect
 the SEQR user to the URL specified in the invoice.
 
-### 2. Present the Receipt
+### 2. Present the receipt
 
 Once the payment is completed, your webshop should query the status of the invoice
 from SEQR by calling getPaymentStatus. If the invoice was successfully paid, 
@@ -71,6 +71,6 @@ a reference number (ersReference) is obtained from
 SEQR. Save the reference number for follow-ups and for print on the customer 
 online confirmation receipt.
 
-### 3. Go Live!
+### 3. Go live!
 
 To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your webshop.
