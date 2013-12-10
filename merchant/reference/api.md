@@ -236,8 +236,59 @@ Used to present the payment in the app.
 | resultDescription | A textual description of resultCode  |
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
-## sendInvoice SOAP examples
-To be added!
+## sendInvoice SOAP request example
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:sendInvoice>
+       <context>
+          <channel>extWS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>1234</password>
+       </context>
+       <invoice>
+          <title>Some Invoice</title>
+          <cashierId>Bob</cashierId>
+          <totalAmount>
+            <currency>SEK</currency>
+            <value>10.22</value>
+          </totalAmount>
+       </invoice>
+     </ext:sendInvoice>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## sendInvoice SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:sendInvoiceResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <invoiceQRCode>http://seqr.se/R1328543027208</invoiceQRCode>
+            <invoiceReference>1328543027208</invoiceReference>
+         </return>
+      </ns2:sendInvoiceResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
 
 
 ## updateInvoice request fields
