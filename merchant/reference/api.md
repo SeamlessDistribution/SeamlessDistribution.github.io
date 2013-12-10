@@ -558,6 +558,24 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
+## registerTerminal SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:registerTerminalResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <terminalId>87e791f9e24148a6892c52aa85bb0331</terminalId>
+         </return>
+      </ns2:registerTerminalResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
 ## unregisterTerminal request fields
 
 
@@ -577,8 +595,52 @@ Used to present the payment in the app.
 | resultDescription | A textual description of resultCode. |
 
 
-## unregisterTerminal SOAP examples
-To be added!
+## unregisterTerminal SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:unregisterTerminal>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+     </ext:unregisterTerminal>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## unregisterTerminal SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:registerTerminalResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:unregisterTerminalResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
 
 
 ## assignSeqrId request fields
@@ -600,8 +662,53 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## assignSeqrId SOAP examples
-To be added!
+## assignSeqrId SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:assignSeqrId>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+       <seqrId>ABC123456</seqrId>
+     </ext:assignSeqrId>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## assignSeqrId SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:assignSeqrIdResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:assignSeqrIdResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
 
 
 ## commitReservation request fields
@@ -646,8 +753,56 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## submitPaymentReceipt SOAP examples
-To be added!
+## submitPaymentReceipt SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:submitPaymentReceipt>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+       <ersReference>2012050100000000000000001</ersReference>
+       <receiptDocument>
+          <mimeType>plain/xml</mimeType>
+          <receiptData>Cjw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+Cjx</receiptData>
+       </receiptDocument>
+     </ext:submitPaymentReceipt>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
+## submitPaymentReceipt SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:submitPaymentReceiptResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+           <ersReference>2012050100000000000000002</ersReference>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:submitPaymentReceiptResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
 
 
 ## refundPayment request fields
