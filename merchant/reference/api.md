@@ -262,9 +262,11 @@ To be added!
 
 
 ## updateInvoice SOAP examples
+
 ### updateInvoice SOAP request
 
 ```
+
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
  xmlns:ext="http://external.interfaces.ers.seamless.com/">
    <soapenv:Header/>
@@ -293,6 +295,7 @@ To be added!
     </ext:updateInvoice>
   </soapenv:Body>
 </soapenv:Envelope>
+
 ```
 
 ### updateInvoice SOAP response
