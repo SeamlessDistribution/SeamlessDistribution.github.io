@@ -21,3 +21,11 @@ Follow these steps to configure your Service for integration with SEQR:
 
 
 
+
+
+### 3. Go live!
+
+To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your Service.
+
+
+
