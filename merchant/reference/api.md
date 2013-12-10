@@ -271,19 +271,19 @@ To be added!
 
 ```
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-..xmlns:ext="http://external.interfaces.ers.seamless.com/">
-...<soapenv:Header/>
-...<soapenv:Body>
-.....<ext:updateInvoice>
-........<context>
-..........<channel>extWS</channel>
-..........<clientComment>comment</clientComment>
-..........<clientId>testClient</clientId>
-..........<clientReference>12345</clientReference>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>87e791f9e24148a6892c52aa85bb0331</id>
-            <type>TERMINALID</type>
+xmlns:ext="http://external.interfaces.ers.seamless.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<ext:updateInvoice>
+<context>
+<channel>extWS</channel>
+<clientComment>comment</clientComment>
+<clientId>testClient</clientId>
+<clientReference>12345</clientReference>
+<clientRequestTimeout>0</clientRequestTimeout>
+<initiatorPrincipalId>
+<id>87e791f9e24148a6892c52aa85bb0331</id>
+<type>TERMINALID</type>
           </initiatorPrincipalId>
           <password>1234</password>
        </context>
