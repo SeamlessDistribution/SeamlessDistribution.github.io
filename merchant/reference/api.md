@@ -236,6 +236,7 @@ Used to present the payment in the app.
 | resultDescription | A textual description of resultCode  |
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
+
 ## sendInvoice SOAP request example, for *Webshop* and *POS*
 
 {% highlight python %}
@@ -269,26 +270,6 @@ Used to present the payment in the app.
 </soapenv:Envelope>
 
 {% endhighlight %}
-
-
-## sendInvoice SOAP response example
-
-{% highlight python %}
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:sendInvoiceResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
-         <return>
-            <resultCode>0</resultCode>
-            <resultDescription>SUCCESS</resultDescription>
-            <invoiceQRCode>http://seqr.se/R1328543027208</invoiceQRCode>
-            <invoiceReference>1328543027208</invoiceReference>
-         </return>
-      </ns2:sendInvoiceResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
 
 
 ## sendInvoice SOAP request example, for *Service*
@@ -325,6 +306,27 @@ Used to present the payment in the app.
 </soapenv:Envelope>
 
 {% endhighlight %}
+
+
+
+## sendInvoice SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:sendInvoiceResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <invoiceQRCode>http://seqr.se/R1328543027208</invoiceQRCode>
+            <invoiceReference>1328543027208</invoiceReference>
+         </return>
+      </ns2:sendInvoiceResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
 
 
 
