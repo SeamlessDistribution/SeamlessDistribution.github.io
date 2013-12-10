@@ -835,7 +835,7 @@ To be added!
    <soapenv:Body>
      <ext:refundPayment>
        <context>
-          <channel>extWS</channel>
+          <channel>WS</channel>
           <clientComment>comment</clientComment>
           <clientId>testClient</clientId>
           <clientReference>12345</clientReference>
