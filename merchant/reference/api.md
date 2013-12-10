@@ -305,6 +305,21 @@ To be added!
 
 ### updateInvoice SOAP response
 
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:updateInvoiceResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:updateInvoiceResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
 
 ## getPaymentStatus request fields
 
