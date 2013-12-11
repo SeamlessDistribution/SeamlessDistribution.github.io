@@ -30,7 +30,7 @@ SEQR-->Cashregister: XML report contents
  $(".diagram").sequenceDiagram({theme: 'hand'});
 </script>
 
-### Reconcile transactions and create report
+### Procedure to reconcile transactions and create report
 
 The following are steps to perform reconciliation against SEQR from cash registers
 
@@ -74,7 +74,7 @@ cash register and amount for the
 period.
 </td></tr>
 <table>
-
+</td></tr>
 
 
 
