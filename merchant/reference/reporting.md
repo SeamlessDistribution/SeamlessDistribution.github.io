@@ -80,9 +80,11 @@ period.
 
 ### Reports per terminal reconciliation
 
+
 Every cash register in a shop perform reconciliation process. The reconciliation
 report will show transactions summary only for the specific cash register. In this case, terminalId
 should be provided when calling markTransactionPeriod.
+
 
 <table>
 <tr><th>Report ID</th><th>Report Name</th><th>Description</th></tr>
