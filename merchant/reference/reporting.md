@@ -30,27 +30,26 @@ SEQR-->Cashregister: XML report contents
  $(".diagram").sequenceDiagram({theme: 'hand'});
 </script>
 
+### Reconcile transactions and create report
+
 The following are steps to perform reconciliation against SEQR from cash registers
 
 1. At the end of a working shift or shop hour, a cashier presses a button 'Close & Reconcile' on a cash register.
-The cash register sends markTransactionPeriod request to SEQR to mark end of transactions list
+The cash register sends **markTransactionPeriod** request to SEQR to mark end of transactions list
 for this period. SEQR returns with a unique reference number, ersReference.
 2. The cash register waits for a couple of seconds (around 3 seconds) in order to make sure that all
 transactions are ready to process for reconciliation report.
-3. The cash register calls executeReport using ersReference from step 1 to fetch reconciliation report
+3. The cash register calls **executeReport** using ersReference from step 1 to fetch reconciliation report
 representing transaction summary since the previous reconciliation until the end of transaction list for this
-period.
+period. The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation, see below.
 4. In case the reconciliation report is not ready, SEQR will return with result code 2
 (REPORT_NOT_READY). The cashier should wait for couple seconds (around 3 seconds) more and repeat
 step 3 again.
 
 
 
-###Reports
+### Reports per shop reconciliation
 
-The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation:
-
-#### Per shop reconciliation 
 
 Only one master cash register perform reconciliation process. The reconciliation
 report will show transactions summary for every cash register in the shop.
@@ -79,7 +78,7 @@ period.
 
 
 
-#### Per terminal reconciliation
+### Reports per terminal reconciliation
 
 Every cash register in a shop perform reconciliation process. The reconciliation
 report will show transactions summary only for the specific cash register. In this case, terminalId
