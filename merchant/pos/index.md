@@ -92,7 +92,7 @@ The parameter seqrId is stored in the local database after a successful assignme
 
 SEQR must be added as a new payment method. SEQR payment is enabled when an active receipt has started and the amount to pay is greater than zero. 
 
-#### 1.	Start the payment by pressing the SEQR payment button in POS. 
+##### 1.	Start the payment by pressing the SEQR payment button in POS 
 
 The following dialog is displayed to the cashier:
  
@@ -108,7 +108,7 @@ If amount to pay is less than the receipt total, the following will occur after 
 If amount to pay is higher than the receipt total, the following occurs after a completed payment:
 * The difference between paid amount and the receipt total is returned to the customer.
 
-#### 2.	Press the Pay button.
+##### 2.	Press the Pay button
 
 It is possible to cancel an ongoing SEQR payment by pressing the Cancel button (method used: cancelInvoice). This option is only available before the payment is committed on the SEQR server. The dialog below is displayed to the cashier until the paying customer has completed the payment on the phone:
 
@@ -123,7 +123,7 @@ The transaction post contains the following data:
 * Description “SEQR payment”
 * Timestamp
 
-#### 3.	Configure the printer to include the following data as a confirmation of the purchase:
+##### 3.	Configure the printer to include the following data as a confirmation of the purchase:
 
 
 * Amount
