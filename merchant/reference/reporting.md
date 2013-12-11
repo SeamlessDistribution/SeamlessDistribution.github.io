@@ -73,8 +73,7 @@ showing ersReference, cashier,
 cash register and amount for the
 period.
 </td></tr>
-<table>
-</td></tr>
+</table>
 
 
 
@@ -98,8 +97,8 @@ period. </td></tr>
     <td>Transaction details for a terminal showing reference 
 id and amounts for each transaction in the period. 
 </td></tr>
-<table>
-</td></tr>
+</table>
+
 
 
 
