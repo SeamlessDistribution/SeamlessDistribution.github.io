@@ -56,7 +56,7 @@ Only one master cash register perform reconciliation process. The reconciliation
 report will show transactions summary for every cash register in the shop.
 
 
-        <table>
+<table>
 <tr><th>Report ID</th><th>Report Name</th><th>Description</th></tr>
 
 
