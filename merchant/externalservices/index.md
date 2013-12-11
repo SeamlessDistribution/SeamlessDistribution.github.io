@@ -52,7 +52,8 @@ HTTP://SEQR.SE/000/EXTERNAL_SERVICE_ID?parameter1=value1&parameter2=value2...
 | --- | --- |
 
 
-#### Order URL
+**Order URL**
+
 
 Accessed by the app using an HTTP GET request on the Order URL. The page hosted on this URL is supposed to issue the Payment request to SEQR server upon the choice of the user. 
 
@@ -68,7 +69,8 @@ http://url/order#TOKEN
 | --- | --- |
 
 
-#### Success URL 
+**Success URL** 
+
 When payment is processed and it is completed successfully, SEQR app brings up the page on this success URL. This URL is accessed using HTTP GET request by SEQR app. 
 Example URL:
 http://url/success#TOKEN
@@ -82,7 +84,8 @@ http://url/success#TOKEN
 | --- | --- |
 
 
-#### Failure URL 
+**Failure URL** 
+
 When the payment is processed and it fails for any reason, SEQR app brings up the page on this failure URL. This URL is accessed using HTTP GET request by SEQR app. 
 Example URL:
 http://url/failure#TOKEN
@@ -96,7 +99,8 @@ http://url/failure#TOKEN
 | --- | --- |
 
 
-#### Cancel URL 
+**Cancel URL** 
+
 Should be provided by the Service. When the payment is canceled by the user, SEQR app brings up the page on this cancel URL. This URL is accessed using HTTP GET request by SEQR app. 
 Example URL:
 http://url/cancel#TOKEN
