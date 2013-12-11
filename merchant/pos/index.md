@@ -38,7 +38,7 @@ Picture?
  
 Both parameters terminalId and password are stored in the local database after successful registration. 
 
-#### How to add a terminal
+**How to add a terminal**
 
 Preferably done in the back office.
 
@@ -54,7 +54,7 @@ ________________________________________
 
 
 
-#### How to remove a terminal
+**How to remove a terminal**
 
 1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
 
