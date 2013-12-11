@@ -33,7 +33,7 @@ ________________________________________
 
 
 
-#### POS menu
+#### **POS menu**
 Under Configuration menu in POS the cashier can select the SEQR terminal submenu. The submenu is only visible if the cashier has administrative rights in the system. 
 
 Picture?
