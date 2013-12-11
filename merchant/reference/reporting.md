@@ -50,7 +50,8 @@ step 3 again.
 
 The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation:
 
-**Per shop reconciliation**: Only one master cash register perform reconciliation process. The reconciliation
+####Per shop reconciliation 
+Only one master cash register perform reconciliation process. The reconciliation
 report will show transactions summary for every cash register in the shop.
 
 <table>
@@ -74,7 +75,8 @@ period.
 <table>
 
 
-**Per terminal reconciliation**: Every cash register in a shop perform reconciliation process. The reconciliation
+####Per terminal reconciliation 
+Every cash register in a shop perform reconciliation process. The reconciliation
 report will show transactions summary only for the specific cash register. In this case, terminalId
 should be provided when calling markTransactionPeriod.
 
