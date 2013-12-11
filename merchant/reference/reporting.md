@@ -51,8 +51,10 @@ step 3 again.
 The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation:
 
 #### Per shop reconciliation 
+
 Only one master cash register perform reconciliation process. The reconciliation
 report will show transactions summary for every cash register in the shop.
+
 
 <table>
 <tr><th>Report ID</th><th>Report Name</th><th>Description</th></tr>
@@ -73,6 +75,8 @@ cash register and amount for the
 period.
 </td></tr>
 <table>
+
+
 
 
 #### Per terminal reconciliation 
