@@ -20,6 +20,7 @@ Follow these steps to configure your POS for integration with SEQR:
 ### 1. Register POS with SEQR
 
 Features of registerTerminal function:
+
 * Each POS/cash register in the checkout line is called a "terminal" in SEQR.
 * Register and unregister POS against SEQR are separate functions in POS. 
 * SEQR payments do not work in POS without a proper registration.
