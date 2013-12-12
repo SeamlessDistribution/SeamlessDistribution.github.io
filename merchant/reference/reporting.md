@@ -100,7 +100,7 @@ id and amounts for each transaction in the period.
 </table>
 
 
-## executeReport SOAP request example, **report STD_RECON_006**
+### executeReport SOAP request example, report STD_RECON_006
 
 
 {% highlight python %}
