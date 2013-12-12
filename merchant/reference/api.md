@@ -57,7 +57,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
                <li>int invoiceVersion</li>
             </ul>
          </td>
-         <td>Obtains status of a previously submitted invoice
+         <td>Obtains status of a previously submitted invoice. When fetching the payment status, SEQR may communicate a set of customer tokens to the merchant that are applicable for the payment. The merchant must then decide which tokens are applied (such as for loyalty) and send them back with the updateInvoice request.
          </td>
       </tr>
       <tr>
