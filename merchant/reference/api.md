@@ -426,7 +426,7 @@ Used to present the payment in the app.
 | resultCode | see Result codes |
 | resultDescription | A textual description of resultCode. |
 | invoiceStatus | Status of the invoice: 0 - Pending usage (when sent from SEQR), ISSUED - Invoice is issued, and waiting for payment, PAID - Invoice is paid, PARTIALLY_PAID - Invoice is partially paid, PENDING_ISSUER_ACKNOWLEDGE - Payment is updated and waiting for issuer acknowledgement, CANCELED - Invoice is canceled, FAILED - Invoice payment has failed, RESERVED - The invoice amount is reserved. **Note!** If getPaymentStatus is not queried after a successful payment, SEQR will assume that cash register is not notified of the successful payment and will reverse the transaction after 20 seconds. |
-| customerTokens | List of customer tokens relevant for this payment |
+| customerTokens | List of customer tokens relevant for this payment, for example loyalty memberships, coupons, etc. |
 | deliveryAddress | If the payment should be delivered automatically, this contains the delivery address to deliver to |
 | resultCode | Receipt of the payment, if the status is PAID |
 
