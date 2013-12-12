@@ -1201,6 +1201,9 @@ To be added!
 
 ### For SOAP examples of different reports, refer to <a href="/merchant/reference/reporting">Reporting</a>.
 
+   
+   
+
 
 ## Result codes
 
