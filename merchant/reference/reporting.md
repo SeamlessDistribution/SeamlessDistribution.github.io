@@ -139,6 +139,40 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
+## executeReport SOAP response example, report STD_RECON_001 (shop)
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:executeReportResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <report>
+               <title/>
+               <mimeType>text/html</mimeType>
+               <content>Cjw/...=</content>
+               <contentString><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ResellerTransactionSummary>
+<Meta>
+<ResellerId>hm1</ResellerId>
+<TransactionPeriodId>2012071711291546101000028</TransactionPeriodId>
+<GeneratedAt>2012-07-18 15:19</GeneratedAt>
+</Meta>
+<Row>
+<SalesCount>202</SalesCount>
+<SalesTotal>5476.52000</SalesTotal>
+</Row>
+<ResellerTransactionSummary>]]></contentString>
+            </report> 
+         </return>
+      </ns2:executeReportResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
 ### executeReport SOAP request example, report STD_RECON_003 (shop)
 
 
