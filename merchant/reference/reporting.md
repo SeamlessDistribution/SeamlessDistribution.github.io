@@ -139,7 +139,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-## executeReport SOAP response example, report STD_RECON_001 (shop)
+### executeReport SOAP response example, report STD_RECON_001 (shop)
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -212,6 +212,58 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
+### executeReport SOAP response example, report STD_RECON_003 (shop)
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:executeReportResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <report>
+               <title>STD_RECON_003_2012071711291546101000028.xml</title>
+               <mimeType>text/html</mimeType>
+               <content>PD94bWwgdmVyc2...=</content>
+              <contentString><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<TransactionDetails>
+<Meta>
+<ResellerId>hm1</ResellerId>
+<TransactionPeriodId>2012071711291546101000028</TransactionPeriodId>
+<GeneratedAt>2012-07-18 15:21</GeneratedAt>
+</Meta>
+
+<Row>
+<TerminalId>d8e0ff10ea214e5282899aa9697117c1</TerminalId>
+<CashierId>bob</CashierId>
+<SalesAmount>93.31000</SalesAmount>
+<ErsReference>2012060410485453001000101</ErsReference>
+</Row>
+
+<Row>
+<TerminalId>d8e0ff10ea214e5282899aa9697117c1</TerminalId>
+<CashierId>bob</CashierId>
+<SalesAmount>30.00000</SalesAmount>
+<ErsReference>2012060410502892201000104</ErsReference>
+</Row>
+
+<Row>
+<TerminalId>d8e0ff10ea214e5282899aa9697117c1</TerminalId>
+<CashierId>bob</CashierId>
+<SalesAmount>340.00000</SalesAmount>
+<ErsReference>2012060411033709001000145</ErsReference>
+</Row>
+
+</TransactionDetails>]]></contentString>
+            </report> 
+         </return>
+      </ns2:executeReportResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
 
 ### executeReport SOAP request example, report STD_RECON_006 (terminal)
 
@@ -250,6 +302,44 @@ id and amounts for each transaction in the period.
           </parameter>
        </parameters>
      </ext:executeReport>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
+### executeReport SOAP response example, report STD_RECON_006 (terminal)
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:executeReportResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <report>
+               <title>STD_RECON_006_2012102916093771801000146.xml</title>
+               <mimeType>text/html</mimeType>
+               <content>PD94...==</content>
+               <contentString><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<CashierTransactionSummary>
+<Meta>
+<ResellerId>hm1</ResellerId>
+<TerminalId>2469e0bf14214797880cafb0eda1b535</TerminalId>
+<TransactionPeriodId>2012102916093771801000146</TransactionPeriodId>
+<GeneratedAt>2012-10-30 12:18</GeneratedAt>
+</Meta>
+
+<Row>
+<SalesCount>1</SalesCount>
+<SalesTotal>10.00000</SalesTotal>
+</Row>
+
+</TerminalTransactionSummary>]]></contentString>
+            </report> 
+         </return>
+      </ns2:executeReportResponse>
    </soapenv:Body>
 </soapenv:Envelope>
 
@@ -298,5 +388,43 @@ id and amounts for each transaction in the period.
 </soapenv:Envelope>
 
 {% endhighlight %}
+
+
+### executeReport SOAP response example, report STD_RECON_007 (terminal)
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:executeReportResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <report>
+               <title>STD_RECON_007_2012102916091394901000143.xml</title>
+               <mimeType>text/html</mimeType>
+               <content>PD94...==</content>
+               <contentString><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<CashierTransactionSummary>
+<Meta>
+<ResellerId>hm1</ResellerId>
+<TerminalId>2469e0bf14214797880cafb0eda1b535</TerminalId>
+<TransactionPeriodId>2012102916093771801000146</TransactionPeriodId>
+<GeneratedAt>2012-10-30 12:20</GeneratedAt>
+</Meta>
+
+<Row>
+<SalesCount>1</SalesCount>
+<SalesTotal>10.00000</SalesTotal>
+</Row>
+
+</TerminalTransactionSummary>]]></contentString>
+            </report> 
+         </return>
+      </ns2:executeReportResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
 
 
