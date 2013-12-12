@@ -33,7 +33,7 @@ integration process.**
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
-   <li>Glossary</a></li>
+   <li>FAQ</a></li>
  </div>
 
 
