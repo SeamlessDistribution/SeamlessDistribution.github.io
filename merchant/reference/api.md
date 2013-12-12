@@ -1199,6 +1199,9 @@ To be added!
 {% endhighlight %}
 
 
+**For SOAP examples of different reports, refer to <a href="/merchant/reference/reporting">Reporting</a>.**
+
+
 ## Result codes
 
 | Code | Description |
