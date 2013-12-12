@@ -100,7 +100,7 @@ id and amounts for each transaction in the period.
 </table>
 
 
-### executeReport SOAP request example, report STD_RECON_001 (shop)
+### Shop report STD_RECON_001 - executeReport SOAP request example
 
 
 {% highlight python %}
@@ -139,7 +139,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-### executeReport SOAP response example, report STD_RECON_001 (shop)
+### Shop report STD_RECON_001 - executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -173,7 +173,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-### executeReport SOAP request example, report STD_RECON_003 (shop)
+### Shop report STD_RECON_003 - executeReport SOAP request example
 
 
 {% highlight python %}
@@ -212,7 +212,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-### executeReport SOAP response example, report STD_RECON_003 (shop)
+### Shop report STD_RECON_003 - executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -265,7 +265,7 @@ id and amounts for each transaction in the period.
 
 
 
-### executeReport SOAP request example, report STD_RECON_006 (terminal)
+### Terminal report STD_RECON_006 - executeReport SOAP request example
 
 
 {% highlight python %}
@@ -309,7 +309,7 @@ id and amounts for each transaction in the period.
 
 
 
-### executeReport SOAP response example, report STD_RECON_006 (terminal)
+### Terminal report STD_RECON_006 - executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -347,7 +347,7 @@ id and amounts for each transaction in the period.
 
 
 
-### executeReport SOAP request example, report STD_RECON_007 (terminal)
+### Terminal report STD_RECON_007 - executeReport SOAP request example
 
 
 {% highlight python %}
@@ -390,7 +390,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-### executeReport SOAP response example, report STD_RECON_007 (terminal)
+### Terminal report STD_RECON_007 - executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
