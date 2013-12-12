@@ -100,7 +100,86 @@ id and amounts for each transaction in the period.
 </table>
 
 
-### executeReport SOAP request example, report STD_RECON_006
+### executeReport SOAP request example, report STD_RECON_001 (shop)
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:executeReport>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>hml</id>
+            <type>RESELLERUSER</type>
+            <userId>9900</userId>
+          </initiatorPrincipalId>
+          <password>2009</password>
+       </context>
+       <reportId>Reconciliation/Shop.xml</reportId>
+       <language>en</language>
+       <parameters>
+          <parameter>
+             <entry>
+                <key>transactionPeriodId</key>
+                <value>2012071711291546101000028</value>
+             </entry>
+          </parameter>
+       </parameters>
+     </ext:executeReport>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+### executeReport SOAP request example, report STD_RECON_003 (shop)
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:executeReport>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>hml</id>
+            <type>RESELLERUSER</type>
+            <userId>9900</userId>
+          </initiatorPrincipalId>
+          <password>2009</password>
+       </context>
+       <reportId>Reconciliation/STD_RECON_003.xml</reportId>
+       <language>en</language>
+       <parameters>
+          <parameter>
+             <entry>
+                <key>transactionPeriodId</key>
+                <value>2012071711291546101000028</value>
+             </entry>
+          </parameter>
+       </parameters>
+     </ext:executeReport>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
+### executeReport SOAP request example, report STD_RECON_006 (terminal)
 
 
 {% highlight python %}
@@ -123,6 +202,50 @@ id and amounts for each transaction in the period.
           <password>2009</password>
        </context>
        <reportId>Reconciliation/STD_RECON_006.xml</reportId>
+       <language>en</language>
+       <parameters>
+          <parameter>
+             <entry>
+                <key>transactionPeriodId</key>
+                <value>2012102916093771801000146</value>
+             </entry>
+             <entry>
+                <key>TERMINALID</key>
+                <value>2469e0bf14214797880cafb0eda1b535</value>
+             </entry>
+          </parameter>
+       </parameters>
+     </ext:executeReport>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
+### executeReport SOAP request example, report STD_RECON_007 (terminal)
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:executeReport>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>hml</id>
+            <type>RESELLERUSER</type>
+            <userId>9900</userId>
+          </initiatorPrincipalId>
+          <password>2009</password>
+       </context>
+       <reportId>Reconciliation/STD_RECON_007.xml</reportId>
        <language>en</language>
        <parameters>
           <parameter>
