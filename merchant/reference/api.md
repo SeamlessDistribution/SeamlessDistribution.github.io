@@ -780,7 +780,7 @@ To be added!
 | --- | --- |
 | context | The ClientContext object |
 | ersReference | Reference of the payment for which the receipt is applicable. |
-| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType). Preferably in ARTS Receipt XML/HTML format. |
+| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. |
 
 
 ## submitPaymentReceipt SOAP response fields
@@ -818,6 +818,7 @@ To be added!
        <receiptDocument>
           <mimeType>plain/xml</mimeType>
           <receiptData>Cjw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+Cjx</receiptData>
+          <receiptType>xxx</receiptType>
        </receiptDocument>
      </ext:submitPaymentReceipt>
    </soapenv:Body>
