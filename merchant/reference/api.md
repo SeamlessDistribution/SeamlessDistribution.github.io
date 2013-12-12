@@ -1199,7 +1199,7 @@ To be added!
 {% endhighlight %}
 
 
-### For SOAP examples of different reports, refer to <a href="/merchant/reference/reporting">Reporting</a>.
+#### For SOAP examples of different reports, refer to <a href="/merchant/reference/reporting">Reporting</a>.
 
    
    
