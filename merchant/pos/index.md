@@ -74,7 +74,7 @@ When getting a payment through the cash register, we cannot show the payment QR 
 which is generated for the invoice to the SEQR user. To overcome that problem,
 we assign a fixed QR code to each cash register. A POS SEQR sticker looks like this:
 
-<img src="/assets/images/seqr_menu.png" width="200px"/>
+<img src="/assets/images/assign_seqr.png" width="200px"/>
 
 Each QR code sticker has a unique number assigned known as SEQR ID. The cash register/POS needs this number to establish a link with the QR code.
 
@@ -101,7 +101,7 @@ SEQR must be added as a new payment method. SEQR payment is enabled when an acti
 
 The following dialog is displayed to the cashier:
  
-Picture?
+<img src="/assets/images/pay_with_seqr.png" width="200px"/>
 
 The amount to pay is pre-entered in the dialog. The cashier can choose to increase or decrease the pre-entered amount.
 If amount to pay is less than the receipt total, the following will occur after a completed payment:
@@ -119,7 +119,7 @@ If amount to pay is higher than the receipt total, the following occurs after a 
 
 It is possible to cancel an ongoing SEQR payment by pressing the Cancel button (method used: cancelInvoice). This option is only available before the payment is committed on the SEQR server. The dialog below is displayed to the cashier until the paying customer has completed the payment on the phone:
 
-Picture?
+<img src="/assets/images/await_customer.png" width="200px"/>
 
 POS calls the SEQR server each second while waiting for the payment to complete (see Get payment status below). The status code returned is “please wait more”, “payment completed” “canceled” or “an error occurred”.
 When the SEQR payment is complete a transaction post is written to the receipt file. 
