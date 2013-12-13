@@ -39,7 +39,7 @@ ________________________________________
 
 The SEQR terminal menu in the POS can be accessed with administrative rights. The menu on the POS may look like this:
 
-Picture?
+<img src="/assets/images/seqr_menu.png" />
  
 Both parameters terminalId and password are stored in the local database after successful registration. 
 
@@ -74,7 +74,7 @@ When getting a payment through the cash register, we cannot show the payment QR 
 which is generated for the invoice to the SEQR user. To overcome that problem,
 we assign a fixed QR code to each cash register. A POS SEQR sticker looks like this:
 
-<img src="/assets/images/seqr-qrcodes.png" width="200px"/>
+<img src="/assets/images/seqr_menu.png" width="200px"/>
 
 Each QR code sticker has a unique number assigned known as SEQR ID. The cash register/POS needs this number to establish a link with the QR code.
 
