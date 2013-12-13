@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SEQR External Service Payment
-description: SEQR Merchant, webshop, POS integration
+description: SEQR Merchant, webshop, Service integration
 ---
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
@@ -32,6 +32,7 @@ service ID> | Start the payment flow in the app for the invoice with reference d
 The QR code can either be printed and to-be-scanned by app or it can be just the contents of the code (a link) that the app reads and understands without having to scan it. The SEQR system has defined various types of QR codes using different URLs.
 When SEQR app scans the QR code (or reads the link), SEQR server resolves the code and provides the app with all the URLs it may need. 
 The URL embedded within a QR code contains the pointer to the Service definition within the SEQR system, to trigger the app. The Service definition in the QR code URL contains 4 URLs for the app to interact with, which are:
+
 * Order URL
 * Success URL 
 * Failure URL
