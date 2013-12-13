@@ -105,12 +105,14 @@ Picture?
 
 The amount to pay is pre-entered in the dialog. The cashier can choose to increase or decrease the pre-entered amount.
 If amount to pay is less than the receipt total, the following will occur after a completed payment:
+
 * The receipt cannot be parked
 * The receipt cannot be canceled
 * The payment cannot be corrected
 * Another payment must be used to complete the receipt
 
 If amount to pay is higher than the receipt total, the following occurs after a completed payment:
+
 * The difference between paid amount and the receipt total is returned to the customer.
 
 ##### 2.	Press the Pay button
