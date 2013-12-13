@@ -13,8 +13,6 @@ Follow these steps to configure your POS for integration with SEQR:
 1. Register POS (terminal) with SEQR 
 2. Assign SEQR id
 3. Add SEQR as payment in your POS
-4. Send invoice to SEQR
-5. Get payment status
 6. Go live!
 
 ### 1. Register POS with SEQR
@@ -39,7 +37,7 @@ ________________________________________
 
 **_POS menu_**
 
-Under Configuration menu in POS the cashier can select the SEQR terminal submenu. The submenu is only visible if the cashier has administrative rights in the system. 
+The SEQR terminal menu in the POS can be accessed with administrative rights. The menu on the POS may look like this:
 
 Picture?
  
@@ -59,13 +57,14 @@ ________________________________________
 
 ________________________________________
 
+Example of registerTerminal:
+
+{% highlight python %}
+{% include registerterminal.py %}
+{% endhighlight %}
 
 
-**How to remove a terminal**
 
-1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
-
-2.	Call unregisterTerminal and the terminal is deleted from the SEQR system.
 
 
 ### 2. Assign SEQR id
@@ -79,11 +78,6 @@ we assign a fixed QR code to each cash register. A POS SEQR sticker looks like t
 
 Each QR code sticker has a unique number assigned known as SEQR ID. The cash register/POS needs this number to establish a link with the QR code.
 
-To register a SEQR sticker, please take a look at the following sample:
-
-{% highlight python %}
-{% include registerterminal.py %}
-{% endhighlight %}
 
 The cashier starts the sequence to assign the SEQR ID from the Configuration menu in POS and SEQR ID registration submenu. It is possible to enter the number manually or by scanning the QR code with a scanner. The scanner must be configured to accept Code 128 in order to read the barcode on the QR sticker.
 
@@ -96,6 +90,7 @@ The parameter seqrId is stored in the local database after a successful assignme
 2.	Call assignSeqrId to assign the SEQR ID currently in use by the cash register.
 
 ### 3. Add SEQR as payment in your POS
+This section describes how to set up the POS for SEQR payment from a cashier's perspective. Refer also to First SEQR payment, which shows how to implement the code with sample flow.
 
 SEQR must be added as a new payment method. SEQR payment is enabled when an active receipt has started and the amount to pay is greater than zero. 
 
@@ -148,7 +143,7 @@ ________________________________________
 
 
 
-## 4. Send invoice to SEQR
+##### 4. Send invoice to SEQR
 
 (Method: **sendInvoice**)
 The cashier starts a new payment sequence:
@@ -169,7 +164,7 @@ ________________________________________
 ________________________________________
 
 
-## 5. Get payment status 
+##### 5. Get payment status 
 
 (Method: **getPaymentStatus**)
 
@@ -185,6 +180,12 @@ Do the following:
 4.	Once the payment is complete a reference number (ersReference) is obtained from SEQR. Save the reference number for follow-ups and print the number on end user receipts.
 
 
-### 6. Go live!
+##### Optional - How to remove a terminal
+
+1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
+
+2.	Call unregisterTerminal and the terminal is deleted from the SEQR system.
+
+### 4. Go live!
 
 To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your POS/cash register.
