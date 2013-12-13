@@ -88,9 +88,13 @@ The parameter seqrId is stored in the local database after a successful assignme
 1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
 
 2.	Call assignSeqrId to assign the SEQR ID currently in use by the cash register.
+3
+
+
 
 ### 3. Add SEQR as payment in your POS
-This section describes how to set up the POS for SEQR payment from a cashier's perspective. Refer also to First SEQR payment, which shows how to implement the code with sample flow.
+
+This section describes how to set up the POS for SEQR payment from a cashier's perspective. Refer also to <a href="/merchant/payment/">First SEQR payment</a>, which shows how to implement the code with sample flow.
 
 SEQR must be added as a new payment method. SEQR payment is enabled when an active receipt has started and the amount to pay is greater than zero. 
 
