@@ -88,7 +88,6 @@ The parameter seqrId is stored in the local database after a successful assignme
 1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
 
 2.	Call assignSeqrId to assign the SEQR ID currently in use by the cash register.
-3
 
 
 
@@ -150,6 +149,7 @@ ________________________________________
 ##### 4. Send invoice to SEQR
 
 (Method: **sendInvoice**)
+
 The cashier starts a new payment sequence:
 
 1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
