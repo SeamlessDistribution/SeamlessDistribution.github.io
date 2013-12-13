@@ -6,19 +6,17 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-## Configure POS/Cash register for SEQR
+## SEQR in a POS/Cash register
 
 Follow these steps to configure your POS for integration with SEQR:
 
-1. Register POS (terminal) with SEQR 
+1. Register POS with SEQR 
 2. Assign SEQR id
 3. Add SEQR as payment in your POS
 6. Go live!
 
 ### 1. Register POS with SEQR
-
-
-Features of registerTerminal function:
+(Method: **registerTerminal**)
 
 
 * Each POS/cash register in the checkout line is called a "terminal" in SEQR.
@@ -188,11 +186,6 @@ Do the following:
 4.	Once the payment is complete a reference number (ersReference) is obtained from SEQR. Save the reference number for follow-ups and print the number on end user receipts.
 
 
-##### **Optional - How to remove a terminal**
-
-1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
-
-2.	Call unregisterTerminal and the terminal is deleted from the SEQR system.
 
 ### 4. Go live!
 
