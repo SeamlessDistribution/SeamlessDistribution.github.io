@@ -68,11 +68,13 @@ while response.resultCode == 0 and response.status == "ISSUED":
 {% endhighlight %}
 
 
-* [Putting it all together](python-script.html) 
-
-
 **Note!** 
 The POS must check the status each second, to verify that payment is completed. Otherwise the SEQR server does not receive any notification that transaction is finalized and the purchase will then be reversed!
+
+
+
+* [Putting it all together](python-script.html) 
+
 
 
 ### Try more functions
