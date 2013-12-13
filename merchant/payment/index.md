@@ -71,6 +71,10 @@ while response.resultCode == 0 and response.status == "ISSUED":
 * [Putting it all together](python-script.html) 
 
 
+**Note!** 
+The POS must check the status each second, to verify that payment is completed. Otherwise the SEQR server does not receive any notification that transaction is finalized and the purchase will then be reversed!
+
+
 ### Try more functions
 So this is the core of SEQR payments. The same flow, more or less, can be used
 in all the payment scenarios you see in the next section.
