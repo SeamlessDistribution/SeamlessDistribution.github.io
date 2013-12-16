@@ -4,10 +4,10 @@ title: SEQR External Service Payment
 description: SEQR Merchant, webshop, Service integration
 ---
 
-<img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
 ## SEQR payment in your Service
 
+<img src="/assets/images/Service_flow.png" />
 
 Follow these steps to configure your Service for integration with SEQR:
 
