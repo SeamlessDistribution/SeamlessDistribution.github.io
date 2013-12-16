@@ -124,18 +124,6 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 | assignSeqrId | Assigns a SEQR ID to a terminal |
 | --- | --- |
 
-### Methods for reconciliation and reporting 
-
-
-|--- | --- |
-|  Method | Description |
-|--- | --- |
-| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
-| executeReport | Executes a report on the SEQR service |
-| --- | --- |
-
-
-
 
 ### Method for retrieving user information (valid for Service integration)
 
@@ -146,6 +134,17 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
 | getClientSessionInfo | Retrieves user information |
 | --- | --- |
 
+
+
+### Methods for reconciliation and reporting 
+
+
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
+| executeReport | Executes a report on the SEQR service |
+| --- | --- |
 
 
 
