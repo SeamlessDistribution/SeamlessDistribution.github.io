@@ -192,7 +192,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | Field | Description |
 | --- | --- |
 | acknowledgementMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow |
-| backURL | used in app-to-app or web shopping |
+| backURL | used in in-app or web shopping |
 | cashierId | "Alice" will show on receipt |
 | clientInvoiceId | Your purchase reference |
 | footer | receipt footer text |

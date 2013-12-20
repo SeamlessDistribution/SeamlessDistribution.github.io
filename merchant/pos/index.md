@@ -6,7 +6,7 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-## SEQR in a POS/Cash register
+## SEQR payment in a POS/Cash register
 
 Follow these steps to configure your POS for integration with SEQR:
 

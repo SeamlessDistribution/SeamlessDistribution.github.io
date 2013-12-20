@@ -5,7 +5,7 @@ description: SEQR Merchant, webshop, POS integration
 ---
 
 
-## SEQR in a Webshop
+## SEQR payment in a Webshop
 
 Add SEQR payment in your “Check out” process where your 
 customer normally selects between payment methods. This is an example of a 
