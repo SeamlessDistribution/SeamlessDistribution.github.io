@@ -22,7 +22,7 @@ integration process.**
   <ul>
    <li><a href="merchant/webshop">Webshop</a></li>
    <li><a href="merchant/pos">POS</a></li>
-   <li><a href="merchant/externalservices">Services</a></li>
+   <li><a href="merchant/externalservices">Service</a></li>
    <li><a href="merchant/inapp">In-app</a></li>
    
   </ul> 

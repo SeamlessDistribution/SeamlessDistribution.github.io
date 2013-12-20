@@ -7,54 +7,39 @@ description: SEQR Merchant, webshop, Service integration
 
 ## SEQR payment in your Service
 
+This section describes how you use SEQR as the payment method for your service.
+
+### Overview
+
+When using SEQR as the payment method for your service, you need to integrate your solution with SEQR. 
+This integration is based upon the normal SEQR payment flow, which is described in [First SEQR payment](/merchant/payment).
+
+The following sequence diagram describes how the integration is performed:
+
 <img src="/assets/images/Service_flow.png" />
 
-Follow these steps to configure your Service for integration with SEQR:
-
-1. Create QR code URLs 
-2. Create Notification URL (used instead of getPaymentStatus)
-3. Go live!
+### Steps to take when integrating with SEQR
 
 
-### 1. Create QR code URLs
+1. Create your QR codes for scanning
+2. Create a web frontend
+3. Create a web backend
+4. Go live!
 
-The Service must support and create all URLs to integrate with SEQR system. To be able to launch SEQR app for paying the invoice, use the schemes in the table below to create URLs. 
+
+### 1. Create your QR codes for scanning
+
+The QR-code that you should use in your service must adapt to a specific pattern.
+Your service must support and create all URLs to integrate with SEQR system. To be able to launch SEQR app for paying the bill, use the schemes in the table below to create URLs. 
 By either doing a redirect or letting the user click on a link to that URL, SEQR app will be triggered and intercepted according to the hierarchical part of the URL.
+The 'service ID' must be agreed with SEQR, since it will be used in the SEQR system to identify your service.
 
-|--- | --- |
-|  URL pattern | Description |
-|--- | --- |
-| SEQR://SEQR.SE/000<invoiceReference/
-service ID> | Start the payment flow in the app for the invoice with reference defined by <invoiceReference> |
-| SEQR-ACTION://WIZARD/CANCEL | Cancel the flow and return to the app. |
-| --- | --- |
 
-The QR code can either be printed and to-be-scanned by app or it can be just the contents of the code (a link) that the app reads and understands without having to scan it. The SEQR system has defined various types of QR codes using different URLs.
-When SEQR app scans the QR code (or reads the link), SEQR server resolves the code and provides the app with all the URLs it may need. 
-The URL embedded within a QR code contains the pointer to the Service definition within the SEQR system, to trigger the app. The Service definition in the QR code URL contains 4 URLs for the app to interact with, which are:
+### 2. Create a web frontend
 
-* Order URL
-* Success URL 
-* Failure URL
-* Cancel URL
-
-Format of QR code URL:
-HTTP://SEQR.SE/000/EXTERNAL_SERVICE_ID 
-Example of QR code URL with optional parameters:
-HTTP://SEQR.SE/000/EXTERNAL_SERVICE_ID?parameter1=value1&parameter2=value2...
-
-|--- | --- |
-|  Item | Description |
-|--- | --- |
-| SEQR://SEQR.SE/ | Domain of the SEQR system. |
-| 000 | Service routing key (may change soon!). Defines the type of URL to launch Service application. Payment Broker retrieves 4 URLs. |
-| EXTERNAL_SERVICE_ID | Unique identifier of the Service. SEQR server locates the status and other information about the Service using this ID. |
-| parameters | Optional: These parameters in the URL are optional and can be sent to the interface without modification. These are particularly useful for the interface to identify different products etc. Naming convention is not imposed by SEQR server for these parameters. Note that these parameters will be returned when calling getClientSessionInfo. |
-| --- | --- |
-
+Since your service will be integrated in the SEQR app, it must implement 4 URLs that the SEQR app needs to be able to access.
 
 **Order URL**
-
 
 Accessed by the app using an HTTP GET request on the Order URL. The page hosted on this URL is supposed to issue the Payment request to SEQR server upon the choice of the user. 
 
@@ -64,7 +49,7 @@ http://url/order#TOKEN
 |--- | --- |
 |  URL part | Description |
 |--- | --- |
-| http://url | Domain of the Service system. |
+| http://url | Domain of the service system. |
 | /order | Path to page for URL type “order”. |
 | TOKEN | The key to get customer information (i.e. msisdn and subscriberKey) using getClientSessionInfo. |
 | --- | --- |
@@ -79,7 +64,7 @@ http://url/success#TOKEN
 |--- | --- |
 |  URL part | Description |
 |--- | --- |
-| http://url | Domain of the Service system. |
+| http://url | Domain of the service system. |
 | /success | Path to page for URL type “success”. |
 | TOKEN | The key to get customer information (i.e. msisdn and subscriberKey) using getClientSessionInfo. |
 | --- | --- |
@@ -94,7 +79,7 @@ http://url/failure#TOKEN
 |--- | --- |
 |  URL part | Description |
 |--- | --- |
-| http://thirdparty.com | Domain of the Service system. |
+| http://thirdparty.com | Domain of the service system. |
 | /fail | Path to page for URL type “fail”. |
 | TOKEN | The key to get customer information (i.e. msisdn and subscriberKey) using getClientSessionInfo. |
 | --- | --- |
@@ -102,53 +87,42 @@ http://url/failure#TOKEN
 
 **Cancel URL** 
 
-Should be provided by the Service. When the payment is canceled by the user, SEQR app brings up the page on this cancel URL. This URL is accessed using HTTP GET request by SEQR app. 
+Should be provided by the service. When the payment is canceled by the user, SEQR app brings up the page on this cancel URL. This URL is accessed using HTTP GET request by SEQR app. 
 Example URL:
 http://url/cancel#TOKEN
 
 |--- | --- |
 |  URL part | Description |
 |--- | --- |
-| http://thirdparty.com | Domain of the Service system. |
+| http://thirdparty.com | Domain of the service system. |
 | /cancel | Path to page for URL type “cancel”. |
 | TOKEN | The key to get customer information (i.e. msisdn and subscriberKey) using getClientSessionInfo. |
 | --- | --- |
 
 
-### 2. Create Notification URL 
-Once an order is issued, the Service must know whether the payment is approved by the user or if cancelled. 
-As soon as the order is placed, Service must call getPaymentStatus, which may require several calls of getPaymentStatus until the payment is approved by SEQR user. This polling can be avoided by sending a notification URL as arameter to getPaymentStatus. 
-SEQR server notifies payment status change using this URL, and Service must again query the payment status to see order state. SEQR server issues a post request for this URL supplying invoiceReference and clientInvoiceId as parameters. This notification URL is optional and it follows the fire and forget technique. There are no retries associated with this notification. 
-Example URL:
-http://thirdparty.com/paymentStateChanged?parameter1=value1&parameter2=value2
-Description of the Notification URL:
+The functionality of the frontend is totally up to you own requirements, as long as it confirms to the follwing:
 
-|--- | --- |
-|  URL part | Description |
-|--- | --- |
-| http://thirdparty.com | Domain of the Service system. |
-| paymentStateChanged | Path of the call back handler. |
-| parameters | These are the optional parameters which can be used by the third party to for any purpose. SEQR server simply returns them while issuing the notification request. Naming convention is not imposed by SEQR server for these parameters. |
-| values | These are values associated with parameters. The values are returned un-changed. |
-| --- | --- |
+* Implement the 4 URL required by SEQR app
+* Can forward the #TOKEN to the web backend
+* Can trigger the Paymentflow in the app using the URL Schema
+* Can trigger the backend to start sendInvocie request
 
 
-Along with HTTP GET parameters, SEQR server appends HTTP post parameters, which can be useful for Service.
-Description of the Notification URL HTTP post parameters:
+### 3. Create a web backend
 
-|--- | --- |
-|  URL parameter | Description |
-|--- | --- |
-| invoiceReference | Unique identifier of the paid invoice. The invoice number does not change once issued by SEQR server. |
-| clientInvoiceId | The invoice id provided by the third party service while calling sendInvoice function. |
-| msisdn | The telephone number used to rout calls on the mobile network to the subscriber. |
-| subscriberKey | Unique identifier of the subscriber within SEQR server. |
-| --- | --- |
+The purpose of the web backend is to serve your web frontend with necessary resources, and to handle communication with the SEQR backend.
 
+The communication with the SEQR backend consists of the following:
 
-### 3. Go live!
+* calling **getClientSessionInfo**, using the #TOKEN given by the app to the web frontend, in order to retrieve required customer data. Refer to the **getClientSessionInfo** request in the <a href="/merchant/reference/api.html">API</a> section.
 
-To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your Service.
+* calling **sendInvoice**, with appropriate invoice information. Refer to the **sendInvoice** request in the <a href="/merchant/reference/api.html">API</a> section.
+
+* calling **getPaymentStatus** and receiving status PAID, to ensure that SEQR backend can confirm that your system is aware of the payment being successful. Refer to the **getPaymentStatus** request in the <a href="/merchant/reference/api.html">API</a> section.
+
+### 4. Go live!
+
+To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your service.
 
 
 
