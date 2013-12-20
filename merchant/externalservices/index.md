@@ -105,7 +105,7 @@ The functionality of the frontend is totally up to you own requirements, as long
 * Implement the 4 URL required by SEQR app
 * Can forward the #TOKEN to the web backend
 * Can trigger the Paymentflow in the app using the URL Schema
-* Can trigger the backend to start sendInvocie request
+* Can trigger the backend to start sendInvoice request
 
 
 ### 3. Create a web backend
