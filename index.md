@@ -7,6 +7,8 @@ description: News and examples for SEQR cashregister integrations
 **Paying with SEQR is super easy and getting paid is almost as easy with our
 integration process.**
 
+Getting started(link) with SEQR is easy. Jump right into the First SEQR payment to see how it works, or check the API resource documentation(link), explore the developer... Have a question? Read the FAQ(link). 
+
 
 <div class="boxes">
  <div class="box">
@@ -33,6 +35,7 @@ integration process.**
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
+   <li>API flows</a></li>
    <li>FAQ</a></li>
  </div>
 

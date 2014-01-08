@@ -21,8 +21,11 @@ your phone number in full format, eg "+46738966XXX". Then complete the activatio
 * You should add a "Payment account", and you are ready to try how it works to
 pay with SEQR! 
 
-<div class="download">
-<span>Read more</span>
+
+
+
+READ MORE
+
 For more details about how to get started with the SEQR app,
 <a href="/downloads/GettingStarted_SEQR_merchants.pdf">read this document</a>.
-</div>
+

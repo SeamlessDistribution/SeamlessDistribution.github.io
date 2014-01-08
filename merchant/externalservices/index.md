@@ -7,7 +7,7 @@ description: SEQR Merchant, webshop, Service integration
 
 ## SEQR payment in your Service
 
-This section describes how you use SEQR as the payment method for your service.
+This section describes how to use SEQR as the payment method for your service.
 
 ### Overview
 
@@ -16,7 +16,7 @@ This integration is based upon the normal SEQR payment flow, which is described 
 
 The following sequence diagram describes how the integration is performed:
 
-<img src="/assets/images/Service_flow.png" />
+<img src="/assets/images/Service_flow_140108.png" />
 
 ### Steps to take when integrating with SEQR
 
