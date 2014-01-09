@@ -35,7 +35,7 @@ Getting started(link) with SEQR is easy. Jump right into the First SEQR payment 
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
-   <li>API flows</a></li>
+   <li><a href="/merchant/reference/flows.html">Sequence diagrams</a></li>
    <li>FAQ</a></li>
  </div>
 

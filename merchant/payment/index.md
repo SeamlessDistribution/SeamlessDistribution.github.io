@@ -15,24 +15,8 @@ Feel hungry for real payments now? Just make sure you have the following in plac
 
 ## Sequence (simplified)
 
-<div class="diagram">
-Cashregister->SEQR: sendInvoice
-SEQR-->Cashregister: (invoice reference)
-Cashregister->SEQR: getPaymentStatus
-SEQR-->Cashregister: ISSUED
-App->SEQR: ask for invoice at QR-code
-SEQR->App: retry until you get SUCCESS
-App->SEQR: payment
-Cashregister->SEQR: getPaymentStatus
-SEQR-->Cashregister: PAID
-Note right of Cashregister: Payment cleared!
-SEQR->App: Done (show receipt)
-Cashregister-->App: Happy!
-</div>
+<img src="/assets/images/first_payment_flow_140108.png" />
 
-<script>
- $(".diagram").sequenceDiagram({theme: 'hand'});
-</script>
 
 ## SEQR Payment in Python
 
