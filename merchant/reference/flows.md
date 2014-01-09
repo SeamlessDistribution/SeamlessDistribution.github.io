@@ -26,18 +26,18 @@ The following sequence diagrams illustrate typical loyalty flows.
 
 
 
-### Example 2: Cashregister sends invoice, user scans, confirms payment and then swipes loyalty card (not used before)
+### Example 2: Cashregister sends invoice, user scans, confirms payment and then swipes loyalty card (card not used before)
 
 <img src="/assets/images/loyalty_send_scan_pay_swipe_140108.png" />
 
 
 
-### Example 3: Cashregister sends invoice, user scans, swipes loyalty card (not used before) and then confirms payment 
+### Example 3: Cashregister sends invoice, user scans, swipes loyalty card (card not used before) and then confirms payment 
 
 <img src="/assets/images/loyalty_send_scan_swipe_pay_140108.png" />
 
 
-### Example 4: Cashregister sends invoice, user swipes card (not used before), scans and then confirms payment   
+### Example 4: Cashregister sends invoice, user swipes card (card not used before), scans and then confirms payment   
 
 <img src="/assets/images/loyalty_send_swipe_scan_140109.png" />
 
