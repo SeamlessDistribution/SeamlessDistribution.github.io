@@ -19,7 +19,9 @@ description: API reference
 
 Cash Register Service allows users to add, connect and store loyalty program information in SEQR to be accessed anywhere at any time through SEQR mobile wallet.
 The following sequence diagrams illustrate typical loyalty flows. 
+
 **Note:** Each flow may have some variation depending on how it is implemented by the card issuer or merchant.
+
 **Note:** Swiped loyalty cards always override loyalty account already existing in SEQR.
 
 
