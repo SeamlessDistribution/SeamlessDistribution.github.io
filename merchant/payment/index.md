@@ -6,7 +6,7 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-## Get SEQR Payments
+## First SEQR payment
 
 Feel hungry for real payments now? Just make sure you have the following in place:
 
@@ -34,6 +34,9 @@ Cashregister-->App: Happy!
  $(".diagram").sequenceDiagram({theme: 'hand'});
 </script>
 
+
+
+
 ## SEQR Payment in Python
 
 Create a bill and publish it to the app (python): 
@@ -43,7 +46,7 @@ Create a bill and publish it to the app (python):
 invoice = client.factory.create("ns0:invoice")
 invoice.paymentMode = "IMMEDIATE_DEBIT"
 invoice.acknowledgmentMode = "NO_ACKNOWLEDGMENT"
-invoice.title="Thai Massage Center"
+invoice.title="Grand Cinema"
 # our invoice has just one row
 invoice.invoiceRows = client.factory.create('ns0:invoiceRows')
 row1 = invoice.invoiceRows.invoiceRow = client.factory.create('ns0:invoiceRow')
@@ -68,7 +71,13 @@ while response.resultCode == 0 and response.status == "ISSUED":
 {% endhighlight %}
 
 
+**Note!** 
+The POS must check the status each second, to verify that payment is completed. Otherwise the SEQR server does not receive any notification that transaction is finalized and the purchase will then be reversed!
+
+
+
 * [Putting it all together](python-script.html) 
+
 
 
 ### Try more functions
