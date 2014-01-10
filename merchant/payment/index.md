@@ -46,7 +46,7 @@ Create a bill and publish it to the app (python):
 invoice = client.factory.create("ns0:invoice")
 invoice.paymentMode = "IMMEDIATE_DEBIT"
 invoice.acknowledgmentMode = "NO_ACKNOWLEDGMENT"
-invoice.title="Movie ticket service"
+invoice.title="Grand Cinema"
 # our invoice has just one row
 invoice.invoiceRows = client.factory.create('ns0:invoiceRows')
 row1 = invoice.invoiceRows.invoiceRow = client.factory.create('ns0:invoiceRow')
