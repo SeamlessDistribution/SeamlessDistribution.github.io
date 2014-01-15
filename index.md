@@ -22,7 +22,9 @@ integration process.**
  <h3>2. Customise payment</h3>
   <ul>
    <li><a href="merchant/webshop">Webshop</a></li>
-   <li><a href="merchant/pos">POS</a></li>  
+   <li><a href="merchant/pos">POS</a></li> 
+   <li><a href="merchant/externalservices">Services</a></li>
+   <li><a href="merchant/inapp">App</a></li> 
   </ul> 
  </div>
  <div class="box">
