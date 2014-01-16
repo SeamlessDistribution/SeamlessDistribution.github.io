@@ -72,14 +72,14 @@ When getting a payment through the cash register, we cannot show the payment QR 
 which is generated for the invoice to the SEQR user. To overcome that problem,
 we assign a fixed QR code to each cash register. A POS SEQR sticker looks like this:
 
-<img src="/assets/images/assign_seqr.png" width="200px"/>
+<img src="/assets/images/seqr_qrcodes.png" width="200px"/>
 
 Each QR code sticker has a unique number assigned known as SEQR ID. The cash register/POS needs this number to establish a link with the QR code.
 
 
 The cashier starts the sequence to assign the SEQR ID from the Configuration menu in POS and SEQR ID registration submenu. It is possible to enter the number manually or by scanning the QR code with a scanner. The scanner must be configured to accept Code 128 in order to read the barcode on the QR sticker.
 
-Picture?
+<img src="/assets/images/assign_seqr.png" width="200px"/>
 
 The parameter seqrId is stored in the local database after a successful assignment.
 
