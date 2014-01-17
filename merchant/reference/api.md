@@ -22,7 +22,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
          <td>
             sendInvoice
             <ul>
-               <li>ClientContext context</li>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
                <li>Invoice invoice</li>
                <li>
                   List
@@ -37,7 +37,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
          <td>
             updateInvoice
             <ul>
-               <li>ClientContext context</li>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
                <li>Invoice invoice</li>
                <li>
                   List
@@ -52,7 +52,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
          <td>
             getPaymentStatus
             <ul>
-               <li>ClientContext context</li>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
                <li>String invoiceReference</li>
                <li>int invoiceVersion</li>
             </ul>
@@ -64,7 +64,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
          <td>
             cancelInvoice
             <ul>
-               <li>ClientContext context</li>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
                <li>String invoiceReference</li>
             </ul>
          </td>
@@ -75,7 +75,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
          <td>
             commitReservation
             <ul>
-               <li>ClientContext context</li>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
                <li>String invoiceReference</li>
             </ul>
          </td>
@@ -87,7 +87,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
          <td>
             submitPaymentReceipt
             <ul>
-               <li>ClientContext context</li>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
                <li>String ersReference</li>
                <li>ReceiptDocument receiptDocument</li>
             </ul>
@@ -101,7 +101,7 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
          <td>
             refundPayment
             <ul>
-               <li>ClientContext context</li>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
                <li>String ersReference</li>
                <li>Invoice invoice</li>
             </ul>
