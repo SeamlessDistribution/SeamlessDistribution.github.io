@@ -31,7 +31,7 @@ Cashregister-->App: Happy!
 </div>
 
 <script>
- $(".diagram").sequenceDiagram({theme: 'hand'});
+ $(".diagram").sequenceDiagram({theme: 'simple'});
 </script>
 
 
