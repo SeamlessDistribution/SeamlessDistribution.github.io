@@ -12,10 +12,10 @@ integration process.**
 
 <div class="boxes">
  <div class="box">
-  <h3>1. Getting started</h3>
+  <h3>1. Get started</h3>
   <ul>
+   <li><a href="merchant/payment">Implement SEQR payments</a></li>
    <li><a href="app/">Get SEQR app</a></li>
-   <li><a href="merchant/payment">First SEQR payment</a></li>
   </ul>
  </div>
  <div class="box">
@@ -38,6 +38,7 @@ integration process.**
   <ul>
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
+   <!-- li><a href="merchant/reference/loyalty.html">Loyalty</a></li -->
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
  </div>
 

@@ -5,29 +5,27 @@ description: SEQR Merchant, webshop, Service integration
 ---
 
 
-## SEQR payment in your Service
+# SEQR payment in your Service
 
-This section describes how to use SEQR as the payment method for your service.
+To use SEQR as the payment method for your service, you need to integrate your own service into the SEQR app.
 
-### Overview
+This integration description is based upon the normal SEQR payment flow, refer to [First SEQR payment](/merchant/payment).
 
-When using SEQR as the payment method for your service, you need to integrate your solution with SEQR. 
-This integration is based upon the normal SEQR payment flow, which is described in [First SEQR payment](/merchant/payment).
+When integration has been performed, SEQR payment is performed according to this sequence diagram:
 
-This sequence diagram illustrates how payment is done when integration has been performed:
 
 <img src="/assets/images/service_sequence.png" />
 
-### Steps to take when integrating with SEQR
+## Steps to take when integrating with SEQR
 
 
 1. Create your QR codes for scanning
-2. Create a web frontend
+2. Create a web frontend to be integrated into SEQR app
 3. Create a web backend
 4. Go live!
 
 
-### 1. Create your QR codes for scanning
+### Create your QR codes for scanning
 
 The QR code that you should use in your service must adapt to a specific pattern. To be able to launch SEQR app for paying the bill, use the schemes in the table below to create URLs. 
 By either doing a redirect or letting the user click on a link to that URL, SEQR app will be triggered and intercepted according to the hierarchical part of the URL.
@@ -46,18 +44,21 @@ HTTP://SEQR.SE/000/EXTERNAL_SERVICE_ID?parameter1=value1&parameter2=value2...
 |--- | --- |
 | HTTP://SEQR.SE | Domain of the SEQR system. |
 | 000 | Service routing key. Defines the type of URL to launch Service application. |
-| parameters | Optional: These parameters in the URL are optional and can be sent to the interface without modification. These are particularly useful for the interface to identify different products etc. Naming convention is not imposed by SEQR server for these parameters. **Note that these parameters will be returned when calling getClientSessionInfo.** |
+| parameters | Optional: These parameters in the URL are optional and can be sent to the interface without modification. These are particularly useful for the interface to identify different products etc. Naming convention is not imposed by SEQR server for these parameters. **Note** that these parameters will be returned when calling getClientSessionInfo. |
 | --- | --- |
 
-### 2. Create a web frontend
+### Create a web frontend to be integrated into SEQR app
 
-When integration your web frontend with the SEQR App, the following functions must be supported:
-1)	Implement Service URLs called by the SEQR App.
-2)	Implement URL Schemas to trigger SEQR App functionality.
-3)	Communicate with Service Web Backend.
+When integrating your web frontend with the SEQR app, the following functions must be supported:
 
-### Implement Service URLs
-Since your service will be integrated in the SEQR app, it must implement 4 URLs that the SEQR app needs to be able to access.
+1. Implement Service URLs called by SEQR app
+2. Implement URL schemas to trigger SEQR app functionality
+3. Implement design requirements
+4. Communicate with Service web backend
+
+
+#### Implement Service URLs
+Since your service will be integrated in the SEQR app, it must implement 4 URLs that SEQR app needs to be able to access.
 
 When SEQR app scans the QR code (or reads the link), SEQR server resolves the code and provides the app with all the URLs it may need.
 
@@ -90,18 +91,46 @@ Example URL: http://url/cancel#TOKEN
 | --- | --- |
 
 
-### Implement URL schemas
+#### Implement URL schemas that trigger the app
 
-Trigger the Paymentflow in the app using the URL Schema (same as above).
+The SEQR app is triggered by URLs using the specific SEQR URI schemes SEQR:// and SEQR-ACTION://. By constructing URLs using these schemes and either doing a redirect or letting the user click on a link to that URL, the app will be triggered and intercept according to the hierarchical part of the URL.
+
+|--- | --- |
+|  Trigger URLs | Description |
+|--- | --- |
+| SEQR://SEQR.SE/R< invoiceReference > | Start the payment flow in the app for the invoice with reference. |
+| SEQR-ACTION://WIZARD/CANCEL | Cancel the external service flow and return to SEQR app. |
+| --- | --- |
 
 
-### Communicate with Service Backend
+#### Implement design requirements 
 
-Can trigger the backend to start sendInvoice request once the customer has fulfilled the order section.
+* Any important information such as booking numbers/reference codes etc. must be sent to the user via an sms or be visible in the receipt. This is to avoid that any important information gets lost in case of connection issues. 
+
+* If the service includes more than one view before the SEQR payment process, you must provide a way for the user to navigate, for example with a back button.
+
+Consider these aspects of Android and iOS systems when creating your service:
+
+__Navigation:__
+
+* Android devices often have a physical back button, which the user can use to navigate back through your service.
+
+* On iPhone, such behavior needs to be put in the service itself, since no physical back button exists.
+
+__Display size and resolution:__
+
+* SEQR supports Android devices with the screen size from 320x480px to 800-1280px. Examples are Sony Experia Mini and Samsung Galaxy. Note that your service must work with all the sizes.
+
+* SEQR supports iOS devices with resolutions 320x480px, 640x960px and 640x1136px. For iOS you need to consider support for Retina resolution, meaning that your graphics must be double the size displayed.
+
+
+#### Communicate with Service backend
+
+The web frontend calls the service backend, which will send a sendInvoice request back to the SEQR system, once the customer has fulfilled the order section.
 
 
 
-### 3. Create a Web Backend
+### Create a web backend
 
 The purpose of the web backend is to serve your web frontend with necessary resources, and to handle communication with SEQR backend.
 
@@ -113,7 +142,7 @@ The communication with SEQR backend consists of the following:
 
 * calling **getPaymentStatus** and receiving status PAID, to ensure that SEQR backend can confirm that your system is aware of the payment being successful. Refer to the **getPaymentStatus** request in the <a href="/merchant/reference/api.html">API</a> section.
 
-### 4. Go live!
+### Go live!
 
 To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your service.
 

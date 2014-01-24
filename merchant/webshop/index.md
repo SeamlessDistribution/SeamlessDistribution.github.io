@@ -5,7 +5,7 @@ description: SEQR Merchant, webshop, POS integration
 ---
 
 
-## SEQR payment in a Webshop
+# SEQR payment in a Webshop
 
 Add SEQR payment in your “Check out” process where your 
 customer normally selects between payment methods. This is an example of a 
@@ -21,22 +21,23 @@ The difference is that polling for payment status is handled by a payment view,
 which also handles showing the QR code to the SEQR user. You still need to request
 the status of the payment after the payment view returns, but only once to find
 out the final status of the invoice.
-To integrate SEQR, follow these steps:
+
+Follow these steps to integrate your webshop with SEQR:
 
 1. Integrate the payment view
 2. Present the receipt
 3. Go live!
 
-### 1. Integrate the payment view
+## Integrate the payment view
 There are two payment views that you can choose from:
 
-Standard Payment View
+#### Standard Payment View
 <img src="/assets/images/paymentview-standard.png" />
 
-Small Payment View
+#### Small Payment View
 <img src="/assets/images/paymentview-small.png" />
 
-Payment View - When SEQR doesn't support the user's phone
+#### Payment View - When SEQR doesn't support the user's phone
 <img src="/assets/images/paymentview-nosupport.png" width="50%"/>
 
 To integrate with SEQR, insert the following script tag into your checkout
@@ -49,7 +50,7 @@ page. The script will insert SEQR payment views at the same location.
 </script>
 {% endhighlight %}
 
-View parameters are:
+#### View parameters 
 
 | Name        | Description | Values | Default |
 |-------------|-----------|---------|-----|
@@ -63,7 +64,7 @@ View parameters are:
  sendInvoice method. After a successful/cancelled payment, the app will redirect
 the SEQR user to the URL specified in the invoice.
 
-### 2. Present the receipt
+## Present the receipt
 
 Once the payment is completed, your webshop should query the status of the invoice
 from SEQR by calling getPaymentStatus. If the invoice was successfully paid, 
@@ -71,6 +72,6 @@ a reference number (ersReference) is obtained from
 SEQR. Save the reference number for follow-ups and for print on the customer 
 online confirmation receipt.
 
-### 3. Go live!
+## Go live!
 
 To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your webshop.
