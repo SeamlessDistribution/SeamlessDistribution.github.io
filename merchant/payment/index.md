@@ -6,7 +6,7 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-## First SEQR payment
+# First SEQR payment
 
 Feel hungry for real payments now? Just make sure you have the following in place:
 
@@ -80,6 +80,6 @@ The POS must check the status each second, to verify that payment is completed. 
 
 
 
-### Try more functions
+## Try more functions
 So this is the core of SEQR payments. The same flow, more or less, can be used
 in all the payment scenarios you see in the next section.

@@ -6,16 +6,16 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-## SEQR payment in a POS/Cash register
+# SEQR payment in a POS/Cash register
 
 Follow these steps to configure your POS for integration with SEQR:
 
-1. Register POS with SEQR 
+1. Register POS with SEQR
 2. Assign SEQR id
 3. Add SEQR as payment in your POS
 6. Go live!
 
-### 1. Register POS with SEQR
+## Register POS with SEQR
 (Method: **registerTerminal**)
 
 
@@ -33,7 +33,7 @@ ________________________________________
 
 
 
-**_POS menu_**
+#### POS menu
 
 The SEQR terminal menu in the POS can be accessed with administrative rights. The menu on the POS may look like this:
 
@@ -41,7 +41,7 @@ The SEQR terminal menu in the POS can be accessed with administrative rights. Th
  
 Both parameters terminalId and password are stored in the local database after successful registration. 
 
-**How to add a terminal**
+#### Add a terminal
 
 Preferably done in the back office.
 
@@ -65,7 +65,7 @@ Example of registerTerminal:
 
 
 
-### 2. Assign SEQR id
+## Assign SEQR id
 (Method: **assignSeqrId**)
 
 When getting a payment through the cash register, we cannot show the payment QR code
@@ -89,13 +89,13 @@ The parameter seqrId is stored in the local database after a successful assignme
 
 
 
-### 3. Add SEQR as payment in your POS
+## Add SEQR as payment in your POS
 
 This section describes how to set up the POS for SEQR payment from a cashier's perspective. Refer also to <a href="/merchant/payment/">First SEQR payment</a>, which shows how to implement the code with sample flow.
 
 SEQR must be added as a new payment method. SEQR payment is enabled when an active receipt has started and the amount to pay is greater than zero. 
 
-##### 1.	Start the payment by pressing the SEQR payment button in POS 
+#### 1.	Start the payment by pressing the SEQR payment button in POS 
 
 The following dialog is displayed to the cashier:
  
@@ -113,7 +113,7 @@ If amount to pay is higher than the receipt total, the following occurs after a 
 
 * The difference between paid amount and the receipt total is returned to the customer.
 
-##### 2.	Press the Pay button
+#### 2.	Press the Pay button
 
 It is possible to cancel an ongoing SEQR payment by pressing the Cancel button (method used: cancelInvoice). This option is only available before the payment is committed on the SEQR server. The dialog below is displayed to the cashier until the paying customer has completed the payment on the phone:
 
@@ -128,7 +128,7 @@ The transaction post contains the following data:
 * Description “SEQR payment”
 * Timestamp
 
-##### 3.	Configure the printer to include the following data as a confirmation of the purchase:
+#### 3.	Configure the printer to include the following data as a confirmation of the purchase:
 
 
 * Amount
@@ -147,7 +147,7 @@ ________________________________________
 
 
 
-##### 4. Send invoice to SEQR
+#### 4. Send invoice to SEQR
 
 (Method: **sendInvoice**)
 
@@ -170,7 +170,7 @@ ________________________________________
 ________________________________________
 
 
-##### 5. Get payment status 
+#### 5. Get payment status 
 
 (Method: **getPaymentStatus**)
 
@@ -187,6 +187,6 @@ Do the following:
 
 
 
-### 4. Go live!
+## Go live!
 
 To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your POS/cash register.

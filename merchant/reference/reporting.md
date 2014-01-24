@@ -4,7 +4,7 @@ title: SEQR Reporting and Reconciliation
 description: SEQR Reporting Reconciliation
 ---
 
-## Reporting and reconciliation
+# Reporting and reconciliation
 
 To check and confirm that cash register/shop has the same number of transactions
 as SEQR service, merchants can integrate towards the reconciliation feature of
@@ -27,10 +27,10 @@ SEQR-->Cashregister: XML report contents
 </div>
 
 <script>
- $(".diagram").sequenceDiagram({theme: 'hand'});
+ $(".diagram").sequenceDiagram({theme: 'simple'});
 </script>
 
-### Procedure to reconcile transactions and create report
+## Procedure to reconcile transactions and create report
 
 The following are steps to perform reconciliation against SEQR from cash registers
 
@@ -48,7 +48,7 @@ step 3 again.
 
 
 
-### Reports per shop reconciliation
+## Reports per shop reconciliation
 
 
 Only one master cash register perform reconciliation process. The reconciliation
@@ -77,7 +77,7 @@ period.
 
 
 
-### Reports per terminal reconciliation
+## Reports per terminal reconciliation
 
 
 Every cash register in a shop perform reconciliation process. The reconciliation
@@ -99,8 +99,9 @@ id and amounts for each transaction in the period.
 </td></tr>
 </table>
 
+## Example shop reports
 
-### Shop report STD_RECON_001 - executeReport SOAP request example
+#### Shop report STD_RECON_001 - executeReport SOAP request example
 
 
 {% highlight python %}
@@ -139,7 +140,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-### Shop report STD_RECON_001 - executeReport SOAP response example
+#### Shop report STD_RECON_001 - executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -173,7 +174,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-### Shop report STD_RECON_003 - executeReport SOAP request example
+#### Shop report STD_RECON_003 - executeReport SOAP request example
 
 
 {% highlight python %}
@@ -212,7 +213,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-### Shop report STD_RECON_003 - executeReport SOAP response example
+#### Shop report STD_RECON_003 - executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -264,8 +265,9 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
+## Example terminal reports
 
-### Terminal report STD_RECON_006 - executeReport SOAP request example
+#### Terminal report STD_RECON_006 - executeReport SOAP request example
 
 
 {% highlight python %}
@@ -309,7 +311,7 @@ id and amounts for each transaction in the period.
 
 
 
-### Terminal report STD_RECON_006 - executeReport SOAP response example
+#### Terminal report STD_RECON_006 - executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -347,7 +349,7 @@ id and amounts for each transaction in the period.
 
 
 
-### Terminal report STD_RECON_007 - executeReport SOAP request example
+#### Terminal report STD_RECON_007 - executeReport SOAP request example
 
 
 {% highlight python %}
@@ -390,7 +392,7 @@ id and amounts for each transaction in the period.
 {% endhighlight %}
 
 
-### Terminal report STD_RECON_007 - executeReport SOAP response example
+#### Terminal report STD_RECON_007 - executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">

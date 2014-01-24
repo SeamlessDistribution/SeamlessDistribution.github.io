@@ -27,5 +27,5 @@ pay with SEQR!
 READ MORE
 
 For more details about how to get started with the SEQR app,
-<a href="/downloads/GettingStarted_SEQR_merchants.pdf">read this document</a>.
+<a href="/downloads/GettingStarted_SEQR_merchants_developer.pdf">read this document</a>.
 

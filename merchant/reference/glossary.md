@@ -4,7 +4,7 @@ title: Merchant API Glossary
 description: SEQR Merchant glossary
 ---
 
-## Glossary
+# Glossary
 
 Terminology used include: 
 
