@@ -1025,7 +1025,7 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## markTransationPeriod SOAP request example, per **shop** reconciliation
+## markTransactionPeriod SOAP request example, per **shop** reconciliation
 
 
 {% highlight python %}
@@ -1054,7 +1054,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransationPeriod SOAP response example, per **shop** reconciliation
+## markTransactionPeriod SOAP response example, per **shop** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1073,7 +1073,7 @@ To be added!
 
 
 
-## markTransationPeriod SOAP request example, per **terminal** reconciliation
+## markTransactionPeriod SOAP request example, per **terminal** reconciliation
 
 
 {% highlight python %}
@@ -1106,7 +1106,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransationPeriod SOAP response example, per **terminal** reconciliation
+## markTransactionPeriod SOAP response example, per **terminal** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
