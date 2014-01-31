@@ -6,9 +6,6 @@ description: API reference
 
 # Payment API / WSDL
 
-For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl).
-For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf)
-and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/). 
 
 ## Methods for payments
 
@@ -1025,7 +1022,7 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## markTransationPeriod SOAP request example, per **shop** reconciliation
+## markTransactionPeriod SOAP request example, per **shop** reconciliation
 
 
 {% highlight python %}
@@ -1054,7 +1051,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransationPeriod SOAP response example, per **shop** reconciliation
+## markTransactionPeriod SOAP response example, per **shop** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1073,7 +1070,7 @@ To be added!
 
 
 
-## markTransationPeriod SOAP request example, per **terminal** reconciliation
+## markTransactionPeriod SOAP request example, per **terminal** reconciliation
 
 
 {% highlight python %}
@@ -1106,7 +1103,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransationPeriod SOAP response example, per **terminal** reconciliation
+## markTransactionPeriod SOAP response example, per **terminal** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
