@@ -46,7 +46,7 @@ page. The script will insert SEQR payment views at the same location.
 {% highlight html %}
 <script
  id="seqrShop"
- src="http://devapi.seqr.com/ws/js/seqrShop.js#!invoiceId=[invoiceReference]">
+ src="http://devapi.seqr.com/seqr-webshop-plugin/js/seqrShop.js#!invoiceId=[invoiceReference]">
 </script>
 {% endhighlight %}
 
