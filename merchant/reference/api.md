@@ -103,7 +103,7 @@ description: API reference
                <li>Invoice invoice</li>
             </ul>
          </td>
-         <td>Refunds a previous payment (Available in production from 2014)
+         <td>Refunds a previous payment (future enhancement, not yet available)
          </td>
       </tr>
    </tbody>
