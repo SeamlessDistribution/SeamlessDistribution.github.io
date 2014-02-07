@@ -95,18 +95,6 @@ description: API reference
          </td>
       </tr>
       <tr>
-         <td>
-            refundPayment
-            <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
-               <li>String ersReference</li>
-               <li>Invoice invoice</li>
-            </ul>
-         </td>
-         <td>Refunds a previous payment (future enhancement, not yet available)
-         </td>
-      </tr>
-   </tbody>
 </table>
 
 
