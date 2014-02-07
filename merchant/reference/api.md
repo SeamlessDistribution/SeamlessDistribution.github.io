@@ -90,7 +90,7 @@ description: API reference
             </ul>
          </td>
          <td>Used to confirm that the payment was received by the cashregister. 
-            Adds an optional receipt document to a payment or refund.
+            Adds an optional receipt document to a payment.
          </td>
       </tr>
    </tbody>
