@@ -89,10 +89,13 @@ description: API reference
                <li>ReceiptDocument receiptDocument</li>
             </ul>
          </td>
-         <td>
-            Used to confirm that the payment was received by the cashregister. 
+         <td>Used to confirm that the payment was received by the cashregister. 
             Adds an optional receipt document to a payment or refund.
          </td>
+         <td>
+         </tr>
+      <tr>
+   <tbody>
 </table>
 
 
