@@ -93,8 +93,6 @@ description: API reference
             Used to confirm that the payment was received by the cashregister. 
             Adds an optional receipt document to a payment or refund.
          </td>
-      </tr>
-      <tr>
 </table>
 
 
