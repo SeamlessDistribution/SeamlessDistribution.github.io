@@ -93,8 +93,6 @@ description: API reference
             Adds an optional receipt document to a payment or refund.
          </td>
       </tr>
-         <td>
-         </tr>
       <tr>
    <tbody>
 </table>
