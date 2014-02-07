@@ -96,6 +96,8 @@ description: API reference
 </table>
 
 
+
+
 ### Methods specific for POS (terminal) registration 
 
 
