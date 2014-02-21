@@ -35,24 +35,26 @@ out the final status of the invoice.
 
 The methods required in a basic integration are:
 
-* sendInvoice
-
-* getPaymentStatus
-
-* markTransactionPeriod
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| sendInvoice | Sends an invoice to SEQR server |
+| getPaymentStatus | Obtains status of a previously submitted invoice |
+| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
+| --- | --- |
 
 
 For an extended integration, also these methods can be used:
 
-* updateInvoice
-
-* cancelInvoice
-
-* commitReservation
-
-* submitPaymentReceipt
-
-* executeReport
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
+| cancelInvoice | Cancels an unpaid invoice |
+| commitReservation | Commits a payment |
+| submitPaymentReceipt | Sends the receipt document of a payment |
+| executeReport | Executes a report on SEQR server |
+| --- | --- |
 
 
 Refer to section [API](/merchant/reference/api.html) for detailed description.

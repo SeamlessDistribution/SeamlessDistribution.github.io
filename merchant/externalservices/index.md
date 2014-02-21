@@ -33,26 +33,29 @@ Follow these steps to integrate your service with SEQR:
 
 The methods required in a basic integration are:
 
-* getClientSessionInfo
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| getClientSessionInfo | Retrieves customer information |
+| sendInvoice | Sends an invoice to SEQR server |
+| getPaymentStatus | Obtains status of a previously submitted invoice |
+| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
+| --- | --- |
 
-* sendInvoice
-
-* getPaymentStatus
-
-* markTransactionPeriod
 
 
 For an extended integration, also these methods can be used:
 
-* updateInvoice
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
+| cancelInvoice | Cancels an unpaid invoice |
+| commitReservation | Commits a payment |
+| submitPaymentReceipt | Sends the receipt document of a payment |
+| executeReport | Executes a report on SEQR server |
+| --- | --- |
 
-* cancelInvoice
-
-* commitReservation
-
-* submitPaymentReceipt
-
-* executeReport
 
 Refer to section [API](/merchant/reference/api.html) for detailed description.
 

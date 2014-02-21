@@ -21,30 +21,30 @@ Follow these steps to configure your POS for integration with SEQR:
 
 The methods required in a basic integration are:
 
-* registerTerminal
-
-* unregisterTeminal
-
-* assignSeqrId
-
-* sendInvoice
-
-* getPaymentStatus
-
-* cancelInvoice
-
-* markTransactionPeriod
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| registerTerminal | Registers a new terminal in SEQR server |
+| unregisterTerminal | Unregisters an already registered terminal |
+| assignSeqrId | Assigns a SEQR ID to a terminal |
+| sendInvoice | Sends an invoice to SEQR server |
+| getPaymentStatus | Obtains status of a previously submitted invoice |
+| cancelInvoice | Cancels an unpaid invoice |
+| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
+| --- | --- |
 
 
 For an extended integration, also these methods can be used:
 
-* updateInvoice
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
+| commitReservation | Commits a payment |
+| submitPaymentReceipt | Sends the receipt document of a payment |
+| executeReport | Executes a report on SEQR server |
+| --- | --- |
 
-* commitReservation
-
-* submitPaymentReceipt
-
-* executeReport
 
 Refer to section [API](/merchant/reference/api.html) for detailed description.
 
