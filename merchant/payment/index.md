@@ -11,7 +11,7 @@ description: SEQR Merchant, webshop, POS integration
 Feel hungry for real payments now? Just make sure you have the following in place:
 
 1. Create a bill and publish it to the app
-2. [Pay using the SEQR app](../../app/)
+2. Pay using the SEQR app
 3. Check the payment status
 
 ## Sequence (simplified)
@@ -59,6 +59,9 @@ invoice.totalAmount.value, invoice.totalAmount.currency = "500", "SEK"
 # publish the invoice to the app
 invoiceResponse = client.service.sendInvoice(context, invoice)
 {% endhighlight %}
+
+## Pay using the app
+Download and install SEQR app, refer to [Get SEQR app](../../app/).
 
 ## Check for payment status
 
