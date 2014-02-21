@@ -10,10 +10,9 @@ description: SEQR Merchant, webshop, POS integration
 
 Feel hungry for real payments now? Just make sure you have the following in place:
 
-1. Get request credentials
-2. Create a bill and publish it to the app
-3. Pay using SEQR app
-4. Check the payment status
+1. Create a bill and publish it to the app
+2. Pay using SEQR app
+3. Check the payment status
 
 ## Sequence (simplified)
 
@@ -37,9 +36,6 @@ Cashregister-->App: Happy!
 </script>
 
 
-## Get request credentials
-
-You need to contact integrations@seamless.se to request reseeller ID and password. With these you call the registerTerminal API request to receive a terminal ID. The terminal ID and password can then be used to make payment requests.
 
 ## Create a bill and publish it to the app 
 

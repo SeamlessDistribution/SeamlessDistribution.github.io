@@ -4,9 +4,10 @@ title: SEQR Integration Sign up
 description: SEQR Integration Sign up
 ---
 
-# Sign up to SEQR servers
+# Get login credentials
 
-To verify that your integration works you can sign up to SEQR servers and run validation tests. [Contact](/contact) Seamless for login credentials.
+You need to [Contact](/contact) Seamless to get reseeller ID and password. With these you call the registerTerminal API request to receive a terminal ID. The terminal ID and password can then be used to make payment requests.
+
 
 
 
