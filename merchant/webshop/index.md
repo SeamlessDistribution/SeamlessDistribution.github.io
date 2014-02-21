@@ -36,16 +36,24 @@ out the final status of the invoice.
 The methods required in a basic integration are:
 
 * sendInvoice
+
 * getPaymentStatus
+
 * markTransactionPeriod
+
 
 For an extended integration, also these methods can be used:
 
 * updateInvoice
+
 * cancelInvoice
+
 * commitReservation
+
 * submitPaymentReceipt
+
 * executeReport
+
 
 Refer to section [API](/merchant/reference/api.html) for detailed description.
 
