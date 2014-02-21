@@ -19,8 +19,7 @@ The Seamless API provides the possibility for merchants to integrate their payme
  <div class="box">
   <h3>1. Get started</h3>
   <ul>
-   <li><a href="xxx">Sign up</a></li>
-   <li><a href="merchant/payment">Implement SEQR payments</a></li>
+   <li><a href="merchant/payment">How SEQR payment works</a></li>
    <li><a href="app/">Get SEQR app</a></li>
   </ul>
  </div>
@@ -34,7 +33,13 @@ The Seamless API provides the possibility for merchants to integrate their payme
   </ul> 
  </div>
  <div class="box">
- <h3>3. Go live!</h3> 
+ <h3>3. Verify your integration</h3>
+  <ul>
+   <li><a href="merchant/reference/signup.html">Sign up</a></li>
+  </ul> 
+ </div>
+ <div class="box">
+ <h3>4. Go live!</h3> 
   <ul>
    <li><a href="merchant/reference/certification.html">Certification</a></li> 
  </ul> 
