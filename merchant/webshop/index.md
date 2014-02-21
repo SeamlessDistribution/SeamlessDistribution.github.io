@@ -34,11 +34,13 @@ the status of the payment after the payment view returns, but only once to find
 out the final status of the invoice.
 
 The methods required in a basic integration are:
+
 * sendInvoice
 * getPaymentStatus
 * markTransactionPeriod
 
 For an extended integration, also these methods can be used:
+
 * updateInvoice
 * cancelInvoice
 * commitReservation
