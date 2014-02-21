@@ -16,15 +16,45 @@ When integration has been performed, SEQR payment is performed according to this
 
 <img src="/assets/images/service_sequence.png" />
 
-## Steps to take when integrating with SEQR
+## Integration procedure
+
+Follow these steps to integrate your service with SEQR:
 
 
-1. Create your QR codes for scanning
-2. Create a web frontend to be integrated into SEQR app
-3. Create a web backend
-4. Verify your integration
-5. Go live!
+1. Add API parameters
+2. Create your QR codes for scanning
+3. Create a web frontend to be integrated into SEQR app
+4. Create a web backend
+5. Verify your integration
+6. Go live!
 
+
+### Add API parameters
+
+The methods required in a basic integration are:
+
+* getClientSessionInfo
+
+* sendInvoice
+
+* getPaymentStatus
+
+* markTransactionPeriod
+
+
+For an extended integration, also these methods can be used:
+
+* updateInvoice
+
+* cancelInvoice
+
+* commitReservation
+
+* submitPaymentReceipt
+
+* executeReport
+
+Refer to section [API](/merchant/reference/api.html) for detailed description.
 
 ### Create your QR codes for scanning
 
