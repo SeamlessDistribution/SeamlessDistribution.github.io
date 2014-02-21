@@ -15,7 +15,7 @@ checkout that supports SEQR:
 
 [See a live demo!](http://devapi.seqr.com/sample)
 
-The flow for a webshop SEQR payment is very similar to [Making your first SEQR
+The flow for a webshop SEQR payment is very similar to [Basic SEQR
 payment](/merchant/payment).
 The difference is that polling for payment status is handled by a payment view,
 which also handles showing the QR code to the SEQR user. You still need to request
@@ -26,7 +26,8 @@ Follow these steps to integrate your webshop with SEQR:
 
 1. Integrate the payment view
 2. Present the receipt
-3. Go live!
+3. Verify your integration
+4. Go live!
 
 ## Integrate the payment view
 There are two payment views that you can choose from:
@@ -71,6 +72,10 @@ from SEQR by calling getPaymentStatus. If the invoice was successfully paid,
 a reference number (ersReference) is obtained from 
 SEQR. Save the reference number for follow-ups and for print on the customer 
 online confirmation receipt.
+
+## Verify your integration
+
+To verify that your integration works you can sign up to SEQR servers and run validation tests. [contact](/contact) Seamless for login credentials. 
 
 ## Go live!
 

@@ -6,7 +6,7 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-# Implement SEQR payments
+# Basic SEQR payment
 
 Feel hungry for real payments now? Just make sure you have the following in place:
 
@@ -38,9 +38,9 @@ Cashregister-->App: Happy!
 
 
 
-## SEQR Payment in Python
+## Create a bill and publish it to the app 
 
-Create a bill and publish it to the app. You will need PIL and qrpython library (pip install qrcode PIL suds)
+You will need PIL and qrpython library (pip install qrcode PIL suds)
 
 {% highlight python %}
 # create an invoice
@@ -60,7 +60,7 @@ invoice.totalAmount.value, invoice.totalAmount.currency = "500", "SEK"
 invoiceResponse = client.service.sendInvoice(context, invoice)
 {% endhighlight %}
 
-Querying for payment status:
+## Check for payment status
 
 {% highlight python %}
 response = client.service.getPaymentStatus(context,

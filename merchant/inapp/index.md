@@ -12,7 +12,7 @@ customer normally selects between payment methods.
 
 All apps offering payments typically have a backend that handles the actual service/product that is sold. It is this backend that must connect to SEQR using our interface, and the communication between your app and your backend is up to your app developer.
 
-The flow for an app SEQR payment is very similar to [Making your first SEQR payment](/merchant/payment).
+The flow for an app SEQR payment is very similar to [Basic SEQR payment](/merchant/payment).
 The difference is that the user presses a "pay" button or link in your app, which launches the SEQR app and presents the bill for the user to confirm the payment.
 You still need to request the status of the payment after your app returns (with backURL), but only once to find out the final status of the invoice.
 
@@ -20,7 +20,8 @@ Follow these steps to integrate your app with SEQR:
 
 1. Insert the payment URL
 2. Present the receipt
-3. Go live!
+3. Verify your integration
+4. Go live!
 
 ## Insert the payment URL
 
@@ -36,6 +37,9 @@ Once the payment is completed, your app should query the status of the invoice f
 SEQR. Save the reference number for follow-ups and for print on the user 
 online confirmation receipt.
 
+## Verify your integration
+
+To verify that your integration works you can sign up to SEQR servers and run validation tests. [contact](/contact) Seamless for login credentials.
 
 ## Go live!
 
