@@ -13,6 +13,7 @@ Follow these steps to configure your POS for integration with SEQR:
 1. Register POS with SEQR
 2. Assign SEQR id
 3. Add SEQR as payment in your POS
+4. Verify your integration
 6. Go live!
 
 ## Register POS with SEQR
@@ -185,6 +186,11 @@ Do the following:
 
 4.	Once the payment is complete a reference number (ersReference) is obtained from SEQR. Save the reference number for follow-ups and print the number on end user receipts.
 
+
+
+## Verify your integration
+
+To verify that your integration works you can sign up to SEQR servers and run validation tests. [contact](/contact) Seamless for login credentials.
 
 
 ## Go live!

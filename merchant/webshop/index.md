@@ -7,13 +7,24 @@ description: SEQR Merchant, webshop, POS integration
 
 # SEQR payment in a Webshop
 
-Add SEQR payment in your “Check out” process where your 
-customer normally selects between payment methods. This is an example of a 
-checkout that supports SEQR:
+To integrate your webshop with SEQR, you need to add SEQR payment in your “Check out” process where your customer normally selects between payment methods. This is an example of a checkout that supports SEQR:
 
 <img src="/assets/images/seqr_webshop.png" />
 
 [See a live demo!](http://devapi.seqr.com/sample)
+
+
+## Integration procedure
+
+Follow these steps to integrate your webshop with SEQR:
+
+1. Add API parameters
+2. Integrate the payment view
+2. Present the receipt
+3. Verify your integration
+4. Go live!
+
+### Add API parameters
 
 The flow for a webshop SEQR payment is very similar to [Basic SEQR
 payment](/merchant/payment).
@@ -22,14 +33,22 @@ which also handles showing the QR code to the SEQR user. You still need to reque
 the status of the payment after the payment view returns, but only once to find
 out the final status of the invoice.
 
-Follow these steps to integrate your webshop with SEQR:
+The methods required in a basic integration are:
+*sendInvoice
+*getPaymentStatus
+*markTransactionPeriod
 
-1. Integrate the payment view
-2. Present the receipt
-3. Verify your integration
-4. Go live!
+For an extended integration, also these methods can be used:
+*updateInvoice
+*cancelInvoice
+*commitReservation
+*submitPaymentReceipt
+*executeReport
 
-## Integrate the payment view
+Refer to section [API](/merchant/reference/api.html) for detailed description.
+
+
+### Integrate the payment view
 There are two payment views that you can choose from:
 
 #### Standard Payment View
@@ -65,7 +84,7 @@ page. The script will insert SEQR payment views at the same location.
  sendInvoice method. After a successful/cancelled payment, the app will redirect
 the SEQR user to the URL specified in the invoice.
 
-## Present the receipt
+### Present the receipt
 
 Once the payment is completed, your webshop should query the status of the invoice
 from SEQR by calling getPaymentStatus. If the invoice was successfully paid, 
@@ -73,10 +92,10 @@ a reference number (ersReference) is obtained from
 SEQR. Save the reference number for follow-ups and for print on the customer 
 online confirmation receipt.
 
-## Verify your integration
+### Verify your integration
 
-To verify that your integration works you can sign up to SEQR servers and run validation tests. [contact](/contact) Seamless for login credentials. 
+To verify that your integration works you can sign up to SEQR servers and run validation tests. [Contact](/contact) Seamless for login credentials. 
 
-## Go live!
+### Go live!
 
 To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your webshop.

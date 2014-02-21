@@ -22,7 +22,8 @@ When integration has been performed, SEQR payment is performed according to this
 1. Create your QR codes for scanning
 2. Create a web frontend to be integrated into SEQR app
 3. Create a web backend
-4. Go live!
+4. Verify your integration
+5. Go live!
 
 
 ### Create your QR codes for scanning
@@ -141,6 +142,10 @@ The communication with SEQR backend consists of the following:
 * calling **sendInvoice**, with appropriate invoice information. Refer to the **sendInvoice** request in the <a href="/merchant/reference/api.html">API</a> section.
 
 * calling **getPaymentStatus** and receiving status PAID, to ensure that SEQR backend can confirm that your system is aware of the payment being successful. Refer to the **getPaymentStatus** request in the <a href="/merchant/reference/api.html">API</a> section.
+
+### Verify your integration
+
+To verify that your integration works you can sign up to SEQR servers and run validation tests. [contact](/contact) Seamless for login credentials.
 
 ### Go live!
 
