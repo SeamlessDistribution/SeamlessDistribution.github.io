@@ -406,7 +406,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 }
 .box {
 	float: left;
-    width: 27%;
+    width: 20%;
     min-width: 7em;
 	padding: 1em;
 }
