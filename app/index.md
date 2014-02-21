@@ -13,7 +13,7 @@ on your phone. Android app is the only platform that is available for public
 
 * Our Android developer app can be installed if you enable "other sources" in 
 settings and then browse to this page on your phone [install android developer
-app](/downloads/se-qr-androidapp-demo-2.1.5.3.apk).
+app](/downloads/se-qr-androidapp-demo-2.1.7.4.apk).
 
 * Once installed you select the "Exdev 4" as server, choose a PIN, and enter
 your phone number in full format, eg "+46738966XXX". Then complete the activation.

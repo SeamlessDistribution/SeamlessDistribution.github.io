@@ -6,9 +6,6 @@ description: API reference
 
 # Payment API / WSDL
 
-For test purpose we use this [WSDL](http://extdev4.seqr.se/extclientproxy/service/v2?wsdl).
-For complete details, refer to the [API documentation](/downloads/ersifextclient-2.4.2.1-manual-SEQR.pdf)
-and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/). 
 
 ## Methods for payments
 
@@ -92,25 +89,16 @@ and to the [javadoc](/downloads/ersifextclient-2.4.2.1-javadoc/).
                <li>ReceiptDocument receiptDocument</li>
             </ul>
          </td>
-         <td>
-            Used to confirm that the payment was received by the cashregister. 
-            Adds an optional receipt document to a payment or refund.
-         </td>
-      </tr>
-      <tr>
-         <td>
-            refundPayment
-            <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
-               <li>String ersReference</li>
-               <li>Invoice invoice</li>
-            </ul>
-         </td>
-         <td>Refunds a previous payment (Available in production from 2014)
+         <td>Used to confirm that the payment was received by the cashregister. 
+            Adds an optional receipt document to a payment.
          </td>
       </tr>
    </tbody>
 </table>
+
+
+
+
 
 
 ### Methods specific for POS (terminal) registration 
@@ -845,81 +833,6 @@ To be added!
 {% endhighlight %}
 
 
-## refundPayment SOAP request fields
-
-
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| ersReference | Reference of the payment to be refunded. |
-| invoice | Invoice data, which contains the amount and other invoice information after products has been removed from the original invoice. |
-
-
-## refundPayment SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| ersReference | The reference of the refund. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
-
-## refundPayment SOAP request example
-
-
-{% highlight python %}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ext="http://external.interfaces.ers.seamless.com/">
-   <soapenv:Header/>
-   <soapenv:Body>
-     <ext:refundPayment>
-       <context>
-          <channel>WS</channel>
-          <clientComment>comment</clientComment>
-          <clientId>testClient</clientId>
-          <clientReference>12345</clientReference>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>87e791f9e24148a6892c52aa85bb0331</id>
-            <type>TERMINALID</type>
-          </initiatorPrincipalId>
-          <password>secret</password>
-       </context>
-       <ersReference>2012050100000000000000001</ersReference>
-       <invoice>
-          <title>Some Invoice</title>
-          <cashierId>Bob</cashierId>
-          <totalAmount>
-            <currency>SEK</currency>
-            <value>10.22</value>
-          </totalAmount>
-       </invoice>
-     </ext:refundPayment>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-## refundPayment SOAP response example
-
-{% highlight python %}
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:refundPaymentResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
-         <return>
-           <ersReference>2012050100000000000000002</ersReference>
-            <resultCode>0</resultCode>
-            <resultDescription>SUCCESS</resultDescription>
-         </return>
-      </ns2:refundPaymentResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
 
 ## getClientSessionInfo request fields
 
@@ -1025,7 +938,7 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## markTransationPeriod SOAP request example, per **shop** reconciliation
+## markTransactionPeriod SOAP request example, per **shop** reconciliation
 
 
 {% highlight python %}
@@ -1054,7 +967,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransationPeriod SOAP response example, per **shop** reconciliation
+## markTransactionPeriod SOAP response example, per **shop** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1073,7 +986,7 @@ To be added!
 
 
 
-## markTransationPeriod SOAP request example, per **terminal** reconciliation
+## markTransactionPeriod SOAP request example, per **terminal** reconciliation
 
 
 {% highlight python %}
@@ -1106,7 +1019,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransationPeriod SOAP response example, per **terminal** reconciliation
+## markTransactionPeriod SOAP response example, per **terminal** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">

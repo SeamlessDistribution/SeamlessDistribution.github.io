@@ -43,9 +43,7 @@ ________________________________________
 
 This sequence diagram illustrates a typical payment flow with loyalty card, where the cash register sends invoice, the user scans, confirms payment and then swipes the loyalty card (in this case, the card has not been used before):
 
-#### This style?
-
-<div class="diagram">
+<!-- div class="diagram">
 
 Cashregister->SEQR: sendInvoice
 SEQR->Cashregister: invoice response
@@ -71,10 +69,7 @@ SEQR->Cashregister: PAID
 
 <script>
  $(".diagram").sequenceDiagram({theme: 'simple'});
-</script>
-
-#### Or this style??
-
+</script -->
 
 <img src="/assets/images/loyalty.png" />
 
