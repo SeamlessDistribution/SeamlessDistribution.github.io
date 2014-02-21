@@ -40,7 +40,6 @@ For an extended integration, also these methods can be used:
 |  Method | Description |
 |--- | --- |
 | updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
-| commitReservation | Commits a payment |
 | submitPaymentReceipt | Sends the receipt document of a payment |
 | executeReport | Executes a report on SEQR server |
 | --- | --- |
