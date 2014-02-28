@@ -47,9 +47,7 @@ For an extended integration, also these methods can be used:
 | --- | --- |
 
 
-Refer to sec## Sequence (simplified)
-
-<div class="diagram">tion [API](/merchant/reference/api.html) for detailed description.
+Refer to section [API](/merchant/reference/api.html) for detailed description.
 
 
 ## Register POS with SEQR
