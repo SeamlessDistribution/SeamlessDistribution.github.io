@@ -79,19 +79,18 @@ page. The script will insert SEQR payment views at the same location.
 {% highlight html %}
 <script
  id="seqrShop"
- src="http://devapi.seqr.com/seqr-webshop-plugin/js/seqrShop.js#!invoiceId=[invoiceReference]">
+ src="http://devapi.seqr.com/seqr-webshop-plugin/js/seqrShop.js#!invoiceReference=[invoiceReference]">
 </script>
 {% endhighlight %}
 
 #### View parameters 
 
-| Name        | Description | Values | Default |
-|-------------|-----------|---------|-----|
-| invoiceId   | (required) invoice reference that you received from sendInvoice request | - | - |
-| layout      | (optional) layout for the payment view | standard, small | standard |
-| language    | (optional) language for texts in payment view | en, sv, ... | detected from browser, falls back to English if not available |
-| successCallback | (optional) this javascript method is invoked after the payment is successful | - | - |
-| successURL  | (optional) redirect to this URL upon successful payment | - | - |
+| Name             | Description | Values | Default |
+|------------------|-----------|---------|-----|
+| invoiceReference | (required) invoice reference that you received from sendInvoice request | - | - |
+| layout           | (optional) layout for the payment view | standard, small | standard |
+| language         | (optional) language for texts in payment view | en, sv, ... | detected from browser, falls back to English if not available |
+| paidCallback     | (optional) this javascript method is invoked after the payment is successful | - | - |
 
 **Note:** when your webshop is browsed on mobile phones, you provide the backUrl in
  **sendInvoice** request. After a successful/cancelled payment, the app will redirect
