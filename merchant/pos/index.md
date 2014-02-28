@@ -124,7 +124,7 @@ The parameter seqrId is stored in the local database after a successful assignme
 
 ## Add SEQR as payment in your POS
 
-This section describes how to set up the POS for SEQR payment from a cashier's perspective. Refer also to <a href="/merchant/payment/">First SEQR payment</a>, which shows how to implement the code with sample flow.
+This section describes how to set up the POS for SEQR payment from a cashier's perspective. Refer also to <a href="/merchant/payment/">Basic SEQR payment</a>, which shows how to implement the code with sample flow.
 
 SEQR must be added as a new payment method. SEQR payment is enabled when an active receipt has started and the amount to pay is greater than zero. 
 
@@ -222,9 +222,9 @@ Do the following:
 
 ## Verify your integration
 
-To verify that your integration works you can sign up to SEQR servers and run validation tests. [contact](/contact) Seamless for login credentials.
+Verify that your integration works and run validation tests towards SEQR servers. [Contact](/contact) Seamless for more information.
 
 
 ## Go live!
 
-To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your POS/cash register.
+To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html).

@@ -71,8 +71,8 @@ online confirmation receipt.
 
 ### Verify your integration
 
-To verify that your integration works you can sign up to SEQR servers and run validation tests. [Contact](/contact) Seamless for login credentials.
+Verify that your integration works and run validation tests towards SEQR servers. [Contact](/contact) Seamless for more information.
 
 ### Go live!
 
-To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html) and receive the credentials to your app.
+To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html).
