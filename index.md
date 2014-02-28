@@ -44,6 +44,7 @@ The Seamless API provides the possibility for merchants to integrate their payme
   <ul>
    <li><a href="merchant/reference/api.html">API</a></li>
    <li><a href="merchant/reference/reporting.html">Reporting</a></li>
+   <li><a href="merchant/reference/refund.html">Refunds</a></li>
    <!-- li><a href="merchant/reference/loyalty.html">Loyalty</a></li -->
    <li><a href="merchant/reference/glossary.html">Glossary</a></li>
   </ul>
