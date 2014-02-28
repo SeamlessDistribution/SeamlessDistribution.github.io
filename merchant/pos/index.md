@@ -8,6 +8,8 @@ description: SEQR Merchant, webshop, POS integration
 
 # SEQR payment in a POS/Cash register
 
+## Integration procedure
+
 Follow these steps to configure your POS for integration with SEQR:
 
 1. Add API parameters
