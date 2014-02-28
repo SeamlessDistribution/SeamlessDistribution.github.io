@@ -47,7 +47,9 @@ For an extended integration, also these methods can be used:
 | --- | --- |
 
 
-Refer to section [API](/merchant/reference/api.html) for detailed description.
+Refer to sec## Sequence (simplified)
+
+<div class="diagram">tion [API](/merchant/reference/api.html) for detailed description.
 
 
 ## Register POS with SEQR
@@ -65,6 +67,19 @@ ________________________________________
 
 ________________________________________
 
+#### Sequence (simplified)
+
+<div class="diagram">
+Cash Register->SEQR: RegisterTerminal()
+SEQR-->Cash Register: terminalId
+Note right of Cash Register: Cashier scans \nor enters SEQR\nsticker content
+Cash Register->SEQR: assignSeqrId(SEQR ID)
+SEQR-->Cash Register: OK
+</div>
+
+<script>
+ $(".diagram").sequenceDiagram({theme: 'simple'});
+</script>
 
 
 
