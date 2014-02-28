@@ -23,7 +23,7 @@ The following requests and parameters are checked during the certification proce
 | Method: getPaymentStatus | Check status of a payment | X | X | X | X |
 | Parameter: invoiceRow | Verify that invoices can contain multiple invoice rows. Check if total amount is included in invoice | X | X | X | X |
 | Method: cancelInvoice | Check that an unpaid invoice can be canceled | X | X | X | X |
-| markTransactionPeriod | Check timestamp when closing shop; used in reporting |
+| Method: markTransactionPeriod | Check timestamp when closing shop; used in reporting |
 | Method: unregisterTerminal | Check that cash register is able to unregister terminals | X |  |  |  |
 | --- | --- | --- | --- | --- | --- |
 
