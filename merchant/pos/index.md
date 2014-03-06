@@ -145,21 +145,11 @@ SEQR must be added as a new payment method. SEQR payment is enabled when an acti
 
 #### 1.	Start the payment by pressing the SEQR payment button in POS 
 
-The following dialog is displayed to the cashier:
- 
-<img src="/assets/images/pay_with_seqr.png" width="200px"/>
+The amount to pay is pre-entered in the cash register dialog. The cashier can choose to increase or decrease the pre-entered amount.
 
-The amount to pay is pre-entered in the dialog. The cashier can choose to increase or decrease the pre-entered amount.
-If amount to pay is less than the receipt total, the following will occur after a completed payment:
+If amount to pay with SEQR is less than the total amount (for example if some part is paid with card or cash), then SEQR should be used LAST among all the different payment types, so that the total amount minus the cash/card amount shows the exact total amount that is to be paid by SEQR. 
 
-* The receipt cannot be parked
-* The receipt cannot be canceled
-* The payment cannot be corrected
-* Another payment must be used to complete the receipt
 
-If amount to pay is higher than the receipt total, the following occurs after a completed payment:
-
-* The difference between paid amount and the receipt total is returned to the customer.
 
 #### 2.	Press the Pay button
 
