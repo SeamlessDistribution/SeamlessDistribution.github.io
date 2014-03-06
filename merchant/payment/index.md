@@ -10,9 +10,12 @@ description: SEQR Merchant, webshop, POS integration
 
 Feel hungry for real payments now? Just make sure you have the following in place:
 
-1. Create a bill and publish it to the app
-2. Pay using SEQR app
-3. Check the payment status
+1. Get terminal context
+2. Create a bill and publish it to the app
+3. Pay using SEQR app
+4. Check the payment status
+
+
 
 ## Sequence (simplified)
 
@@ -34,6 +37,11 @@ Cashregister-->App: Happy!
 <script>
  $(".diagram").sequenceDiagram({theme: 'simple'});
 </script>
+
+
+## Get terminal context
+
+Refer to <a href="/merchant/reference/signup.html">Get login credentials</a> for example terminal ID and password to use during the payment requests. 
 
 
 
