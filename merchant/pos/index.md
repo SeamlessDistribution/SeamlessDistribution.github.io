@@ -139,9 +139,9 @@ The parameter seqrId is stored in the local database after a successful assignme
 
 ## Add SEQR as payment in your POS
 
-This section describes how to set up the POS for SEQR payment from a cashier's perspective. Refer also to <a href="/merchant/payment/">Basic SEQR payment</a>, which shows how to implement the code with sample flow.
+This section describes an example of SEQR payment from a cashier's perspective. Refer also to <a href="/merchant/payment/">Basic SEQR payment</a>, which shows how to implement the code with sample flow.
 
-SEQR must be added as a new payment method. SEQR payment is enabled when an active receipt has started and the amount to pay is greater than zero. 
+SEQR must be added as a new payment method. SEQR can only be used started when an active receipt exists and the amount to pay is greater than zero. 
 
 #### 1.	Start the payment by pressing the SEQR payment button in POS 
 
