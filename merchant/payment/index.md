@@ -8,14 +8,13 @@ description: SEQR Merchant, webshop, POS integration
 
 # Basic SEQR payment
 
-Feel hungry for real payments now? Just make sure you have the following in place:
+Make a test purchase:
 
-1. Get terminal context
-2. Create a bill and publish it to the app
-3. Pay using SEQR app
-4. Check the payment status
+1. Create a bill and publish it to the app
+2. Pay using SEQR app
+3. Check the payment status
 
-
+The example uses [public credentials](../reference/signup.html) that you can use for testing. 
 
 ## Sequence (simplified)
 
@@ -39,12 +38,6 @@ Cashregister-->App: Happy!
 </script>
 
 
-## Get terminal context
-
-Refer to <a href="/merchant/reference/signup.html">Get login credentials</a> for example terminal ID and password to use during the payment requests. 
-
-
-
 ## Create a bill and publish it to the app 
 
 You will need PIL and qrpython library (pip install qrcode PIL suds)
@@ -66,6 +59,7 @@ invoice.totalAmount.value, invoice.totalAmount.currency = "500", "SEK"
 # publish the invoice to the app
 invoiceResponse = client.service.sendInvoice(context, invoice)
 {% endhighlight %}
+
 
 ## Pay using SEQR app
 
