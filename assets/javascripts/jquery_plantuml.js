@@ -56,8 +56,7 @@ $(document).ready(function () {
             $(value).html('');
             var importedSVGRootElement = document.importNode(svgDoc.documentElement, true);
             $(value).append(importedSVGRootElement);
-            $(value).append('<p><a href="http://devapi.seqr.com/plantuml/png/' + data + '">[PNG]</a> ');
-            $(value).append('<a href="http://devapi.seqr.com/plantuml/svg/' + data + '">[SVG]</a></p>');
+            $(value).append('<p><a href="http://devapi.seqr.com/plantuml/png/' + data + '">[PNG]</a> <a href="http://devapi.seqr.com/plantuml/svg/' + data + '">[SVG]</a></p>');
             $(value).show();
         });
     });
