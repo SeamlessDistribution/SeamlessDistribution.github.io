@@ -4,13 +4,15 @@ title: SEQR Developer Site
 description: News and examples for SEQR cashregister integrations
 ---
 
+<div class="aboutseqr">
 SEQR is a system for mobile payments. Its flexible platform works in almost any payment situation. Key factors are security, speed, accessibility and usability. SEQR offers the ability for user interaction, through the SEQR app, with an almost limitless range of functions in connection with shopping and payments.
 
 **Paying with SEQR is super easy and getting paid is just as easy with our
 integration process.**
-
+</div>
+<div class="aboutapi">
 The Seamless API provides the possibility for merchants to integrate their payment system with SEQR, enabling their customers to be able to pay using the SEQR app in an easy, fast and secure way. Any type of shop can integrate with SEQR, it may be a POS, a webshop, a service, an app, etc. For the merchant, this technology is very advantageous since it reduces their transaction costs by half, compared to regular card payments.
-
+</div>
 
  
 
