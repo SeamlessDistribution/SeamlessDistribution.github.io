@@ -68,18 +68,14 @@ ________________________________________
 #### Sequence (simplified)
 
 <div class="diagram">
-Cash Register->SEQR: RegisterTerminal()
-SEQR-->Cash Register: terminalId
-Note right of Cash Register: Cashier scans \nor enters SEQR\nsticker content
-Cash Register->SEQR: assignSeqrId(SEQR ID)
-SEQR-->Cash Register: OK
+@startuml
+skinparam monochrome true
+Cashregister->SEQR:RegisterTerminal()
+SEQR-->Cashregister: terminalId
+Cashregister->SEQR: assignSeqrId(SEQR ID)
+SEQR-->Cashregister: OK
+@enduml
 </div>
-
-<script>
- $(".diagram").sequenceDiagram({theme: 'simple'});
-</script>
-
-
 
 #### POS menu
 
@@ -101,7 +97,6 @@ Preferably done in the back office.
 ________________________________________
 **Note!** The terminal id that is received as response, must hereafter be used in every method that is called, for the particular terminal/POS.
 
-________________________________________
 
 Example of registerTerminal:
 

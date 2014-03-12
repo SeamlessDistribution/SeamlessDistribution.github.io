@@ -449,3 +449,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
     }
 
 }
+
+.diagram {
+    display: none;
+}
