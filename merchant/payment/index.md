@@ -19,6 +19,8 @@ The example uses [public credentials](../reference/signup.html) that you can use
 ## Sequence (simplified)
 
 <div class="diagram">
+@startuml
+skinparam monochrome true
 Cashregister->SEQR: sendInvoice
 SEQR-->Cashregister: (invoice reference)
 Cashregister->SEQR: getPaymentStatus
@@ -31,12 +33,8 @@ SEQR-->Cashregister: PAID
 Note right of Cashregister: Payment cleared!
 SEQR->App: Done (show receipt)
 Cashregister-->App: Happy!
+@enduml
 </div>
-
-<script>
- $(".diagram").sequenceDiagram({theme: 'simple'});
-</script>
-
 
 ## Create a bill and publish it to the app 
 
