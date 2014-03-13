@@ -7,11 +7,7 @@ description: SEQR Merchant, webshop, Service integration
 
 # SEQR payment in your Service
 
-To use SEQR as the payment method for your service, you need to integrate your own service into the SEQR app.
-
-This integration description is based upon the normal SEQR payment flow, refer to [Basic SEQR payment](/merchant/payment).
-
-When integration has been performed, SEQR payment is performed according to this sequence diagram:
+To use SEQR as the payment method for your service, you need to integrate your own service into the SEQR app.This integration description is based upon the normal SEQR payment flow, refer to [Basic SEQR payment](/merchant/payment). When integration has been performed, SEQR payment is performed according to this sequence diagram:
 
 
 <div class="diagram">
