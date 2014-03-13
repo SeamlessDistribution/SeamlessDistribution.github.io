@@ -16,18 +16,32 @@ When integration has been performed, SEQR payment is performed according to this
 
 <div class="diagram">
 @startuml
+
+scale 650 width
 skinparam monochrome true
 
-
+Note over App: User scans \n Service QR code
+App->SEQR: Retrieve 4 Service URL's \n and TOKEN
+App->ServiceWeb: Redirect to Service URL for Order \n include TOKEN as location hash. Example:\nhttp://service-host/order-page#123456-789013
+ServiceWeb->ServiceBackend: Retreive Service data\nby providing TOKEN.
+ServiceBackend->SEQR: Call getClientSessionInfo \nproviding TOKEN
+note right of ServiceWeb 
+	The customer interacts
+	with Service Web, 
+	embedded in SEQR App. 
+	Using service features
+end note
+ServiceWeb->ServiceBackend: Submit Order
+ServiceBackend->SEQR: Call sendInvoice.\n Providing Notification URL.\n Retrieving SEQR Invoice Reference.
+ServiceWeb->App: Trigger Payment flow\n using URL Schema, providing\n SEQR Invoice Reference
+App->SEQR: Pay Invoice
+SEQR->ServiceBackend: Call Notification URL
+ServiceBackend->SEQR: Call getPayementStatus\n using SEQR Invoice Reference
+App->ServiceWeb: Redirect to Service Success Page\n including TOKEN and SEQR Invoice Reference. Example: \n http://service-host/success-page#123456-789013_1234567890
+ServiceWeb->ServiceBackend: Retreive service data 
 
 @enduml
 </div>
-
-
-
-
-
-<img src="/assets/images/service_sequence.png" />
 
 ## Integration procedure
 
