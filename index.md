@@ -1,7 +1,7 @@
 ---
 layout: firstpage
 title: SEQR Developer Site
-description: News and examples for SEQR cashregister integrations
+description: News and examples for SEQR merchant integrations
 ---
 <div class="inner-nomargin">
 	<div class="boxes">
@@ -42,7 +42,7 @@ description: News and examples for SEQR cashregister integrations
  <div class="margin">
  <h4>References</h4> 
   <ul>
-   <li><a href="merchant/reference/api.html">API</a><br>The Seamless API used for integration is the Cash Register Service interface, and the integration with SEQR is done via SOAP. Where a protocol other than SOAP is preferred, the developer should create a proxy to serve as an intermediate point between the client and the SEQR service. The client and the proxy can then use the preferred protocol while the proxy and the SEQR service will use SOAP.</li>
+   <li><a href="merchant/reference/api.html">API</a><br>The Seamless API used for integration is the Merchant Service interface, and the integration with SEQR is done via SOAP. Where a protocol other than SOAP is preferred, the developer should create a proxy to serve as an intermediate point between the client and the SEQR service. The client and the proxy can then use the preferred protocol while the proxy and the SEQR service will use SOAP.</li>
    <li><a href="merchant/reference/reporting.html">Reporting</a><br>The Report function in our API  enables reconciliation; that is, to check and confirm that the client has the same number of transactions as the SEQR service during a specified period.</li>
    <!-- li><a href="merchant/reference/loyalty.html">Loyalty</a></li -->
    <li><a href="merchant/reference/glossary.html">Glossary</a><br>The Glossary gives brief description to the terminology used in our documents and website.</li>
