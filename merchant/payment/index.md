@@ -29,7 +29,7 @@ SEQR-->Seller: (invoice reference)
 Seller->SEQR: getPaymentStatus
 SEQR-->Seller: ISSUED
 SEQRApp->SEQR: ask for invoice at QR-code
-SEQR->SEQRApp: retry until you get SUCCESS
+Note right of SEQR: retry until you get SUCCESS
 SEQRApp->SEQR: payment
 Seller->SEQR: getPaymentStatus
 SEQR-->Seller: PAID
