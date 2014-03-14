@@ -21,6 +21,8 @@ The example uses [public credentials](../reference/signup.html) that you can use
 <div class="diagram">
 @startuml
 skinparam monochrome true
+participant Seller
+participant SEQR
 participant "SEQR App" as SEQRApp
 Seller->SEQR: sendInvoice
 SEQR-->Seller: (invoice reference)
