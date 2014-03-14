@@ -21,18 +21,18 @@ The example uses [public credentials](../reference/signup.html) that you can use
 <div class="diagram">
 @startuml
 skinparam monochrome true
-Cashregister->SEQR: sendInvoice
-SEQR-->Cashregister: (invoice reference)
-Cashregister->SEQR: getPaymentStatus
-SEQR-->Cashregister: ISSUED
-App->SEQR: ask for invoice at QR-code
-SEQR->App: retry until you get SUCCESS
-App->SEQR: payment
-Cashregister->SEQR: getPaymentStatus
-SEQR-->Cashregister: PAID
-Note right of Cashregister: Payment cleared!
-SEQR->App: Done (show receipt)
-Cashregister-->App: Happy!
+Seller->SEQR: sendInvoice
+SEQR-->Seller: (invoice reference)
+Seller->SEQR: getPaymentStatus
+SEQR-->Seller: ISSUED
+SEQR App->SEQR: ask for invoice at QR-code
+SEQR->SEQR App: retry until you get SUCCESS
+SEQR App->SEQR: payment
+Seller->SEQR: getPaymentStatus
+SEQR-->Seller: PAID
+Note right of Seller: Payment cleared!
+SEQR->SEQR App: Done (show receipt)
+Seller-->SEQR App: Happy!
 @enduml
 </div>
 
