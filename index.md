@@ -11,8 +11,8 @@ description: News and examples for SEQR merchant integrations
 	  <h4>Get started</h4>
 	 </div>
 	  <ul>
-	   <li><a href="merchant/payment">Basic SEQR payment</a> | How it works</li>
-	   <li><a href="app/">Get SEQR app</a> | Demo app for testing</li>
+	   <li><a href="merchant/payment">Basic SEQR payment</a> - How it works</li>
+	   <li><a href="app/">Get SEQR app</a> - Demo app for testing</li>
 	  </ul>
 	 </div>
 	 <div class="box">
@@ -21,10 +21,10 @@ description: News and examples for SEQR merchant integrations
 		 <h4>Customise payment</h4>
 	 </div>
 	  <ul>
-	   <li><a href="merchant/webshop">Webshop</a> | Payments on your e-commerce</li>
-	   <li><a href="merchant/pos">POS</a> | Payments in your store</li> 
-	   <li><a href="merchant/externalservices">Services</a> | Payments through a web service</li>
-	   <li><a href="merchant/inapp">App</a> | Payments in your mobile app</li> 
+	   <li><a href="merchant/webshop">Webshop</a> - Payments on your e-commerce</li>
+	   <li><a href="merchant/pos">POS</a> - Payments in your store</li> 
+	   <li><a href="merchant/externalservices">Services</a> - Payments through a web service</li>
+	   <li><a href="merchant/inapp">App</a> - Payments in your mobile app</li> 
 	  </ul> 
 	 </div>
 	<div class="box">
@@ -33,8 +33,8 @@ description: News and examples for SEQR merchant integrations
 		 <h4>Go live with SEQR</h4> 
 		</div>
 		<ul>
-		   <li><a href="merchant/reference/signup.html">Get login credentials</a> | Get started</li>
-			<li><a href="merchant/reference/certification.html">Certification</a> | Certify your integration</li> 
+		   <li><a href="merchant/reference/signup.html">Get login credentials</a> - Get started</li>
+			<li><a href="merchant/reference/certification.html">Certification</a> - Certify your integration</li> 
 		</ul> 
 	</div>
 </div>
