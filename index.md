@@ -42,7 +42,7 @@ description: News and examples for SEQR merchant integrations
  <div class="margin">
  <h4>References</h4> 
   <ul>
-   <li><a href="merchant/reference/api.html">API</a><br>Integration with SEQR is done via SOAP</li>
+   <li><a href="merchant/reference/api.html">API</a><br>Integration with SEQR is done via SOAP.</li>
    <li><a href="merchant/reference/reporting.html">Reporting</a><br>The Report function in SEQR API enables reconciliation; that is, to check and confirm that the client has the same number of transactions as the SEQR service during a specified period.</li>
    <!-- li><a href="merchant/reference/loyalty.html">Loyalty</a></li -->
    <li><a href="merchant/reference/glossary.html">Glossary</a><br>The Glossary gives brief description to the terminology used in our documents and website.</li>
