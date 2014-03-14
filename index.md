@@ -13,7 +13,6 @@ description: News and examples for SEQR cashregister integrations
 	  <ul>
 	   <li><a href="merchant/payment">Basic SEQR payment</a> | How it works</li>
 	   <li><a href="app/">Get SEQR app</a> | Demo app for testing</li>
-	   <li><a href="merchant/reference/signup.html">Get login credentials</a> | Get started</li>
 	  </ul>
 	 </div>
 	 <div class="box">
@@ -34,6 +33,7 @@ description: News and examples for SEQR cashregister integrations
 		 <h4>Go live with SEQR</h4> 
 		</div>
 		<ul>
+		   <li><a href="merchant/reference/signup.html">Get login credentials</a> | Get started</li>
 			<li><a href="merchant/reference/certification.html">Certification</a> | Certify your integration</li> 
 		</ul> 
 	</div>
