@@ -33,14 +33,14 @@ The standardized API used for clearing of transactions between SEQR and an accou
 The register machine of receiving payments with SEQR and also the API within SEQR system.
 
 **Client**
-Includes the the SEQR user using SEQR app, provisioners using ATMs and Internet banking as well as the merchant's cash registers.
+Includes the SEQR user using SEQR app, provisioners using ATMs and Internet banking as well as the merchant's cash registers.
 
 **Clearing**
 Is done in real time before the transaction is accepted. SEQR expects this money to be available at a holding account by the time of settlement.
 
 ### D
 **Device**
-Device is a generic word denoting a Mobile Equipment without SIM; such as smartphone, cell phone, mobile handset, mobile terminal, tablet computer, USB-data module, Personal Digital Assistant, etc
+Device is a generic word denoting a Mobile Equipment without SIM; such as smartphone, cell phone, mobile handset, mobile terminal, tablet computer, USB-data module, Personal Digital Assistant, etc.
 
 **DoS**
 Denial of Service
@@ -57,7 +57,7 @@ Electronic Recharge System 360, Seamless payment platform.
 
 ### I
 **Invoice**
-Seamless uses the word “Invoice” for defining the bill sent to the SEQR user 
+Seamless uses the word “Invoice” for defining the bill sent to the SEQR user. 
 
 ### J
 
@@ -77,7 +77,7 @@ Near Field Communication, a standard based communication technology enabling the
 
 ### O
 **OTP**
-One-time password
+One-time password.
 
 ### P
 **P2P**
@@ -103,7 +103,7 @@ Interface for managing devices for example in case of theft.
 
 ### Q
 **QR code**
-Quick Response Code, a matrix (2D) barcode
+Quick Response Code, a matrix (2D) barcode.
 
 ### R
 **Reconciliation**
@@ -135,7 +135,7 @@ The SEQR third-party service interface provides merchants and service providers 
 The consumer paying goods with SEQR.
 
 **SOAP**
-Simple Object Access Protocol
+Simple Object Access Protocol.
 
 **SSL**
 Secure Sockets Layer

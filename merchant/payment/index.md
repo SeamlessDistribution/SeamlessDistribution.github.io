@@ -19,24 +19,25 @@ The example uses [public credentials](../reference/signup.html) that you can use
 ## Sequence (simplified)
 
 <div class="diagram">
-Cashregister->SEQR: sendInvoice
-SEQR-->Cashregister: (invoice reference)
-Cashregister->SEQR: getPaymentStatus
-SEQR-->Cashregister: ISSUED
-App->SEQR: ask for invoice at QR-code
-SEQR->App: retry until you get SUCCESS
-App->SEQR: payment
-Cashregister->SEQR: getPaymentStatus
-SEQR-->Cashregister: PAID
-Note right of Cashregister: Payment cleared!
-SEQR->App: Done (show receipt)
-Cashregister-->App: Happy!
+@startuml
+skinparam monochrome true
+participant Seller
+participant SEQR
+participant "SEQR App" as SEQRApp
+Seller->SEQR: sendInvoice
+SEQR-->Seller: (invoice reference)
+Seller->SEQR: getPaymentStatus
+SEQR-->Seller: ISSUED
+SEQRApp->SEQR: ask for invoice at QR-code
+Note right of SEQR: retry until you get SUCCESS
+SEQRApp->SEQR: payment
+Seller->SEQR: getPaymentStatus
+SEQR-->Seller: PAID
+Note right of Seller: Payment cleared!
+SEQR->SEQRApp: Done (show receipt)
+Seller-->SEQRApp: Happy!
+@enduml
 </div>
-
-<script>
- $(".diagram").sequenceDiagram({theme: 'simple'});
-</script>
-
 
 ## Create a bill and publish it to the app 
 

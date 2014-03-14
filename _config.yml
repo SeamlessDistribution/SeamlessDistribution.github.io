@@ -3,3 +3,4 @@ lsi: false
 pygments: true
 title: SEQR for Developers
 markdown: kramdown
+exclude: ['Guardfile']

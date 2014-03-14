@@ -18,17 +18,16 @@ transaction period; used in reporting.
 
 
 <div class="diagram">
+@startuml
+skinparam monochrome true
 Cashregister->SEQR: markTransactionPeriod
 SEQR-->Cashregister: ersReference
 Cashregister->SEQR: executeReport (ersReference)
 SEQR-->Cashregister: REPORT_NOT_READY
 Cashregister->SEQR: executeReport (ersReference)
 SEQR-->Cashregister: XML report contents
+@enduml
 </div>
-
-<script>
- $(".diagram").sequenceDiagram({theme: 'simple'});
-</script>
 
 ## Procedure to reconcile transactions and create report
 
