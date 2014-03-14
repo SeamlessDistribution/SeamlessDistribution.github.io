@@ -11,7 +11,7 @@ To integrate your webshop with SEQR, you need to add SEQR payment in your “Che
 
 <img src="/assets/images/seqr_webshop.png" />
 
-[See a live demo!](http://devapi.seqr.com/seqr-webshop-sample/)
+##[See a live demo!](http://devapi.seqr.com/seqr-webshop-sample/)
 
 
 ## Integration procedure
