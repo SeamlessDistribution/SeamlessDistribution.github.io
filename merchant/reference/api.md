@@ -6,6 +6,8 @@ description: API reference
 
 # Payment API / WSDL
 
+This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
+https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
 
 ## Methods for payments
 
@@ -137,9 +139,9 @@ description: API reference
 
 
 
-## Context parameter used in all calls <a name="context"></a>
+## Context parameter used in all calls 
 
-
+<a name="context"></a>
 
 A principal is the main actor in each request to the SEQR service and represents either a seller or a buyer. Each request has at least an initiator principal.
 The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
@@ -201,7 +203,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
 | issueDate | cashregsister Date  | dateTime | XSD standard |
 | notificationURL | optional notification/confirmation url | string | unknown |
-| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED/RESERVATION_REQUIRED are limited in use | string | unknown |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string | unknown |
 | title | title displayed on bill and receipt | string | unknown |
 | totalAmount | full amount of invoice/bill | unknown | unknown |
 
