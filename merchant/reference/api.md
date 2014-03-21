@@ -193,19 +193,19 @@ The ClientContext structure is used in all requests to identify, authenticate an
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
-| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow | string | unknown |
-| backURL | used in in-app or web shopping | string | unknown |
-| cashierId | "Alice" will show on receipt | string | unknown |
-| clientInvoiceId | Your purchase reference | string | unknown |
+| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow | string |  |
+| backURL | used in in-app or web shopping | string |  |
+| cashierId | "Alice" will show on receipt | string |  |
+| clientInvoiceId | Your purchase reference | string |  |
 | footer | receipt footer text | string | unknown |
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
 | issueDate | cashregsister Date  | dateTime | XSD standard |
-| notificationURL | optional notification/confirmation url | string | unknown |
+| notificationURL | optional notification/confirmation url | string |  |
 | paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string | unknown |
-| title | title displayed on bill and receipt | string | unknown |
-| totalAmount | full amount of invoice/bill | unknown | unknown |
+| title | title displayed on bill and receipt | string |  |
+| totalAmount | full amount of invoice/bill | unknown |  |
 
 
 
@@ -216,16 +216,16 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 Used to present the payment in the app. 
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
-| itemDescription | optional | string | unknown |
-| itemDiscount | optional | unknown | unknown |
-| itemEAN | optional | string | unknown |
-| itemQuantity | should be 1 or more | decimal | unknown |
-| itemTaxRate | optional VAT line like "0.25" | decimal | unknown |
-| itemTotalAmount | required total amount for this row | unknown | unknown |
-| itemUnit | optional "dl" | string | unknown |
-| itemUnitPrice | optional  | unknown | unknown |
+| itemDescription | optional | string |  |
+| itemDiscount | optional | amount |  |
+| itemEAN | optional | string | string |
+| itemQuantity | should be 1 or more | decimal |  |
+| itemTaxRate | optional VAT line like "0.25" | decimal |  |
+| itemTotalAmount | required total amount for this row | amount |  |
+| itemUnit | optional "dl" | string |  |
+| itemUnitPrice | optional  | amount |  |
 
 
 # Requests and responses
@@ -339,12 +339,12 @@ Used to present the payment in the app.
 ### updateInvoice SOAP request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| invoice | Invoice data, which contains the amount and other invoice information | unknown | unknown |
-| invoiceReference | The SEQR service reference to the registered invoice. | string | unknown |
-| tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.| unknown | unknown |
+| invoice | Invoice data, which contains the amount and other invoice information | unknown |  |
+| invoiceReference | The SEQR service reference to the registered invoice. | string |  |
+| tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.| list |  |
 
 
 ### updateInvoice SOAP response fields
@@ -415,11 +415,11 @@ Used to present the payment in the app.
 ### getPaymentStatus SOAP request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| invoiceReference | The SEQR service reference to the registered invoice. | string | unknown |
-| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. | unknown | unknown |
+| invoiceReference | The SEQR service reference to the registered invoice. | string |  |
+| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. | unknown |  |
 
 
 ### getPaymentStatus SOAP response fields
@@ -492,11 +492,11 @@ This method confirms that the payment has been acknowledged and takes an optiona
 cashregisters as html. This receipt won't appear in the app automatically. 
 Please contact us if you are interested in using a custom receipt in the app. 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| ersReference | Reference of the payment for which the receipt is applicable. | unknown | unknown |
-| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. | unknown | unknown |
+| ersReference | Reference of the payment for which the receipt is applicable. | unknown |  |
+| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. | unknown |  |
 
 
 ### submitPaymentReceipt SOAP response fields
@@ -566,10 +566,10 @@ Please contact us if you are interested in using a custom receipt in the app.
 ### cancelInvoice SOAP request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| invoiceReference | Reference of the invoice to be canceled. | string | unknown |
+| invoiceReference | Reference of the invoice to be canceled. | string |  |
 
 
 ### cancelInvoice SOAP response fields
@@ -632,10 +632,10 @@ Please contact us if you are interested in using a custom receipt in the app.
 ### commitReservation SOAP request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| invoiceReference | Reference of the invoice that is reserved. | string | unknown |
+| invoiceReference | Reference of the invoice that is reserved. | string |  |
 
 
 ### commitReservation SOAP response fields
@@ -657,12 +657,12 @@ To be added - contact us if you plan to handle reservations.
 ### registerTerminal SOAP request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". | unknown | unknown |
+| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". | unknown |  |
 | password | Password for future communications with the SEQR service. | string | unknown |
-| name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". | string | unknown |
+| name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". | string |  |
 
 
 ### registerTerminal SOAP response fields
@@ -731,10 +731,10 @@ To be added - contact us if you plan to handle reservations.
 ### unregisterTerminal SOAP request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| TerminalId | The SEQR ID of the terminal to be unregistered. | unknown | unknown |
+| TerminalId | The SEQR ID of the terminal to be unregistered. | unknown |  |
 
 
 ### unregisterTerminal SOAP response fields
@@ -797,10 +797,10 @@ To be added - contact us if you plan to handle reservations.
 ### assignSeqrId SOAP request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| SeqrId | The SEQR ID of the terminal. | unknown | unknown |
+| SeqrId | The SEQR ID of the terminal. | unknown |  |
 
 
 ### assignSeqrId SOAP response fields
@@ -864,10 +864,10 @@ To be added - contact us if you plan to handle reservations.
 ### getClientSessionInfo request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| key | Authorization token, provided by SEQR server. | unknown | unknown |
+| key | Authorization token, provided by SEQR server. | unknown |  |
 
 
 ### getClientSessionInfo response fields
@@ -950,10 +950,10 @@ To be added - contact us if you plan to handle reservations.
 ### markTransactionPeriod request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| parameters | Optional parameters that can be used in processing the request. | unknown | unknown |
+| parameters | Optional parameters that can be used in processing the request. | unknown |  |
 
 
 ### markTransactionPeriod response fields
@@ -1072,12 +1072,12 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 ### executeReport SOAP request fields
 
 
-| Field | Description | Type | Length |
+| Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| reportId | The identifier of the report that should be executed/produced. | unknown | unknown |
-| language | The report language (null if the default language is to be used). | unknown | unknown |
-| parameters | Optional parameters that can be used in processing the request. | unknown | unknown |
+| reportId | The identifier of the report that should be executed/produced. | string |  |
+| language | The report language (null if the default language is to be used). | string |  |
+| parameters | Optional parameters that can be used in processing the request. | parameters |  |
 
 
 ### executeReport SOAP response fields
