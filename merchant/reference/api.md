@@ -184,7 +184,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | cashierId | "Alice" will show on receipt |
 | clientInvoiceId | Your purchase reference |
 | footer | receipt footer text |
-| invoiceRows | See <a href="#InvoiceRow-data">invoiceRow</a> description |
+| invoiceRows | See [InvoiceRow data][invoiceRow data description] |
 | issueDate | cashregsister Date  |
 | notificationURL | optional notification/confirmation url |
 | paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED/RESERVATION_REQUIRED are limited in use  |
