@@ -339,8 +339,8 @@ Used to present the payment in the app.
 | context | The ClientContext object | unknown | unknown |
 | invoice | Invoice data, which contains the amount and other invoice information | unknown | unknown |
 | invoiceReference | The SEQR service reference to the registered invoice. | unknown | unknown |
-| tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.
-| unknown | unknown |
+| tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.| unknown | unknown |
+
 
 
 ## updateInvoice SOAP response fields
