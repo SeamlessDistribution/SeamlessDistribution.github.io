@@ -19,17 +19,22 @@ app](/downloads/se-qr-androidapp-demo-2.1.8.3-aligned.apk).
 
 <img src="/assets/images/devapp_pics/termsOfService.png" width="200px"/> 
 
+And Accept the Terms Of Service.
+
 Then choose a PIN:
 
 <img src="/assets/images/devapp_pics/select_pin.png" width="200px"/> 
 
-and enter your phone number in full format, eg "+46738966XXX": 
+Enter your device number in full format, eg "+46738966XXX": 
 
-<img src="/assets/images/devapp_pics/phone number2.png" width="200px"/> 
+<img src="/assets/images/devapp_pics/phone_number2.png" width="200px"/> 
 
-Then complete the activation.
+Enter the activation code that SEQR generated and sent to you:
 
-* You should add a "Payment account", and you are ready to try how it works to
+<img src="/assets/images/devapp_pics/test_smscode.png" width="200px"/>
+
+
+* You should also add a "Payment account", and you are ready to try how it works to
 pay with SEQR! 
 
 <img src="/assets/images/devapp_pics/Accounts2.png" width="200px"/>
