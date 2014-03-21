@@ -6,6 +6,8 @@ description: API reference
 
 # Payment API / WSDL
 
+This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
+https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
 
 ## Methods for payments
 
@@ -137,35 +139,49 @@ description: API reference
 
 
 
-## Context parameter used in all calls
+## Context parameter used in all calls 
 
-
+<a name="context"></a>
 
 A principal is the main actor in each request to the SEQR service and represents either a seller or a buyer. Each request has at least an initiator principal.
 The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
 
 <table>
-<tr><th>ClientContext fields</th><th>Description</th></tr>
+<tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Max-Length</th></tr>
 <tr><td>clientId </td>
-    <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.</td></tr>
+    <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.</td>
+    <td> string </td>
+    <td> </td></tr>
 <tr><td>channel </td>
-    <td> The channel used to send a request. Always use ClientWS or WS. </td></tr>
+    <td> The channel used to send a request. Always use ClientWS or WS. </td>
+    <td> string </td>
+    <td> 40 </td></tr>
 <tr><td>clientRequestTimeout </td>
-    <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td></tr>
+    <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td>
+    <td> long </td>
+    <td>  </td></tr>
 <tr><td>initiatorPrincipalId </td>
     <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. 
          Use TERMINALID except when you regsister a new terminal, then you need RESELLERUSER (as provided from Seamless). 
-    </td></tr>
+    </td>
+    <td> string </td>
+    <td>  </td></tr>
 <tr><td>password</td>
-    <td>The password used to authenticate the initiator principal.</td></tr>
+    <td>The password used to authenticate the initiator principal.</td>
+    <td> string </td>
+    <td>  </td></tr>
 <tr><td>clientReference </td>
     <td>The client reference for the transaction.
         Recommended: the clientReference should be unique at least for the specific client id.
         Note: SEQR service does not check this field. The field has a maximum length of 32 characters. 
         The field is mandatory for troubleshooting purposes.
-    </td></tr>
+    </td>
+    <td> string </td>
+    <td> 32 </td></tr>
 <tr><td>clientComment </td>
-    <td>Client comment included within the request. Optional.</td></tr>
+    <td>Client comment included within the request. Optional.</td>
+    <td> string </td>
+    <td> 80 </td></tr>
 </table>
 
 
@@ -177,42 +193,46 @@ The ClientContext structure is used in all requests to identify, authenticate an
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
 
-| Field | Description |
-| --- | --- |
-| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow |
-| backURL | used in in-app or web shopping |
-| cashierId | "Alice" will show on receipt |
-| clientInvoiceId | Your purchase reference |
-| footer | receipt footer text |
-| invoiceRows | See invoiceRow description |
-| issueDate | cashregsister Date  |
-| notificationURL | optional notification/confirmation url |
-| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED/RESERVATION_REQUIRED are limited in use  |
-| title | title displayed on bill and receipt |
-| totalAmount | full amount of invoice/bill |
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow | string |  |
+| backURL | used in in-app or web shopping | string |  |
+| cashierId | "Alice" will show on receipt | string |  |
+| clientInvoiceId | Your purchase reference | string |  |
+| footer | receipt footer text | string | unknown |
+| invoiceRows | See [invoiceRow data description](#invoiceRow) | 
+| issueDate | cashregsister Date  | dateTime | XSD standard |
+| notificationURL | optional notification/confirmation url | string |  |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string |  |
+| title | title displayed on bill and receipt | string |  |
+| totalAmount | full amount of invoice/bill | unknown |  |
 
 
 
 
-## InvoiceRow data 
+## invoiceRow data <a name="invoiceRow"></a>
 
 
 Used to present the payment in the app. 
 
 
-| Field | Description |
-| --- | --- |
-| itemDescription | optional |
-| itemDiscount | optional |
-| itemEAN | optional |
-| itemQuantity | should be 1 or more |
-| itemTaxRate | optional VAT line like "0.25" |
-| itemTotalAmount | required total amount for this row |
-| itemUnit | optional "dl" |
-| itemUnitPrice | optional  |
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| itemDescription | optional | string |  |
+| itemDiscount | optional | amount |  |
+| itemEAN | optional | string |  |
+| itemQuantity | should be 1 or more | decimal |  |
+| itemTaxRate | optional VAT line like "0.25" | decimal |  |
+| itemTotalAmount | required total amount for this row | amount |  |
+| itemUnit | optional "dl" | string |  |
+| itemUnitPrice | optional  | amount |  |
 
 
-## sendInvoice SOAP response fields
+# Requests and responses
+
+## sendInvoice 
+
+### sendInvoice SOAP response fields
 
 
 | Field | Description |
@@ -224,7 +244,7 @@ Used to present the payment in the app.
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
 
-## sendInvoice SOAP request example, for **Webshop** and **POS**
+### sendInvoice SOAP request example, for **Webshop** and **POS**
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -259,7 +279,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-## sendInvoice SOAP request example, for **Service**
+### sendInvoice SOAP request example, for **Service**
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -295,8 +315,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-
-## sendInvoice SOAP response example
+### sendInvoice SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -315,21 +334,20 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
+## updateInvoice
+
+### updateInvoice SOAP request fields
 
 
-## updateInvoice SOAP request fields
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| invoice | Invoice data, which contains the amount and other invoice information | unknown |  |
+| invoiceReference | The SEQR service reference to the registered invoice. | string |  |
+| tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.| list |  |
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| invoice | Invoice data, which contains the amount and other invoice information |
-| invoiceReference | The SEQR service reference to the registered invoice. |
-| tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.
-|
-
-
-## updateInvoice SOAP response fields
+### updateInvoice SOAP response fields
 
 
 | Field | Description |
@@ -339,7 +357,7 @@ Used to present the payment in the app.
 | resultDescription | A textual description of resultCode. |
 
 
-## updateInvoice SOAP request example
+### updateInvoice SOAP request example
 
 
 {% highlight python %}
@@ -375,8 +393,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-
-## updateInvoice SOAP response example
+### updateInvoice SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -393,32 +410,33 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
+## getPaymentStatus
 
-## getPaymentStatus SOAP request fields
+### getPaymentStatus SOAP request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| invoiceReference | The SEQR service reference to the registered invoice. | string |  |
+| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. | unknown |  |
+
+
+### getPaymentStatus SOAP response fields
 
 
 | Field | Description |
 | --- | --- |
-| context | The ClientContext object |
-| invoiceReference | The SEQR service reference to the registered invoice. |
-| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment (invoiceStatus) changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. |
-
-
-## getPaymentStatus SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| ersReference | The unique reference generated by the SEQR service once the invoice has been paid (null for all other invoiceStatus than PAID invoice has been paid). |
+| ersReference | The unique reference generated by the SEQR service once the invoice has been paid (null for all other invoiceStatus than PAID invoice has been paid). | 
 | resultCode | see Result codes |
 | resultDescription | A textual description of resultCode. |
-| invoiceStatus | Status of the invoice: 0 - Pending usage (when sent from SEQR), ISSUED - Invoice is issued, and waiting for payment, PAID - Invoice is paid, PARTIALLY_PAID - Invoice is partially paid, PENDING_ISSUER_ACKNOWLEDGE - Payment is updated and waiting for issuer acknowledgement, CANCELED - Invoice is canceled, FAILED - Invoice payment has failed, RESERVED - The invoice amount is reserved. **Note!** If getPaymentStatus is not queried after a successful payment, SEQR will assume that cash register is not notified of the successful payment and will reverse the transaction after 20 seconds. |
+| status | Status of the invoice: 0 - Pending usage (when sent from SEQR), ISSUED - Invoice is issued, and waiting for payment, PAID - Invoice is paid, PARTIALLY_PAID - Invoice is partially paid, PENDING_ISSUER_ACKNOWLEDGE - Payment is updated and waiting for issuer acknowledgement, CANCELED - Invoice is canceled, FAILED - Invoice payment has failed, RESERVED - The invoice amount is reserved. **Note!** If getPaymentStatus is not queried after a successful payment, SEQR will assume that cash register is not notified of the successful payment and will reverse the transaction after 20 seconds. |
 | customerTokens | List of customer tokens relevant for this payment, for example loyalty memberships, coupons, etc. |
 | deliveryAddress | If the payment should be delivered automatically, this contains the delivery address to deliver to |
 | resultCode | Receipt of the payment, if the status is PAID |
 
 
-## getPaymentStatus SOAP request example
+### getPaymentStatus SOAP request example
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -447,7 +465,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-## getPaymentStatus SOAP response example
+### getPaymentStatus SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -466,153 +484,22 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
+## submitPaymentReciept
 
-## cancelInvoice SOAP request fields
+### submitPaymentReciept SOAP request fields
 
+This method confirms that the payment has been acknowledged and takes an optional receipt from the 
+cashregisters as html. This receipt won't appear in the app automatically. 
+Please contact us if you are interested in using a custom receipt in the app. 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| invoiceReference | Reference of the invoice to be canceled. |
-
-
-## cancelInvoice SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| ersReference | Reference of the payment for which the receipt is applicable. | unknown |  |
+| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. | unknown |  |
 
 
-## cancelInvoice SOAP request example
-
-{% highlight python %}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ext="http://external.interfaces.ers.seamless.com/">
-   <soapenv:Header/>
-   <soapenv:Body>
-     <ext:cancelInvoice>
-       <context>
-          <channel>extWS</channel>
-          <clientComment>comment</clientComment>
-          <clientId>testClient</clientId>
-          <clientReference>12345</clientReference>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>87e791f9e24148a6892c52aa85bb0331</id>
-            <type>TERMINALID</type>
-          </initiatorPrincipalId>
-          <password>1234</password>
-       </context>
-       <invoiceReference>123123</invoiceReference>
-     </ext:cancelInvoice>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-## cancelInvoice SOAP response example
-
-{% highlight python %}
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:cancelInvoiceResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
-         <return>
-            <resultCode>0</resultCode>
-            <resultDescription>SUCCESS</resultDescription>
-         </return>
-      </ns2:cancelInvoiceResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-## registerTerminal SOAP request fields
-
-
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". |
-| password | Password for future communications with the SEQR service. |
-| name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". |
-
-
-## registerTerminal SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-| terminalId | The newly generated unique identifier for this terminal. This identifier should be used in future communications of this terminal towards the SEQR service. |
-
-
-## registerTerminal SOAP request example
-
-
-{% highlight python %}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ext="http://external.interfaces.ers.seamless.com/">
-   <soapenv:Header/>
-   <soapenv:Body>
-     <ext:registerTerminal>
-       <context>
-          <channel>WS</channel>
-          <clientComment>comment</clientComment>
-          <clientId>testClient</clientId>
-          <clientReference>12345</clientReference>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>fredellsfisk</id>
-            <type>RESELLERUSER</type>
-            <userId>9900</userId>
-          </initiatorPrincipalId>
-          <password>2009</password>
-       </context>
-       <externalTerminalId>Shop 1/POS 2</externalTerminalId>
-       <password>secret</password>
-       <name>My Shop's Name</name>
-     </ext:registerTerminal>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-## registerTerminal SOAP response example
-
-{% highlight python %}
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:registerTerminalResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
-         <return>
-            <resultCode>0</resultCode>
-            <resultDescription>SUCCESS</resultDescription>
-            <terminalId>87e791f9e24148a6892c52aa85bb0331</terminalId>
-         </return>
-      </ns2:registerTerminalResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-## unregisterTerminal SOAP request fields
-
-
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| TerminalId | The SEQR ID of the terminal to be unregistered. |
-
-
-## unregisterTerminal SOAP response fields
+### submitPaymentReceipt SOAP response fields
 
 
 | Field | Description |
@@ -622,165 +509,7 @@ Used to present the payment in the app.
 | resultDescription | A textual description of resultCode. |
 
 
-## unregisterTerminal SOAP request example
-
-
-{% highlight python %}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ext="http://external.interfaces.ers.seamless.com/">
-   <soapenv:Header/>
-   <soapenv:Body>
-     <ext:unregisterTerminal>
-       <context>
-          <channel>WS</channel>
-          <clientComment>comment</clientComment>
-          <clientId>testClient</clientId>
-          <clientReference>12345</clientReference>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>87e791f9e24148a6892c52aa85bb0331</id>
-            <type>TERMINALID</type>
-          </initiatorPrincipalId>
-          <password>secret</password>
-       </context>
-     </ext:unregisterTerminal>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-## unregisterTerminal SOAP response example
-
-{% highlight python %}
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:registerTerminalResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
-         <return>
-            <resultCode>0</resultCode>
-            <resultDescription>SUCCESS</resultDescription>
-         </return>
-      </ns2:unregisterTerminalResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-
-
-
-## assignSeqrId SOAP request fields
-
-
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| SeqrId | The SEQR ID of the terminal. |
-
-
-## assignSeqrId SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
-
-## assignSeqrId SOAP request example
-
-
-{% highlight python %}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ext="http://external.interfaces.ers.seamless.com/">
-   <soapenv:Header/>
-   <soapenv:Body>
-     <ext:assignSeqrId>
-       <context>
-          <channel>WS</channel>
-          <clientComment>comment</clientComment>
-          <clientId>testClient</clientId>
-          <clientReference>12345</clientReference>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>87e791f9e24148a6892c52aa85bb0331</id>
-            <type>TERMINALID</type>
-          </initiatorPrincipalId>
-          <password>secret</password>
-       </context>
-       <seqrId>ABC123456</seqrId>
-     </ext:assignSeqrId>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-## assignSeqrId SOAP response example
-
-{% highlight python %}
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:assignSeqrIdResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
-         <return>
-            <resultCode>0</resultCode>
-            <resultDescription>SUCCESS</resultDescription>
-         </return>
-      </ns2:assignSeqrIdResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-
-
-
-## commitReservation SOAP request fields
-
-
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| invoiceReference | Reference of the invoice that is reserved. |
-
-
-## commitReservation SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
-
-## commitReservation SOAP examples
-To be added!
-
-
-## submitPaymentReciept SOAP request fields
-
-
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| ersReference | Reference of the payment for which the receipt is applicable. |
-| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. |
-
-
-## submitPaymentReceipt SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
-
-## submitPaymentReceipt SOAP request example
+### submitPaymentReceipt SOAP request example
 
 
 {% highlight python %}
@@ -814,8 +543,7 @@ To be added!
 {% endhighlight %}
 
 
-
-## submitPaymentReceipt SOAP response example
+### submitPaymentReceipt SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -833,17 +561,316 @@ To be added!
 {% endhighlight %}
 
 
+## cancelInvoice
 
-## getClientSessionInfo request fields
+### cancelInvoice SOAP request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| invoiceReference | Reference of the invoice to be canceled. | string |  |
+
+
+### cancelInvoice SOAP response fields
 
 
 | Field | Description |
 | --- | --- |
-| context | The ClientContext object |
-| key | Authorization token, provided by SEQR server. |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
 
 
-## getClientSessionInfo response fields
+### cancelInvoice SOAP request example
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:cancelInvoice>
+       <context>
+          <channel>extWS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>1234</password>
+       </context>
+       <invoiceReference>123123</invoiceReference>
+     </ext:cancelInvoice>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+### cancelInvoice SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:cancelInvoiceResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:cancelInvoiceResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## commitReservation
+
+### commitReservation SOAP request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| invoiceReference | Reference of the invoice that is reserved. | string |  |
+
+
+### commitReservation SOAP response fields
+
+
+| Field | Description |
+| --- | --- |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+### commitReservation SOAP examples
+
+To be added - contact us if you plan to handle reservations. 
+
+
+## registerTerminal
+
+### registerTerminal SOAP request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". | unknown |  |
+| password | Password for future communications with the SEQR service. | string | unknown |
+| name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". | string |  |
+
+
+### registerTerminal SOAP response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+| terminalId | The newly generated unique identifier for this terminal. This identifier should be used in future communications of this terminal towards the SEQR service. |
+
+
+### registerTerminal SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:registerTerminal>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>fredellsfisk</id>
+            <type>RESELLERUSER</type>
+            <userId>9900</userId>
+          </initiatorPrincipalId>
+          <password>2009</password>
+       </context>
+       <externalTerminalId>Shop 1/POS 2</externalTerminalId>
+       <password>secret</password>
+       <name>My Shop's Name</name>
+     </ext:registerTerminal>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+### registerTerminal SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:registerTerminalResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <terminalId>87e791f9e24148a6892c52aa85bb0331</terminalId>
+         </return>
+      </ns2:registerTerminalResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## unregisterTerminal
+
+### unregisterTerminal SOAP request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| TerminalId | The SEQR ID of the terminal to be unregistered. | unknown |  |
+
+
+### unregisterTerminal SOAP response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+### unregisterTerminal SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:unregisterTerminal>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+     </ext:unregisterTerminal>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+### unregisterTerminal SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:registerTerminalResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:unregisterTerminalResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## assingSeqrId
+
+### assignSeqrId SOAP request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| SeqrId | The SEQR ID of the terminal. | unknown |  |
+
+
+### assignSeqrId SOAP response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+### assignSeqrId SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:assignSeqrId>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+       <seqrId>ABC123456</seqrId>
+     </ext:assignSeqrId>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+### assignSeqrId SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:assignSeqrIdResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:assignSeqrIdResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## getClientSessionInfo
+
+### getClientSessionInfo request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| key | Authorization token, provided by SEQR server. | unknown |  |
+
+
+### getClientSessionInfo response fields
 
 
 | Field | Description |
@@ -853,7 +880,7 @@ To be added!
 | parameters | Set of parameters related to the user of the Service. Will always contain the following: msisdn (the msisdn of SEQR user), subscriberKey (unique identifier of SEQR user). May contain any additional parameters embedded in the QR code: ParameterX, ParameterZ. etc. (can be any number of embedded QR code parameters supplied in the list)|
 
 
-## getClientSessionInfo SOAP request example
+### getClientSessionInfo SOAP request example
 
 
 {% highlight python %}
@@ -879,7 +906,7 @@ To be added!
 {% endhighlight %}
 
 
-## getClientSessionInfo SOAP response example
+### getClientSessionInfo SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -918,17 +945,18 @@ To be added!
 {% endhighlight %}
 
 
+## markTransactionPeriod
 
-## markTransactionPeriod request fields
-
-
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| parameters | Optional parameters that can be used in processing the request. |
+### markTransactionPeriod request fields
 
 
-## markTransactionPeriod response fields
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| parameters | Optional parameters that can be used in processing the request. | unknown |  |
+
+
+### markTransactionPeriod response fields
 
 
 | Field | Description |
@@ -938,7 +966,7 @@ To be added!
 | resultDescription | A textual description of resultCode. |
 
 
-## markTransactionPeriod SOAP request example, per **shop** reconciliation
+### markTransactionPeriod SOAP request example, per **shop** reconciliation
 
 
 {% highlight python %}
@@ -967,7 +995,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransactionPeriod SOAP response example, per **shop** reconciliation
+### markTransactionPeriod SOAP response example, per **shop** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -986,7 +1014,7 @@ To be added!
 
 
 
-## markTransactionPeriod SOAP request example, per **terminal** reconciliation
+### markTransactionPeriod SOAP request example, per **terminal** reconciliation
 
 
 {% highlight python %}
@@ -1019,7 +1047,7 @@ To be added!
 {% endhighlight %}
 
 
-## markTransactionPeriod SOAP response example, per **terminal** reconciliation
+### markTransactionPeriod SOAP response example, per **terminal** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1037,19 +1065,22 @@ To be added!
 {% endhighlight %}
 
 
+## executeReport
 
-## executeReport SOAP request fields
+For SOAP examples of different reports, refer to <a href="/merchant/reference/reporting">Reporting</a>.
 
-
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| reportId | The identifier of the report that should be executed/produced. |
-| language | The report language (null if the default language is to be used). |
-| parameters | Optional parameters that can be used in processing the request. |
+### executeReport SOAP request fields
 
 
-## executeReport SOAP response fields
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| reportId | The identifier of the report that should be executed/produced. | string |  |
+| language | The report language (null if the default language is to be used). | string |  |
+| parameters | Optional parameters that can be used in processing the request. | parameters |  |
+
+
+### executeReport SOAP response fields
 
 
 | Field | Description |
@@ -1060,7 +1091,7 @@ To be added!
 | report | The executed/produced report, in binary and plain text form, if available. |
 
 
-## executeReport SOAP request example
+### executeReport SOAP request example
 
 
 {% highlight python %}
@@ -1090,7 +1121,7 @@ To be added!
 {% endhighlight %}
 
 
-## executeReport SOAP response example
+### executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1112,11 +1143,6 @@ To be added!
 
 {% endhighlight %}
 
-
-### For SOAP examples of different reports, refer to <a href="/merchant/reference/reporting">Reporting</a>.
-
-   
-   
 
 
 ## Result codes
