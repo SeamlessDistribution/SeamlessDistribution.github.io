@@ -147,29 +147,29 @@ A principal is the main actor in each request to the SEQR service and represents
 The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
 
 <table>
-<tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Length</th></tr>
+<tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Max-Length</th></tr>
 <tr><td>clientId </td>
     <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.</td>
     <td> string </td>
-    <td> unknown </td></tr>
+    <td> </td></tr>
 <tr><td>channel </td>
     <td> The channel used to send a request. Always use ClientWS or WS. </td>
     <td> string </td>
-    <td> unknown </td></tr>
+    <td> 40 </td></tr>
 <tr><td>clientRequestTimeout </td>
     <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td>
     <td> long </td>
-    <td> unknown </td></tr>
+    <td>  </td></tr>
 <tr><td>initiatorPrincipalId </td>
     <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. 
          Use TERMINALID except when you regsister a new terminal, then you need RESELLERUSER (as provided from Seamless). 
     </td>
     <td> string </td>
-    <td> unknown </td></tr>
+    <td>  </td></tr>
 <tr><td>password</td>
     <td>The password used to authenticate the initiator principal.</td>
     <td> string </td>
-    <td> unknown </td></tr>
+    <td>  </td></tr>
 <tr><td>clientReference </td>
     <td>The client reference for the transaction.
         Recommended: the clientReference should be unique at least for the specific client id.
@@ -177,11 +177,11 @@ The ClientContext structure is used in all requests to identify, authenticate an
         The field is mandatory for troubleshooting purposes.
     </td>
     <td> string </td>
-    <td> Maximum 32 </td></tr>
+    <td> 32 </td></tr>
 <tr><td>clientComment </td>
     <td>Client comment included within the request. Optional.</td>
     <td> string </td>
-    <td> unknown </td></tr>
+    <td> 80 </td></tr>
 </table>
 
 
@@ -203,7 +203,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
 | issueDate | cashregsister Date  | dateTime | XSD standard |
 | notificationURL | optional notification/confirmation url | string |  |
-| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string | unknown |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string |  |
 | title | title displayed on bill and receipt | string |  |
 | totalAmount | full amount of invoice/bill | unknown |  |
 
@@ -220,7 +220,7 @@ Used to present the payment in the app.
 | --- | --- | --- | --- |
 | itemDescription | optional | string |  |
 | itemDiscount | optional | amount |  |
-| itemEAN | optional | string | string |
+| itemEAN | optional | string |  |
 | itemQuantity | should be 1 or more | decimal |  |
 | itemTaxRate | optional VAT line like "0.25" | decimal |  |
 | itemTotalAmount | required total amount for this row | amount |  |
