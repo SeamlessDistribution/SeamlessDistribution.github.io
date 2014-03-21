@@ -15,11 +15,24 @@ on your phone. Android app is the only platform that is available for public
 settings and then browse to this page on your phone [install android developer
 app](/downloads/se-qr-androidapp-demo-2.1.8.3-aligned.apk).
 
-* Once installed you select the "Exdev 4" as server, choose a PIN, and enter
-your phone number in full format, eg "+46738966XXX". Then complete the activation.
+* Once installed you make sure that "Extdev 4" is selected as server:
+
+<img src="/assets/images/devapp_pics/termsOfService.png" width="200px"/> 
+
+Then choose a PIN:
+
+<img src="/assets/images/devapp_pics/select_pin.png" width="200px"/> 
+
+and enter your phone number in full format, eg "+46738966XXX": 
+
+<img src="/assets/images/devapp_pics/phone number2.png" width="200px"/> 
+
+Then complete the activation.
 
 * You should add a "Payment account", and you are ready to try how it works to
 pay with SEQR! 
+
+<img src="/assets/images/devapp_pics/Accounts2.png" width="200px"/>
 
 
 
