@@ -481,6 +481,80 @@ Used to present the payment in the app.
 
 {% endhighlight %}
 
+## submitPaymentReciept SOAP request fields
+
+This method confirms that the payment has been acknowledged and takes an optional receipt from the 
+cashregisters as html. This receipt won't appear in the app automatically. 
+Please contact us if you are interested in using a custom receipt in the app. 
+
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| ersReference | Reference of the payment for which the receipt is applicable. | unknown | unknown |
+| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. | unknown | unknown |
+
+
+## submitPaymentReceipt SOAP response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Not used, will be null. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+## submitPaymentReceipt SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:submitPaymentReceipt>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+       <ersReference>2012050100000000000000001</ersReference>
+       <receiptDocument>
+          <mimeType>plain/xml</mimeType>
+          <receiptData>Cjw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+Cjx</receiptData>
+          <receiptType>xxx</receiptType>
+       </receiptDocument>
+     </ext:submitPaymentReceipt>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
+## submitPaymentReceipt SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:submitPaymentReceiptResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+           <ersReference>2012050100000000000000002</ersReference>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:submitPaymentReceiptResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
 
 
 ## cancelInvoice SOAP request fields
@@ -545,6 +619,33 @@ Used to present the payment in the app.
 </soapenv:Envelope>
 
 {% endhighlight %}
+
+
+## commitReservation SOAP request fields
+
+
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| invoiceReference | Reference of the invoice that is reserved. | string | unknown |
+
+
+## commitReservation SOAP response fields
+
+
+| Field | Description |
+| --- | --- |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+## commitReservation SOAP examples
+
+To be added - contact us if you plan to handle reservations. 
+
+
+
+
 
 
 ## registerTerminal SOAP request fields
@@ -751,102 +852,6 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-
-
-
-## commitReservation SOAP request fields
-
-
-| Field | Description | Type | Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| invoiceReference | Reference of the invoice that is reserved. | string | unknown |
-
-
-## commitReservation SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
-
-## commitReservation SOAP examples
-To be added!
-
-
-## submitPaymentReciept SOAP request fields
-
-
-| Field | Description | Type | Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| ersReference | Reference of the payment for which the receipt is applicable. | unknown | unknown |
-| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. | unknown | unknown |
-
-
-## submitPaymentReceipt SOAP response fields
-
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
-
-## submitPaymentReceipt SOAP request example
-
-
-{% highlight python %}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ext="http://external.interfaces.ers.seamless.com/">
-   <soapenv:Header/>
-   <soapenv:Body>
-     <ext:submitPaymentReceipt>
-       <context>
-          <channel>WS</channel>
-          <clientComment>comment</clientComment>
-          <clientId>testClient</clientId>
-          <clientReference>12345</clientReference>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>87e791f9e24148a6892c52aa85bb0331</id>
-            <type>TERMINALID</type>
-          </initiatorPrincipalId>
-          <password>secret</password>
-       </context>
-       <ersReference>2012050100000000000000001</ersReference>
-       <receiptDocument>
-          <mimeType>plain/xml</mimeType>
-          <receiptData>Cjw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+Cjx</receiptData>
-          <receiptType>xxx</receiptType>
-       </receiptDocument>
-     </ext:submitPaymentReceipt>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-
-## submitPaymentReceipt SOAP response example
-
-{% highlight python %}
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:submitPaymentReceiptResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
-         <return>
-           <ersReference>2012050100000000000000002</ersReference>
-            <resultCode>0</resultCode>
-            <resultDescription>SUCCESS</resultDescription>
-         </return>
-      </ns2:submitPaymentReceiptResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
 
 
 
