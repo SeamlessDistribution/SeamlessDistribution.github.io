@@ -145,27 +145,41 @@ A principal is the main actor in each request to the SEQR service and represents
 The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
 
 <table>
-<tr><th>ClientContext fields</th><th>Description</th></tr>
+<tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Length</th></tr>
 <tr><td>clientId </td>
-    <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.</td></tr>
+    <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.</td>
+    <td> string </td>
+    <td> unknown </td></tr>
 <tr><td>channel </td>
-    <td> The channel used to send a request. Always use ClientWS or WS. </td></tr>
+    <td> The channel used to send a request. Always use ClientWS or WS. </td>
+    <td> string </td>
+    <td> unknown </td></tr>
 <tr><td>clientRequestTimeout </td>
-    <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td></tr>
+    <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td>
+    <td> long </td>
+    <td> unknown </td></tr>
 <tr><td>initiatorPrincipalId </td>
     <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. 
          Use TERMINALID except when you regsister a new terminal, then you need RESELLERUSER (as provided from Seamless). 
-    </td></tr>
+    </td>
+    <td> string </td>
+    <td> unknown </td></tr>
 <tr><td>password</td>
-    <td>The password used to authenticate the initiator principal.</td></tr>
+    <td>The password used to authenticate the initiator principal.</td>
+    <td> string </td>
+    <td> unknown </td></tr>
 <tr><td>clientReference </td>
     <td>The client reference for the transaction.
         Recommended: the clientReference should be unique at least for the specific client id.
         Note: SEQR service does not check this field. The field has a maximum length of 32 characters. 
         The field is mandatory for troubleshooting purposes.
-    </td></tr>
+    </td>
+    <td> string </td>
+    <td> Maximum 32 </td></tr>
 <tr><td>clientComment </td>
-    <td>Client comment included within the request. Optional.</td></tr>
+    <td>Client comment included within the request. Optional.</td>
+    <td> string </td>
+    <td> unknown </td></tr>
 </table>
 
 
@@ -177,19 +191,19 @@ The ClientContext structure is used in all requests to identify, authenticate an
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
 
-| Field | Description |
-| --- | --- |
-| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow |
-| backURL | used in in-app or web shopping |
-| cashierId | "Alice" will show on receipt |
-| clientInvoiceId | Your purchase reference |
-| footer | receipt footer text |
-| invoiceRows | See [invoiceRow data description](#invoiceRow) |
-| issueDate | cashregsister Date  |
-| notificationURL | optional notification/confirmation url |
-| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED/RESERVATION_REQUIRED are limited in use  |
-| title | title displayed on bill and receipt |
-| totalAmount | full amount of invoice/bill |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow | string | unknown |
+| backURL | used in in-app or web shopping | string | unknown |
+| cashierId | "Alice" will show on receipt | string | unknown |
+| clientInvoiceId | Your purchase reference | string | unknown |
+| footer | receipt footer text | string | unknown |
+| invoiceRows | See [invoiceRow data description](#invoiceRow) | 
+| issueDate | cashregsister Date  | dateTime | XSD standard |
+| notificationURL | optional notification/confirmation url | string | unknown |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED/RESERVATION_REQUIRED are limited in use | string | unknown |
+| title | title displayed on bill and receipt | string | unknown |
+| totalAmount | full amount of invoice/bill | unknown | unknown |
 
 
 
@@ -200,16 +214,16 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 Used to present the payment in the app. 
 
 
-| Field | Description |
-| --- | --- |
-| itemDescription | optional |
-| itemDiscount | optional |
-| itemEAN | optional |
-| itemQuantity | should be 1 or more |
-| itemTaxRate | optional VAT line like "0.25" |
-| itemTotalAmount | required total amount for this row |
-| itemUnit | optional "dl" |
-| itemUnitPrice | optional  |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| itemDescription | optional | string | unknown |
+| itemDiscount | optional | unknown | unknown |
+| itemEAN | optional | string | unknown |
+| itemQuantity | should be 1 or more | decimal | unknown |
+| itemTaxRate | optional VAT line like "0.25" | decimal | unknown |
+| itemTotalAmount | required total amount for this row | unknown | unknown |
+| itemUnit | optional "dl" | string | unknown |
+| itemUnitPrice | optional  | unknown | unknown |
 
 
 ## sendInvoice SOAP response fields
@@ -320,13 +334,13 @@ Used to present the payment in the app.
 ## updateInvoice SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| invoice | Invoice data, which contains the amount and other invoice information |
-| invoiceReference | The SEQR service reference to the registered invoice. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| invoice | Invoice data, which contains the amount and other invoice information | unknown | unknown |
+| invoiceReference | The SEQR service reference to the registered invoice. | unknown | unknown |
 | tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.
-|
+| unknown | unknown |
 
 
 ## updateInvoice SOAP response fields
@@ -397,11 +411,11 @@ Used to present the payment in the app.
 ## getPaymentStatus SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| invoiceReference | The SEQR service reference to the registered invoice. |
-| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment (invoiceStatus) changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| invoiceReference | The SEQR service reference to the registered invoice. | unknown | unknown |
+| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment (invoiceStatus) changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. | unknown | unknown |
 
 
 ## getPaymentStatus SOAP response fields
@@ -409,7 +423,7 @@ Used to present the payment in the app.
 
 | Field | Description |
 | --- | --- |
-| ersReference | The unique reference generated by the SEQR service once the invoice has been paid (null for all other invoiceStatus than PAID invoice has been paid). |
+| ersReference | The unique reference generated by the SEQR service once the invoice has been paid (null for all other invoiceStatus than PAID invoice has been paid). | 
 | resultCode | see Result codes |
 | resultDescription | A textual description of resultCode. |
 | invoiceStatus | Status of the invoice: 0 - Pending usage (when sent from SEQR), ISSUED - Invoice is issued, and waiting for payment, PAID - Invoice is paid, PARTIALLY_PAID - Invoice is partially paid, PENDING_ISSUER_ACKNOWLEDGE - Payment is updated and waiting for issuer acknowledgement, CANCELED - Invoice is canceled, FAILED - Invoice payment has failed, RESERVED - The invoice amount is reserved. **Note!** If getPaymentStatus is not queried after a successful payment, SEQR will assume that cash register is not notified of the successful payment and will reverse the transaction after 20 seconds. |
@@ -470,10 +484,10 @@ Used to present the payment in the app.
 ## cancelInvoice SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| invoiceReference | Reference of the invoice to be canceled. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| invoiceReference | Reference of the invoice to be canceled. | unknown | unknown |
 
 
 ## cancelInvoice SOAP response fields
@@ -534,12 +548,12 @@ Used to present the payment in the app.
 ## registerTerminal SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". |
-| password | Password for future communications with the SEQR service. |
-| name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". | unknown | unknown |
+| password | Password for future communications with the SEQR service. | string | unknown |
+| name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". | string | unknown |
 
 
 ## registerTerminal SOAP response fields
@@ -606,10 +620,10 @@ Used to present the payment in the app.
 ## unregisterTerminal SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| TerminalId | The SEQR ID of the terminal to be unregistered. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| TerminalId | The SEQR ID of the terminal to be unregistered. | unknown | unknown |
 
 
 ## unregisterTerminal SOAP response fields
@@ -673,10 +687,10 @@ Used to present the payment in the app.
 ## assignSeqrId SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| SeqrId | The SEQR ID of the terminal. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| SeqrId | The SEQR ID of the terminal. | unknown | unknown |
 
 
 ## assignSeqrId SOAP response fields
@@ -741,10 +755,10 @@ Used to present the payment in the app.
 ## commitReservation SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| invoiceReference | Reference of the invoice that is reserved. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| invoiceReference | Reference of the invoice that is reserved. | unknown | unknown |
 
 
 ## commitReservation SOAP response fields
@@ -763,11 +777,11 @@ To be added!
 ## submitPaymentReciept SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| ersReference | Reference of the payment for which the receipt is applicable. |
-| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| ersReference | Reference of the payment for which the receipt is applicable. | unknown | unknown |
+| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. | unknown | unknown |
 
 
 ## submitPaymentReceipt SOAP response fields
@@ -837,10 +851,10 @@ To be added!
 ## getClientSessionInfo request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| key | Authorization token, provided by SEQR server. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| key | Authorization token, provided by SEQR server. | unknown | unknown |
 
 
 ## getClientSessionInfo response fields
@@ -922,10 +936,10 @@ To be added!
 ## markTransactionPeriod request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| parameters | Optional parameters that can be used in processing the request. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| parameters | Optional parameters that can be used in processing the request. | unknown | unknown |
 
 
 ## markTransactionPeriod response fields
@@ -1041,12 +1055,12 @@ To be added!
 ## executeReport SOAP request fields
 
 
-| Field | Description |
-| --- | --- |
-| context | The ClientContext object |
-| reportId | The identifier of the report that should be executed/produced. |
-| language | The report language (null if the default language is to be used). |
-| parameters | Optional parameters that can be used in processing the request. |
+| Field | Description | Type | Length |
+| --- | --- | --- | --- |
+| context | The ClientContext object | unknown | unknown |
+| reportId | The identifier of the report that should be executed/produced. | unknown | unknown |
+| language | The report language (null if the default language is to be used). | unknown | unknown |
+| parameters | Optional parameters that can be used in processing the request. | unknown | unknown |
 
 
 ## executeReport SOAP response fields
