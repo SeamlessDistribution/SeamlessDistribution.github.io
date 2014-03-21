@@ -19,17 +19,17 @@ app](/downloads/se-qr-androidapp-demo-2.1.8.3-aligned.apk).
 
 <img src="/assets/images/devapp_pics/termsOfService.png" width="200px"/> 
 
-And Accept the Terms Of Service.
+* And Accept the Terms Of Service.
 
-Then choose a PIN:
+* Then choose a PIN:
 
 <img src="/assets/images/devapp_pics/select_pin.png" width="200px"/> 
 
-Enter your device number in full format, eg "+46738966XXX": 
+* Enter your device number in full format, eg "+46738966XXX": 
 
 <img src="/assets/images/devapp_pics/phone_number2.png" width="200px"/> 
 
-Enter the activation code that SEQR generated and sent to you:
+* Enter the activation code that SEQR generated and sent to you:
 
 <img src="/assets/images/devapp_pics/test_smscode.png" width="200px"/>
 
