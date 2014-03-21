@@ -42,7 +42,7 @@ description: News and examples for SEQR merchant integrations
  <div class="margin">
  
  <iframe title="YouTube video player" class="youtube-player" type="text/html" 
-width="640" height="390" src="http://www.youtube.com/embed/qb8Q4fOxqAw"
+width="320" height="195" src="http://www.youtube.com/embed/qb8Q4fOxqAw"
 frameborder="0" allowFullScreen></iframe>
  
  
