@@ -40,6 +40,12 @@ description: News and examples for SEQR merchant integrations
 </div>
 
  <div class="margin">
+ 
+ <iframe title="YouTube video player" class="youtube-player" type="text/html" 
+width="320" height="195" src="http://www.youtube.com/embed/qb8Q4fOxqAw"
+frameborder="0" allowFullScreen></iframe>
+ 
+ 
  <h4>References</h4> 
   <ul>
    <li><a href="merchant/reference/api.html">API</a> - Integration with SEQR is done via SOAP.</li>

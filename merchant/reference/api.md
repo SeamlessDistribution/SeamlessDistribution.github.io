@@ -199,13 +199,13 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | backURL | used in in-app or web shopping | string |  |
 | cashierId | "Alice" will show on receipt | string |  |
 | clientInvoiceId | Your purchase reference | string |  |
-| footer | receipt footer text | string | unknown |
+| footer | receipt footer text | string |  |
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
-| issueDate | cashregsister Date  | dateTime | XSD standard |
+| issueDate | cashregsister Date  | dateTime | |
 | notificationURL | optional notification/confirmation url | string |  |
 | paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string |  |
 | title | title displayed on bill and receipt | string |  |
-| totalAmount | full amount of invoice/bill | unknown |  |
+| totalAmount | full amount of invoice/bill |  |  |
 
 
 
@@ -342,7 +342,7 @@ Used to present the payment in the app.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| invoice | Invoice data, which contains the amount and other invoice information | unknown |  |
+| invoice | Invoice data, which contains the amount and other invoice information |  |  |
 | invoiceReference | The SEQR service reference to the registered invoice. | string |  |
 | tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.| list |  |
 
@@ -419,7 +419,7 @@ Used to present the payment in the app.
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
 | invoiceReference | The SEQR service reference to the registered invoice. | string |  |
-| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. | unknown |  |
+| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. |  |  |
 
 
 ### getPaymentStatus SOAP response fields
@@ -495,8 +495,8 @@ Please contact us if you are interested in using a custom receipt in the app.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| ersReference | Reference of the payment for which the receipt is applicable. | unknown |  |
-| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. | unknown |  |
+| ersReference | Reference of the payment for which the receipt is applicable. |  |  |
+| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. |  |  |
 
 
 ### submitPaymentReceipt SOAP response fields
@@ -660,8 +660,8 @@ To be added - contact us if you plan to handle reservations.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". | unknown |  |
-| password | Password for future communications with the SEQR service. | string | unknown |
+| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". |  |  |
+| password | Password for future communications with the SEQR service. | string |  |
 | name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". | string |  |
 
 
@@ -734,7 +734,7 @@ To be added - contact us if you plan to handle reservations.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| TerminalId | The SEQR ID of the terminal to be unregistered. | unknown |  |
+| TerminalId | The SEQR ID of the terminal to be unregistered. |  |  |
 
 
 ### unregisterTerminal SOAP response fields
@@ -800,7 +800,7 @@ To be added - contact us if you plan to handle reservations.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| SeqrId | The SEQR ID of the terminal. | unknown |  |
+| SeqrId | The SEQR ID of the terminal. |  |  |
 
 
 ### assignSeqrId SOAP response fields
@@ -867,7 +867,7 @@ To be added - contact us if you plan to handle reservations.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| key | Authorization token, provided by SEQR server. | unknown |  |
+| key | Authorization token, provided by SEQR server. |  |  |
 
 
 ### getClientSessionInfo response fields
@@ -953,7 +953,7 @@ To be added - contact us if you plan to handle reservations.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| parameters | Optional parameters that can be used in processing the request. | unknown |  |
+| parameters | Optional parameters that can be used in processing the request. |  |  |
 
 
 ### markTransactionPeriod response fields
