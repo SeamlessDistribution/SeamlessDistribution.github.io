@@ -201,7 +201,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | clientInvoiceId | Your purchase reference | string |  |
 | footer | receipt footer text | string |  |
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
-| issueDate | cashregsister Date  | dateTime | XSD standard |
+| issueDate | cashregsister Date  | dateTime | |
 | notificationURL | optional notification/confirmation url | string |  |
 | paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string |  |
 | title | title displayed on bill and receipt | string |  |
