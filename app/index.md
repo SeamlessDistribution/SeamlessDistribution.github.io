@@ -7,9 +7,10 @@ description: A demo and developer app for trying things out.
 Get SEQR app
 =============
 
-For testing purposes we have a test server and test app that you can play with
-on your phone. Android app is the only platform that is available for public
- development purposes. 
+For development and demo purposes we have a test server and test app that you can play with
+on your phone. Android app is the only platform that is available for public development and demo purposes. 
+
+The instruction below describes how to get access to the development app, that is through our *Extdev4* server. To get access to the demo app and demo system, you must [contact](/contact) us to get login credentials.
 
 #### 1. Download and install the app
 
