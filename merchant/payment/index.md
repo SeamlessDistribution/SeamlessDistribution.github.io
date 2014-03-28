@@ -21,21 +21,21 @@ The example uses [public credentials](../reference/signup.html) that you can use
 <div class="diagram">
 @startuml
 skinparam monochrome true
-participant Seller
+participant Merchant
 participant SEQR
 participant "SEQR App" as SEQRApp
-Seller->SEQR: sendInvoice
-SEQR-->Seller: (invoice reference)
-Seller->SEQR: getPaymentStatus
-SEQR-->Seller: ISSUED
+Merchant->SEQR: sendInvoice
+SEQR-->Merchant: (invoice reference)
+Merchant->SEQR: getPaymentStatus
+SEQR-->Merchant: ISSUED
 SEQRApp->SEQR: ask for invoice at QR-code
 Note right of SEQR: retry until you get SUCCESS
 SEQRApp->SEQR: payment
-Seller->SEQR: getPaymentStatus
-SEQR-->Seller: PAID
-Note right of Seller: Payment cleared!
+Merchant->SEQR: getPaymentStatus
+SEQR-->Merchant: PAID
+Note right of Merchant: Payment cleared!
 SEQR->SEQRApp: Done (show receipt)
-Seller-->SEQRApp: Happy!
+Merchant-->SEQRApp: Happy!
 @enduml
 </div>
 
