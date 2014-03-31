@@ -50,7 +50,7 @@ This scenario illustrates payment when the customer already has SEQR app install
 
 1.	Customer opens your app.
 2.	Customer gets information that SEQR can be used to pay at your checkouts.
-3.	Customer presses the **Betala med SEQR** link in your app.
+3.	Customer presses the **Betala med SEQR/Pay with SEQR** link in your app.
 4.	SEQR app is launched and customer pays with SEQR.
 5.	Customer gets the receipt in the mobile device and a standard receipt.
 
@@ -62,7 +62,7 @@ This scenario illustrates payment when the customer does not have SEQR app insta
 
 1.	Customer opens your app.
 2.	Customer gets information that SEQR can be used to pay at your checkouts.
-3.	Customer presses the Betala med SEQR link in your app.
+3.	Customer presses the **Betala med SEQR/Pay with SEQR** link in your app.
 4.	Customer is sent to the download store.
 5.	Customer downloads and launches SEQR app. 
 6.	Customer connects a payment account and pays with SEQR.
