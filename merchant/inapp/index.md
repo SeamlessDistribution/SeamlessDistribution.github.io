@@ -60,8 +60,10 @@ Refer to section [API](/merchant/reference/api.html) for detailed description.
 Make a redirection (button or link) in your app, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the "HTTP:" header with "SEQR:"; that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use SEQR://SEQR.SE/R12345.
 
 
-**Note:** when your app shop is browsed, you provide the backURL in the
+**Note:** When your app shop is browsed, you provide the backURL in the
  sendInvoice request. After a successful/cancelled payment, the app will redirect the SEQR user to the URL specified in sendInvoice. Typically this will be a URL with a URL scheme that will launch the calling app again.
+
+**Note2:** The invoice status will still be "ISSUED" even if the customer press cancel in the SEQR-app. The backURL will still be called and you should therefore treat "ISSUED" as canceld if you the status is still "ISSUED" after you receive a notice on your provided backURL.
 
 ### Present the receipt
 
