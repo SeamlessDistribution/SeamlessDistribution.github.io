@@ -146,6 +146,8 @@ https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
 A principal is the main actor in each request to the SEQR service and represents either a seller or a buyer. Each request has at least an initiator principal.
 The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
 
+If no max-length is specified it is unlimited for strings.
+
 <table>
 <tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Max-Length</th></tr>
 <tr><td>clientId </td>
@@ -219,13 +221,13 @@ Used to present the payment in the app.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | itemDescription | optional | string |  |
-| itemDiscount | optional | amount |  |
+| itemDiscount | optional | decimal |  |
 | itemEAN | optional | string |  |
 | itemQuantity | should be 1 or more | decimal |  |
 | itemTaxRate | optional VAT line like "0.25" | decimal |  |
-| itemTotalAmount | required total amount for this row | amount |  |
+| itemTotalAmount | required total decimal for this row | decimal |  |
 | itemUnit | optional "dl" | string |  |
-| itemUnitPrice | optional  | amount |  |
+| itemUnitPrice | optional  | decimal |  |
 
 
 # Requests and responses
