@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Link app to SEQR
+title: Promoting SEQR
 description: SEQR Merchant, link your app to SEQR payment
 ---
 
 
-# Link your app to SEQR payment  
+# Promoting SEQR 
 
 The purpose of in-app linking to SEQR is for your customer to be able to pay with SEQR from your app. The link should be used to increase usage of your app and thereby increase consumer loyalty to your brand.
 
