@@ -1,18 +1,13 @@
 ---
 layout: default
-title: Promoting SEQR
+title: SEQR Onboarding
 description: SEQR Merchant, link your app to SEQR payment
 ---
 
 
-# Promoting SEQR 
+# SEQR Onboarding
 
-The purpose of in-app linking to SEQR is for your customer to be able to pay with SEQR from your app. The link should be used to increase usage of your app and thereby increase consumer loyalty to your brand.
-
-
-## Information about SEQR in your app
-
-A sample integration with SEQR would contain the following items:
+A mobile integration with SEQR would contain the following items:
 
 * A page with brief information about SEQR (optional)
 * A button to pay with SEQR

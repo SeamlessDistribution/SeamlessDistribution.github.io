@@ -35,7 +35,7 @@ description: News and examples for SEQR merchant integrations
 		<ul>
 		   <li><a href="merchant/reference/signup.html">Get login credentials</a> - Get started</li>
 			<li><a href="merchant/reference/certification.html">Certification</a> - Certify your integration</li> 
-	   <li><a href="merchant/linkapp">Promoting SEQR</a> - Link your app to SEQR</li> 
+	   <li><a href="merchant/linkapp">SEQR Onboarding</a> - Link your app to SEQR</li> 
 		</ul> 
 	</div>
 </div>
