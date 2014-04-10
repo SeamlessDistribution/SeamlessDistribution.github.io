@@ -1149,13 +1149,13 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 
 ## Result codes
 
-Note that the list only points out the responses that are relevant; that is, the API request that may cause the response. The other response codes are not common but could occur in some cases.
+Note that this list points out only relevant responses with the API requests that may issue the response. The other response codes are unrelevant but could occur in some cases.
 
 
-| Code | Description | Request sending this response |
+| Code | Description | Request that may issue this response |
 | --- | --- |
 | 0 | SUCCESS | All requests |
-| 1 | PENDING_APPROVAL |
+| 1 | PENDING_APPROVAL | 
 | 10 | REJECTED_BUSINESS_LOGIC |
 | 11 | REJECTED_AMOUNT | Valid for sendInvoice, updateInvoice, refundPayment |
 | 12 | REJECTED_PAYMENT |
