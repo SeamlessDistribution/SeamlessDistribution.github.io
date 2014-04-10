@@ -1149,7 +1149,7 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 
 ## Result codes
 
-Note that this list points out only relevant responses with the API requests that may issue the response. The other response codes are unrelevant but could occur in some cases.
+Note that this list points out the responses that are relevant, with the API request(s) that may issue the response. The other response codes are unrelevant but could occur in some cases.
 
 
 | Code | Description | Request that may issue this response |
@@ -1157,7 +1157,7 @@ Note that this list points out only relevant responses with the API requests tha
 | 0 | SUCCESS | All requests |
 | 1 | PENDING_APPROVAL | 
 | 10 | REJECTED_BUSINESS_LOGIC |
-| 11 | REJECTED_AMOUNT | Valid for sendInvoice, updateInvoice, refundPayment |
+| 11 | REJECTED_AMOUNT | sendInvoice, updateInvoice, refundPayment |
 | 12 | REJECTED_PAYMENT |
 | 20 | AUTHENTICATION_FAILED | All requests |
 | 21 | ACCESS_DENIED |
@@ -1172,11 +1172,11 @@ Note that this list points out only relevant responses with the API requests tha
 | 37 | INITIATOR_PRINCIPAL_NOT_FOUND | All requests |
 | 38 | RECEIVER_PRINCIPAL_NOT_FOUND |
 | 39 | SENDER_PRINCIPAL_NOT_FOUND |
-| 48 | PAYMENT_IN_PROGRESS | Valid for updateInvoice, cancelInvoice, refundPayment |
-| 49 | INVALID_INVOICE_DATA | Valid for sendInvoice, updateInvoice |
-| 50 | CANNOT_CANCEL_PAID_INVOICE | Valid for cancelInvoice |
-| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS | Valid for cancelInvoice |
-| 53 | INVALID_SEQR_ID | Valid for assignSeqrId |
+| 48 | PAYMENT_IN_PROGRESS | updateInvoice, cancelInvoice, refundPayment |
+| 49 | INVALID_INVOICE_DATA | sendInvoice, updateInvoice |
+| 50 | CANNOT_CANCEL_PAID_INVOICE | cancelInvoice |
+| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS | cancelInvoice |
+| 53 | INVALID_SEQR_ID | assignSeqrId |
 | 54 | INVALID_INVOICE_REFERENCE |
 | 55 | PAYMENT_ALREADY_CANCELLED |
 | 56 | REGISTRATION_NOT_POSSIBLE |
