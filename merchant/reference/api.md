@@ -1149,6 +1149,8 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 
 ## Result codes
 
+For information on the cause of each relevant error (that is, which request may response with this error), refer to Relevant responses per request below. 
+
 | Code | Description |
 | --- | --- |
 | 0 | SUCCESS |
@@ -1200,6 +1202,27 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 | 94 | SERVICE_UNAVAILABLE |
 
 
+### Relevant error response per request
+
+This table shows the possible relevant errors that may occur for each API request. "Y" stands for "Yes" for those requests that the error may occur. Note that not all errors are listed here since they are not relevant but could in some cases occur.
+
+| Code |  sendInvoice |updateInvoice | getPaymentStatus | cancelInvoice | registerTerminal | unregisterTerminal | assignSeqrId | submitPaymentReceipt | refundPayment |
+| --- | --- |
+| 0 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 11 | Y | Y |  |  |  |  |  |  |  |
+| 20 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 29 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 33 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 37 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 48 |   | Y |   | Y |   |   |   |   | Y |
+| 49 | Y | Y |   |   |   |   |   |   |   |
+| 50 |   |   |   | Y |   |   |   |   |   |
+| 51 |   |   |   | Y |   |   |   |   |   |
+| 53 |   |   |   |   |   |   | Y |   |   |
+| 90 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 91 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 93 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 94 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
 
 
 
