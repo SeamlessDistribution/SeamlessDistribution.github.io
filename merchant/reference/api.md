@@ -1149,29 +1149,30 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 
 ## Result codes
 
-For information on the cause of each relevant error (that is, which request may response with this error), refer to Relevant responses per request below. 
+Note that the list only points out the responses that are relevant; that is, the API request that may cause the response. The other response codes are not common but could occur in some cases.
 
-| Code | Description |
+
+| Code | Description | Request sending this response |
 | --- | --- |
-| 0 | SUCCESS |
+| 0 | SUCCESS | All requests |
 | 1 | PENDING_APPROVAL |
 | 10 | REJECTED_BUSINESS_LOGIC |
-| 11 | REJECTED_AMOUNT |
+| 11 | REJECTED_AMOUNT | Valid for sendInvoice, updateInvoice, refundPayment |
 | 12 | REJECTED_PAYMENT |
 | 13 | REJECTED_TOPUP |
-| 20 | AUTHENTICATION_FAILED |
+| 20 | AUTHENTICATION_FAILED | All requests |
 | 21 | ACCESS_DENIED |
 | 22 | INVALID_NEW_PASSWORD |
 | 23 | INVALID_ERS_REFERENCE |
-| 29 | INVALID_INITIATOR_PRINCIPAL_ID |
+| 29 | INVALID_INITIATOR_PRINCIPAL_ID | All requests |
 | 30 | INVALID_RECEIVER_PRINCIPAL_ID |
 | 31 | INVALID_SENDER_PRINCIPAL_ID |
 | 32 | INVALID_TOPUP_PRINCIPAL_ID |
-| 33 | INVALID_INITIATOR_PRINCIPAL_STATE |
+| 33 | INVALID_INITIATOR_PRINCIPAL_STATE | All requests |
 | 34 | INVALID_RECEIVER_PRINCIPAL_STATE |
 | 35 | INVALID_SENDER_PRINCIPAL_STATE |
 | 36 | INVALID_TOPUP_PRINCIPAL_STATE |
-| 37 | INITIATOR_PRINCIPAL_NOT_FOUND |
+| 37 | INITIATOR_PRINCIPAL_NOT_FOUND | All requests |
 | 38 | RECEIVER_PRINCIPAL_NOT_FOUND |
 | 39 | SENDER_PRINCIPAL_NOT_FOUND |
 | 40 | TOPUP_PRINCIPAL_NOT_FOUND |
@@ -1182,12 +1183,12 @@ For information on the cause of each relevant error (that is, which request may 
 | 45 | RECEIVER_ACCOUNT_NOT_FOUND |
 | 46 | SENDER_ACCOUNT_NOT_FOUND |
 | 47 | TOPUP_ACCOUNT_NOT_FOUND |
-| 48 | PAYMENT_IN_PROGRESS |
-| 49 | INVALID_INVOICE_DATA |
-| 50 | CANNOT_CANCEL_PAID_INVOICE |
-| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS |
+| 48 | PAYMENT_IN_PROGRESS | Valid for updateInvoice, cancelInvoice, refundPayment |
+| 49 | INVALID_INVOICE_DATA | Valid for sendInvoice, updateInvoice |
+| 50 | CANNOT_CANCEL_PAID_INVOICE | Valid for cancelInvoice |
+| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS | Valid for cancelInvoice |
 | 52 | INVALID_CUSTOMER |
-| 53 | INVALID_SEQR_ID|
+| 53 | INVALID_SEQR_ID | Valid for assignSeqrId |
 | 54 | INVALID_INVOICE_REFERENCE |
 | 55 | PAYMENT_ALREADY_CANCELLED |
 | 56 | REGISTRATION_NOT_POSSIBLE |
@@ -1195,34 +1196,11 @@ For information on the cause of each relevant error (that is, which request may 
 | 61 | AUTHORIZATION_CANCELLED |
 | 62 | AUTHORIZATION_IN_PROGRESS |
 | 64 | INVALID_NOTIFICATION_URL |
-| 90 | SYSTEM_ERROR |
-| 91 | UNSUPPORTED_OPERATION |
+| 90 | SYSTEM_ERROR | All requests |
+| 91 | UNSUPPORTED_OPERATION | All requests |
 | 92 | LICENSE_REJECTION |
-| 93 | SYSTEM_BUSY |
-| 94 | SERVICE_UNAVAILABLE |
-
-
-### Relevant error response per request
-
-This table shows the possible relevant errors that may occur for each API request. "Y" stands for "Yes" for those requests that the error may occur. Note that not all errors are listed here since they are not relevant but could in some cases occur.
-
-| Code |  sendInvoice |updateInvoice | getPaymentStatus | cancelInvoice | registerTerminal | unregisterTerminal | assignSeqrId | submitPaymentReceipt | refundPayment |
-| --- | --- |
-| 0 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| 11 | Y | Y |  |  |  |  |  |  |  |
-| 20 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| 29 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| 33 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| 37 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| 48 |   | Y |   | Y |   |   |   |   | Y |
-| 49 | Y | Y |   |   |   |   |   |   |   |
-| 50 |   |   |   | Y |   |   |   |   |   |
-| 51 |   |   |   | Y |   |   |   |   |   |
-| 53 |   |   |   |   |   |   | Y |   |   |
-| 90 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| 91 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| 93 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| 94 | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| 93 | SYSTEM_BUSY | All requests |
+| 94 | SERVICE_UNAVAILABLE | All requests |
 
 
 
