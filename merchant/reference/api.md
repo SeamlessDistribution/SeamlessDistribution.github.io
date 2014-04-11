@@ -246,7 +246,7 @@ Used to present the payment in the app.
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
 
-### sendInvoice SOAP request example, for **Webshop** and **POS**
+### sendInvoice SOAP request example
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -261,54 +261,21 @@ Used to present the payment in the app.
           <clientReference>12345</clientReference>
           <clientRequestTimeout>0</clientRequestTimeout>
           <initiatorPrincipalId>
-            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <id>8609bf533abf4a20816e8bfe76639521</id>
             <type>TERMINALID</type>
           </initiatorPrincipalId>
-          <password>1234</password>
+          <password>N2YFUhKaB1ZSuVF</password>
        </context>
        <invoice>
+       	<acknowledgmentMode>NO_ACKNOWLEDGMENT</acknowledgmentMode>
           <title>Some Invoice</title>
           <cashierId>Bob</cashierId>
           <totalAmount>
             <currency>SEK</currency>
             <value>10.22</value>
           </totalAmount>
-       </invoice>
-     </ext:sendInvoice>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-### sendInvoice SOAP request example, for **Service**
-
-{% highlight python %}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ext="http://external.interfaces.ers.seamless.com/">
-   <soapenv:Header/>
-   <soapenv:Body>
-     <ext:sendInvoice>
-       <context>
-          <channel>service</channel>
-          <clientComment>comment</clientComment>
-          <clientId>testClient</clientId>
-          <clientReference>12345</clientReference>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>87e791f9e24148a6892c52aa85bb0331</id>
-            <type>TERMINALID</type>
-          </initiatorPrincipalId>
-          <password>1234</password>
-       </context>
-       <invoice>
-          <title>Some Invoice</title>
-          <cashierId>Bob</cashierId>
-          <totalAmount>
-            <currency>SEK</currency>
-            <value>10.22</value>
-          </totalAmount>
-          <notificationUrl>http://www.thirdparty.com/notifyMeHere</notificationUrl>
+          <!-- in case you don't want to poll for payment status -->
+          <notificationUrl>http://www.thirdparty.com/notifyMeHere</notificationUrl>          
        </invoice>
      </ext:sendInvoice>
    </soapenv:Body>
@@ -326,12 +293,12 @@ Used to present the payment in the app.
          <return>
             <resultCode>0</resultCode>
             <resultDescription>SUCCESS</resultDescription>
-            <invoiceQRCode>http://seqr.se/R1328543027208</invoiceQRCode>
-            <invoiceReference>1328543027208</invoiceReference>
+            <invoiceQRCode>HTTP://SEQR.SE/R1397222701693</invoiceQRCode>
+            <invoiceReference>1397222701693</invoiceReference>
          </return>
       </ns2:sendInvoiceResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
+   </soap:Body>
+</soap:Envelope>
 
 {% endhighlight %}
 
@@ -1149,57 +1116,39 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 
 ## Result codes
 
-| Code | Description |
+Note that this list points out the responses that are relevant, with the API request(s) that may issue the response. The other response codes are unrelevant but could occur in some cases.
+
+
+| Code | Description | Request that may issue this response |
 | --- | --- |
-| 0 | SUCCESS |
-| 1 | PENDING_APPROVAL |
-| 10 | REJECTED_BUSINESS_LOGIC |
-| 11 | REJECTED_AMOUNT |
+| 0 | SUCCESS | All requests |
+| 11 | REJECTED_AMOUNT | sendInvoice, updateInvoice, refundPayment |
 | 12 | REJECTED_PAYMENT |
-| 13 | REJECTED_TOPUP |
-| 20 | AUTHENTICATION_FAILED |
+| 20 | AUTHENTICATION_FAILED | All requests |
 | 21 | ACCESS_DENIED |
-| 22 | INVALID_NEW_PASSWORD |
 | 23 | INVALID_ERS_REFERENCE |
-| 29 | INVALID_INITIATOR_PRINCIPAL_ID |
+| 29 | INVALID_INITIATOR_PRINCIPAL_ID | All requests |
 | 30 | INVALID_RECEIVER_PRINCIPAL_ID |
 | 31 | INVALID_SENDER_PRINCIPAL_ID |
-| 32 | INVALID_TOPUP_PRINCIPAL_ID |
-| 33 | INVALID_INITIATOR_PRINCIPAL_STATE |
+| 33 | INVALID_INITIATOR_PRINCIPAL_STATE | All requests |
 | 34 | INVALID_RECEIVER_PRINCIPAL_STATE |
 | 35 | INVALID_SENDER_PRINCIPAL_STATE |
-| 36 | INVALID_TOPUP_PRINCIPAL_STATE |
-| 37 | INITIATOR_PRINCIPAL_NOT_FOUND |
+| 37 | INITIATOR_PRINCIPAL_NOT_FOUND | All requests |
 | 38 | RECEIVER_PRINCIPAL_NOT_FOUND |
 | 39 | SENDER_PRINCIPAL_NOT_FOUND |
-| 40 | TOPUP_PRINCIPAL_NOT_FOUND |
-| 41 | INVALID_PRODUCT |
-| 42 | INVALID_RECEIVER_ACCOUNT_TYPE |
-| 43 | INVALID_SENDER_ACCOUNT_TYPE |
-| 44 | INVALID_TOPUP_ACCOUNT_TYPE |
-| 45 | RECEIVER_ACCOUNT_NOT_FOUND |
-| 46 | SENDER_ACCOUNT_NOT_FOUND |
-| 47 | TOPUP_ACCOUNT_NOT_FOUND |
-| 48 | PAYMENT_IN_PROGRESS |
-| 49 | INVALID_INVOICE_DATA |
-| 50 | CANNOT_CANCEL_PAID_INVOICE |
-| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS |
-| 52 | INVALID_CUSTOMER |
-| 53 | INVALID_SEQR_ID|
+| 48 | PAYMENT_IN_PROGRESS | updateInvoice, cancelInvoice, refundPayment |
+| 49 | INVALID_INVOICE_DATA | sendInvoice, updateInvoice |
+| 50 | CANNOT_CANCEL_PAID_INVOICE | cancelInvoice |
+| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS | cancelInvoice |
+| 53 | INVALID_SEQR_ID | assignSeqrId |
 | 54 | INVALID_INVOICE_REFERENCE |
 | 55 | PAYMENT_ALREADY_CANCELLED |
 | 56 | REGISTRATION_NOT_POSSIBLE |
-| 60 | AUTHORIZATION_EXPIRED |
-| 61 | AUTHORIZATION_CANCELLED |
-| 62 | AUTHORIZATION_IN_PROGRESS |
 | 64 | INVALID_NOTIFICATION_URL |
-| 90 | SYSTEM_ERROR |
-| 91 | UNSUPPORTED_OPERATION |
-| 92 | LICENSE_REJECTION |
-| 93 | SYSTEM_BUSY |
-| 94 | SERVICE_UNAVAILABLE |
-
-
+| 90 | SYSTEM_ERROR | All requests |
+| 91 | UNSUPPORTED_OPERATION | All requests |
+| 93 | SYSTEM_BUSY | All requests |
+| 94 | SERVICE_UNAVAILABLE | All requests |
 
 
 

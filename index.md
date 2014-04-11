@@ -42,11 +42,6 @@ description: News and examples for SEQR merchant integrations
 
  <div class="margin">
  
- <!-- iframe title="YouTube video player" class="youtube-player" type="text/html" 
-width="320" height="195" src="http://www.youtube.com/embed/qb8Q4fOxqAw"
-frameborder="0" allowFullScreen></iframe -->
- 
- 
  <h4>References</h4> 
   <ul>
    <li><a href="merchant/reference/api.html">API</a> - Integration with SEQR is done via SOAP.</li>
@@ -54,6 +49,16 @@ frameborder="0" allowFullScreen></iframe -->
    <!-- li><a href="merchant/reference/loyalty.html">Loyalty</a></li -->
    <li><a href="merchant/reference/glossary.html">Glossary</a> - Gives a brief description to the terminology used in our documents and website.</li>
   </ul>
+
+<video width="640" height="480" controls>
+  <source src="downloads/SEQR_McD-demo.webm" type="video/ogg">
+  <!--  <source src="movie.mp4" type="video/mp4"> -->
+  Your browser does not support the video tag.
+</video> 
+
+ <!-- iframe title="YouTube video player" class="youtube-player" type="text/html" 
+width="320" height="195" src="http://www.youtube.com/embed/qb8Q4fOxqAw" frameborder="0" allowFullScreen></iframe -->
+ 
  </div>
 
 <div class="margin">
