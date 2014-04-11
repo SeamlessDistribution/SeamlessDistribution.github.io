@@ -1122,13 +1122,10 @@ Note that this list points out the responses that are relevant, with the API req
 | Code | Description | Request that may issue this response |
 | --- | --- |
 | 0 | SUCCESS | All requests |
-| 1 | PENDING_APPROVAL | 
-| 10 | REJECTED_BUSINESS_LOGIC |
 | 11 | REJECTED_AMOUNT | sendInvoice, updateInvoice, refundPayment |
 | 12 | REJECTED_PAYMENT |
 | 20 | AUTHENTICATION_FAILED | All requests |
 | 21 | ACCESS_DENIED |
-| 22 | INVALID_NEW_PASSWORD |
 | 23 | INVALID_ERS_REFERENCE |
 | 29 | INVALID_INITIATOR_PRINCIPAL_ID | All requests |
 | 30 | INVALID_RECEIVER_PRINCIPAL_ID |
@@ -1150,7 +1147,6 @@ Note that this list points out the responses that are relevant, with the API req
 | 64 | INVALID_NOTIFICATION_URL |
 | 90 | SYSTEM_ERROR | All requests |
 | 91 | UNSUPPORTED_OPERATION | All requests |
-| 92 | LICENSE_REJECTION |
 | 93 | SYSTEM_BUSY | All requests |
 | 94 | SERVICE_UNAVAILABLE | All requests |
 
