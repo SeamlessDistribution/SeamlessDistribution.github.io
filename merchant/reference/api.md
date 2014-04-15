@@ -83,7 +83,7 @@ https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
          </td>
       </tr>
       <tr>
-         <td>
+        <td>
             submitPaymentReceipt
             <ul>
                <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
@@ -93,6 +93,18 @@ https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
          </td>
          <td>Used to confirm that the payment was received by the cashregister. 
             Adds an optional receipt document to a payment.
+         </td>
+      </tr>
+      <tr>
+         <td>
+            refundPayment
+            <ul>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
+               <li>String ersReference</li>
+               <li>Invoice invoice</li>
+            </ul>
+         </td>
+         <td>Refunds a previous payment, either part of it or the whole sum. After this method, submitPaymentReceipt is used to upload a receipt. Note that this method requires the account provider's API to be able to handle refund payments.
          </td>
       </tr>
    </tbody>
@@ -908,6 +920,84 @@ To be added - contact us if you plan to handle reservations.
             </parameters> 
          </return>
       </ns2:getClientSessionInfoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+## refundPayment
+
+### refundPayment SOAP request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| ersReference | Reference of the payment to be refunded |  |  |
+| invoice | Invoice data, which contains the amount and other invoice information after products have been removed from the original invoice |  |  |
+
+
+
+### refundPayment SOAP response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Reference to the payment that is refunded. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+### refundPayment SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:refundPayment>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+       <ersReference>2012050100000000000000001</ersReference>
+       <invoice>
+          <title>Refund</title>
+          <cashierId>Bob</cashierId>
+          <totalAmount>
+            <currency>SEK</currency>
+            <value>10.22</value>
+          </totalAmount>
+       </invoice>
+     </ext:refundPayment>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+### refundPayment SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:refundPaymentResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+          <ersReference>2012050100000000000000002</ersReference>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:refundPaymentResponse>
    </soapenv:Body>
 </soapenv:Envelope>
 
