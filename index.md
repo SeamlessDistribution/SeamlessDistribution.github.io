@@ -51,8 +51,8 @@ description: News and examples for SEQR merchant integrations
   </ul>
 
 <video width="640" height="480" controls>
-  <source src="downloads/SEQR_McD-demo.webm" type="video/ogg">
-  <!--  <source src="movie.mp4" type="video/mp4"> -->
+  <source src="downloads/SEQR_McD-demo.webm" type="video/ogg"> 
+  <source src="downloads/SEQR_McD-demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video> 
 
