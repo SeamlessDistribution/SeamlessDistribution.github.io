@@ -83,7 +83,7 @@ https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
          </td>
       </tr>
       <tr>
-         <td>
+        <td>
             submitPaymentReceipt
             <ul>
                <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
@@ -93,6 +93,18 @@ https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
          </td>
          <td>Used to confirm that the payment was received by the cashregister. 
             Adds an optional receipt document to a payment.
+         </td>
+      </tr>
+      <tr>
+         <td>
+            refundPayment
+            <ul>
+               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
+               <li>String ersReference</li>
+               <li>Invoice invoice</li>
+            </ul>
+         </td>
+         <td>Refunds a previous payment, either part of it or the whole sum. Note that this method requires that the account provider's API is able to handle refund payments.
          </td>
       </tr>
    </tbody>
@@ -234,7 +246,7 @@ Used to present the payment in the app.
 
 ## sendInvoice 
 
-### sendInvoice SOAP response fields
+#### sendInvoice SOAP response fields
 
 
 | Field | Description |
@@ -246,7 +258,7 @@ Used to present the payment in the app.
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
 
-### sendInvoice SOAP request example
+#### sendInvoice SOAP request example
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -284,7 +296,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-### sendInvoice SOAP response example
+#### sendInvoice SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -305,7 +317,7 @@ Used to present the payment in the app.
 
 ## updateInvoice
 
-### updateInvoice SOAP request fields
+#### updateInvoice SOAP request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -316,7 +328,7 @@ Used to present the payment in the app.
 | tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.| list |  |
 
 
-### updateInvoice SOAP response fields
+#### updateInvoice SOAP response fields
 
 
 | Field | Description |
@@ -326,7 +338,7 @@ Used to present the payment in the app.
 | resultDescription | A textual description of resultCode. |
 
 
-### updateInvoice SOAP request example
+#### updateInvoice SOAP request example
 
 
 {% highlight python %}
@@ -362,7 +374,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-### updateInvoice SOAP response example
+#### updateInvoice SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -381,7 +393,7 @@ Used to present the payment in the app.
 
 ## getPaymentStatus
 
-### getPaymentStatus SOAP request fields
+#### getPaymentStatus SOAP request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -391,7 +403,7 @@ Used to present the payment in the app.
 | invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. |  |  |
 
 
-### getPaymentStatus SOAP response fields
+#### getPaymentStatus SOAP response fields
 
 
 | Field | Description |
@@ -405,7 +417,7 @@ Used to present the payment in the app.
 | resultCode | Receipt of the payment, if the status is PAID |
 
 
-### getPaymentStatus SOAP request example
+#### getPaymentStatus SOAP request example
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -434,7 +446,7 @@ Used to present the payment in the app.
 {% endhighlight %}
 
 
-### getPaymentStatus SOAP response example
+#### getPaymentStatus SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -455,7 +467,7 @@ Used to present the payment in the app.
 
 ## submitPaymentReciept
 
-### submitPaymentReciept SOAP request fields
+#### submitPaymentReciept SOAP request fields
 
 This method confirms that the payment has been acknowledged and takes an optional receipt from the 
 cashregisters as html. This receipt won't appear in the app automatically. 
@@ -468,7 +480,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 | receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. |  |  |
 
 
-### submitPaymentReceipt SOAP response fields
+#### submitPaymentReceipt SOAP response fields
 
 
 | Field | Description |
@@ -478,7 +490,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 | resultDescription | A textual description of resultCode. |
 
 
-### submitPaymentReceipt SOAP request example
+#### submitPaymentReceipt SOAP request example
 
 
 {% highlight python %}
@@ -512,7 +524,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 {% endhighlight %}
 
 
-### submitPaymentReceipt SOAP response example
+#### submitPaymentReceipt SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -532,7 +544,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 
 ## cancelInvoice
 
-### cancelInvoice SOAP request fields
+#### cancelInvoice SOAP request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -541,7 +553,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 | invoiceReference | Reference of the invoice to be canceled. | string |  |
 
 
-### cancelInvoice SOAP response fields
+#### cancelInvoice SOAP response fields
 
 
 | Field | Description |
@@ -551,7 +563,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 | resultDescription | A textual description of resultCode. |
 
 
-### cancelInvoice SOAP request example
+#### cancelInvoice SOAP request example
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -579,7 +591,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 {% endhighlight %}
 
 
-### cancelInvoice SOAP response example
+#### cancelInvoice SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -598,7 +610,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 
 ## commitReservation
 
-### commitReservation SOAP request fields
+#### commitReservation SOAP request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -607,7 +619,7 @@ Please contact us if you are interested in using a custom receipt in the app.
 | invoiceReference | Reference of the invoice that is reserved. | string |  |
 
 
-### commitReservation SOAP response fields
+#### commitReservation SOAP response fields
 
 
 | Field | Description |
@@ -616,14 +628,93 @@ Please contact us if you are interested in using a custom receipt in the app.
 | resultDescription | A textual description of resultCode. |
 
 
-### commitReservation SOAP examples
+#### commitReservation SOAP examples
 
 To be added - contact us if you plan to handle reservations. 
 
 
+## refundPayment
+
+#### refundPayment SOAP request fields
+
+
+| Field | Description | Type | Max-Length |
+| --- | --- | --- | --- |
+| context | See [the ClientContext object](#context) |  |  |
+| ersReference | Reference of the payment to be refunded |  |  |
+| invoice | Invoice data, which contains the amount and other invoice information after products have been removed from the original invoice |  |  |
+
+
+
+#### refundPayment SOAP response fields
+
+
+| Field | Description |
+| --- | --- |
+| ersReference | Reference to the payment that is refunded. |
+| resultCode | see Result codes |
+| resultDescription | A textual description of resultCode. |
+
+
+#### refundPayment SOAP request example
+
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ext:refundPayment>
+       <context>
+          <channel>WS</channel>
+          <clientComment>comment</clientComment>
+          <clientId>testClient</clientId>
+          <clientReference>12345</clientReference>
+          <clientRequestTimeout>0</clientRequestTimeout>
+          <initiatorPrincipalId>
+            <id>87e791f9e24148a6892c52aa85bb0331</id>
+            <type>TERMINALID</type>
+          </initiatorPrincipalId>
+          <password>secret</password>
+       </context>
+       <ersReference>2012050100000000000000001</ersReference>
+       <invoice>
+          <title>Refund</title>
+          <cashierId>Bob</cashierId>
+          <totalAmount>
+            <currency>SEK</currency>
+            <value>10.22</value>
+          </totalAmount>
+       </invoice>
+     </ext:refundPayment>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+#### refundPayment SOAP response example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:refundPaymentResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+          <ersReference>2012050100000000000000002</ersReference>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:refundPaymentResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+
+
 ## registerTerminal
 
-### registerTerminal SOAP request fields
+#### registerTerminal SOAP request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -634,7 +725,7 @@ To be added - contact us if you plan to handle reservations.
 | name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". | string |  |
 
 
-### registerTerminal SOAP response fields
+#### registerTerminal SOAP response fields
 
 
 | Field | Description |
@@ -645,7 +736,7 @@ To be added - contact us if you plan to handle reservations.
 | terminalId | The newly generated unique identifier for this terminal. This identifier should be used in future communications of this terminal towards the SEQR service. |
 
 
-### registerTerminal SOAP request example
+#### registerTerminal SOAP request example
 
 
 {% highlight python %}
@@ -677,7 +768,7 @@ To be added - contact us if you plan to handle reservations.
 {% endhighlight %}
 
 
-### registerTerminal SOAP response example
+#### registerTerminal SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -697,7 +788,7 @@ To be added - contact us if you plan to handle reservations.
 
 ## unregisterTerminal
 
-### unregisterTerminal SOAP request fields
+#### unregisterTerminal SOAP request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -706,7 +797,7 @@ To be added - contact us if you plan to handle reservations.
 | TerminalId | The SEQR ID of the terminal to be unregistered. |  |  |
 
 
-### unregisterTerminal SOAP response fields
+#### unregisterTerminal SOAP response fields
 
 
 | Field | Description |
@@ -716,7 +807,7 @@ To be added - contact us if you plan to handle reservations.
 | resultDescription | A textual description of resultCode. |
 
 
-### unregisterTerminal SOAP request example
+#### unregisterTerminal SOAP request example
 
 
 {% highlight python %}
@@ -744,7 +835,7 @@ To be added - contact us if you plan to handle reservations.
 {% endhighlight %}
 
 
-### unregisterTerminal SOAP response example
+#### unregisterTerminal SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -763,7 +854,7 @@ To be added - contact us if you plan to handle reservations.
 
 ## assingSeqrId
 
-### assignSeqrId SOAP request fields
+#### assignSeqrId SOAP request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -772,7 +863,7 @@ To be added - contact us if you plan to handle reservations.
 | SeqrId | The SEQR ID of the terminal. |  |  |
 
 
-### assignSeqrId SOAP response fields
+#### assignSeqrId SOAP response fields
 
 
 | Field | Description |
@@ -782,7 +873,7 @@ To be added - contact us if you plan to handle reservations.
 | resultDescription | A textual description of resultCode. |
 
 
-### assignSeqrId SOAP request example
+#### assignSeqrId SOAP request example
 
 
 {% highlight python %}
@@ -811,7 +902,7 @@ To be added - contact us if you plan to handle reservations.
 {% endhighlight %}
 
 
-### assignSeqrId SOAP response example
+#### assignSeqrId SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -830,7 +921,7 @@ To be added - contact us if you plan to handle reservations.
 
 ## getClientSessionInfo
 
-### getClientSessionInfo request fields
+#### getClientSessionInfo request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -839,7 +930,7 @@ To be added - contact us if you plan to handle reservations.
 | key | Authorization token, provided by SEQR server. |  |  |
 
 
-### getClientSessionInfo response fields
+#### getClientSessionInfo response fields
 
 
 | Field | Description |
@@ -849,7 +940,7 @@ To be added - contact us if you plan to handle reservations.
 | parameters | Set of parameters related to the user of the Service. Will always contain the following: msisdn (the msisdn of SEQR user), subscriberKey (unique identifier of SEQR user). May contain any additional parameters embedded in the QR code: ParameterX, ParameterZ. etc. (can be any number of embedded QR code parameters supplied in the list)|
 
 
-### getClientSessionInfo SOAP request example
+#### getClientSessionInfo SOAP request example
 
 
 {% highlight python %}
@@ -875,7 +966,7 @@ To be added - contact us if you plan to handle reservations.
 {% endhighlight %}
 
 
-### getClientSessionInfo SOAP response example
+#### getClientSessionInfo SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -914,9 +1005,10 @@ To be added - contact us if you plan to handle reservations.
 {% endhighlight %}
 
 
+
 ## markTransactionPeriod
 
-### markTransactionPeriod request fields
+#### markTransactionPeriod request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -925,7 +1017,7 @@ To be added - contact us if you plan to handle reservations.
 | parameters | Optional parameters that can be used in processing the request. |  |  |
 
 
-### markTransactionPeriod response fields
+#### markTransactionPeriod response fields
 
 
 | Field | Description |
@@ -935,7 +1027,7 @@ To be added - contact us if you plan to handle reservations.
 | resultDescription | A textual description of resultCode. |
 
 
-### markTransactionPeriod SOAP request example, per **shop** reconciliation
+#### markTransactionPeriod SOAP request example, per **shop** reconciliation
 
 
 {% highlight python %}
@@ -964,7 +1056,7 @@ To be added - contact us if you plan to handle reservations.
 {% endhighlight %}
 
 
-### markTransactionPeriod SOAP response example, per **shop** reconciliation
+#### markTransactionPeriod SOAP response example, per **shop** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -983,7 +1075,7 @@ To be added - contact us if you plan to handle reservations.
 
 
 
-### markTransactionPeriod SOAP request example, per **terminal** reconciliation
+#### markTransactionPeriod SOAP request example, per **terminal** reconciliation
 
 
 {% highlight python %}
@@ -1016,7 +1108,7 @@ To be added - contact us if you plan to handle reservations.
 {% endhighlight %}
 
 
-### markTransactionPeriod SOAP response example, per **terminal** reconciliation
+#### markTransactionPeriod SOAP response example, per **terminal** reconciliation
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1038,7 +1130,7 @@ To be added - contact us if you plan to handle reservations.
 
 For SOAP examples of different reports, refer to <a href="/merchant/reference/reporting">Reporting</a>.
 
-### executeReport SOAP request fields
+#### executeReport SOAP request fields
 
 
 | Field | Description | Type | Max-Length |
@@ -1049,7 +1141,7 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 | parameters | Optional parameters that can be used in processing the request. | parameters |  |
 
 
-### executeReport SOAP response fields
+#### executeReport SOAP response fields
 
 
 | Field | Description |
@@ -1060,7 +1152,7 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 | report | The executed/produced report, in binary and plain text form, if available. |
 
 
-### executeReport SOAP request example
+#### executeReport SOAP request example
 
 
 {% highlight python %}
@@ -1090,7 +1182,7 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 {% endhighlight %}
 
 
-### executeReport SOAP response example
+#### executeReport SOAP response example
 
 {% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
