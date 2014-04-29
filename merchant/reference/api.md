@@ -1224,7 +1224,6 @@ Note that this list points out the responses that are relevant, with the API req
 | 51 | CANNOT_CANCEL_INVOICE_ IN_PROGRESS | | cancelInvoice |
 | 53 | INVALID_SEQR_ID | Non alphanumeric segrId was used | assignSeqrId |
 | 54 | INVALID_INVOICE_ REFERENCE | Invoice with given reference number can't be found for given terminal id | getPaymentStatus |
-| 55 | PAYMENT_ALREADY_ CANCELLED | ? | cancelInvoice |
 | 64 | INVALID_NOTIFICATION_ URL | Not valid notificationUrl (e.g not starting with http://) | sendInvoice, updateInvoice, refundPayment |
 | 90 | SYSTEM_ERROR | Unclassified errors | All requests |
 | 91 | UNSUPPORTED_OPERATION | For example wrong TYPE in initiatorPrincipalId section | All requests |
