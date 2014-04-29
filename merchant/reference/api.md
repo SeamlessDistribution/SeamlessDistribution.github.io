@@ -1221,8 +1221,7 @@ Note that this list points out the responses that are relevant, with the API req
 | 37 | INITIATOR_PRINCIPAL_NOT_FOUND | Given id or userId for RESELLERUSER in initiatorPrincipalId section not found in SEQR | All requests |
 | 49 | INVALID_INVOICE_DATA | For example wrong currency | sendInvoice, updateInvoice |
 | 50 | CANNOT_CANCEL_PAID_INVOICE | Invoice with given reference number has already been paid | cancelInvoice |
-| 51 | CANNOT_CANCEL_INVOICE_
-IN_PROGRESS | | cancelInvoice |
+| 51 | CANNOT_CANCEL_INVOICE_ IN_PROGRESS | | cancelInvoice |
 | 53 | INVALID_SEQR_ID | Non alphanumeric segrId was used | assignSeqrId |
 | 54 | INVALID_INVOICE_REFERENCE | Invoice with given reference number can't be found for given terminal id | getPaymentStatus |
 | 55 | PAYMENT_ALREADY_CANCELLED | ? | cancelInvoice |
