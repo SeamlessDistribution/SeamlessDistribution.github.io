@@ -1215,16 +1215,17 @@ Note that this list points out the responses that are relevant, with the API req
 | --- | --- |
 | 0 | SUCCESS | Given operation ended successfully | All requests |
 | 20 | AUTHENTICATION_FAILED | Wrong password | All requests |
-| 21 | ACCESS_DENIED | Password assigned to terminalId is less than 4 characters |
-| 23 | INVALID_ERS_REFERENCE | Given ERS reference number cannot be found |
+| 21 | ACCESS_DENIED | Password assigned to terminalId is less than 4 characters | unregisterTerminal, sendInvoice, getPaymentStatus |
+| 23 | INVALID_ERS_REFERENCE | Given ERS reference number cannot be found | refundPayment |
 | 29 | INVALID_INITIATOR_PRINCIPAL_ID | Given id for TERMINALID in initiatorPrincipalId cannot be found | All requests |
 | 37 | INITIATOR_PRINCIPAL_NOT_FOUND | Given id or userId for RESELLERUSER in initiatorPrincipalId section not found in SEQR | All requests |
 | 49 | INVALID_INVOICE_DATA | For example wrong currency | sendInvoice, updateInvoice |
 | 50 | CANNOT_CANCEL_PAID_INVOICE | Invoice with given reference number has already been paid | cancelInvoice |
-| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS | | cancelInvoice |
+| 51 | CANNOT_CANCEL_INVOICE_
+IN_PROGRESS | | cancelInvoice |
 | 53 | INVALID_SEQR_ID | Non alphanumeric segrId was used | assignSeqrId |
-| 54 | INVALID_INVOICE_REFERENCE | ? | getPaymentStatus |
-| 55 | PAYMENT_ALREADY_CANCELLED | All requests |
+| 54 | INVALID_INVOICE_REFERENCE | Invoice with given reference number can't be found for given terminal id | getPaymentStatus |
+| 55 | PAYMENT_ALREADY_CANCELLED | ? | cancelInvoice |
 | 64 | INVALID_NOTIFICATION_URL | Not valid notificationUrl (e.g not starting with http://) | sendInvoice, updateInvoice, refundPayment |
 | 90 | SYSTEM_ERROR | Unclassified errors | All requests |
 | 91 | UNSUPPORTED_OPERATION | For example wrong TYPE in initiatorPrincipalId section | All requests |
