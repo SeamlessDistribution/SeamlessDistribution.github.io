@@ -1226,7 +1226,7 @@ Note that this list points out the responses that are relevant, with the API req
 | 54 | INVALID_INVOICE_ REFERENCE | Invoice with given reference number can't be found for given terminal id | getPaymentStatus |
 | 64 | INVALID_NOTIFICATION_ URL | Not valid notificationUrl (e.g not starting with http://) | sendInvoice, updateInvoice, refundPayment |
 | 90 | SYSTEM_ERROR | Unclassified errors | All requests |
-| 91 | UNSUPPORTED_OPERATION | For example wrong TYPE in initiatorPrincipalId section | All requests |
+| 91 | UNSUPPORTED_OPERATION | The method is not supported by the service | All requests |
 | 94 | SERVICE_UNAVAILABLE | External backend system unavailable (e.g. Bank system) | All requests |
 | 95 | INVOICE_ALREADY_ CANCELED | Invoice with given reference number is already canceled through cancelInvoice call | cancelInvoice |
 
