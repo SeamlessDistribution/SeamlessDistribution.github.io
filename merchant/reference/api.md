@@ -104,7 +104,7 @@ https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
                <li>Invoice invoice</li>
             </ul>
          </td>
-         <td>Refunds a previous payment, either part of it or the whole sum. Note that this method requires that the account provider's API is able to handle refund payments.
+         <td>Refunds a previous payment, either part of it or the whole sum.
          </td>
       </tr>
    </tbody>
