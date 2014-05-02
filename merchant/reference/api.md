@@ -104,7 +104,7 @@ https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
                <li>Invoice invoice</li>
             </ul>
          </td>
-         <td>Refunds a previous payment, either part of it or the whole sum. Note that this method requires that the account provider's API is able to handle refund payments.
+         <td>Refunds a previous payment, either part of it or the whole sum.
          </td>
       </tr>
    </tbody>
@@ -1211,36 +1211,24 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 Note that this list points out the responses that are relevant, with the API request(s) that may issue the response. The other response codes are unrelevant but could occur in some cases.
 
 
-| Code | Description | Request that may issue this response |
+| Code | Description |  Detailed description | Request that may issue this response |
 | --- | --- |
-| 0 | SUCCESS | All requests |
-| 11 | REJECTED_AMOUNT | sendInvoice, updateInvoice, refundPayment |
-| 12 | REJECTED_PAYMENT |
-| 20 | AUTHENTICATION_FAILED | All requests |
-| 21 | ACCESS_DENIED |
-| 23 | INVALID_ERS_REFERENCE |
-| 29 | INVALID_INITIATOR_PRINCIPAL_ID | All requests |
-| 30 | INVALID_RECEIVER_PRINCIPAL_ID |
-| 31 | INVALID_SENDER_PRINCIPAL_ID |
-| 33 | INVALID_INITIATOR_PRINCIPAL_STATE | All requests |
-| 34 | INVALID_RECEIVER_PRINCIPAL_STATE |
-| 35 | INVALID_SENDER_PRINCIPAL_STATE |
-| 37 | INITIATOR_PRINCIPAL_NOT_FOUND | All requests |
-| 38 | RECEIVER_PRINCIPAL_NOT_FOUND |
-| 39 | SENDER_PRINCIPAL_NOT_FOUND |
-| 48 | PAYMENT_IN_PROGRESS | updateInvoice, cancelInvoice, refundPayment |
-| 49 | INVALID_INVOICE_DATA | sendInvoice, updateInvoice |
-| 50 | CANNOT_CANCEL_PAID_INVOICE | cancelInvoice |
-| 51 | CANNOT_CANCEL_INVOICE_IN_PROGRESS | cancelInvoice |
-| 53 | INVALID_SEQR_ID | assignSeqrId |
-| 54 | INVALID_INVOICE_REFERENCE |
-| 55 | PAYMENT_ALREADY_CANCELLED |
-| 56 | REGISTRATION_NOT_POSSIBLE |
-| 64 | INVALID_NOTIFICATION_URL |
-| 90 | SYSTEM_ERROR | All requests |
-| 91 | UNSUPPORTED_OPERATION | All requests |
-| 93 | SYSTEM_BUSY | All requests |
-| 94 | SERVICE_UNAVAILABLE | All requests |
+| 0 | SUCCESS | Given operation ended successfully | All requests |
+| 20 | AUTHENTICATION_FAILED | Wrong password | All requests |
+| 21 | ACCESS_DENIED | Password assigned to terminalId is less than 4 characters | unregisterTerminal, sendInvoice, getPaymentStatus |
+| 23 | INVALID_ERS_REFERENCE | Given ERS reference number cannot be found | refundPayment |
+| 29 | INVALID_INITIATOR_ PRINCIPAL_ID | Given id for TERMINALID in initiatorPrincipalId cannot be found | All requests |
+| 37 | INITIATOR_PRINCIPAL_ NOT_FOUND | Given id or userId for RESELLERUSER in initiatorPrincipalId section not found in SEQR | All requests |
+| 49 | INVALID_INVOICE_ DATA | For example wrong currency | sendInvoice, updateInvoice |
+| 50 | CANNOT_CANCEL_PAID_ INVOICE | Invoice with given reference number has already been paid | cancelInvoice |
+| 51 | CANNOT_CANCEL_INVOICE_ IN_PROGRESS | | cancelInvoice |
+| 53 | INVALID_SEQR_ID | Non alphanumeric segrId was used | assignSeqrId |
+| 54 | INVALID_INVOICE_ REFERENCE | Invoice with given reference number can't be found for given terminal id | getPaymentStatus |
+| 64 | INVALID_NOTIFICATION_ URL | Not valid notificationUrl (e.g not starting with http://) | sendInvoice, updateInvoice, refundPayment |
+| 90 | SYSTEM_ERROR | Unclassified errors | All requests |
+| 91 | UNSUPPORTED_OPERATION | The method is not supported by the service | All requests |
+| 94 | SERVICE_UNAVAILABLE | External backend system unavailable (e.g. Bank system) | All requests |
+| 95 | INVOICE_ALREADY_ CANCELED | Invoice with given reference number is already canceled through cancelInvoice call | cancelInvoice |
 
 
 
