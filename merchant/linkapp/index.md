@@ -1,11 +1,11 @@
 ---
 layout: default
-title: SEQR onboarding
+title: Link your app to SEQR payment
 description: SEQR Merchant, link your app to SEQR payment
 ---
 
 
-# SEQR onboarding
+# Link your app to SEQR payment
 
 A mobile integration with SEQR would contain the following items:
 
