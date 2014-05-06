@@ -5,7 +5,7 @@ description: SEQR Merchant, link your app to SEQR payment
 ---
 
 
-# Link your app to SEQR payment
+# Support your customers - Link your app to SEQR payment
 
 A mobile integration with SEQR would contain the following items:
 
