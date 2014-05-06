@@ -1229,6 +1229,8 @@ Note that this list points out the responses that are relevant, with the API req
 | 91 | UNSUPPORTED_OPERATION | The method is not supported by the service | All requests |
 | 94 | SERVICE_UNAVAILABLE | External backend system unavailable (e.g. Bank system) | All requests |
 | 95 | INVOICE_ALREADY_ CANCELED | Invoice with given reference number is already canceled through cancelInvoice call | cancelInvoice |
+| 97 | RESELLER_NOT_ALLOWED_ TO_DO_REFUND |  | refundPayment |
+| 98 | SUM_OF_REFUNDS_CAN_NOT_ BE_MORE_THAN_ORIGINAL_TRANSACTION |  | refundPayment |
 
 
 
