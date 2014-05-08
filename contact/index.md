@@ -4,9 +4,6 @@ title: SEQR Developer Site - Contact
 description: Contact us
 ---
 
-#Contact us
-
-
 
 <h1>Please fill in the form below in order to initiate integration process</h1>
 <form action="mailto:integrations@seamless.se?Subject=Integration request" method="post" enctype="text/plain" >
