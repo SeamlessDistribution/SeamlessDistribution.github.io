@@ -1,0 +1,47 @@
+.div-table{
+  display:table;
+  width:auto;
+  border:0px;
+  border-spacing:0px;/*cellspacing:poor IE support for  this*/
+}
+.div-table-row{
+  display:table-row;
+  width:auto;
+  clear:both;
+}
+
+}
+.div-table-row-msg{
+  display:table-row;
+  column-span: 1; /* W3C */
+-webkit-column-span: 1; /* Safari & Chrome */
+-moz-column-span: 1; /* Firefox */
+-ms-column-span: 1; /* Internet Explorer */
+-o-column-span: 1; /* Opera */
+}
+
+.div-table-col{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;
+  width:270px;
+}
+
+.div-table-col-msg{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;
+  width:400px;
+}
+
+.msg{
+  width:400px;
+  height: 150px;
+}
+
+h1{
+font-size: 1.5em;
+color: #000;
+line-height: 1.3em;
+margin-bottom: 0.6em;
+}
+
+
