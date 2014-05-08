@@ -23,7 +23,7 @@
 .div-table-col{
   float:left;/*fix for  buggy browsers*/
   display:table-column;
-  width:270px;
+  width:50%;
 }
 
 .div-table-col-msg{
