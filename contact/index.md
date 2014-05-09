@@ -5,11 +5,11 @@ description: Contact us
 ---
 
 
-<h1>Please fill in the form below in order to initiate integration process</h1>
+<h1>Please fill in the form below, in order to initiate the integration process</h1>
 <form action="mailto:integrations@seamless.se?Subject=Integration request" method="post" enctype="text/plain" >
 <div class="div-table">
              <div class="div-table-row">
-                <div class="div-table-col"><p>Retailer:</p></div>
+                <div class="div-table-col"><p>Merchant/integrator:</p></div>
                 <div  class="div-table-col"><input type="text" name="Retailer"></div>
              </div>
 	<div class="div-table-row">
@@ -17,7 +17,7 @@ description: Contact us
                 <div  class="div-table-col"><input type="text" name="Country"></div>
              </div>
 	<div class="div-table-row">
-                <div class="div-table-col"><p>Seamless seller name:</p></div>
+                <div class="div-table-col"><p>Seamless Sales person:</p></div>
                 <div  class="div-table-col"><input type="text" name="Seamless seller name"></div>
              </div>
             <div class="div-table-row">
@@ -41,10 +41,10 @@ description: Contact us
       </div>
 <input type="submit" value="Submit">
 <p>
-<br/><b>Retailer</b> - Retailer's company name
-<br/><b>Seamless seller</b> - Seamless seller who retailer signed SEQR agreement with
-<br/><b>Country</b> - country of retailer's system production environment (e.g. where are cash registers located)
-<br/><b>Integrator</b> - retailter's or retailer vendor's technical person responsible for integration process
+<br/><b>Merchant</b> - Integrator's company name
+<br/><b>Seamless Sales person</b> - Seamless Sales person who merchant signed SEQR agreement with
+<br/><b>Country</b> - country of merchant's system production environment (e.g. where are cash registers located)
+<br/><b>Integrator</b> - merchant's or merchant vendor's technical person responsible for integration process
 </p>
 </form>
 
