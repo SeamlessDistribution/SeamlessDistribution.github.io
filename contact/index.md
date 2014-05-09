@@ -44,7 +44,7 @@ description: Contact us
 <br/><b>Merchant</b> - Integrator's company name
 <br/><b>Seamless Sales person</b> - Seamless Sales person who merchant signed SEQR agreement with
 <br/><b>Country</b> - country of merchant's system production environment (e.g. where are cash registers located)
-<br/><b>Integrator</b> - merchant's or merchant vendor's technical person responsible for integration process
+<br/><b>Integrator</b> - merchant's or vendor's technical person responsible for integration process
 </p>
 </form>
 
