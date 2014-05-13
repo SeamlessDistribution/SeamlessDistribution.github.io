@@ -130,7 +130,7 @@ SEQR is a system for mobile payments where to pay with your phone instead of usi
 SEQR backend performing the service and the APIs.
 
 **SEQR Tab**
-SEQR Tab is the name of the mobile cash register that Seamless provides to merchants who do not use a cash register directly integrated with SEQR.
+The name of the mobile cash register that Seamless provides to merchants who do not use a cash register directly integrated with SEQR.
 
 **SEQR Ticketing**
 The SEQR offer to merchants to provide payments for tickets, such as in public transport.
