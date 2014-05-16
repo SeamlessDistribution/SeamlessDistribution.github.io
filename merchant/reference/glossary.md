@@ -16,7 +16,8 @@ The SEQR user’s bank or credit institution that accepts and processes payment 
 Application Programming Interface, interface to other components within or outside the SEQR system.
 
 **App**
-The SEQR applications for iOS and Android.
+The SEQR applications for iOS, Android and Windows Mobile.
+"App" can also refer to your app. When the user presses a “pay” button or a link in your app, it launches the SEQR app and presents the bill for the user to confirm the payment (i.e. the user does not need to scan a QR code). This feature requires integration.
 
 **Authorization service**
 Interface for authorizing and adding accounts to a SEQR user.
@@ -128,8 +129,11 @@ SEQR is a system for mobile payments where to pay with your phone instead of usi
 **SEQR server**
 SEQR backend performing the service and the APIs.
 
-**SEQR Services**
-The SEQR third-party service interface provides merchants and service providers possibilities to deliver services and shopping experiences directly into the SEQR app.
+**SEQR Tab**
+The name of the mobile cash register that Seamless provides to merchants who do not use a cash register directly integrated with SEQR.
+
+**Services**
+Services are a payment experience directly in the SEQR app, which consists of choosing service options and then paying with SEQR. Example is the Parking service.
 
 **SEQR user**
 The consumer paying goods with SEQR.
@@ -149,6 +153,6 @@ Seamless uses the word “terminal” for registered handsets or point of sale t
 ### V
 
 ### W
-**WebShop**
+**Webshop**
 The SEQR webshop interface provides merchants and service providers the possibility to deliver services and shopping experiences in a webshop solution.
 
