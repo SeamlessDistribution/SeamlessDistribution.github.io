@@ -16,8 +16,8 @@ The SEQR user’s bank or credit institution that accepts and processes payment 
 Application Programming Interface, interface to other components within or outside the SEQR system.
 
 **App**
-The SEQR applications for iOS and Android.
-"App" can also refer to an external app shop; that is, payment with SEQR from an external app. The user presses a “pay” button or link in the external app, which launches the SEQR app and presents the bill for the user to confirm the payment (i.e. the user does not need to scan a code). This feature requires integration.
+The SEQR applications for iOS, Android and Windows Mobile.
+"App" can also refer to your app. When the user presses a “pay” button or a link in your app, it launches the SEQR app and presents the bill for the user to confirm the payment (i.e. the user does not need to scan a QR code). This feature requires integration.
 
 **Authorization service**
 Interface for authorizing and adding accounts to a SEQR user.
