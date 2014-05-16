@@ -13,7 +13,7 @@ All apps offering payments typically have a backend that handles the actual serv
 
 ### Example of shopping and payment flow in your app and SEQR app
 
-<img src="/assets/images/appshop/total_flow.png" width="50%" />
+<img src="/assets/images/appshop/total_flow.png" width="75%" />
 
 
 ## Integration procedure
