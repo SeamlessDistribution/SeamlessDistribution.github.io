@@ -11,6 +11,10 @@ To integrate your app with SEQR, you need to add SEQR payment in your “Check o
 
 All apps offering payments typically have a backend that handles the actual service/product that is sold. It is this backend that must connect to SEQR using our interface, and the communication between your app and your backend is up to your app developer.
 
+## Example of shopping and payment flow in your app and SEQR app
+
+<img src="/assets/images/appshop/total_flow.png" />
+
 
 ## Integration procedure
 
