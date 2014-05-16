@@ -132,9 +132,6 @@ SEQR backend performing the service and the APIs.
 **SEQR Tab**
 The name of the mobile cash register that Seamless provides to merchants who do not use a cash register directly integrated with SEQR.
 
-**SEQR Ticketing**
-The SEQR offer to merchants to provide payments for tickets, such as in public transport.
-
 **Services**
 Services are a payment experience directly in the SEQR app, which consists of choosing service options and then paying with SEQR. Example is the Parking service.
 
