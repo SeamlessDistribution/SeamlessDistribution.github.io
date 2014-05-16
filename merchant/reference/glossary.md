@@ -136,7 +136,7 @@ The name of the mobile cash register that Seamless provides to merchants who do 
 The SEQR offer to merchants to provide payments for tickets, such as in public transport.
 
 **Services**
-An external service provider that has integrated their service into SEQR app in order to deliver services and shopping experiences directly in SEQR app for payment with SEQR. Example is the Parking service.
+Services are a payment experience directly in the SEQR app, which consists of choosing service options and then paying with SEQR. Example is the Parking service.
 
 **SEQR user**
 The consumer paying goods with SEQR.
