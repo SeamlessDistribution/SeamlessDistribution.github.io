@@ -7,7 +7,7 @@ description: API reference
 # Payment API / WSDL
 
 This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
-https://extdev.seqr.se/extclientproxy/service/v2?wsdl
+https://extdev.seqr.com/extclientproxy/service/v2?wsdl
 
 ## Methods for payments
 
