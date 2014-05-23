@@ -25,8 +25,6 @@ description: News and examples for SEQR merchant integrations
 	   <li><a href="merchant/pos">POS</a> - Payments in your store</li> 
 	   <li><a href="merchant/externalservices">Services</a> - Payments through a web service</li>
 	   <li><a href="merchant/inapp">App</a> - Payments in your mobile app</li>
-	   <li><a href="merchant/linkapp">Support your customers with SEQR</a> -
-	   	<br> Link your app to SEQR</li>
 	  </ul> 
 	 </div>
 	<div class="box">
