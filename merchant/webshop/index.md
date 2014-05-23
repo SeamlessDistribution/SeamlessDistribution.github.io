@@ -73,8 +73,8 @@ There are two payment views that you can choose from, standard payment view and 
 #### Payment View - When SEQR doesn't support the user's phone
 <img src="/assets/images/paymentview-nosupport.png" width="50%"/>
 
-To integrate with SEQR, insert the following script tag into your checkout
-page. The script will insert SEQR payment views at the same location.
+As an example, to integrate with SEQR, insert the following script tag into your checkout
+page. The script will insert SEQR payment views at the same location. When running in production you only need to implement REST calls for sending invoices, getting payment status, and updating the payment receipt. For an example REST service you can see our [PHP example on github](https://github.com/SeamlessDistribution/seqr-webshop-api).
 
 {% highlight html %}
 <script
