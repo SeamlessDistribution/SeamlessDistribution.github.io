@@ -93,7 +93,7 @@ https://extdev.seqr.com/extclientproxy/service/v2?wsdl
             </ul>
          </td>
          <td>Used to confirm that the payment was received by the cashregister. 
-            Adds an optional receipt document to a payment.
+            Adds a receipt document to the payment.
          </td>
       </tr>
       <tr>
@@ -470,9 +470,8 @@ Used to present the payment in the app.
 
 #### submitPaymentReciept SOAP request fields
 
-This method confirms that the payment has been acknowledged and takes an optional receipt from the 
-cashregisters as html. This receipt won't appear in the app automatically. 
-Please contact us if you are interested in using a custom receipt in the app. 
+This method confirms that the payment has been acknowledged and adds a receipt from the cashregisters as html. This receipt won't appear in the app automatically. 
+Please contact us if you are interested in using a customized receipt in the app. 
 
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
