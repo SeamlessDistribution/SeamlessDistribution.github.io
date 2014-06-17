@@ -72,7 +72,7 @@ _Tip:_ Have a look at our [example webshop api](https://github.com/SeamlessDistr
  
 Use the sendInvoice response to present a QR code, or in the mobile case show a button that links to the SEQR App.
 
-_Tip:_ To simply presentation of the QR code or button you can use our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
+_Tip:_ To easily add a QR code or button you can use our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
 
 #### 3. Poll payment status
 
