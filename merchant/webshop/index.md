@@ -18,13 +18,13 @@ To integrate your webshop with SEQR, you need to add SEQR payment in your “Che
 
 Follow these steps to integrate your webshop with SEQR:
 
-1. Add API parameters
+1. Implement the required methods
 2. Add SEQR as payment in your webshop
-2. Present the receipt
-3. Verify your integration
-4. Go live!
+3. Present the receipt
+4. Verify your integration
+5. Go live!
 
-### Add API parameters
+### Required Methods
 
 The flow for a webshop SEQR payment is very similar to [Basic SEQR
 payment](/merchant/payment), with the **sendInvoice** request.
@@ -62,50 +62,25 @@ Refer to section [API](/merchant/reference/api.html) for detailed description.
 
 ### Add SEQR as payment in your webshop  
 
-#### 1. Integrate the payment view
-There are two payment views that you can choose from, standard payment view and small payment view:
+#### 1. Send the invoice
 
-#### Standard Payment View
-<img src="/assets/images/paymentview-standard.png" />
+Start by creating an invoice and sending it to the SEQR server using sendInvoice.
 
-#### Small Payment View
-<img src="/assets/images/paymentview-small.png" />
-
-#### Payment View - When SEQR doesn't support the user's phone
-<img src="/assets/images/paymentview-nosupport.png" width="50%"/>
-
-As an example, to integrate with SEQR, insert the following script tag into your checkout
-page. The script will insert SEQR payment views at the same location. When running in production you only need to implement REST calls for sending invoices, getting payment status, and updating the payment receipt. For an example REST service you can see our [PHP example on github](https://github.com/SeamlessDistribution/seqr-webshop-api).
-
-{% highlight html %}
-<script
- id="seqrShop"
- src="http://devapi.seqr.com/seqr-webshop-plugin/js/seqrShop.js#!invoiceReference=[invoiceReference]">
-</script>
-{% endhighlight %}
-
-#### View parameters 
-
-| Name             | Description | Values | Default |
-|------------------|-----------|---------|-----|
-| invoiceReference | (required) invoice reference that you received from sendInvoice request | - | - |
-| layout           | (optional) layout for the payment view | standard, small | standard |
-| language         | (optional) language for texts in payment view | en, sv, ... | detected from browser, falls back to English if not available |
-| paidCallback     | (optional) this javascript method is invoked after the payment is successful | - | - |
-
-**Note:** when your webshop is browsed on mobile phones, you provide the backUrl in
- **sendInvoice** request. After a successful/cancelled payment, the app will redirect
-the SEQR user to the URL specified in the invoice.
-
+_Tip:_ Have a look at our [example webshop api](https://github.com/SeamlessDistribution/seqr-webshop-api) to see how sendInvoice or getPaymentStatus using PHP.
 
 #### 2. Get payment status
+ 
+Use the sendInvoice response to present a QR code, or in the mobile case show a button that links to the SEQR App.
+
+_Tip:_ To simply presentation of the QR code or button you can use our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
+
+#### 3. Poll payment status
 
 Once the payment is completed, your webshop should query the status of the invoice
 from SEQR by calling **getPaymentStatus**. 
 
 **Note!** The web server must check the status each second, to verify that payment is completed. Otherwise SEQR server does not receive any notification that transaction is finalized and the payment will then be reversed!
 This request should be triggered from a javascript timer on the website, so when SEQR user closes the window or moves away from the payment page, the polling stops. Another benefit is that you do not need to have a polling-loop on your backend, which will improve your webshop’s server performance.
-
 
 ### Present the receipt
 
@@ -120,6 +95,17 @@ Verify that your integration works and run validation tests towards SEQR servers
 ### Go live!
 
 To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html).
+
+# Examples
+
+
+Visit [https://devapi.seqr.com/seqr-webshop-sample/](https://devapi.seqr.com/seqr-webshop-sample/) to try the sample webshop.
+
+The source code for sample webshop can be found at [https://github.com/SeamlessDistribution/seqr-webshop-sample](https://github.com/SeamlessDistribution/seqr-webshop-sample).
+
+The source code for the REST calls in the sample webshop can be found at [https://github.com/SeamlessDistribution/seqr-webshop-api](https://github.com/SeamlessDistribution/seqr-webshop-api).
+
+The source code for the webshop plugin can be found at [https://github.com/SeamlessDistribution/seqr-webshop-plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
 
 # Common use cases
 
