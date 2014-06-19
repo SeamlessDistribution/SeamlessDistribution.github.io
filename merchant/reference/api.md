@@ -4,7 +4,7 @@ title: SEQR Merchant API
 description: API reference
 ---
 
-# Payment API / WSDL v2.5.0
+# Payment API / WSDL v2.6.0
 
 
 This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
