@@ -71,7 +71,7 @@ The invoice status will be "ISSUED" even if the customer presses cancel in SEQR 
 
 Even if the user presses cancel during payment flow in SEQR app, the invoice status will be "ISSUED" and the backURL will be called - therefore you should treat "ISSUED" as "canceled" if the status is still "ISSUED" after you received a notice on your provided backURL.
 
-For example code of sendInvoice with backURL and notificationUrl, refer to [Webshop](/merchant/webshop.html)
+For example code of sendInvoice with backURL and notificationUrl, refer to [Webshop](/merchant/webshop).
 
 
 ### Insert the payment URL
