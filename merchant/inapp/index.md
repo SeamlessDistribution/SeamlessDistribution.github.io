@@ -59,16 +59,26 @@ For an extended integration, also these methods can be used:
 
 Refer to section [API](/merchant/reference/api.html) for detailed description.
 
+**Notes:**
+
+For the sendInvoice request you must include the backURL and notificationUrl (the backURL is set to 'done' page, and the notificationUrl calls the getPaymentStatus request.) 
+
+The backURL will redirect the user to your app after successful or canceled payment. Typically this will be a URL to a webpage or with a URL scheme that launches or returns to your app. Also provide a backend call to your server where you must acknowledge that payment has been done - this is more secure than using only the backURL since the user might exit the flow as soon as the payment has gone through (and the flow is not yet completed).
+
+The backURL is only used if the user is making a purchase through a browser on their mobile device. The 'done' page simply makes a final getPaymentStatus call and displays the output in the page.
+
+The invoice status will be "ISSUED" even if the customer presses cancel in SEQR app. The backURL will still be called and you should therefore treat "ISSUED" as canceled if the status is still "ISSUED" after you receive a notice on your provided backURL.
+
+Even if the user presses cancel during payment flow in SEQR app, the invoice status will be "ISSUED" and the backURL will be called - therefore you should treat "ISSUED" as "canceled" if the status is still "ISSUED" after you received a notice on your provided backURL.
+
+For example code of sendInvoice with backURL and notificationUrl, refer to [Webshop](/merchant/webshop).
+
 
 ### Insert the payment URL
 
 Make a redirection (button or link) in your app, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the "HTTP:" header with "SEQR:"; that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use SEQR://SEQR.SE/R12345.
 
 
-**Note:** When your app shop is browsed, you provide the backURL in the
- sendInvoice request. After a successful/cancelled payment, the app will redirect the SEQR user to the URL specified in sendInvoice. Typically this will be a URL with a URL scheme that will launch the calling app again.
-
-**Note2:** The invoice status will still be "ISSUED" even if the customer press cancel in the SEQR-app. The backURL will still be called and you should therefore treat "ISSUED" as canceld if you the status is still "ISSUED" after you receive a notice on your provided backURL.
 
 ### Present the receipt
 
