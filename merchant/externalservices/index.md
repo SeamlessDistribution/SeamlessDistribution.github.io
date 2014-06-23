@@ -44,7 +44,7 @@ ServiceWeb->ServiceBackend: Retreive service data
 Follow these steps to integrate your service with SEQR:
 
 
-1. Add API parameters
+1. Implement the required methods
 2. Create your QR codes for scanning
 3. Create a web frontend to be integrated into SEQR app
 4. Create a web backend
@@ -52,7 +52,7 @@ Follow these steps to integrate your service with SEQR:
 6. Go live!
 
 
-### Add API parameters
+### Implement the required methods
 
 The methods required in a basic integration are:
 

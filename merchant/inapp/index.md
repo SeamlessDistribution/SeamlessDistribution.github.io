@@ -20,13 +20,13 @@ All apps offering payments typically have a backend that handles the actual serv
 
 Follow these steps to integrate your app with SEQR:
 
-1. Add API parameters
+1. Implement the required methods
 2. Insert the payment URL
 3. Present the receipt
 4. Verify your integration
 4. Go live!
 
-### Add API parameters
+### Implement the required methods
 
 The flow for an app SEQR payment is very similar to [Basic SEQR payment](/merchant/payment).
 The difference is that the user presses a "pay" button or link in your app, which launches the SEQR app and presents the bill for the user to confirm the payment.

@@ -12,14 +12,14 @@ description: SEQR Merchant, webshop, POS integration
 
 Follow these steps to configure your POS for integration with SEQR:
 
-1. Add API parameters
+1. Implement the required methods
 2. Register POS with SEQR
 3. Assign SEQR id
 4. Add SEQR as payment in your POS
 5. Verify your integration
 6. Go live!
 
-## Add API parameters
+## Implement the required methods
 
 The methods required in a basic integration are:
 
