@@ -24,7 +24,7 @@ Follow these steps to integrate your webshop with SEQR:
 4. Verify your integration
 5. Go live!
 
-### Required Methods
+### Implement the required methods
 
 The flow for a webshop SEQR payment is very similar to [Basic SEQR
 payment](/merchant/payment), with the **sendInvoice** request.
