@@ -162,29 +162,38 @@ The ClientContext structure is used in all requests to identify, authenticate an
 If no max-length is specified it is unlimited for strings.
 
 <table>
-<tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Max-Length</th></tr>
+<tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Required</th><th>Max-Length</th><th>Sample value</th></tr>
 <tr><td>clientId </td>
     <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.</td>
     <td> string </td>
-    <td> </td></tr>
+    <td> Y </td>
+    <td> </td>
+    <td>POS Version 3.4.1</td></tr>
 <tr><td>channel </td>
     <td> The channel used to send a request. Always use ClientWS or WS. </td>
     <td> string </td>
-    <td> 40 </td></tr>
+    <td> Y </td>
+    <td> 40 </td>
+    <td> ClientWS</td></tr>
 <tr><td>clientRequestTimeout </td>
     <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td>
     <td> long </td>
-    <td>  </td></tr>
+    <td> Y </td>
+    <td>  </td>
+    <td>0</td></tr>
 <tr><td>initiatorPrincipalId </td>
     <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. 
          Use TERMINALID except when you regsister a new terminal, then you need RESELLERUSER (as provided from Seamless). 
     </td>
     <td> string </td>
-    <td>  </td></tr>
+    <td> Y </td>
+    <td>  </td>
+   <td>   </td>
+</tr>
 <tr><td>password</td>
     <td>The password used to authenticate the initiator principal.</td>
     <td> string </td>
-    <td>  </td></tr>
+    <td> Y </td><td>  </td><td> mySecretP455W0RD </td></tr>
 <tr><td>clientReference </td>
     <td>The client reference for the transaction.
         Recommended: the clientReference should be unique at least for the specific client id.
@@ -192,14 +201,16 @@ If no max-length is specified it is unlimited for strings.
         The field is mandatory for troubleshooting purposes.
     </td>
     <td> string </td>
-    <td> 32 </td></tr>
+    <td> Y </td>
+    <td> 32 </td><td> SendInvoice2348287fdsfsd83 </td></tr>
 <tr><td>clientComment </td>
-    <td>Client comment included within the request. Optional.</td>
+    <td>Client comment included within the request.</td>
     <td> string </td>
-    <td> 80 </td></tr>
+    <td> N </td>
+    <td> 80 </td><td>  </td></tr>
 </table>
 
-
+ 
 
 
 ## Invoice data 
@@ -208,19 +219,20 @@ If no max-length is specified it is unlimited for strings.
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
 
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow | string |  |
-| backURL | used in in-app or web shopping | string |  |
-| cashierId | "Alice" will show on receipt | string |  |
-| clientInvoiceId | Your purchase reference | string |  |
-| footer | receipt footer text | string |  |
+| Field | Description | Type | Required | Max-Length | Sample Value
+| --- | --- | --- | --- | --- | --- |
+| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow | string | Y |  | NO_ACKNOWLEDGMENT | 
+| backURL | in a website shop:  This is the link that  the user will be redirected in your site after a succesfull payment | string | N | | http://merchant.com/displayafterpay |
+| cashierId | Merchant cashier id | string | Y |  | John00232 |
+| clientInvoiceId | This Invoice ID refers to the Identification number from the Merchant itself | string | Y | | Merchant34213421 | 
+| footer | Footer that you want to display in the users phone receipt | string | Y | | RFC:12389234DKJ3 |
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
-| issueDate | cashregsister Date  | dateTime | |
-| notificationURL | optional notification/confirmation url | string |  |
-| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string |  |
-| title | title displayed on bill and receipt | string |  |
-| totalAmount | full amount of invoice/bill |  |  |
+| issueDate | cashregsister Date  | dateTime | Y | | 2014-04-05T13:23:53 | 
+| notificationURL | optional notification/confirmation url. If set SEQR will access this url after successful payment by user.| string | N | | http://merchant.com/paymentConfirmation?inv=32923423423 |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string | Y | | IMMEDIATE_DEBIT |
+| title | title displayed on bill and receipt | string | Y | | My Store Sample Store |
+| totalAmount:value | full amount of invoice/bill | Decimal | Y | 18 | 112.11 | 
+| totalAmount:currency | Use the currency of the country you are in.  Use the ISO standard | string | Y | | EUR |
 
 
 
@@ -231,16 +243,19 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 Used to present the payment in the app. 
 
 
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| itemDescription | optional | string |  |
-| itemDiscount | optional | decimal |  |
-| itemEAN | optional | string |  |
-| itemQuantity | should be 1 or more | decimal |  |
-| itemTaxRate | optional VAT line like "0.25" | decimal |  |
-| itemTotalAmount | required total decimal for this row | decimal |  |
-| itemUnit | optional "dl" | string |  |
-| itemUnitPrice | optional  | decimal |  |
+| Field | Description | Type | Required | Max-Length | Sample Value
+| --- | --- | --- | --- | --- | --- |
+| itemDescription | description of the item that was sold | string | N | | Coca-Cola | 
+| itemDiscount:value | Total discount for listed products | decimal | N | | 8.44 |
+| itemDiscount:currency|  Use the currency of the country you are in.  Use the ISO standard | string | N | | EUR |
+| itemEAN | product EAN  | string | N | | 0076232342 |
+| itemQuantity | should be 1 or more | decimal | Y | | 2 | 
+| itemTaxRate | use the tax rate of your country | decimal | N | |  0.25 | 
+| itemTotalAmount:value | Total value for listed products | decimal | Y | | 8.44 |
+| itemTotalAmount:currency|  Use the currency of the country you are in.  Use the ISO standard | string | Y | | EUR |
+| itemUnit | Use the type of unit based on ISO 20022| string | N | | Kg |
+| itemUnitPrice:value | Unit price for listed products | decimal | N | | 8.44 |
+| itemUnitPrice:currency|  Use the currency of the country you are in.  Use the ISO standard | string | N | | EUR |
 
 
 # Requests and responses
@@ -250,13 +265,12 @@ Used to present the payment in the app.
 #### sendInvoice SOAP response fields
 
 
-| Field | Description |
-| --- | --- |
-| ersReference | Not used by this method (will be null after this method). |
-| resultCode | Request result code |
-| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for cash registers) |
-| resultDescription | A textual description of resultCode  |
-|invoiceReference  | The SEQR service reference to the registered invoice. |
+| Field | Description | Type | Max-Length | Sample Value
+| --- | --- | --- | --- | --- |
+| resultCode | Response result code | integer | 2 | 0 |
+| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for cash registers) | string | | HTTP://SEQR.SE/R1397240460668 |
+| resultDescription | A textual description of resultCode  | string | | SUCCESS |
+|invoiceReference  | This is the Invoice Reference that the Merchant should use to do the getPaymentStatus | string | |  1397240460668|
 
 
 #### sendInvoice SOAP request example
@@ -280,7 +294,7 @@ Used to present the payment in the app.
           <password>N2YFUhKaB1ZSuVF</password>
        </context>
        <invoice>
-       	<acknowledgmentMode>NO_ACKNOWLEDGMENT</acknowledgmentMode>
+        <acknowledgmentMode>NO_ACKNOWLEDGMENT</acknowledgmentMode>
           <title>Some Invoice</title>
           <cashierId>Bob</cashierId>
           <totalAmount>
@@ -1233,6 +1247,7 @@ Note that this list points out the responses that are relevant, with the API req
 | 97 | RESELLER_NOT_ALLOWED_ TO_DO_REFUND | Refund option is not allowed for that reseller | refundPayment |
 | 98 | SUM_OF_REFUNDS_CAN_NOT_ BE_MORE_THAN_ORIGINAL_ TRANSACTION | Sum of the refunds is more than the original transaction | refundPayment |
 | 99 | RECEIVER_ACCOUNT_DOES_ NOT_ALLOW_REFUNDS | External backend does not allow refund (e.g. receiver's banking system) | refundPayment |
+
 
 
 

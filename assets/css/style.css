@@ -402,7 +402,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 
 /* NAVIGATION */
 .navigation {
-	width: 11%;
+	width: 10%;
 	float: left;
 	min-height: 500px;
 	clear: left;
