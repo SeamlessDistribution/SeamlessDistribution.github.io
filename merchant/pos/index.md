@@ -12,14 +12,14 @@ description: SEQR Merchant, webshop, POS integration
 
 Follow these steps to configure your POS for integration with SEQR:
 
-1. Add API parameters
+1. Implement the required methods
 2. Register POS with SEQR
 3. Assign SEQR id
 4. Add SEQR as payment in your POS
 5. Verify your integration
 6. Go live!
 
-## Add API parameters
+## Implement the required methods
 
 The methods required in a basic integration are:
 
@@ -31,6 +31,7 @@ The methods required in a basic integration are:
 | assignSeqrId | Assigns a SEQR ID to a terminal |
 | sendInvoice | Sends an invoice to SEQR server |
 | getPaymentStatus | Obtains status of a previously submitted invoice |
+| submitPaymentReceipt | Sends the receipt document of a payment |
 | cancelInvoice | Cancels an unpaid invoice |
 | markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
 | --- | --- |
@@ -42,7 +43,7 @@ For an extended integration, also these methods can be used:
 |  Method | Description |
 |--- | --- |
 | updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
-| submitPaymentReceipt | Sends the receipt document of a payment |
+| refundPayment | Refunds a previous payment, partly or the whole sum |
 | executeReport | Executes a report on SEQR server |
 | --- | --- |
 

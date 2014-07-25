@@ -10,7 +10,7 @@ Get SEQR app
 For development and demo purposes we have a test server and test app that you can play with
 on your phone. Android app is the only platform that is available for public development and demo purposes. 
 
-The instruction below describes how to get access to the development app, that is through our **Extdev 4** server.
+The instruction below describes how to get access to the development app, that is through our **Extdev** server.
 
 
 
@@ -20,7 +20,7 @@ Our Android developer app can be installed if you enable "other sources" in
 settings and then browse to this page on your phone [install android developer
 app](/downloads/se-qr-androidapp-demo-2.1.8.3-aligned.apk).
 
-#### 2. Once installed, make sure that "Extdev 4" is selected as server, and accept the Terms of Service:
+#### 2. Once installed, make sure that "Extdev" is selected as server, and accept the Terms of Service:
 
 <img src="/assets/images/devapp_pics/termsOfService.png" width="100px"/> 
 
@@ -29,7 +29,7 @@ app](/downloads/se-qr-androidapp-demo-2.1.8.3-aligned.apk).
 
 <img src="/assets/images/devapp_pics/select_pin.png" width="100px"/> 
 
-#### 4. Enter your device number in full format, such as "0046738966XXX": 
+#### 4. Enter your device number in full format, such as "0046727025XXX": 
 
 <img src="/assets/images/devapp_pics/phone_number2.png" width="100px"/> 
 

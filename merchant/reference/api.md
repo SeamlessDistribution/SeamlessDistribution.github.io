@@ -4,10 +4,11 @@ title: SEQR Merchant API
 description: API reference
 ---
 
-# Payment API / WSDL
+# Payment API / WSDL v2.6.0
+
 
 This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
-https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
+https://extdev.seqr.com/extclientproxy/service/v2?wsdl
 
 ## Methods for payments
 
@@ -92,7 +93,7 @@ https://extdev4.seqr.se/extclientproxy/service/v2?wsdl
             </ul>
          </td>
          <td>Used to confirm that the payment was received by the cashregister. 
-            Adds an optional receipt document to a payment.
+            Adds a receipt document to the payment.
          </td>
       </tr>
       <tr>
@@ -483,9 +484,8 @@ Used to present the payment in the app.
 
 #### submitPaymentReciept SOAP request fields
 
-This method confirms that the payment has been acknowledged and takes an optional receipt from the 
-cashregisters as html. This receipt won't appear in the app automatically. 
-Please contact us if you are interested in using a custom receipt in the app. 
+This method confirms that the payment has been acknowledged and adds a receipt from the cashregisters as html. This receipt won't appear in the app automatically. 
+Please contact us if you are interested in using a customized receipt in the app. 
 
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
@@ -1242,9 +1242,11 @@ Note that this list points out the responses that are relevant, with the API req
 | 90 | SYSTEM_ERROR | Unclassified errors | All requests |
 | 91 | UNSUPPORTED_OPERATION | The method is not supported by the service | All requests |
 | 94 | SERVICE_UNAVAILABLE | External backend system unavailable (e.g. Bank system) | All requests |
-| 95 | INVOICE_ALREADY_ CANCELED | Invoice with given reference number is already canceled through cancelInvoice call | cancelInvoice |
-| 97 | RESELLER_NOT_ALLOWED_ TO_DO_REFUND |  | refundPayment |
-| 98 | SUM_OF_REFUNDS_CAN_NOT_ BE_MORE_THAN_ORIGINAL_TRANSACTION |  | refundPayment |
+| 95 | INVOICE_ALREADY_CANCELED | Invoice with given reference number is already canceled through cancelInvoice call | cancelInvoice |
+| 96 | INVOICE_STATE_NOT_RESERVED | The invoice state is not reserved for doing final or actual transaction | commitReservation |
+| 97 | RESELLER_NOT_ALLOWED_ TO_DO_REFUND | Refund option is not allowed for that reseller | refundPayment |
+| 98 | SUM_OF_REFUNDS_CAN_NOT_ BE_MORE_THAN_ORIGINAL_ TRANSACTION | Sum of the refunds is more than the original transaction | refundPayment |
+| 99 | RECEIVER_ACCOUNT_DOES_ NOT_ALLOW_REFUNDS | External backend does not allow refund (e.g. receiver's banking system) | refundPayment |
 
 
 
