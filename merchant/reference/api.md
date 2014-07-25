@@ -297,9 +297,41 @@ Used to present the payment in the app.
         <acknowledgmentMode>NO_ACKNOWLEDGMENT</acknowledgmentMode>
           <title>Some Invoice</title>
           <cashierId>Bob</cashierId>
+          <invoiceRows>
+            <invoiceRow>
+              <itemDescription>Laptop Samsung Ultrabook</itemDescription>
+              <itemQuantity>2</itemQuantity>
+              <itemSKU>16</itemSKU>
+              <itemTaxRate>0.24</itemTaxRate>
+              <itemTotalAmount>
+                <currency>SEK</currency>
+                <value>500</value>
+              </itemTotalAmount>
+              <itemUnit></itemUnit>
+              <itemUnitPrice>
+                <currency>SEK</currency>
+                <value>250</value>
+              </itemUnitPrice>
+            </invoiceRow>
+            <invoiceRow>
+              <itemDescription>Laptop Apple MacBook Air</itemDescription>
+              <itemQuantity>1</itemQuantity>
+              <itemSKU>3</itemSKU>
+              <itemTaxRate>0.24</itemTaxRate>
+              <itemTotalAmount>
+                <currency>SEK</currency>
+                <value>1000</value>
+              </itemTotalAmount>
+              <itemUnit></itemUnit>
+              <itemUnitPrice>
+                <currency>SEK</currency>
+                <value>1000</value>
+              </itemUnitPrice>
+            </invoiceRow>
+          </invoiceRows>
           <totalAmount>
             <currency>SEK</currency>
-            <value>10.22</value>
+            <value>1500</value>
           </totalAmount>
           <!-- in case you don't want to poll for payment status -->
           <notificationUrl>http://www.thirdparty.com/notifyMeHere</notificationUrl>          

@@ -124,7 +124,14 @@ Below you can find answers to most common question that can appear during integr
            </div>        
     </div>
  </div>
-
+ <div class="faq_container">
+   <div class="faq">
+      <div class="faq_question">I have used "notificationUrl" in sendInvoice request but it is called only when invoice status is changed to "PAID". Why? </div>
+           <div class="faq_answer_container">
+              <div class="faq_answer">Unfortunatelly for now URL defined in "notificationUrl" will be called only once invoice is PAID. So if you're not using our <a href="https://github.com/SeamlessDistribution/seqr-webshop-plugin">plugin</a> then you have to implement getPaymentStatus and check status of invoice on your own.</div>
+           </div>        
+    </div>
+ </div>
 
 
 
