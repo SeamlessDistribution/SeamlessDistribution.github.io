@@ -31,16 +31,12 @@ SEQR-->Cashregister: XML report contents
 
 ## Procedure to reconcile transactions and create report
 
-The following are steps to perform reconciliation against SEQR from cash registers
+The following are steps to perform reconciliation against SEQR from points of sale:
 
-1. At the end of a working shift or shop hour, a cashier presses a button 'Close & Reconcile' on a cash register.
-The cash register sends **markTransactionPeriod** request to SEQR to mark end of transactions list
-for this period. SEQR returns with a unique reference number, ersReference.
-2. The cash register waits for a couple of seconds (around 3 seconds) in order to make sure that all
-transactions are ready to process for reconciliation report.
-3. The cash register calls **executeReport** using ersReference from step 1 to fetch reconciliation report
-representing transaction summary since the previous reconciliation until the end of transaction list for this
-period. The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation, see below.
+1. At the end of a working shift or shop hour, a cashier presses a button 'Close & Reconcile' on a point of sale.
+The cash register sends **markTransactionPeriod** request to SEQR to mark end of transactions list for this period. SEQR returns with a unique reference number, ersReference.
+2. The point of sale waits for a couple of seconds (around 3 seconds) in order to make sure that all transactions are ready to process for reconciliation report.
+3. The point of sale calls **executeReport** using ersReference from step 1 to fetch reconciliation report representing transaction summary since the previous reconciliation until the end of transaction list for this period. The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation, see below.
 4. In case the reconciliation report is not ready, SEQR will return with result code 2
 (REPORT_NOT_READY). The cashier should wait for couple seconds (around 3 seconds) more and repeat
 step 3 again.
@@ -51,7 +47,7 @@ step 3 again.
 
 
 Only one master cash register perform reconciliation process. The reconciliation
-report will show transactions summary for every cash register in the shop.
+report will show transactions summary for every point of sale in the shop.
 
 
 <table>
@@ -60,17 +56,13 @@ report will show transactions summary for every cash register in the shop.
 
 <tr><td>STD_RECON_001</td>
     <td>Merchant Transactions</td>
-    <td>Transaction summary for a shop representing number 
-of transactions and summary amount done for the 
-period. 
+    <td>Transaction summary for a shop representing number of transactions and summary amount done for the period. 
 </td></tr>
 
 
 <tr><td>STD_RECON_003</td>
     <td>Merchant Transactions Details</td><td>Transaction details for a shop
-showing ersReference, cashier,
-cash register and amount for the
-period.
+showing ersReference, cashier, point of sale and amount for the period.
 </td></tr>
 </table>
 
@@ -79,9 +71,8 @@ period.
 ## Reports per terminal reconciliation
 
 
-Every cash register in a shop perform reconciliation process. The reconciliation
-report will show transactions summary only for the specific cash register. In this case, terminalId
-should be provided when calling markTransactionPeriod.
+Every point of sale in a shop performs reconciliation process. The reconciliation
+report will show transactions summary only for the specific point of sale. In this case, terminalId should be provided when calling markTransactionPeriod.
 
 
 <table>
@@ -93,8 +84,7 @@ of transactions and summary amount purchased/refunded for the
 period. </td></tr>
 
 <tr><td>STD_RECON_007</td><td>Terminal Transactions Details</td>
-    <td>Transaction details for a terminal showing reference 
-id and amounts for each transaction in the period. 
+    <td>Transaction details for a terminal showing reference id and amounts for each transaction in the period. 
 </td></tr>
 </table>
 

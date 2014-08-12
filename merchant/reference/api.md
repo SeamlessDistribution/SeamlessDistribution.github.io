@@ -92,7 +92,7 @@ https://extdev.seqr.com/extclientproxy/service/v2?wsdl
                <li>ReceiptDocument receiptDocument</li>
             </ul>
          </td>
-         <td>Used to confirm that the payment was received by the cashregister. 
+         <td>Used to confirm that the payment was received by the point of sale. 
             Adds a receipt document to the payment.
          </td>
       </tr>
@@ -164,7 +164,7 @@ If no max-length is specified it is unlimited for strings.
 <table>
 <tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Max-Length</th></tr>
 <tr><td>clientId </td>
-    <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4.</td>
+    <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4."</td>
     <td> string </td>
     <td> </td></tr>
 <tr><td>channel </td>
@@ -216,7 +216,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | clientInvoiceId | Your purchase reference | string |  |
 | footer | receipt footer text | string |  |
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
-| issueDate | cashregsister Date  | dateTime | |
+| issueDate | point of sale Date  | dateTime | |
 | notificationURL | optional notification/confirmation url | string |  |
 | paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string |  |
 | title | title displayed on bill and receipt | string |  |
@@ -254,7 +254,7 @@ Used to present the payment in the app.
 | --- | --- |
 | ersReference | Not used by this method (will be null after this method). |
 | resultCode | Request result code |
-| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for cash registers) |
+| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for points of sale) |
 | resultDescription | A textual description of resultCode  |
 |invoiceReference  | The SEQR service reference to the registered invoice. |
 
@@ -401,7 +401,7 @@ Used to present the payment in the app.
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
 | invoiceReference | The SEQR service reference to the registered invoice. | string |  |
-| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in responce message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. |  |  |
+| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in response message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. |  |  |
 
 
 #### getPaymentStatus SOAP response fields
@@ -470,7 +470,7 @@ Used to present the payment in the app.
 
 #### submitPaymentReciept SOAP request fields
 
-This method confirms that the payment has been acknowledged and adds a receipt from the cashregisters as html. This receipt won't appear in the app automatically. 
+This method confirms that the payment has been acknowledged and adds a receipt from the points of sale as html. This receipt won't appear in the app automatically. 
 Please contact us if you are interested in using a customized receipt in the app. 
 
 | Field | Description | Type | Max-Length |

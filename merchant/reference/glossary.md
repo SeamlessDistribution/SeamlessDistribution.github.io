@@ -16,7 +16,7 @@ The SEQR user’s bank or credit institution that accepts and processes payment 
 Application Programming Interface, interface to other components within or outside the SEQR system.
 
 **App**
-The SEQR applications for iOS, Android and Windows Mobile.
+The SEQR apps for iOS, Android and Windows Mobile.
 "App" can also refer to your app. When the user presses a “pay” button or a link in your app, it launches the SEQR app and presents the bill for the user to confirm the payment (i.e. the user does not need to scan a QR code). This feature requires integration.
 
 **Authorization service**
@@ -31,10 +31,10 @@ The standardized API used for clearing of transactions between SEQR and an accou
 
 ### C
 **Cash register**
-The register machine of receiving payments with SEQR and also the API within SEQR system.
+The register machine of receiving payments with SEQR, but normally referred to as "point of sale" (see POS). Also referring to the Cash Register Service API within the SEQR system.
 
 **Client**
-Includes the SEQR user using SEQR app, provisioners using ATMs and Internet banking as well as the merchant's cash registers.
+Includes the SEQR user using SEQR app, provisioners using ATMs and Internet banking as well as the merchant's points of sale.
 
 **Clearing**
 Is done in real time before the transaction is accepted. SEQR expects this money to be available at a holding account by the time of settlement.
@@ -66,7 +66,7 @@ Seamless uses the word “Invoice” for defining the bill sent to the SEQR user
 
 ### L
 **Loyalty**
-Links merchant's loyalty cards with SEQR and have the rebates/bonus points automatically added to the point of sales.
+Links merchant's loyalty cards with SEQR and have the rebates/bonus points automatically added to the points of sale.
 
 ### M
 **Merchant**
@@ -85,10 +85,10 @@ One-time password.
 Peer to Peer, used for example when sending money from a SEQR subscriber to another person.
 
 **POS**
-Point of Sale in a physical store.
+Point of sale in a physical store.
 
 **POS protocol**
-A SOAP based protocol using HTTPS used for communicating with the merchant's cash register.
+A SOAP based protocol using HTTPS used for communicating with the merchant's point of sale.
 
 **Provider**
 The SEQR user’s banking system providing a SOAP/SSL bank account interface that SEQR can connect to and send requests.
@@ -130,7 +130,7 @@ SEQR is a system for mobile payments where to pay with your phone instead of usi
 SEQR backend performing the service and the APIs.
 
 **SEQR Tab**
-The name of the mobile cash register that Seamless provides to merchants who do not use a cash register directly integrated with SEQR.
+The name of the mobile point of sale that Seamless provides to merchants who do not use a point of sale directly integrated with SEQR.
 
 **Services**
 Services are a payment experience directly in the SEQR app, which consists of choosing service options and then paying with SEQR. Example is the Parking service.
