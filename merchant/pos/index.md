@@ -62,7 +62,7 @@ Refer to section [API](/merchant/reference/api.html) for detailed description.
 
 
 ________________________________________
-**Note!** Each terminal is added only once. For example, if the checkout line contains five cash registers you also need five terminals registered in SEQR. Any new or reinstalled point of sale must be registered against SEQR.
+**Note!** Each terminal is added only once. For example, if the checkout line contains five points of sale you also need five terminals registered in SEQR. Any new or reinstalled point of sale must be registered against SEQR.
 
 ________________________________________
 
@@ -71,16 +71,16 @@ ________________________________________
 <div class="diagram">
 @startuml
 skinparam monochrome true
-Cashregister->SEQR:RegisterTerminal()
-SEQR-->Cashregister: terminalId
-Cashregister->SEQR: assignSeqrId(SEQR ID)
-SEQR-->Cashregister: OK
+PointOfSale->SEQR:RegisterTerminal()
+SEQR-->PointOfSale: terminalId
+PointOfSale->SEQR: assignSeqrId(SEQR ID)
+SEQR-->PointOfSale: OK
 @enduml
 </div>
 
 #### Point of sale menu
 
-The SEQR terminal menu in the POS can be accessed with administrative rights. The menu on the point of sale may look like this:
+The SEQR terminal menu in the point of sale can be accessed with administrative rights. The menu on the point of sale may look like this:
 
 <img src="/assets/images/seqr_menu.png" />
  

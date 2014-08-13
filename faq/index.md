@@ -43,6 +43,7 @@ Below you can find answers to the most common questions that may occur during th
     height: 0px;
     overflow: hidden;
     padding: 0px;
+    color: #000000;
 }
 
 .faq_container {
