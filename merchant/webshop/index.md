@@ -11,7 +11,7 @@ To integrate your webshop with SEQR, you need to add SEQR payment in your “Che
 
 <img src="/assets/images/seqr_webshop.png" />
 
-##[See a live demo!](http://devapi.seqr.com/seqr-webshop-sample/)
+##[See a live demo!](https://devapi.seqr.com/seqr-webshop-sample/)
 
 
 ## Integration procedure
@@ -40,6 +40,7 @@ The methods required in a basic integration are:
 |--- | --- |
 | sendInvoice | Sends an invoice to SEQR server |
 | getPaymentStatus | Obtains status of a previously submitted invoice |
+| cancelInvoice | Cancels an unpaid invoice. Can be triggered after defined timeout |
 | submitPaymentReceipt | Sends the receipt document of a payment |
 | markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
 | --- | --- |
@@ -51,7 +52,6 @@ For an extended integration, also these methods can be used:
 |  Method | Description |
 |--- | --- |
 | updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
-| cancelInvoice | Cancels an unpaid invoice |
 | refundPayment | Refunds a previous payment, partly or the whole sum |
 | executeReport | Executes a report on SEQR server |
 | --- | --- |
@@ -70,7 +70,7 @@ _Tip:_ Have a look at our [example webshop api](https://github.com/SeamlessDistr
 
 #### 2. Get payment status
  
-Use the sendInvoice response to present a QR code, or in the mobile case show a button that links to the SEQR App.
+Use the sendInvoice response to present a QR code. For mobile browsers (e.g. on smartphones) make a redirection (button, link or clickable QRCode) in your webshop, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the “HTTP:” header with “SEQR-DEMO:” (for integration only, in production it should be SEQR:) that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use SEQR://SEQR.SE/R12345. The reason for that is that you can’t scan QRCode from page that is being browsed on your phone using the same phone.
 
 _Tip:_ To easily add a QR code or button you can use our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
 
@@ -81,6 +81,8 @@ from SEQR by calling **getPaymentStatus**.
 
 **Note!** The web server must check the status each second, to verify that payment is completed. Otherwise SEQR server does not receive any notification that transaction is finalized and the payment will then be reversed!
 This request should be triggered from a javascript timer on the website, so when SEQR user closes the window or moves away from the payment page, the polling stops. Another benefit is that you do not need to have a polling-loop on your backend, which will improve your webshop’s server performance.
+
+_Tip:_  You can skip polling if you are using our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
 
 ### Present the receipt
 
@@ -186,7 +188,7 @@ WebServer->Browser: Receipt page
 
 ### Step 9. sendInvoice
 
-The notificationUrl parameter is mandatory. It should contain a session id or token that enables the web server to map payment status back to a customer's session in step 31.
+The notificationUrl parameter is optional. It should contain a session id or token that enables the web server to map payment status back to a customer's session in step 31.
 
 ### Step 11. Checkout page with QR code
 
@@ -276,10 +278,10 @@ WebServer->Browser: Receipt page
 
 A backURL parameter is optional. If it is provided the SEQR application will load the URL in a browser when the customer has confirmed payment (step 27).
 
-### Step 27. Open backURL
-
-This step is only triggered is a backURL was provided in the cal to sendInvoice (step 9).
-
 ### Step 23. getPaymentStatus
 
 Payment status must called immediately when the notificationUrl is called. Failing to call payment status will cause the payment to be cancelled, resulting in an SMS being sent to the customer. The response in step 24 should be stored in the customer's session so that it can be displayed in the page that the backURL loads in step 28.
+
+### Step 27. Open backURL
+
+This step is only triggered is a backURL was provided in the call to sendInvoice (step 9).
