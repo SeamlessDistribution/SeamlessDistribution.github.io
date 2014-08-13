@@ -116,7 +116,7 @@ https://extdev.seqr.com/extclientproxy/service/v2?wsdl
 
 
 
-### Methods specific for POS (terminal) registration 
+### Methods specific for point of sale (terminal) registration 
 
 
 |--- | --- |
