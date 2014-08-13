@@ -54,11 +54,11 @@ Below you can find answers to the most common questions that may occur during th
 <div class="faq_container">
    <div class="faq">
       <ul>
-       <div class="faq_question">I've been using /extclientproxy/service?wsdl and now I'm trying to use /extclientproxy/service/v2?wsdl but after scanning QR code in SEQR app there is still “waiting for amount...” info even after calling sendInvoice by my point of sale. Why?</div>
+       <div class="faq_question"><li>I've been using /extclientproxy/service?wsdl and now I'm trying to use /extclientproxy/service/v2?wsdl but after scanning QR code in SEQR app there is still “waiting for amount...” info even after calling sendInvoice by my point of sale. Why?</div>
            <div class="faq_answer_container">
               <div class="faq_answer">Probably the reason is missing
 <pre><code class="python"><span class="n">&lt;</span>acknowledgmentMode<span>&gt;</span>NO_ACKNOWLEDGMENT<span>&lt;</span><span>/</span>acknowledgmentMode<span>&gt;</span></code></pre>
-			in your sendInvoice request. See <a href="/merchant/reference/api.html">API</a> for details.</div>
+			in your sendInvoice request. See <a href="/merchant/reference/api.html">API</a> for details.</li>
            </div>        
     </div>
  </div>
