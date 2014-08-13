@@ -51,10 +51,10 @@ Below you can find answers to the most common questions that may occur during th
  
 </style>
  
-<div class="faq_container">
+<li><div class="faq_container">
    <div class="faq">
       <ul>
-       <li><div class="faq_question">I've been using /extclientproxy/service?wsdl and now I'm trying to use /extclientproxy/service/v2?wsdl but after scanning QR code in SEQR app there is still “waiting for amount...” info even after calling sendInvoice by my point of sale. Why?</div>
+       <div class="faq_question">I've been using /extclientproxy/service?wsdl and now I'm trying to use /extclientproxy/service/v2?wsdl but after scanning QR code in SEQR app there is still “waiting for amount...” info even after calling sendInvoice by my point of sale. Why?</div>
            <li><div class="faq_answer_container">
               <div class="faq_answer">Probably the reason is missing
 <pre><code class="python"><span class="n">&lt;</span>acknowledgmentMode<span>&gt;</span>NO_ACKNOWLEDGMENT<span>&lt;</span><span>/</span>acknowledgmentMode<span>&gt;</span></code></pre>
@@ -62,9 +62,9 @@ Below you can find answers to the most common questions that may occur during th
            </div>        
     </div>
  </div>
-<div class="faq_container">
+<li><div class="faq_container">
    <div class="faq">
-      <li><div class="faq_question">I've called markTransactionPeriod and used transactionPeriodId in executeReport for STD_RECON_006 or STD_RECON_007 reports but report is still not ready. Why?</div>
+      <div class="faq_question">I've called markTransactionPeriod and used transactionPeriodId in executeReport for STD_RECON_006 or STD_RECON_007 reports but report is still not ready. Why?</div>
            <div class="faq_answer_container">
               <div class="faq_answer">In order to use terminal related reports you have to specify that terminal in markTransactionPeriod call by adding:
 <pre><code class="python"><span class="p">&lt;</span><span class="n">parameters</span><span class="o">&gt;</span>
