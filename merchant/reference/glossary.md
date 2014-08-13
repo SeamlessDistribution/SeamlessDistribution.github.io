@@ -31,7 +31,7 @@ The standardized API used for clearing of transactions between SEQR and an accou
 
 ### C
 **Cash register**
-The register machine of receiving payments with SEQR, but normally referred to as "point of sale" (see POS). Also referring to the Cash Register Service API within the SEQR system.
+The register machine receiving payments with SEQR, but normally referred to as "point of sale" (see POS). Also referring to the Cash Register Service API within the SEQR system.
 
 **Client**
 Includes the SEQR user using SEQR app, provisioners using ATMs and Internet banking as well as the merchant's points of sale.

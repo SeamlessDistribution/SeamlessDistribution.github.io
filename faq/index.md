@@ -53,17 +53,18 @@ Below you can find answers to the most common questions that may occur during th
  
 <div class="faq_container">
    <div class="faq">
-      <div class="faq_question">I've been using /extclientproxy/service?wsdl and now I'm trying to use /extclientproxy/service/v2?wsdl but after scanning QR code in SEQR app there is still “waiting for amount...” info even after calling sendInvoice by my point of sale. Why?</div>
-           <div class="faq_answer_container">
+      <ul>
+       <li><div class="faq_question">I've been using /extclientproxy/service?wsdl and now I'm trying to use /extclientproxy/service/v2?wsdl but after scanning QR code in SEQR app there is still “waiting for amount...” info even after calling sendInvoice by my point of sale. Why?</div>
+           <li><div class="faq_answer_container">
               <div class="faq_answer">Probably the reason is missing
 <pre><code class="python"><span class="n">&lt;</span>acknowledgmentMode<span>&gt;</span>NO_ACKNOWLEDGMENT<span>&lt;</span><span>/</span>acknowledgmentMode<span>&gt;</span></code></pre>
-			in your sendInvoice request. See <a href="/merchant/reference/api.html">API</a> for details.</div>
+			in your sendInvoice request. See <a href="/merchant/reference/api.html">API</a> for details.</div></li>
            </div>        
     </div>
  </div>
 <div class="faq_container">
    <div class="faq">
-      <div class="faq_question">I've called markTransactionPeriod and used transactionPeriodId in executeReport for STD_RECON_006 or STD_RECON_007 reports but report is still not ready. Why?</div>
+      <li><div class="faq_question">I've called markTransactionPeriod and used transactionPeriodId in executeReport for STD_RECON_006 or STD_RECON_007 reports but report is still not ready. Why?</div>
            <div class="faq_answer_container">
               <div class="faq_answer">In order to use terminal related reports you have to specify that terminal in markTransactionPeriod call by adding:
 <pre><code class="python"><span class="p">&lt;</span><span class="n">parameters</span><span class="o">&gt;</span>
@@ -72,7 +73,7 @@ Below you can find answers to the most common questions that may occur during th
 		<span class="o">&lt;</span>value<span class="o">&gt;</span><span class="n"><span class="o">&lt;</span>YOUR_TERMINAL_ID_HERE</span><span class="o">&gt;</span><span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
 	<span class="o">&lt;/</span><span class="n">entry</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">parameters</span><span class="o">&gt;</span></code></pre>
-			in your sendInvoice request. See <a href="/merchant/reference/api.html">API</a> for details.</div>
+			in your sendInvoice request. See <a href="/merchant/reference/api.html">API</a> for details.</div></li>
            </div>        
     </div>
  </div>

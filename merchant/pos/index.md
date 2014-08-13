@@ -6,16 +6,16 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-# SEQR payment in a POS/Cash register
+# SEQR payment in a point of sale
 
 ## Integration procedure
 
-Follow these steps to configure your POS for integration with SEQR:
+Follow these steps to configure your point of sale for integration with SEQR:
 
 1. Implement the required methods
-2. Register POS with SEQR
+2. Register point of sale with SEQR
 3. Assign SEQR id
-4. Add SEQR as payment in your POS
+4. Add SEQR as payment in your point of sale
 5. Verify your integration
 6. Go live!
 
@@ -51,18 +51,18 @@ For an extended integration, also these methods can be used:
 Refer to section [API](/merchant/reference/api.html) for detailed description.
 
 
-## Register POS with SEQR
+## Register point of sale with SEQR
 (Method: **registerTerminal**)
 
 
-* Each POS/cash register in the checkout line is called a "terminal" in SEQR.
-* Register and unregister POS against SEQR are separate functions in POS. 
-* SEQR payments do not work in POS without a proper registration.
+* Each point of sale in the checkout line is called a "terminal" in SEQR.
+* Register and unregister point of sale against SEQR are separate functions in points of sale. 
+* SEQR payments do not work in point of sale without a proper registration.
 * Reseller user id and password stored in back office are used when a new SEQR terminal is registered.
 
 
 ________________________________________
-**Note!** Each terminal is added only once. For example, if the checkout line contains five cash registers you also need five terminals registered in SEQR. Any new or reinstalled POS must be registered against SEQR.
+**Note!** Each terminal is added only once. For example, if the checkout line contains five cash registers you also need five terminals registered in SEQR. Any new or reinstalled point of sale must be registered against SEQR.
 
 ________________________________________
 
@@ -78,9 +78,9 @@ SEQR-->Cashregister: OK
 @enduml
 </div>
 
-#### POS menu
+#### Point of sale menu
 
-The SEQR terminal menu in the POS can be accessed with administrative rights. The menu on the POS may look like this:
+The SEQR terminal menu in the POS can be accessed with administrative rights. The menu on the point of sale may look like this:
 
 <img src="/assets/images/seqr_menu.png" />
  
@@ -96,7 +96,7 @@ Preferably done in the back office.
 
 
 ________________________________________
-**Note!** The terminal id that is received as response, must hereafter be used in every method that is called, for the particular terminal/POS.
+**Note!** The terminal id that is received as response, must hereafter be used in every method that is called, for the particular terminal/point of sale.
 
 
 Example of registerTerminal:
@@ -107,21 +107,19 @@ Example of registerTerminal:
 
 
 
-
-
 ## Assign SEQR id
 (Method: **assignSeqrId**)
 
-When getting a payment through the cash register, we cannot show the payment QR code
+When getting a payment through the point of sale, we cannot show the payment QR code
 which is generated for the invoice to the SEQR user. To overcome that problem,
-we assign a fixed QR code to each cash register. A POS SEQR sticker looks like this:
+we assign a fixed QR code to each point of sale. A point of sale SEQR sticker looks like this:
 
 <img src="/assets/images/testcode.png" width="200px"/>
 
-Each QR code sticker has a unique number assigned known as SEQR ID. The cash register/POS needs this number to establish a link with the QR code.
+Each QR code sticker has a unique number assigned known as SEQR ID. The point of sale needs this number to establish a link with the QR code.
 
 
-The cashier starts the sequence to assign the SEQR ID from the Configuration menu in POS and SEQR ID registration submenu. It is possible to enter the number manually or by scanning the QR code with a scanner. The scanner must be configured to accept Code 128 in order to read the barcode on the QR sticker.
+The cashier starts the sequence to assign the SEQR ID from the Configuration menu in point of sale and SEQR ID registration submenu. It is possible to enter the number manually or by scanning the QR code with a scanner. The scanner must be configured to accept Code 128 in order to read the barcode on the QR sticker.
 
 <img src="/assets/images/assign_seqr.png" width="200px"/>
 
@@ -129,19 +127,19 @@ The parameter seqrId is stored in the local database after a successful assignme
 
 1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
 
-2.	Call assignSeqrId to assign the SEQR ID currently in use by the cash register.
+2.	Call assignSeqrId to assign the SEQR ID currently in use by the point of sale.
 
 
 
-## Add SEQR as payment in your POS
+## Add SEQR as payment in your point of sale
 
 This section describes an example of SEQR payment from a cashier's perspective. Refer also to <a href="/merchant/payment/">Basic SEQR payment</a>, which shows how to implement the code with sample flow.
 
 SEQR must be added as a new payment method. SEQR can only be used started when an active receipt exists and the amount to pay is greater than zero. 
 
-#### 1.	Start the payment by pressing the SEQR payment button in POS 
+#### 1.	Start the payment by pressing the SEQR payment button in point of sale 
 
-The amount to pay is pre-entered in the cash register dialog. The cashier can choose to increase or decrease the pre-entered amount.
+The amount to pay is pre-entered in the point of sale dialog. The cashier can choose to increase or decrease the pre-entered amount.
 
 If amount to pay with SEQR is less than the total amount (for example if some part is paid with card or cash), then SEQR should be used LAST among all the different payment types, so that the total amount minus the cash/card amount shows the exact total amount that is to be paid by SEQR. 
 
@@ -153,7 +151,7 @@ It is possible to cancel an ongoing SEQR payment by pressing the Cancel button (
 
 <img src="/assets/images/await_customer.png" width="200px"/>
 
-POS calls the SEQR server each second while waiting for the payment to complete (see Get payment status below). The status code returned is “please wait more”, “payment completed” “canceled” or “an error occurred”.
+The point of sale calls the SEQR server each second while waiting for the payment to complete (see Get payment status below). The status code returned is “please wait more”, “payment completed” “canceled” or “an error occurred”.
 When the SEQR payment is complete a transaction post is written to the receipt file. 
 The transaction post contains the following data:
 
@@ -172,7 +170,7 @@ The transaction post contains the following data:
 ________________________________________
 **Note!**
 
-* It is not possible to perform a SEQR payment against SEQR server when POS is offline. 
+* It is not possible to perform a SEQR payment against SEQR server when point of sale is offline. 
 * All payments made by SEQR must be recorded, preferably in a separate account in the back office. A report can be generated, preferably in the back office – for more information, refer to Reporting.
 
 ________________________________________
@@ -215,7 +213,7 @@ Do the following:
 
 2.	Once each second; call getPaymentStatus for 30 seconds until the method returns that payment has completed. If getPaymentStatus is not queried, payment done by SEQR user will be refunded. 
 
-3.	Add questions for the cashier to select either “try again” or “cancel the payment” if the payment has still not gone through after 30 seconds of polling. When selecting “try again” a new poll of 30 seconds is started, with the same reference number. **Note!** The POS must check the status each second, to verify that payment is completed. Otherwise the SEQR server does not receive any notification that transaction is finalized and the purchase will then be reversed!
+3.	Add questions for the cashier to select either “try again” or “cancel the payment” if the payment has still not gone through after 30 seconds of polling. When selecting “try again” a new poll of 30 seconds is started, with the same reference number. **Note!** The point of sale must check the status each second, to verify that payment is completed. Otherwise the SEQR server does not receive any notification that transaction is finalized and the purchase will then be reversed!
 
 4.	Once the payment is complete a reference number (ersReference) is obtained from SEQR. Save the reference number for follow-ups and print the number on end user receipts.
 
