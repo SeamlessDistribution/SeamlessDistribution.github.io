@@ -22,26 +22,26 @@ description: News and examples for SEQR merchant integrations
 	 </div>
 	  <ul>
 	   <li><a href="merchant/webshop">Webshop</a> - Payments on your e-commerce</li>
-	   <li><a href="merchant/pos">POS</a> - Payments in your store</li> 
+	   <li><a href="merchant/pos">Point of sale</a> - Payments in your store</li> 
 	   <li><a href="merchant/externalservices">Services</a> - Payments through a web service</li>
 	   <li><a href="merchant/inapp">App</a> - Payments in your mobile app</li>
-	  </ul> 
+	  </ul>
 	 </div>
 	<div class="box">
 	 	<div class="center">
 		 <img src="/assets/images/golive.png">
-		 <h4>Go live with SEQR</h4> 
+		 <h4>Go live with SEQR</h4>
 		</div>
 		<ul>
 		   <li><a href="merchant/reference/signup.html">Get login credentials</a> - Get started</li>
 			<li><a href="merchant/reference/certification.html">Certification</a> - Certify your integration</li>  
-		</ul> 
+		</ul>
 	</div>
 </div>
 
  <div class="margin">
- 
- <h4>References</h4> 
+
+ <h4>References</h4>
   <ul>
    <li><a href="merchant/reference/api.html">API</a> - Integration with SEQR is done via SOAP.</li>
    <li><a href="faq/">FAQ</a> - Frequently Asked Questions</li>
@@ -51,14 +51,14 @@ description: News and examples for SEQR merchant integrations
   </ul>
 
 <video width="640" height="480" controls>
-  <source src="downloads/SEQR_McD-demo.webm" type="video/webm"> 
+  <source src="downloads/SEQR_McD-demo.webm" type="video/webm">
   <source src="downloads/SEQR_McD-demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
-</video> 
+</video>
 
- <!-- iframe title="YouTube video player" class="youtube-player" type="text/html" 
+ <!-- iframe title="YouTube video player" class="youtube-player" type="text/html"
 width="320" height="195" src="http://www.youtube.com/embed/qb8Q4fOxqAw" frameborder="0" allowFullScreen></iframe -->
- 
+
  </div>
 
 <div class="margin">
@@ -68,7 +68,7 @@ width="320" height="195" src="http://www.youtube.com/embed/qb8Q4fOxqAw" framebor
 		<br><br>
 		SEQR offers the ability for user interaction, through the SEQR app, with an almost limitless range of functions in connection with shopping and payments.
 	</div>
-	
+
 	<div class="aboutapi">
 		<h4>Paying with SEQR is super easy.<br>Getting paid is just as easy with our api.</h4>
 		The Seamless API provides the possibility for merchants to integrate their payment system with SEQR, enabling their customers to be able to pay using the SEQR app in an easy, fast and secure way. Any type of shop can integrate with SEQR, it may be a POS, a webshop, a service, an app, etc.
