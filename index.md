@@ -22,7 +22,7 @@ description: News and examples for SEQR merchant integrations
 	 </div>
 	  <ul>
 	   <li><a href="merchant/webshop">Webshop</a> - Payments on your e-commerce</li>
-	   <li><a href="merchant/pos">Point of sale</a> - Payments in your store</li> 
+	   <li><a href="merchant/pos">Point of sale</a> - Payments in your store</li>
 	   <li><a href="merchant/externalservices">Services</a> - Payments through a web service</li>
 	   <li><a href="merchant/inapp">App</a> - Payments in your mobile app</li>
 	  </ul>
@@ -38,6 +38,8 @@ description: News and examples for SEQR merchant integrations
 		</ul>
 	</div>
 </div>
+
+<iframe src="https://docs.google.com/presentation/d/1eLZNSrJTp2gonATodBhhzzfdRvRuvONJFoD4kqbqjsg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
  <div class="margin">
 
