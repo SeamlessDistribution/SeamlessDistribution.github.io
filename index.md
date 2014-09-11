@@ -39,7 +39,6 @@ description: News and examples for SEQR merchant integrations
 	</div>
 </div>
 
-<iframe src="https://docs.google.com/presentation/d/1eLZNSrJTp2gonATodBhhzzfdRvRuvONJFoD4kqbqjsg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
  <div class="margin">
 
