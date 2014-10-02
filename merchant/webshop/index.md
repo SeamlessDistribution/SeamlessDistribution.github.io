@@ -80,7 +80,7 @@ Once the payment is completed, your webshop should query the status of the invoi
 from SEQR by calling **getPaymentStatus**. On a mobile browser, this request is triggered by the user
 leaving SEQR app and returning to the webshop app, but if the user does not return to the webshop app,
 then the payment will be canceled (see also the Note below). To avoid this, a notificationURL can be
-implemented; for more information see the webshop plugin referred to below and [Use Case 2: SEQR payment using mobile browser](#UseCase2).
+implemented; for more information see the webshop plugin referred to below as well as the use case below: [Use Case 2: SEQR payment using mobile browser](#UseCase2).
 
 
 **Note!** The web server must check the status each second, to verify that payment is completed.
