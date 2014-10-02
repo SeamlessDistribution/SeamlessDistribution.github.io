@@ -21,10 +21,10 @@ App->SEQR: Retrieve 4 Service URL's \n and TOKEN
 App->ServiceWeb: Redirect to Service URL for Order \n include TOKEN as location hash. Example:\nhttp://service-host/order-page#123456-789013
 ServiceWeb->ServiceBackend: Retreive Service data\nby providing TOKEN.
 ServiceBackend->SEQR: Call getClientSessionInfo \nproviding TOKEN
-note right of ServiceWeb 
+note right of ServiceWeb
 	The customer interacts
-	with Service Web, 
-	embedded in SEQR App. 
+	with Service Web,
+	embedded in SEQR App.
 	Using service features
 end note
 ServiceWeb->ServiceBackend: Submit Order
@@ -32,9 +32,9 @@ ServiceBackend->SEQR: Call sendInvoice.\n Providing Notification URL.\n Retrievi
 ServiceWeb->App: Trigger Payment flow\n using URL Schema, providing\n SEQR Invoice Reference
 App->SEQR: Pay Invoice
 SEQR->ServiceBackend: Call Notification URL
-ServiceBackend->SEQR: Call getPayementStatus\n using SEQR Invoice Reference
+ServiceBackend->SEQR: Call getPaymentStatus\n using SEQR Invoice Reference
 App->ServiceWeb: Redirect to Service Success Page\n including TOKEN and SEQR Invoice Reference. Example: \n http://service-host/success-page#123456-789013_1234567890
-ServiceWeb->ServiceBackend: Retreive service data 
+ServiceWeb->ServiceBackend: Retreive service data
 
 @enduml
 </div>
@@ -84,7 +84,7 @@ Refer to section [API](/merchant/reference/api.html) for detailed description.
 
 ### Create your QR codes for scanning
 
-The QR code that you should use in your service must adapt to a specific pattern. To be able to launch SEQR app for paying the bill, use the schemes in the table below to create URLs. 
+The QR code that you should use in your service must adapt to a specific pattern. To be able to launch SEQR app for paying the bill, use the schemes in the table below to create URLs.
 By either doing a redirect or letting the user click on a link to that URL, SEQR app will be triggered and intercepted according to the hierarchical part of the URL.
 
 The URL embedded within a QR code contains the pointer to the Service definition within the SEQR system, to trigger the app.
@@ -119,22 +119,22 @@ Since your service will be integrated in the SEQR app, it must implement 4 URLs 
 
 When SEQR app scans the QR code (or reads the link), SEQR server resolves the code and provides the app with all the URLs it may need.
 
-* Order URL - Accessed by the app using an HTTP GET request on the Order URL. The page hosted on this URL is supposed to issue the Payment request to SEQR server upon the choice of the user. 
+* Order URL - Accessed by the app using an HTTP GET request on the Order URL. The page hosted on this URL is supposed to issue the Payment request to SEQR server upon the choice of the user.
 Example URL: http://url/order#TOKEN
 
 
 
-* Success URL - When payment is processed and it is completed successfully, SEQR app brings up the page on this success URL. This URL is accessed using HTTP GET request by SEQR app. 
+* Success URL - When payment is processed and it is completed successfully, SEQR app brings up the page on this success URL. This URL is accessed using HTTP GET request by SEQR app.
 Example URL: http://url/success#TOKEN
 
 
 
-* Failure URL - When the payment is processed and it fails for any reason, SEQR app brings up the page on this failure URL. This URL is accessed using HTTP GET request by SEQR app. 
+* Failure URL - When the payment is processed and it fails for any reason, SEQR app brings up the page on this failure URL. This URL is accessed using HTTP GET request by SEQR app.
 Example URL: http://url/failure#TOKEN
 
 
 
-* Cancel URL - Should be provided by the service. When the payment is canceled by the user, SEQR app brings up the page on this cancel URL. This URL is accessed using HTTP GET request by SEQR app. 
+* Cancel URL - Should be provided by the service. When the payment is canceled by the user, SEQR app brings up the page on this cancel URL. This URL is accessed using HTTP GET request by SEQR app.
 Example URL: http://url/cancel#TOKEN
 
 
@@ -160,9 +160,9 @@ The SEQR app is triggered by URLs using the specific SEQR URI schemes SEQR:// an
 | --- | --- |
 
 
-#### Implement design requirements 
+#### Implement design requirements
 
-* Any important information such as booking numbers/reference codes etc. must be sent to the user via an sms or be visible in the receipt. This is to avoid that any important information gets lost in case of connection issues. 
+* Any important information such as booking numbers/reference codes etc. must be sent to the user via an sms or be visible in the receipt. This is to avoid that any important information gets lost in case of connection issues.
 
 * If the service includes more than one view before the SEQR payment process, you must provide a way for the user to navigate, for example with a back button.
 
@@ -206,6 +206,3 @@ Verify that your integration works and run validation tests towards SEQR servers
 ### Go live!
 
 To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html).
-
-
-

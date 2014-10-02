@@ -69,7 +69,7 @@ Start by creating an invoice and sending it to the SEQR server using sendInvoice
 _Tip:_ Have a look at our [example webshop api](https://github.com/SeamlessDistribution/seqr-webshop-api) to see how sendInvoice or getPaymentStatus using PHP.
 
 #### 2. Get payment status
- 
+
 Use the sendInvoice response to present a QR code. For mobile browsers (e.g. on smartphones) make a redirection (button, link or clickable QRCode) in your webshop, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the “HTTP:” header with “SEQR-DEMO:” (for integration only, in production it should be SEQR:) that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use SEQR://SEQR.SE/R12345. The reason for that is that you can’t scan QRCode from page that is being browsed on your phone using the same phone.
 
 _Tip:_ To easily add a QR code or button you can use our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
@@ -77,22 +77,31 @@ _Tip:_ To easily add a QR code or button you can use our [webshop plugin](https:
 #### 3. Poll payment status
 
 Once the payment is completed, your webshop should query the status of the invoice
-from SEQR by calling **getPaymentStatus**. 
+from SEQR by calling **getPaymentStatus**. On a mobile browser, this request is triggered by the user
+leaving SEQR app and returning to the webshop app, but if the user does not return to the webshop app,
+then the payment will be canceled (see also **Note** below). To avoid this, a notificationURL can be
+implemented; for more information see the webshop plugin referred to below and [Use Case 2: SEQR payment using mobile browser](#UseCase2)
 
-**Note!** The web server must check the status each second, to verify that payment is completed. Otherwise SEQR server does not receive any notification that transaction is finalized and the payment will then be reversed!
-This request should be triggered from a javascript timer on the website, so when SEQR user closes the window or moves away from the payment page, the polling stops. Another benefit is that you do not need to have a polling-loop on your backend, which will improve your webshop’s server performance.
+
+**Note!** The web server must check the status each second, to verify that payment is completed.
+Otherwise SEQR server does not receive any notification that transaction is finalized and the payment
+will then be reversed (canceled)!
+This request should be triggered from a javascript timer on the website,
+so when SEQR user closes the window or moves away from the payment page, the polling stops.
+Another benefit is that you do not need to have a polling-loop on your backend,
+which will improve your webshop’s server performance.
 
 _Tip:_  You can skip polling if you are using our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
 
 ### Present the receipt
 
-If the invoice was successfully paid, a reference number (ersReference) is obtained from 
-SEQR. Save the reference number for follow-ups and for print on the SEQR user's 
+If the invoice was successfully paid, a reference number (ersReference) is obtained from
+SEQR. Save the reference number for follow-ups and for print on the SEQR user's
 online confirmation receipt.
 
 ### Verify your integration
 
-Verify that your integration works and run validation tests towards SEQR servers. [Contact](/contact) Seamless for more information. 
+Verify that your integration works and run validation tests towards SEQR servers. [Contact](/contact) Seamless for more information.
 
 ### Go live!
 
@@ -111,7 +120,7 @@ The source code for the webshop plugin can be found at [https://github.com/Seaml
 
 # Common use cases
 
-## Use Case 1: SEQR purchase using browser
+## Use Case 1: SEQR payment using browser
 
 <div class="diagram">
 @startuml
@@ -200,13 +209,13 @@ At this point the browser should start waiting for a payment status update. Idea
 
 ### Step 29. getPaymentStatus
 
-Payment status must called immediately when the notificationUrl is called. Failing to call payment status will cause the payment to be cancelled, resulting in an SMS being sent to the customer.
+Payment status must be called immediately when the notificationUrl is called. Failing to call payment status will cause the payment to be cancelled, resulting in an SMS being sent to the customer.
 
 ### Step 31. Payment done
 
 The customer's session must be updated with the payment status from step 30. This payment status is returned to the web browser using the mechanism from step 12.
 
-## Use Case 2: SEQR purchase using mobile browser
+## Use Case 2: SEQR payment using mobile browser <a name="UseCase2"></a>
 
 <div class="diagram">
 @startuml
@@ -280,8 +289,8 @@ A backURL parameter is optional. If it is provided the SEQR application will loa
 
 ### Step 23. getPaymentStatus
 
-Payment status must called immediately when the notificationUrl is called. Failing to call payment status will cause the payment to be cancelled, resulting in an SMS being sent to the customer. The response in step 24 should be stored in the customer's session so that it can be displayed in the page that the backURL loads in step 28.
+Payment status must be called immediately when the notificationUrl is called. Failing to call payment status will cause the payment to be cancelled, resulting in an SMS being sent to the customer. The response in step 24 should be stored in the customer's session so that it can be displayed in the page that the backURL loads in step 28.
 
 ### Step 27. Open backURL
 
-This step is only triggered is a backURL was provided in the call to sendInvoice (step 9).
+This step is only triggered if a backURL was provided in the call to sendInvoice (step 9).
