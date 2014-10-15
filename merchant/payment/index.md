@@ -28,9 +28,9 @@ Merchant->SEQR: sendInvoice
 SEQR-->Merchant: (invoice reference)
 Merchant->SEQR: getPaymentStatus
 SEQR-->Merchant: ISSUED
-SEQRApp->SEQR: ask for invoice at QR-code
+SEQRApp->SEQR: ask for invoice at point of sale from QR-code 
 Note right of SEQR: retry until you get SUCCESS
-SEQRApp->SEQR: payment
+SEQRApp->SEQR: payment (using uniqe payment reference)
 Merchant->SEQR: getPaymentStatus
 SEQR-->Merchant: PAID
 Note right of Merchant: Payment cleared!
