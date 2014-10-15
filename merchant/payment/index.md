@@ -25,12 +25,12 @@ participant Merchant
 participant SEQR
 participant "SEQR App" as SEQRApp
 Merchant->SEQR: sendInvoice
-SEQR-->Merchant: (invoice reference)
+SEQR-->Merchant: (unique reference)
 Merchant->SEQR: getPaymentStatus
 SEQR-->Merchant: ISSUED
-SEQRApp->SEQR: ask for invoice at point of sale from QR-code 
+SEQRApp->SEQR: ask for invoice at point of sale or using reference 
 Note right of SEQR: retry until you get SUCCESS
-SEQRApp->SEQR: payment (using uniqe payment reference)
+SEQRApp->SEQR: payment (with uniqe reference)
 Merchant->SEQR: getPaymentStatus
 SEQR-->Merchant: PAID
 Note right of Merchant: Payment cleared!
