@@ -8,7 +8,7 @@ import tempfile
 #logging.basicConfig(level=logging.INFO)
 #logging.getLogger('suds.client').setLevel(logging.DEBUG)
 
-client = Client('https://extdev4.seqr.se/extclientproxy/service/v2?wsdl')
+client = Client('https://extdev4.seqr.se/soap/merchant/cashregister-2?wsdl')
 context = client.factory.create("ns0:clientContext")
 context.clientRequestTimeout = 0
 
