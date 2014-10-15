@@ -16,7 +16,7 @@ Make a test purchase:
 
 The example uses [public credentials](../reference/signup.html) that you can use for testing. 
 
-## Sequence (simplified)
+## Sequence of payment
 
 <div class="diagram">
 @startuml
