@@ -16,7 +16,7 @@ Make a test purchase:
 
 The example uses [public credentials](../reference/signup.html) that you can use for testing. 
 
-## Sequence (simplified)
+## Sequence of payment
 
 <div class="diagram">
 @startuml
@@ -25,12 +25,12 @@ participant Merchant
 participant SEQR
 participant "SEQR App" as SEQRApp
 Merchant->SEQR: sendInvoice
-SEQR-->Merchant: (invoice reference)
+SEQR-->Merchant: (unique reference)
 Merchant->SEQR: getPaymentStatus
 SEQR-->Merchant: ISSUED
-SEQRApp->SEQR: ask for invoice at QR-code
+SEQRApp->SEQR: ask for invoice at point of sale or using reference 
 Note right of SEQR: retry until you get SUCCESS
-SEQRApp->SEQR: payment
+SEQRApp->SEQR: payment (with uniqe reference)
 Merchant->SEQR: getPaymentStatus
 SEQR-->Merchant: PAID
 Note right of Merchant: Payment cleared!
