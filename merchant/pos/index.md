@@ -6,7 +6,7 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-# SEQR payment in a point of sale
+# SEQR payment in a POS
 
 ## Integration procedure
 
@@ -56,7 +56,7 @@ Refer to section [API](/merchant/reference/api.html) for detailed description.
 
 
 * Each point of sale in the checkout line is called a "terminal" in SEQR.
-* Register and unregister point of sale against SEQR are separate functions in points of sale. 
+* Register and unregister point of sale against SEQR are separate functions in points of sale.
 * SEQR payments do not work in point of sale without a proper registration.
 * Reseller user id and password stored in back office are used when a new SEQR terminal is registered.
 
@@ -83,14 +83,14 @@ SEQR-->PointOfSale: OK
 The SEQR terminal menu in the point of sale can be accessed with administrative rights. The menu on the point of sale may look like this:
 
 <img src="/assets/images/seqr_menu.png" />
- 
-Both parameters terminalId and password are stored in the local database after successful registration. 
+
+Both parameters terminalId and password are stored in the local database after successful registration.
 
 #### Add a terminal
 
 Preferably done in the back office.
 
-1.	Create a context for administrative tasks using RESELLERUSER as the principal type. You have received your account information in a separate document from Seamless. 
+1.	Create a context for administrative tasks using RESELLERUSER as the principal type. You have received your account information in a separate document from Seamless.
 
 2.	Call registerTerminal to add new terminals into the SEQR system. Save the password you generated together with the terminal id received from SEQR system for further usage.
 
@@ -135,13 +135,13 @@ The parameter seqrId is stored in the local database after a successful assignme
 
 This section describes an example of SEQR payment from a cashier's perspective. Refer also to <a href="/merchant/payment/">Basic SEQR payment</a>, which shows how to implement the code with sample flow.
 
-SEQR must be added as a new payment method. SEQR can only be used started when an active receipt exists and the amount to pay is greater than zero. 
+SEQR must be added as a new payment method. SEQR can only be used started when an active receipt exists and the amount to pay is greater than zero.
 
-#### 1.	Start the payment by pressing the SEQR payment button in point of sale 
+#### 1.	Start the payment by pressing the SEQR payment button in point of sale
 
 The amount to pay is pre-entered in the point of sale dialog. The cashier can choose to increase or decrease the pre-entered amount.
 
-If amount to pay with SEQR is less than the total amount (for example if some part is paid with card or cash), then SEQR should be used LAST among all the different payment types, so that the total amount minus the cash/card amount shows the exact total amount that is to be paid by SEQR. 
+If amount to pay with SEQR is less than the total amount (for example if some part is paid with card or cash), then SEQR should be used LAST among all the different payment types, so that the total amount minus the cash/card amount shows the exact total amount that is to be paid by SEQR.
 
 
 
@@ -152,7 +152,7 @@ It is possible to cancel an ongoing SEQR payment by pressing the Cancel button (
 <img src="/assets/images/await_customer.png" width="200px"/>
 
 The point of sale calls the SEQR server each second while waiting for the payment to complete (see Get payment status below). The status code returned is “please wait more”, “payment completed” “canceled” or “an error occurred”.
-When the SEQR payment is complete a transaction post is written to the receipt file. 
+When the SEQR payment is complete a transaction post is written to the receipt file.
 The transaction post contains the following data:
 
 * Amount
@@ -170,7 +170,7 @@ The transaction post contains the following data:
 ________________________________________
 **Note!**
 
-* It is not possible to perform a SEQR payment against SEQR server when point of sale is offline. 
+* It is not possible to perform a SEQR payment against SEQR server when point of sale is offline.
 * All payments made by SEQR must be recorded, preferably in a separate account in the back office. A report can be generated, preferably in the back office – for more information, refer to Reporting.
 
 ________________________________________
@@ -193,7 +193,7 @@ The cashier starts a new payment sequence:
 * Issue date, when the invoice was created
 * Invoice title
 * ClientInvoiceId (a link between SEQR and your own system)
-* Invoice rows (articles, discounts, other payments) 
+* Invoice rows (articles, discounts, other payments)
 
 
 ________________________________________
@@ -202,7 +202,7 @@ ________________________________________
 ________________________________________
 
 
-#### 5. Get payment status 
+#### 5. Get payment status
 
 (Method: **getPaymentStatus**)
 
@@ -211,7 +211,7 @@ Do the following:
 
 1.	Create a context for terminal usage by setting the principal type to TERMINALID. Supply the context with password and the terminal id as you saved for further usage when the terminal was created.
 
-2.	Once each second; call getPaymentStatus for 30 seconds until the method returns that payment has completed. If getPaymentStatus is not queried, payment done by SEQR user will be refunded. 
+2.	Once each second; call getPaymentStatus for 30 seconds until the method returns that payment has completed. If getPaymentStatus is not queried, payment done by SEQR user will be refunded.
 
 3.	Add questions for the cashier to select either “try again” or “cancel the payment” if the payment has still not gone through after 30 seconds of polling. When selecting “try again” a new poll of 30 seconds is started, with the same reference number. **Note!** The point of sale must check the status each second, to verify that payment is completed. Otherwise the SEQR server does not receive any notification that transaction is finalized and the purchase will then be reversed!
 
