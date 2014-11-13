@@ -76,7 +76,7 @@ For example code of sendInvoice with backURL and notificationUrl, refer to [Webs
 
 ### Insert the payment URL
 
-Make a redirection (button or link) in your app, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the "HTTP:" header with "SEQR:"; that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use SEQR://SEQR.SE/R12345.
+Make a redirection (button or link) in your app, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the "HTTP:" header with "seqr:" (for production app) or "seqr-demo:" (for demo app); that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use seqr://SEQR.SE/R12345 (for production app) or seqr-demo://SEQR.SE/R12345 (for demo app).
 
 
 

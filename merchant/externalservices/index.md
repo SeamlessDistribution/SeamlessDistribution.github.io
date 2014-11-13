@@ -150,12 +150,12 @@ Example URL: http://url/cancel#TOKEN
 
 #### Implement URL schemas that trigger the app
 
-The SEQR app is triggered by URLs using the specific SEQR URI schemes SEQR:// and SEQR-ACTION://. By constructing URLs using these schemes and either doing a redirect or letting the user click on a link to that URL, the app will be triggered and intercept according to the hierarchical part of the URL.
+The SEQR app is triggered by URLs using the specific SEQR URI schemes seqr:// (for production app) or seqr-demo:// (for demo app) and SEQR-ACTION://. By constructing URLs using these schemes and either doing a redirect or letting the user click on a link to that URL, the app will be triggered and intercept according to the hierarchical part of the URL.
 
 |--- | --- |
 |  Trigger URLs | Description |
 |--- | --- |
-| SEQR://SEQR.SE/R< invoiceReference > | Start the payment flow in the app for the invoice with reference. |
+| seqr://SEQR.SE/R< invoiceReference > (use seqr-demo:// for demo app)| Start the payment flow in the app for the invoice with reference. |
 | SEQR-ACTION://WIZARD/CANCEL | Cancel the external service flow and return to SEQR app. |
 | --- | --- |
 
