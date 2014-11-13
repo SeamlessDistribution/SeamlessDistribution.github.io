@@ -70,7 +70,7 @@ _Tip:_ Have a look at our [example webshop api](https://github.com/SeamlessDistr
 
 #### 2. Get payment status
 
-Use the sendInvoice response to present a QR code. For mobile browsers (e.g. on smartphones) make a redirection (button, link or clickable QRCode) in your webshop, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the “HTTP:” header with “SEQR-DEMO:” (for integration only, in production it should be SEQR:) that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use SEQR://SEQR.SE/R12345. The reason for that is that you can’t scan QRCode from page that is being browsed on your phone using the same phone.
+Use the sendInvoice response to present a QR code. For mobile browsers (e.g. on smartphones) make a redirection (button, link or clickable QRCode) in your webshop, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the “HTTP:” header with “seqr-demo:” (for integration only, in production it should be seqr:) that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use seqr-demo://SEQR.SE/R12345 (for demo app) or seqr://SEQR.SE/R12345 (for production app). The reason for that is that you can’t scan QRCode from page that is being browsed on your phone using the same phone.
 
 _Tip:_ To easily add a QR code or button you can use our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
 
