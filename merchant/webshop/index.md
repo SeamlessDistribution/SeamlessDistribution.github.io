@@ -7,6 +7,8 @@ description: SEQR Merchant, webshop, POS integration
 
 # SEQR payment in a Webshop
 
+If your webshop is based on an eCommerce platform check our [eCommerce plugin page](/plugins)
+
 To integrate your webshop with SEQR, you need to add SEQR payment in your “Check out” process where your customer normally selects between payment methods. This is an example of a checkout that supports SEQR:
 
 <img src="/assets/images/seqr_webshop.png" />
