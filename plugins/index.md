@@ -13,8 +13,8 @@ If your webshop is based on one of the eCommerce platforms from the list below a
 |  eCommerce platform | compatible versions | plugin GitHub link |
 |--- | --- | --- |
 | Magento | 1.6 - 1.9 | [Magento plugin](https://github.com/SeamlessDistribution/seqr-magento-plugin) |
-| OpenCart | 1.5.4, 1.5.6.4 (Legacy) | TBA |
-| OpenCart | 2.0.0.0 | TBA |
+| OpenCart | 1.5.4, 1.5.6.4 (Legacy) | [OpenCart Legacy](https://github.com/SeamlessDistribution/seqr-opencart-plugin-legacy) |
+| OpenCart | 2.X | [OpenCart 2.X](https://github.com/SeamlessDistribution/seqr-opencart-plugin) |
 | PrestaShop | 1.5, 1.6 | [PrestaShop plugin](https://github.com/SeamlessDistribution/seqr-prestashop-plugin) |
 | WooCommerce | 3.9, 4.0 | [WooCommerce plugin](https://github.com/SeamlessDistribution/woocommerce-seqr-payment-gateway) |
 | --- | --- | --- |
