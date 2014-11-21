@@ -16,7 +16,7 @@ The SEQR user’s bank or credit institution that accepts and processes payment 
 Application Programming Interface, interface to other components within or outside the SEQR system.
 
 **App**
-The SEQR apps for iOS, Android and Windows Mobile.
+The SEQR apps for iOS, Android and Windows Phone.
 "App" can also refer to your app. When the user presses a “pay” button or a link in your app, it launches the SEQR app and presents the bill for the user to confirm the payment (i.e. the user does not need to scan a QR code). This feature requires integration.
 
 **Authorization service**
