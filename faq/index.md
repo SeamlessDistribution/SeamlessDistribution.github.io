@@ -119,7 +119,7 @@ Below you can find answers to the most common questions that may occur during th
   <div class="faq">
     <div class="faq_question"><li>I want to integrate my webshop with SEQR - do I have to implement all methods on my own?</li></div>
     <div class="faq_answer_container">
-      <div class="faq_answer">You can implement all methods on your own the way you like. You can also use our <a href="https://github.com/SeamlessDistribution/seqr-webshop-plugin">plugin</a> which will simplify generating QR code and calling getPaymentStatus.</div>        
+      <div class="faq_answer">You can implement all methods on your own the way you like. You can also use our <a href="http://developer.seqr.com/plugins/">eCommerce platforms plugins</a> or our <a href="https://github.com/SeamlessDistribution/seqr-webshop-plugin">webshop plugin</a> which will simplify generating QR code and calling getPaymentStatus.</div>        
     </div>
   </div>
 </div>
