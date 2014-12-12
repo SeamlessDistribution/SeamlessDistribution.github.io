@@ -67,9 +67,8 @@ The backURL will redirect the user to your app after successful or canceled paym
 
 The backURL is only used if the user is making a purchase through a browser on their mobile device. The 'done' page simply makes a final getPaymentStatus call and displays the output in the page.
 
-The invoice status will be "ISSUED" even if the customer presses cancel in SEQR app. The backURL will still be called and you should therefore treat "ISSUED" as canceled if the status is still "ISSUED" after you receive a notice on your provided backURL.
-
-Even if the user presses cancel during payment flow in SEQR app, the invoice status will be "ISSUED" and the backURL will be called - therefore you should treat "ISSUED" as "canceled" if the status is still "ISSUED" after you received a notice on your provided backURL.
+If user will press cancel in SEQR app then invoice will get canceled. The backURL will still be called.
+getPaymentStatus will respond will status CANCELED.
 
 For example code of sendInvoice with backURL and notificationUrl, refer to [Webshop](/merchant/webshop).
 
