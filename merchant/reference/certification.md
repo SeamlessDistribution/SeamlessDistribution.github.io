@@ -17,3 +17,30 @@ For information about requests and parameters that require verification, please 
 <a href="/downloads/SEQR_certification_process_web.pdf">Webshops</a>
 
 Please [contact](/contact) us when you wish to certify your integration.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
