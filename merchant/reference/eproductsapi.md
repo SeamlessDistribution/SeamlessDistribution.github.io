@@ -9,45 +9,29 @@ description: eProducts API reference
 1. [eProducts API](#eproducts-api)
 2. [Function requests used for POS client integration](#function-requests-used-for-pos-client-integration)
 3. [Mandatory Methods](#mandatory-methods)
-3.1 [getProductsList](#getproductslist)
-3.1.1 [getProductList request](#getproductlist-request)
-3.1.2 [getProductList response](#getproductlist-response)
-3.2 [reserveVoucher](#reservevoucher)
-3.2.1 [reserveVoucher request](#reservevoucher-request)
-3.2.2 [reserveVoucher response](#reservevoucher-response)
-3.3 [buyReservedVoucher](#buyreservedvoucher)
-3.3.1 [buyReservedVoucher request](#buyreservedvoucher-request)
-3.3.2 [buyReservedVoucher response](#buyreservedvoucher-response)
-3.4 [cancelVoucherReservation](#cancelvoucherreservation)
-3.4.1 [cancelVoucherReservation request](#cancelvoucherreservation-request)
-3.4.2 [cancelVoucherReservation response](#cancelvoucherreservation-response)
-3.5 [cancelTransaction](#canceltransaction)
-3.5.1 [cancelTransaction request](#canceltransaction-request)
-3.5.2 [cancelTransaction response](#canceltransaction-response)
+	* [getProductsList](#getproductslist)
+	* [reserveVoucher](#reservevoucher)
+	* [buyReservedVoucher](#buyreservedvoucher)
+	* [cancelVoucherReservation](#cancelvoucherreservation)
+	* [cancelTransaction](#canceltransaction)
 4. [Optional Methods](#optional-methods)
-4.1 [executeReport](#executereport)
-4.1.1 [executeReport CASHIER_SALES_PERIOD example](#executereport-cashiersalesperiod-example)
-4.1.2 [executeReport CASHIER_WORKSHIFT example](#executereport-cashierworkshift-example)
-4.1.3 [executeReport RESELLER_INFO example](#executereport-resellerinfo-example)
-4.1.4 [executeReport RESELLER_SALES_PERIOD example](#executereport-resellersalesperiod-example)
-4.1.5 [executeReport WORKSHIFT example](#executereport-workshift-example)
+	* [executeReport](#executereport)
 5. [Response Codes](#response-codes)
 
-
-# eProducts API
+# 1. eProducts API
 
 This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
 http://extdev.kontantkort.nu/extclientproxy/client?wsdl
 
 [Up](#table-of-content)
 
-# Function requests used for POS client integration 
+# 2. Function requests used for POS client integration 
 Below you will find methods used in POS and eProducts integration.
 This is part of eProducts API. Methods not listed belowe shall not be implemented.
 
 [Up](#table-of-content)
 
-## Mandatory Methods
+# 3. Mandatory Methods
 These methods have to be implemented in order to pass our certification get production access.
 
 [Up](#table-of-content)
@@ -440,7 +424,7 @@ Allows to cancel transaction that has been finished. Using ersReference from buy
 
 [Up](#table-of-content)
 
-## Optional Methods
+# 4. Optional Methods
 These methods have to be implemented in order to pass our certification get production access.
 
 [Up](#table-of-content)
@@ -901,7 +885,7 @@ Allows to generate reports.
 
 [Up](#table-of-content)
 
-# Response Codes
+# 5. Response Codes
 
 |--- | --- | --- | --- |
 | Code | Description | Detailed description | Can occur |
