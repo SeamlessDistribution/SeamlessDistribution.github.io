@@ -101,7 +101,7 @@ SÄKERHETSKOD <vs>
 -------------------------<vs>
 9140000014 <vs>
 -------------------------<vs>
-FÖR ATT TANKA PÅ DITT KORT SLÅ *110*SÄRERHETSKOD# OCH LUR
+FÖR ATT TANKA PÅ DITT KORT SLÅ *110*SÄKERHETSKOD# OCH LUR
 Giltigt fram till:2014/01/01
 <vs>
 Serienumber: 9140014
