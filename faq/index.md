@@ -139,6 +139,41 @@ Below you can find answers to the most common questions that may occur during th
     </div>
   </div>
 </div>
+<div class="faq_container">
+  <div class="faq">
+    <div class="faq_question"><li>Where can I get seqrID to be used with assignSeqrId?</li></div>
+    <div class="faq_answer_container">
+      <div class="faq_answer">
+        <ol>
+          <li>Pick any string you like. Digits are favourable but any alphanumeric string will do the trick. This string will be your <b>seqrId</b> to be used with
+              assignSeqrId calls. (&lt;seqrId&gt;STRING_OF_YOUR_CHOICE&lt;/seqrId&gt;) </li>
+          <li>Create URL based on which you will generate QRCode. Such URL is combined of 2 parts.
+              Constant part is <b><font color="red">HTTP://SEQR.SE/Q</font></b> and dynamic part is <b>seqrId</b> of your choice.
+              Example: Let say you've chosen <b><font color="green">0039394857311223</font></b> to be your seqrId.
+              The URL based on which you will generate QRCode will be <b><font color="red">HTTP://SEQR.SE/Q</font><font color="green">0039394857311223</font></b></li>
+          <li>To generate QRCode you can use any generator you like for instance:
+              http://seqr.com/se-qr-web/qrgenerator?code=HTTP://SEQR.SE/Q0039394857311223</li></ol></div>
+    </div>
+  </div>
+</div>
+<div class="faq_container">
+  <div class="faq">
+    <div class="faq_question"><li>Where can I get QRCode?</li></div>
+    <div class="faq_answer_container">
+      <div class="faq_answer">
+        <ol>
+          <li>Pick any string you like. Digits are favourable but any alphanumeric string will do the trick. This string will be your <b>seqrId</b> to be used with
+              assignSeqrId calls. (&lt;seqrId&gt;STRING_OF_YOUR_CHOICE&lt;/seqrId&gt;) </li>
+          <li>Create URL based on which you will generate QRCode. Such URL is combined of 2 parts.
+              Constant part is <b><font color="red">HTTP://SEQR.SE/Q</font></b> and dynamic part is <b>seqrId</b> of your choice.
+              Example: Let say you've chosen <b><font color="green">0039394857311223</font></b> to be your seqrId.
+              The URL based on which you will generate QRCode will be <b><font color="red">HTTP://SEQR.SE/Q</font><font color="green">0039394857311223</font></b></li>
+          <li>To generate QRCode you can use any generator you like for instance:
+              http://seqr.com/se-qr-web/qrgenerator?code=HTTP://SEQR.SE/Q0039394857311223</li>
+        </ol></div>
+    </div>
+  </div>
+</div>
 </ul>
 
 
