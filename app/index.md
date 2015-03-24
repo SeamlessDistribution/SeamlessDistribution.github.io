@@ -18,7 +18,7 @@ The instruction below describes how to get access to the development app, that i
 
 Our Android developer app can be installed if you enable "other sources" in
 settings and then browse to this page on your phone [install android developer
-app](/downloads/seqr-android-integration-2.8.1.apk).
+app](/downloads/se-qr-androidapp-demo-2.6.6.apk).
 
 #### 2. Once installed, make sure that "Extdev" is selected as server, and accept the Terms of Service:
 
