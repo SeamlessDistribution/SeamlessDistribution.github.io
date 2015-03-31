@@ -840,7 +840,7 @@ To be added - contact us if you plan to handle reservations.
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
-| TerminalId | The SEQR ID of the terminal to be unregistered. |  |  |
+| TerminalId | Unique ID returned by regiterTerminal associated POS |  |  |
 
 
 #### unregisterTerminal SOAP response fields
