@@ -76,7 +76,9 @@ More details you can find [here](/merchant/reference/api.html).
 <b>notificationURL</b> is on of the parameters of sendInvoice request. This parameter tells SEQR where to send notification once invoice is paid.
 This url has to be unique for diffferent purchases. Let say customer bought product with id 000111222, then your notificationURL can look like this:
 
-https://your.webshop.domain.com/orderNotif?productId=000111222
+{% highlight python %}
+   https://your.webshop.domain.com/orderNotif?productId=000111222
+{% endhighlight %}
 
 Once your web-shop received such request it should:
 
