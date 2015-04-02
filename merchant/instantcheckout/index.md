@@ -64,8 +64,8 @@ API details and test endpointURL can be found [here](/merchant/reference/api.htm
 4. Put SEQR Instant Checkout QRCodes on product details page
 5. Test that integration works
 
-# Create and expose REST service for SEQR Instant Checkout service
-SEQR Instant Checkout API descrition can be found [here](/merchant/reference/instantcheckoutapi.html
+# Create and expose REST service
+SEQR Instant Checkout API descrition can be found [here](/merchant/reference/instantcheckoutapi.html).
 Test creadentials can be found [here](/merchant/reference/signup.html).
 
 # Implement methods from SEQR Payment API
