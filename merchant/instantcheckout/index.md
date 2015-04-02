@@ -57,9 +57,9 @@ All starts with user scanning QR code on your web-shop.
 To achieve a full integration between SEQR Instant Chekout and web shoop these steps must be covered:
 
 1. Create and expose REST service implementing SEQR Instant Checkout API (CreatePurchase).
-API details and test endpointURL can be found [here](/merchant/reference/instantcheckoutapi.html
+API details and test endpointURL can be found [here](/merchant/reference/instantcheckoutapi.html)
 2. Implement methods from SEQR Payment API (sendInvoice, getPaymentStatus).
-API details and test endpointURL can be found [here](/merchant/reference/api.html
+API details and test endpointURL can be found [here](/merchant/reference/api.html)
 3. Expose service for notifications (notificationURL)
 4. Put SEQR Instant Checkout QRCodes on product details page
 5. Test that integration works
@@ -70,7 +70,7 @@ Test creadentials can be found [here](/merchant/reference/signup.html).
 
 # Implement methods from SEQR Payment API
 There have to be two methods of SEQR Payment API implemented on your web-shop's backend side - sendInvoice and getPaymentStatus.
-More details you can find [here](/merchant/reference/signup.html).
+More details you can find [here](/merchant/reference/api.html).
 
 # Expose service for notifications
 <b>notificationURL</b> is on of the parameters of sendInvoice request. This parameter tells SEQR where to send notification once invoice is paid.
