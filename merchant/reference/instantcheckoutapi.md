@@ -19,8 +19,8 @@ SEQR Instant Checkout service will sent below values to web-shop
 {% highlight python %}
 {
     "purchaseToken": "29834231890234",
-    "clientName": "Kalle Karlsson",
-    "street": "Storgatan 1",
+    "clientName": "John Smith",
+    "street": "Streetname 1",
     "city": "Stockholm",
     "country": "Sweden",
     "state": "",
