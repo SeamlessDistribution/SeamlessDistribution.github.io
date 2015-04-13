@@ -26,6 +26,7 @@ description: News and examples for SEQR merchant integrations
 	   <li><a href="merchant/pos">Point of sale</a> - Payments in your store</li>
 	   <li><a href="merchant/externalservices">Services</a> - Payments through a web service</li>
 	   <li><a href="merchant/webshop">Webshop</a> - Payments on your e-commerce</li>
+	   <li><a href="merchant/instantcheckout">SEQR Instant Checkout</a> - One step checkout with SEQR</li>
 	  </ul>
 	 </div>
 	<div class="box">
@@ -47,6 +48,7 @@ description: News and examples for SEQR merchant integrations
   <ul>
    <li><a href="merchant/reference/api.html">Payment API</a> - Integration with SEQR is done via SOAP.</li>
    <li><a href="merchant/reference/eproductsapi.html">eProducts API</a> - Integration with SEQR is done via SOAP.</li>
+   <li><a href="merchant/reference/instantcheckoutapi.html">SEQR Instant Checkout API</a> - Integration with SEQR is done via SOAP and REST</li>
    <li><a href="plugins/">Plugins</a> - SEQR plugins for eCommerce platforms</li>
    <li><a href="faq/">FAQ</a> - Frequently Asked Questions</li>
    <li><a href="merchant/reference/reporting.html">Reporting</a> - Enables reconciliation; that is, to check and confirm that the client has the same number of transactions as the SEQR service during a specified period.</li>
