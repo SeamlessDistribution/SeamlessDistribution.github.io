@@ -90,7 +90,7 @@ It would also be good idea to send email with order confirmation to customer.
 In order to put SEQR Instant Checkout QR codes on your pages you will have to:
 
 1. Import our java script qr code generator
-<script src="http://cdn.seqr.com/seqr-services-dev/wss-dev/seqrQRCode-0.0.1.min.js"></script>
+<script src="http://cdn.seqr.com/seqr-services-dev/wss-dev/seqrQRCode-0.0.3.min.js"></script>
 
 2. Put this piece of code on you page:
 
