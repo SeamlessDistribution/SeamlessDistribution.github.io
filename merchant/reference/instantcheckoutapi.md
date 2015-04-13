@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SEQR Instant Checkout API
+title: SEQR Instant Checkout
 description: SEQR Instant Checkout API
 ---
 
