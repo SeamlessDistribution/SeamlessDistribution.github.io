@@ -93,7 +93,8 @@ In order to put SEQR Instant Checkout QR codes on your pages you will have to:
 
 {% highlight python %}
 <div id="qrcode"></div>
-<script src="http://cdn.seqr.com/seqr-services-dev/wss-dev/seqrQRCode-0.0.3.min.js"></script>
+<script src="http://cdn.seqr.com/seqr-services-dev/wss-dev/seqrQRCode-0.0.3.min.js">
+</script>
 {% endhighlight %}
 
 2. Put this piece of code on you page:

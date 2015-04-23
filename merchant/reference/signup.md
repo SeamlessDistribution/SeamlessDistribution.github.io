@@ -14,8 +14,8 @@ You need to [contact](/contact) Seamless to get reseller ID and password. With t
 Example terminal context, that can be used before contacting us:
 {% highlight python %}
 context.initiatorPrincipalId.type = 'TERMINALID'
-context.initiatorPrincipalId.id = '8609bf533abf4a20816e8bfe76639521'
-context.password = 'N2YFUhKaB1ZSuVF'
+context.initiatorPrincipalId.id = 'test_terminal_do_not_unregister'
+context.password = '12345678'
 {% endhighlight %}
 
 Example shop/reseller context, that can be used before contacting us:
