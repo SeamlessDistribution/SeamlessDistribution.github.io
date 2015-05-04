@@ -67,7 +67,7 @@ curl
 -X POST
 -H 'Accept: application/json'
 -H 'Content-Type: application/json;charset=UTF-8'
--d '{"purchaseToken": "29834231890234", "clientName": "Kalle Karlsson", 
+-d '{"purchaseToken": "29834231890234", "clientName": "John Smith", 
 "street": "Storgatan 1", "city": "Stockholm", "country": "Sweden", 
 "state": "", "zip": "11122", "email": "very.happy@shopping.com"}'
 https://your.pretty.webshop.com/webshop/createPurchase
