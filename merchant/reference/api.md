@@ -662,6 +662,7 @@ Please contact us if you are interested in using a customized receipt in the app
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
+| amount | Commited amount and currency |  |  |
 | invoiceReference | Reference of the invoice that is reserved. | string |  |
 
 
@@ -674,9 +675,48 @@ Please contact us if you are interested in using a customized receipt in the app
 | resultDescription | A textual description of resultCode. |
 
 
-#### commitReservation SOAP examples
+#### commitReservation SOAP request example
 
-To be added - contact us if you plan to handle reservations. 
+ {% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:commitReservation xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <context>
+            <clientRequestTimeout>0</clientRequestTimeout>
+            <initiatorPrincipalId>
+               <id>87e791f9e24148a6892c52aa85bb0331</id>
+               <type>TERMINALID</type>
+            </initiatorPrincipalId>
+            <password>1234</password>
+         </context>
+         <amount>
+            <currency>SEK</currency>
+            <value>5</value>
+         </amount>
+         <invoiceReference>123123</invoiceReference>
+      </ns2:commitReservation>
+   </soap:Body>
+</soap:Envelope>
+
+{% endhighlight %}
+
+
+#### commitReservation SOAP response example
+
+{% highlight python %}
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:commitReservationResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:commitReservationResponse>
+   </soap:Body>
+</soap:Envelope>
+
+{% endhighlight %}
 
 
 ## refundPayment
