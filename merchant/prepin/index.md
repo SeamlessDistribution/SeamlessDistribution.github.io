@@ -10,11 +10,42 @@ SEQR Preliminary Payment allows you to reserve some amount on customer's account
 
 # Integration procedure
 
-Integration procedure depends on what kind of system you are integrating with SEQR. Basically you can follow procedure for [webshop](/merchant/webshop/index.html), [POS](/merchant/pos/index.html) or [mobile app](/merchant/inapp/index.html).
+1. Implement the required methods.
+2. Install test [mobile app](/app/).
+3. Test your implementation against preliminary payment flow.
+4. Introduce your implementation to your system.
+5. Verify your integration.
+6. Go live!
 
 # Implement the required methods
 
-Just follow instructions for your kind of system where you can find which methods are required.
+
+The methods required in a basic integration are:
+
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| registerTerminal | Registers a new terminal in SEQR server (required in POS systems) |
+| unregisterTerminal | Unregisters an already registered terminal (required in POS systems) |
+| assignSeqrId | Assigns a SEQR ID to a terminal (required in POS systems) |
+| sendInvoice | Sends an invoice to SEQR server |
+| getPaymentStatus | Obtains status of a previously submitted invoice |
+| updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
+| cancelInvoice | Cancels an unpaid invoice (required in POS systems) |
+| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
+| --- | --- |
+
+
+For an extended integration, also these methods can be used:
+
+|--- | --- |
+|  Method | Description |
+|--- | --- |
+| refundPayment | Refunds a previous payment, partly or the whole sum |
+| submitPaymentReceipt | Sends the receipt document of a payment |
+| executeReport | Executes a report on SEQR server |
+| --- | --- |
+
 
 Main difference is to additionally implement commitReservation method.
 

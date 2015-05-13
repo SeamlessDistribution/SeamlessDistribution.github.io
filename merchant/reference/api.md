@@ -225,11 +225,12 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | backURL | in a website shop:  This is the link that  the user will be redirected in your site after a succesfull payment | string | N | | http://merchant.com/displayafterpay |
 | cashierId | Merchant cashier id | string | Y |  | John00232 |
 | clientInvoiceId | This Invoice ID refers to the Identification number from the Merchant itself | string | Y | | Merchant34213421 | 
+| commitReservationTimeout | Time (in seconds) while Merchant can make a commit of preliminary payment | long | N | | 3600 |
 | footer | Footer that you want to display in the users phone receipt | string | Y | | RFC:12389234DKJ3 |
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
 | issueDate | point of sale Date  | dateTime | Y | | 2014-04-05T13:23:53 | 
 | notificationURL | optional notification/confirmation url. If set SEQR will access this url after successful payment by user.| string | N | | http://merchant.com/paymentConfirmation?inv=32923423423 |
-| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string | Y | | IMMEDIATE_DEBIT |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED / RESERVATION_REQUIRED_PRELIMINARY_AMOUNT are limited in use | string | Y | | IMMEDIATE_DEBIT |
 | title | title displayed on bill and receipt | string | Y | | My Store Sample Store |
 | totalAmount:value | full amount of invoice/bill | Decimal | Y | 18 | 112.11 | 
 | totalAmount:currency | Use the currency of the country you are in.  Use the ISO standard | string | Y | | EUR |
