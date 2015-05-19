@@ -225,11 +225,12 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | backURL | in a website shop:  This is the link that  the user will be redirected in your site after a succesfull payment | string | N | | http://merchant.com/displayafterpay |
 | cashierId | Merchant cashier id | string | Y |  | John00232 |
 | clientInvoiceId | This Invoice ID refers to the Identification number from the Merchant itself | string | Y | | Merchant34213421 | 
+| commitReservationTimeout | Time (in seconds) while Merchant can make a commit of preliminary payment | long | N | | 3600 |
 | footer | Footer that you want to display in the users phone receipt | string | Y | | RFC:12389234DKJ3 |
 | invoiceRows | See [invoiceRow data description](#invoiceRow) | 
 | issueDate | point of sale Date  | dateTime | Y | | 2014-04-05T13:23:53 | 
 | notificationURL | optional notification/confirmation url. If set SEQR will access this url after successful payment by user.| string | N | | http://merchant.com/paymentConfirmation?inv=32923423423 |
-| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED are limited in use | string | Y | | IMMEDIATE_DEBIT |
+| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED / RESERVATION_REQUIRED_PRELIMINARY_AMOUNT are limited in use | string | Y | | IMMEDIATE_DEBIT |
 | title | title displayed on bill and receipt | string | Y | | My Store Sample Store |
 | totalAmount:value | full amount of invoice/bill | Decimal | Y | 18 | 112.11 | 
 | totalAmount:currency | Use the currency of the country you are in.  Use the ISO standard | string | Y | | EUR |
@@ -662,6 +663,7 @@ Please contact us if you are interested in using a customized receipt in the app
 | Field | Description | Type | Max-Length |
 | --- | --- | --- | --- |
 | context | See [the ClientContext object](#context) |  |  |
+| amount | Commited amount and currency |  |  |
 | invoiceReference | Reference of the invoice that is reserved. | string |  |
 
 
@@ -674,9 +676,48 @@ Please contact us if you are interested in using a customized receipt in the app
 | resultDescription | A textual description of resultCode. |
 
 
-#### commitReservation SOAP examples
+#### commitReservation SOAP request example
 
-To be added - contact us if you plan to handle reservations. 
+ {% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:commitReservation xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <context>
+            <clientRequestTimeout>0</clientRequestTimeout>
+            <initiatorPrincipalId>
+               <id>87e791f9e24148a6892c52aa85bb0331</id>
+               <type>TERMINALID</type>
+            </initiatorPrincipalId>
+            <password>1234</password>
+         </context>
+         <amount>
+            <currency>SEK</currency>
+            <value>5</value>
+         </amount>
+         <invoiceReference>123123</invoiceReference>
+      </ns2:commitReservation>
+   </soap:Body>
+</soap:Envelope>
+
+{% endhighlight %}
+
+
+#### commitReservation SOAP response example
+
+{% highlight python %}
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:commitReservationResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+         </return>
+      </ns2:commitReservationResponse>
+   </soap:Body>
+</soap:Envelope>
+
+{% endhighlight %}
 
 
 ## refundPayment
