@@ -142,7 +142,7 @@ We highly recommend to leave it to zero for an immediate response. Use different
 {% highlight python %}
 <soapenv:Envelope 
 xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
-Xmlns:ext="http://externalws.client.ers.seamless.com/">
+xmlns:ext="http://externalws.client.ers.seamless.com/">
    <soapenv:Header/>
    <soapenv:Body>
       <ext:reserveVoucher>
@@ -178,10 +178,10 @@ Xmlns:ext="http://externalws.client.ers.seamless.com/">
 
 {% highlight python %}
 <soap:Envelope 
-Xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <ns2:reserveVoucherResponse 
-Xmlns:ns2="http://externalws.client.ers.seamless.com/">
+xmlns:ns2="http://externalws.client.ers.seamless.com/">
          <return>
             <errorDescription>SUCCESS</errorDescription>
             <ersReference>2014071814275177901000128</ersReference>
@@ -216,7 +216,7 @@ The second step in the two-phase commit procedure for buying a voucher. Can only
 {% highlight python %}
 <soapenv:Envelope 
 xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
-Xmlns:ext="http://externalws.client.ers.seamless.com/">
+xmlns:ext="http://externalws.client.ers.seamless.com/">
    <soapenv:Header/>
    <soapenv:Body>
       <ext:buyReservedVoucher>
@@ -300,7 +300,7 @@ Used to cancel a reservation of a voucher after a successful response from a res
 {% highlight python %}
 <soapenv:Envelope 
 xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
-Xmlns:ext="http://externalws.client.ers.seamless.com/">
+xmlns:ext="http://externalws.client.ers.seamless.com/">
    <soapenv:Header/>
    <soapenv:Body>
       <ext:cancelVoucherReservation>
@@ -331,10 +331,10 @@ Xmlns:ext="http://externalws.client.ers.seamless.com/">
 
 {% highlight python %}
 <soap:Envelope 
-Xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <ns2:reserveVoucherResponse 
-Xmlns:ns2="http://externalws.client.ers.seamless.com/">
+xmlns:ns2="http://externalws.client.ers.seamless.com/">
          <return>
             <errorDescription>SUCCESS</errorDescription>
             <ersReference>2014071814275177901000128</ersReference>
