@@ -27,6 +27,7 @@ description: News and examples for SEQR merchant integrations
 	   <li><a href="merchant/externalservices">Services</a> - Payments through a web service</li>
 	   <li><a href="merchant/webshop">Webshop</a> - Payments on your e-commerce</li>
 	   <li><a href="merchant/instantcheckout">SEQR Instant Checkout</a> - One step checkout with SEQR</li>
+	   <li><a href="merchant/prepin">Pre-Pin</a> - Preliminary payments</li>
 	  </ul>
 	 </div>
 	<div class="box">
