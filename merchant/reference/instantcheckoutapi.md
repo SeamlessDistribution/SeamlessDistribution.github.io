@@ -25,7 +25,8 @@ SEQR Instant Checkout service will sent below values to web-shop
     "country": "Sweden",
     "state": "",
     "zip": "11122",
-    "email": "very.happy@shopping.com"
+    "email": "very.happy@shopping.com",
+    "msisdn": "483344323423"
 }
 {% endhighlight %}
 
@@ -40,6 +41,7 @@ SEQR Instant Checkout service will sent below values to web-shop
 | state | street of delivery address |
 | zip | zip or postal code of delivery addres |
 | email | email address of customer |
+| msisdn | customer's phone number |
 |--|---|
 
 <b>sample createPurchase response</b>
