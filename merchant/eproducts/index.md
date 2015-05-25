@@ -76,7 +76,18 @@ The receipt file is part of the response code. Configure the printer to include 
 # Operator logos
 
 Logos that should be printed on voucher depending on retuned img tag.
-All logos can be downoaded HERE (I will put link to rar or zip archive with all logos we have once we have all)
+All logos can be downoaded HERE (I will put link to rar or zip archive with all logos we have once we have all).
+Downloaded logos have to be scaled and exported to meet your system requirements and below specifications.
+
+|---|---|
+| atribute | value |
+|---|---|
+| Max-width | 384px |
+| Max-height | No larger then Max-width |
+| Colour | Monochrome | 
+|---|---|
+
+# List of operator logos
 
 |---|---|---|
 | Operator | img tag | Country |
@@ -89,18 +100,18 @@ All logos can be downoaded HERE (I will put link to rar or zip archive with all 
 | Lebara |&lt;img src="lebara_se.bmp"&gt;| Sweden |
 | Mundio |&lt;img src="mundio_se.bmp"&gt;| Sweden |
 | LycaMobile |&lt;img src="lyca_se.bmp"&gt;| Sweden |
-| Lebara |&lt;img src="lebara_dk.bmp"&gt;| Danmark |
-| TDC |&lt;img src="tdc_dk.bmp"&gt;| Danmark |
-| Telia |&lt;img src="telia_dk.bmp"&gt;| Danmark |
-| Oister |&lt;img src="oister_dk.bmp"&gt;| Danmark |
-| Telenor |&lt;img src="telenor_dk.bmp"&gt;| Danmark |
-| CBB |&lt;img src="cbb_dk.bmp"&gt;| Danmark |
-| One Mobile |&lt;img src="one_dk.bmp"&gt;| Danmark |
-| Colour Mobile |&lt;img src="colour_dk.bmp"&gt;| Danmark |
-| LycaMobile |&lt;img src="lyca_dk.bmp"&gt;| Danmark |
-| IDT |&lt;img src="idt_dk.bmp"&gt;| Danmark |
-| Mundio |&lt;img src="mundio_dk.bmp"&gt;| Danmark |
-| Telepost |&lt;img src="telepost_dk.bmp"&gt;| Danmark |
+| Lebara |&lt;img src="lebara_dk.bmp"&gt;| Denmark |
+| TDC |&lt;img src="tdc_dk.bmp"&gt;| Denmark |
+| Telia |&lt;img src="telia_dk.bmp"&gt;| Denmark |
+| Oister |&lt;img src="oister_dk.bmp"&gt;| Denmark |
+| Telenor |&lt;img src="telenor_dk.bmp"&gt;| Denmark |
+| CBB |&lt;img src="cbb_dk.bmp"&gt;| Denmark |
+| One Mobile |&lt;img src="one_dk.bmp"&gt;| Denmark |
+| Colour Mobile |&lt;img src="colour_dk.bmp"&gt;| Denmark |
+| LycaMobile |&lt;img src="lyca_dk.bmp"&gt;| Denmark |
+| IDT |&lt;img src="idt_dk.bmp"&gt;| Denmark |
+| Mundio |&lt;img src="mundio_dk.bmp"&gt;| Denmark |
+| Telepost |&lt;img src="telepost_dk.bmp"&gt;| Denmark |
 |---|---|---|
 
 # Sample voucher
