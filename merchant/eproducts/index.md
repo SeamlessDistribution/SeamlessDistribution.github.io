@@ -69,9 +69,49 @@ The receipt file is part of the response code. Configure the printer to include 
 | &lt;br&gt; | Break line |
 | &lt;vs&gt; | Add vertical space |
 | &lt;hs&gt; | Add horizontal space |
-| &lt;img src="logo.bmp" | Print image logo.bmp |
-| &lt;barcode digits="$EAN_code$" | Print product barcode |
+| &lt;img src="logo.bmp"&gt; | Print image logo.bmp |
+| &lt;barcode digits="$EAN_code$"&gt; | Print product barcode |
 | --- | --- |
+
+# Operator logos
+
+Logos that should be printed on voucher depending on retuned img tag.
+All logos can be downoaded from [HERE](/downloads/logos/Logos.zip).
+
+|---|---|
+| atribute | value |
+|---|---|
+| Max-width | 384px |
+| Max-height | No larger then Max-width |
+| Colour | Monochrome | 
+|---|---|
+
+# List of operator logos
+
+|---|---|---|
+| Operator | img tag | Country |
+|---|---|---|
+| Telia |&lt;img src="telia_se.bmp"&gt; | Sweden |
+| Tele2 |&lt;img src="tele2_se.bmp"&gt; | Sweden
+| Telenor |&lt;img src="telenor_se.bmp"&gt;| Sweden | 
+| TRE |&lt;img src="3_se.bmp"&gt; |  Sweden |
+| IDT |&lt;img src="idt_se.bmp"&gt;| Sweden |
+| Lebara |&lt;img src="lebara_se.bmp"&gt;| Sweden |
+| Mundio |&lt;img src="mundio_se.bmp"&gt;| Sweden |
+| LycaMobile |&lt;img src="lyca_se.bmp"&gt;| Sweden |
+| Lebara |&lt;img src="lebara_dk.bmp"&gt;| Denmark |
+| TDC |&lt;img src="tdc_dk.bmp"&gt;| Denmark |
+| Telia |&lt;img src="telia_dk.bmp"&gt;| Denmark |
+| Oister |&lt;img src="oister_dk.bmp"&gt;| Denmark |
+| Telenor |&lt;img src="telenor_dk.bmp"&gt;| Denmark |
+| CBB |&lt;img src="cbb_dk.bmp"&gt;| Denmark |
+| One Mobile |&lt;img src="one_dk.bmp"&gt;| Denmark |
+| Colour Mobile |&lt;img src="colour_dk.bmp"&gt;| Denmark |
+| LycaMobile |&lt;img src="lyca_dk.bmp"&gt;| Denmark |
+| IDT |&lt;img src="idt_dk.bmp"&gt;| Denmark |
+| Mundio |&lt;img src="mundio_dk.bmp"&gt;| Denmark |
+| Telepost |&lt;img src="telepost_dk.bmp"&gt;| Denmark |
+|---|---|---|
 
 # Sample voucher
 
@@ -86,7 +126,9 @@ The receipt file is part of the response code. Configure the printer to include 
 <productEAN>7330596001123</productEAN>
 <productName><name of product> 100KR</productName>
 <productSKU>10053</productSKU>
-<receipt>Värdebevis
+<receipt>
+	<img src="telia_se.bmp">
+	Värdebevis
 <vs>
 ---------
 2013/07/19 14:47:37
@@ -110,17 +152,22 @@ VID PROBLEM MED
 <vs>
 LADDNING KONTAKTA 13
 <vs>
-<Operator> KUNDTJÄNST PÅ <phone number></receipt>
+<Operator> KUNDTJÄNST PÅ 
+<barcode digits="7330596001123">
+<phone number>
+</receipt>
 <voucher>
-<code>9140000014</code>
-<expiryDate>2014-01-01T00:00:00+01:00</expiryDate>
-<serial>9140014</serial>
+ <code>9140000014</code>
+ <expiryDate>2014-01-01T00:00:00+01:00</expiryDate>
+ <serial>9140014</serial>
 </voucher>
 </return>
 </ns2:buyVoucherResponse>
 </soap:Body>
 </soap:Envelope>
 {% endhighlight %}
+
+
 
 # Two step voucher purchase
 In a realistic scenario, the POS client wants to be very sure that the purchase goes through after it has received the payment/allocated the funds. This can be accomplished by using a two-phase commit procedure using reserveVoucher and buyReservedVoucher.
