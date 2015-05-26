@@ -76,8 +76,7 @@ The receipt file is part of the response code. Configure the printer to include 
 # Operator logos
 
 Logos that should be printed on voucher depending on retuned img tag.
-All logos can be downoaded HERE (I will put link to rar or zip archive with all logos we have once we have all).
-Downloaded logos have to be scaled and exported to meet your system requirements and below specifications.
+All logos can be downoaded from [HERE](/downloads/logos/Logos.zip).
 
 |---|---|
 | atribute | value |
