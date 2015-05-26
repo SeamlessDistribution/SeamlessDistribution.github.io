@@ -73,6 +73,19 @@ The receipt file is part of the response code. Configure the printer to include 
 | &lt;barcode digits="$EAN_code$"&gt; | Print product barcode |
 | --- | --- |
 
+# Product EAN barcodes
+
+Replace product EAN code from  &lt;barcode digits="$EAN_code$"&gt; tag with barcode.
+If it's not possible to generate barcodes within your system you can use:
+
+<b>https://se.kontantkort.nu/eproducts/eproducts/ean-barcode-gen?eanCode=&lt;EAN code value&gt;</b>
+
+<b>Example:</b>
+
+https://se.kontantkort.nu/eproducts/eproducts/ean-barcode-gen?eanCode=7340040308036
+
+<img src="https://se.kontantkort.nu/eproducts/eproducts/ean-barcode-gen?eanCode=7340040308036" width="300px"/>
+
 # Operator logos
 
 Logos that should be printed on voucher depending on retuned img tag.
