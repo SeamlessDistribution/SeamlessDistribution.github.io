@@ -188,6 +188,11 @@ Hence, the call to fetch a report from 1st June to 30th June 2015 is
 	'https://invoice-int.seqr.com/api/report?startDate=01.06.2015&endDate=30.06.2015&issuer=abc'
 {% endhighlight %}
 
+# Notifications
+
+After successfull payment SEQR Invoice Service will call RESTful API exposed by issuer.
+Please check <a href="/merchant/reference/invoiceserviceapi.html">SEQR Invoice Service API</a> for more details.
+
 # Certification
 
 For certification purpose we will send you couple sets of parametrs. You should generate SEQR Invoice Service QR codes based on these parameters and send generated QR codes back to us for validation. 
