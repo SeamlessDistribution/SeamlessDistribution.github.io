@@ -182,10 +182,11 @@ which results in the following SHA-256 hash
 Hence, the call to fetch a report from 1st June to 30th June 2015 is 
 
 {% highlight python %}
-   curl
-	-X GET
-	-H 'X-Auth-Token: 1be46a9bb3efac8e7b691c06cb6d7bea43c5522a64a1cbfd5f511e67de6440c0'
-	'https://invoice-int.seqr.com/api/report?startDate=01.06.2015&endDate=30.06.2015&issuer=abc'
+curl
+-X GET
+-H 'X-Auth-Token: 1be46a9bb3efac8e7b691c06cb6d7bea43c5522a64a1cbfd5f511e67de6440c0'
+'https://invoice-int.seqr.com/api/report?startDate=01.06.2015
+&endDate=30.06.2015&issuer=abc'
 {% endhighlight %}
 
 # Notifications
