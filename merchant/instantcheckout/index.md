@@ -37,6 +37,7 @@ All starts with user scanning QR code on your web-shop.
 | sendInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop triggered by CreatePurchase request. This method creates invoice on SEQR side and returns it's reference number (invoiceReference). This by calling this method web-shop provides also <b>notificationURL</b> to be used for callbacks |
 | notification callback service | web-shop | [SEQR Payment](/merchant/reference/api.html) | <b>notificationURL</b> will be called (empty HTTPS POST) by SEQR once customer confirmed payment.|
 | getPaymentStatus | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop after receiving request to <b>notificationURL</b>. This method will return status of payment. If returned status is "PAID" this is also commit of transaction. Once payment is commited you have to take care of product stock level. |
+| refundPayment | SEQR | [SEQR Payment](/merchant/reference/api.html) | Refunds a previous payment, partly or the whole sum |
 |--- | --- | --- | --- |
 
 # Flow description

@@ -32,6 +32,7 @@ The methods required in a basic integration are:
 | sendInvoice | Sends an invoice to SEQR server |
 | getPaymentStatus | Obtains status of a previously submitted invoice |
 | cancelInvoice | Cancels an unpaid invoice |
+| refundPayment | Refunds a previous payment, partly or the whole sum |
 | --- | --- |
 
 
@@ -41,7 +42,6 @@ For an extended integration, also these methods can be used:
 |  Method | Description |
 |--- | --- |
 | updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
-| refundPayment | Refunds a previous payment, partly or the whole sum |
 | markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
 | executeReport | Executes a report on SEQR server |
 | --- | --- |
