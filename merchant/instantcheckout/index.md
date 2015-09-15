@@ -40,6 +40,8 @@ All starts with user scanning QR code on your web-shop.
 | refundPayment | SEQR | [SEQR Payment](/merchant/reference/api.html) | Refunds a previous payment, partly or the whole sum |
 |--- | --- | --- | --- |
 
+<b>All above methods/services are mandatory to implement</b>
+
 # Flow description
 
 1. Customer scanns QRCode placed on web-shop page using SEQR app
