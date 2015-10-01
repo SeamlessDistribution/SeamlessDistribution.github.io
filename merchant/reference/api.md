@@ -222,7 +222,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 | Field | Description | Type | Required | Max-Length | Sample Value
 | --- | --- | --- | --- | --- | --- |
 | acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow | string | Y |  | NO_ACKNOWLEDGMENT | 
-| backURL | in a website shop:  This is the link that  the user will be redirected in your site after a succesfull payment | string | N | | http://merchant.com/displayafterpay |
+| backURL | in a website shop:  This is the link that  the user will be redirected in your site after a succesfull payment or after pressing cancel | string | N | | http://merchant.com/displayafterpay |
 | cashierId | Merchant cashier id | string | Y |  | John00232 |
 | clientInvoiceId | This Invoice ID refers to the Identification number from the Merchant itself | string | Y | | Merchant34213421 | 
 | commitReservationTimeout | Time (in seconds) while Merchant can make a commit of preliminary payment | long | N | | 3600 |
