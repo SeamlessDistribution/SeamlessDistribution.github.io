@@ -64,6 +64,7 @@ The following QR code consists of the parameters:
 | d | Phone invoice 05.2015 |
 | h | 22ef08bdc0fe9693ca4a65e3bfec3d927108fc47be9889b1001fd6f613f6e3b3 |
 | i | abc |
+| o | true |
 | r | 73782174 |
 |---|---|---|
 
