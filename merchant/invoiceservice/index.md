@@ -21,9 +21,7 @@ Please become familiar with guidelines for printing SEQR QR codes attached to [t
 An example QR code for Invoice Service looks as follows:
 
 {% highlight python %}
-   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015
-   &a=100&c=SEK&r=73782174&o=true
-   &h=99fd26ca2e1e28324e45465c0f9949c474d2544e0ccb8474d12930c72235fddb
+   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015&a=100.00&c=SEK&r=73782174&o=true&h=22ef08bdc0fe9693ca4a65e3bfec3d927108fc47be9889b1001fd6f613f6e3b3
 {% endhighlight %}
 
 (all in one line)
@@ -39,7 +37,7 @@ The rules governing the creation of a QR code are summarized in a table below.
 | a=&lt;amount&gt; | Y | Amount to be paid, numerical value with a precision up to 2 decimal points, eg. 100.00 (with a dot '.' being the decimal seperator). |
 | c=&lt;currency&gt; | Y | 3-characters long currency |
 | r=&lt;issuers_reference&gt; | Y | Max 30-characters long unique reference of the invoice. It is set up by an issuer. Allowed characters: alphanumeric, white spaces, braces, dash, slash, comma, dot, single and double quotes. ([A-Zaz\w.,\(\)-\\\\/\"\'])+ |
-| o=&lt;true or false&gt; | N | if set to true the invoice can be paid only once; default value: false - it means that invoice identified by the same reference can be paid several times. |
+| o=&lt;true or false&gt; | Y | if set to true the invoice can be paid only once; default value: false - it means that invoice identified by the same reference can be paid several times. |
 | h=&lt;hash_of_invoice&gt; | Y | SHA-256 hash which is a derivative of the URL. It protects against any changes introduced to the QR code by a non-issuer. The algorithm for computing the checksum is explained in the dedicated chapter below. |
 |--- | --- | --- |
 
@@ -51,9 +49,7 @@ Parameters: issuer, description, amount, currency, reference and h can be placed
 Let us assume that there is the following QR code representing the invoice to be paid.
 
 {% highlight python %}
-   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015
-   &a=100.00&c=SEK&r=73782174
-   &h=22ef08bdc0fe9693ca4a65e3bfec3d927108fc47be9889b1001fd6f613f6e3b3
+   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015&a=100.00&c=SEK&r=73782174&o=true&h=22ef08bdc0fe9693ca4a65e3bfec3d927108fc47be9889b1001fd6f613f6e3b3
 {% endhighlight %}
 
 (all in one line)
@@ -81,21 +77,16 @@ To compute the hash (the value of 'h' paramater) one should do the following:
 6. If 'once' is present, append to it value of 'once' parameter
 7. Append to it a secret string for issuer. Secret string will be provided to an issuer during the onboarding process. 
    In this instruction, let us asume that the secret string is: SECRET_STRING_FOR_ISSUER.
-8. Transform any upper-case letters in the string into lower-case letters.
-9. Compute SHA-256 out of the final string. The resulting hash is a value of 'h' parameter.
+8. Compute SHA-256 out of the final string. The resulting hash is a value of 'h' parameter.
 
 Hash is computed for strings in utf-8 format. This should be supported by default by any major development platform.
 
-# Hash computing examples
-
-<b>Example #1</b>
+# Hash computing example
 
 QR code (urlencoded)
 
 {% highlight python %}
-   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015
-   &a=100.00&c=SEK&r=73782174
-   &h=22ef08bdc0fe9693ca4a65e3bfec3d927108fc47be9889b1001fd6f613f6e3b3
+   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015&a=100.00&c=SEK&r=73782174&o=true&h=bc4048c537ee5d175e885ef17489b94340dbcce461ff4028b854d00d65f86c18
 {% endhighlight %}
 
 (all in one line)
@@ -103,40 +94,14 @@ QR code (urlencoded)
 The input string for computing the hash (after point 8 in the instruction above) is:
 
 {% highlight python %}
-   abcphone invoice 05.2015100.00sek73782174secret_string_for_issuer
+   abcPhone invoice 05.2015100.00SEK73782174trueSECRET_STRING_FOR_ISSUER
 {% endhighlight %}
 
 The corresponding SHA-256 hash is:
 
 {% highlight python %}
-   22ef08bdc0fe9693ca4a65e3bfec3d927108fc47be9889b1001fd6f613f6e3b3
+   bc4048c537ee5d175e885ef17489b94340dbcce461ff4028b854d00d65f86c18
 {% endhighlight %}
-
-
-<b>Example #2</b>
-
-QR code (urlencoded)
-
-{% highlight python %}
-   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015
-   &a=100.00&c=SEK&r=73782174&o=true
-   &h=99fd26ca2e1e28324e45465c0f9949c474d2544e0ccb8474d12930c72235fddb
-{% endhighlight %}
-
-(all in one line)
-
-The input string for computing the hash (after point 8 in the instruction above) is:
-
-{% highlight python %}
-   abcphone invoice 05.2015100.00sek73782174truesecret_string_for_issuer
-{% endhighlight %}
-
-The corresponding SHA-256 hash is:
-
-{% highlight python %}
-   99fd26ca2e1e28324e45465c0f9949c474d2544e0ccb8474d12930c72235fddb
-{% endhighlight %}
-
 
 For testing purposes one can use on-line SHA-256 calculator available at: <a href="http://www.xorbin.com/tools/sha256-hash-calculator">http://www.xorbin.com/tools/sha256-hash-calculator</a> .
 
