@@ -41,7 +41,8 @@ The rules governing the creation of a QR code are summarized in a table below.
 | h=&lt;hash_of_invoice&gt; | Y | SHA-256 hash which is a derivative of the URL. It protects against any changes introduced to the QR code by a non-issuer. The algorithm for computing the checksum is explained in the dedicated chapter below. |
 |--- | --- | --- |
 
-Parameters: issuer, description, amount, currency, reference and h can be placed in the QR code after '?' character in any order.
+Parameters: issuer, description, amount, currency, reference, once and hash can be placed in the QR code after '?' character in any order.
+Don not leave this parameters empty. All parameters are mandatory and empty value is also invalid.
 
 
 # Hash computation
@@ -49,7 +50,7 @@ Parameters: issuer, description, amount, currency, reference and h can be placed
 Let us assume that there is the following QR code representing the invoice to be paid.
 
 {% highlight python %}
-   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015&a=100.00&c=SEK&r=73782174&o=true&h=22ef08bdc0fe9693ca4a65e3bfec3d927108fc47be9889b1001fd6f613f6e3b3
+   HTTP://SEQR.SE/000/invoice?i=abc&d=Phone%20invoice%2005.2015&a=100.00&c=SEK&r=73782174&o=true&h=bc4048c537ee5d175e885ef17489b94340dbcce461ff4028b854d00d65f86c18
 {% endhighlight %}
 
 (all in one line)
@@ -59,13 +60,13 @@ The following QR code consists of the parameters:
 |---|---|---|
 | Param name | Param value |
 |---|---|---|
+| i | abc |
+| d | Phone invoice 05.2015 |
 | a | 100.00 |
 | c | SEK |
-| d | Phone invoice 05.2015 |
-| h | 22ef08bdc0fe9693ca4a65e3bfec3d927108fc47be9889b1001fd6f613f6e3b3 |
-| i | abc |
 | o | true |
 | r | 73782174 |
+| h | bc4048c537ee5d175e885ef17489b94340dbcce461ff4028b854d00d65f86c18 |
 |---|---|---|
 
 To compute the hash (the value of 'h' paramater) one should do the following:
@@ -75,7 +76,7 @@ To compute the hash (the value of 'h' paramater) one should do the following:
 3. Append to it value of 'amount' parameter
 4. Append to it value of 'currency' parameter
 5. Append to it value of 'reference' parameter
-6. If 'once' is present, append to it value of 'once' parameter
+6. Append to it value of 'once' parameter
 7. Append to it a secret string for issuer. Secret string will be provided to an issuer during the onboarding process. 
    In this instruction, let us asume that the secret string is: SECRET_STRING_FOR_ISSUER.
 8. Compute SHA-256 out of the final string. The resulting hash is a value of 'h' parameter.
