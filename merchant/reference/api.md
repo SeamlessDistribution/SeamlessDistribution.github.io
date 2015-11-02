@@ -407,6 +407,7 @@ Used to present the payment in the app.
           </initiatorPrincipalId>
           <password>1234</password>
        </context>
+       <invoiceReference>123123</invoiceReference>
        <invoice>
           <title>Some Invoice</title>
           <cashierId>Bob</cashierId>
