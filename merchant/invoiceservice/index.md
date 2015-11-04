@@ -161,6 +161,11 @@ curl
 After successfull payment SEQR Invoice Service will call RESTful API exposed by issuer.
 Please check <a href="/merchant/reference/invoiceserviceapi.html">SEQR Invoice Service API</a> for more details.
 
+# Verification
+
+The easiest way to verify your QRCodes is downloading and setting SEQR app up.
+Please follow instructions from [SEQR test app](/app) then just scan your QRCode to find out whether it is valid or not.
+
 # Certification
 
 For certification purpose we will send you couple sets of parametrs. You should generate SEQR Invoice Service QR codes based on these parameters and send generated QR codes back to us for validation. 
