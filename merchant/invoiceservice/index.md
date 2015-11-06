@@ -120,10 +120,8 @@ The parameters of a call are as follows:
 |---|---|---|
 | Param name | Param type | Description |
 |---|---|---|
-| startDate | QUERY | give me reports newer than startDate (inclusive),
-format: ddMMyyyy |
-| endDate | QUERY | give me reports older than endDate (inclusive),
-format: ddMMyyyy |
+| startDate | QUERY | give me reports newer than startDate (inclusive), format: ddMMyyyy |
+| endDate | QUERY | give me reports older than endDate (inclusive), format: ddMMyyyy |
 | issuer | QUERY | issuer name; the same value that is used in generated QR codes |
 | X-Auth-Token | HTTP HEADER | SHA-256 hash constructed out of the following string: &lt;issuer name&gt; + &lt;secret string for issuer used for invoice QR code generation&gt;. |
 |---|---|---|
@@ -152,8 +150,7 @@ Hence, the call to fetch a report from 1st June to 30th June 2015 is
 curl
 -X GET
 -H 'X-Auth-Token: 1be46a9bb3efac8e7b691c06cb6d7bea43c5522a64a1cbfd5f511e67de6440c0'
-'https://invoice-int.seqr.com/api/report?startDate=01062015
-&endDate=30062015&issuer=abc'
+'https://invoice-int.seqr.com/api/report?startDate=01062015&endDate=30062015&issuer=abc'
 {% endhighlight %}
 
 # Notifications
