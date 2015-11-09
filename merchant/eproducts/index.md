@@ -197,8 +197,8 @@ When merchant has notified Seamless that all work is done, a certification test 
 The certification flows are the following:
 
 1. Getting product list using getProductList.
-2. Reserving a voucher and buying it. Note that the system should allow buying more than one voucher in single transaction.
-3. Reserving a voucher and canceling it. All vouchers should be cancelled if there is more than one for a single transaction.
+2. Reserving a voucher and buying it. 
+3. Reserving a voucher and canceling reservation. 
 4. Reserving and buying a voucher then refunding it using cancelTransaction (using ersReference from buyReservedVoucher response).
 5. Getting reports using executeReport method (if implemented).
 6. Error handling.
