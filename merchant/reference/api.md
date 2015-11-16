@@ -1185,10 +1185,12 @@ Please contact us if you are interested in using a customized receipt in the app
           </initiatorPrincipalId>
           <password>secret</password>
        </context>
-   <entry>
-          <key>TERMINALID</key>
-          <value>2469e0bf14214797880cafb0eda1b535</value>
-       </entry>
+       <parameters>
+          <entry>
+             <key>TERMINALID</key>
+             <value>2469e0bf14214797880cafb0eda1b535</value>
+          </entry>
+       <parameters>
      </ext:markTransactionPeriod>
    </soapenv:Body>
 </soapenv:Envelope>
