@@ -1186,10 +1186,12 @@ Please contact us if you are interested in using a customized receipt in the app
           <password>secret</password>
        </context>
        <parameters>
+        <parameter>
           <entry>
              <key>TERMINALID</key>
              <value>2469e0bf14214797880cafb0eda1b535</value>
           </entry>
+        </parameter>
        <parameters>
      </ext:markTransactionPeriod>
    </soapenv:Body>
