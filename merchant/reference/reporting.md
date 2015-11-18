@@ -54,13 +54,13 @@ report will show transactions summary for every point of sale in the shop.
 <tr><th>Report ID</th><th>Report Name</th><th>Description</th></tr>
 
 
-<tr><td>STD_RECON_001</td>
+<tr><td>Reconciliation/Shop.xml</td>
     <td>Merchant Transactions</td>
     <td>Transaction summary for a shop representing number of transactions and summary amount done for the period. 
 </td></tr>
 
 
-<tr><td>STD_RECON_003</td>
+<tr><td>Reconciliation/STD_RECON_003</td>
     <td>Merchant Transactions Details</td><td>Transaction details for a shop
 showing ersReference, cashier, point of sale and amount for the period.
 </td></tr>
@@ -78,12 +78,12 @@ report will show transactions summary only for the specific point of sale. In th
 <table>
 <tr><th>Report ID</th><th>Report Name</th><th>Description</th></tr>
 
-<tr><td>STD_RECON_006</td>
+<tr><td>Reconciliation/STD_RECON_006</td>
     <td>Terminal Transactions Summary</td><td>Contains the number 
 of transactions and summary amount purchased/refunded for the 
 period. </td></tr>
 
-<tr><td>STD_RECON_007</td><td>Terminal Transactions Details</td>
+<tr><td>Reconciliation/STD_RECON_007</td><td>Terminal Transactions Details</td>
     <td>Transaction details for a terminal showing reference id and amounts for each transaction in the period. 
 </td></tr>
 </table>
