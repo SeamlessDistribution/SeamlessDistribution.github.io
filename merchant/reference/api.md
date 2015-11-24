@@ -1314,7 +1314,7 @@ Note that this list points out the responses that are relevant, with the API req
 | 49 | INVALID_INVOICE_ DATA | For example wrong currency | sendInvoice, updateInvoice |
 | 50 | CANNOT_CANCEL_PAID_ INVOICE | Invoice with given reference number has already been paid | cancelInvoice |
 | 51 | CANNOT_CANCEL_INVOICE_ IN_PROGRESS | | cancelInvoice |
-| 53 | INVALID_SEQR_ID | Non alphanumeric segrId was used | assignSeqrId |
+| 53 | INVALID_SEQR_ID | Given seqrID has already been assigned to other terminal. Tip: use your own unique prefix for seqrID. Example mymerchantname31231231 | assignSeqrId |
 | 54 | INVALID_INVOICE_ REFERENCE | Invoice with given reference number can't be found for given terminal id | getPaymentStatus |
 | 64 | INVALID_NOTIFICATION_ URL | Not valid notificationUrl (e.g not starting with http://) | sendInvoice, updateInvoice, refundPayment |
 | 90 | SYSTEM_ERROR | Unclassified errors | All requests |
