@@ -143,17 +143,22 @@ period. </td></tr>
                <mimeType>text/html</mimeType>
                <content>Cjw/...=</content>
                <contentString><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<ResellerTransactionSummary>
+<TransactionDetails> 
 <Meta>
-<ResellerId>hm1</ResellerId>
-<TransactionPeriodId>2012071711291546101000028</TransactionPeriodId>
-<GeneratedAt>2012-07-18 15:19</GeneratedAt>
+<ResellerId>spectra</ResellerId>
+<TerminalId>a2aaebce17bf4e81985a49c7717af14d</TerminalId>
+<TransactionPeriodId>2015120408534212001005262</TransactionPeriodId>
+<GeneratedAt>2015-12-04 09:09</GeneratedAt> 
 </Meta>
+
 <Row>
-<SalesCount>202</SalesCount>
-<SalesTotal>5476.52000</SalesTotal>
+<TerminalId>a2aaebce17bf4e81985a49c7717af14d</TerminalId>
+<CashierId>NULL</CashierId>
+<SalesAmount>100.00000</SalesAmount>
+<ErsReference>2015120408531541501005256</ErsReference>
 </Row>
-<ResellerTransactionSummary>]]></contentString>
+
+</TransactionDetails>]]></contentString>
             </report> 
          </return>
       </ns2:executeReportResponse>
