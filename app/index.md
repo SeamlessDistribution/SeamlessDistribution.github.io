@@ -8,7 +8,7 @@ Get SEQR app
 =============
 
 For development and demo purposes we have a test server and test app that you can play with
-on your phone. Android app is the only platform that is available for public development and demo purposes.
+on your phone. 
 
 The instruction below describes how to get access to the development app, that is through our **Extdev** server.
 
@@ -16,9 +16,7 @@ The instruction below describes how to get access to the development app, that i
 
 #### 1. Download and install the app
 
-Our Android developer app can be installed if you enable "other sources" in
-settings and then browse to this page on your phone [install android developer
-app](/downloads/se-qr-androidapp-demo-2.6.6.apk).
+In order to be able to use our SEQR test app you have to provide us with your Google Play account email address or Apple ID.
 
 #### 2. Once installed, make sure that "Extdev" is selected as server, and accept the Terms of Service:
 
