@@ -111,7 +111,6 @@ In order to put SEQR Instant Checkout QR codes on your pages you will have to:
             selector: '#qrcode',
             purchaseToken: some_token_recognized_by_webshop,
             webshopId: 'example_shop_id',
-            mode: 'demo'
         });
     })
 </script>
@@ -124,5 +123,4 @@ In order to put SEQR Instant Checkout QR codes on your pages you will have to:
 | selector | id of the html div tag that is going to be wired as the widget |
 | purchaseToken | This is id of the product or product bundle or product SKU which will be used in CreatePurchase call |
 | webshopId | This is the id of web-shop recognised by SEQR Instant Checkout service |
-| mode | Version of SEQR app. Should be set to "demo" for integration purpose. On production this parameter should be removed. |
 |---|---|
