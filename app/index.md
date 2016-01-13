@@ -38,7 +38,7 @@ app](/downloads/se-qr-androidapp-demo-2.6.6.apk).
 <img src="/assets/images/devapp_pics/test_smscode.png" width="300px"/>
 
 
-#### 6. Select "Payment account"
+#### 6. Press add payment account icon (wallet)
 
 <img src="/assets/images/devapp_pics/Accounts2.png" width="300px"/>
 
