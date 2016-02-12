@@ -3,27 +3,63 @@ layout: default
 title: SEQR Merchant API
 description: API reference
 ---
+# Table of content
 
-# Payment API / WSDL v2.6.0
+<ol>
+	<li><a href="#payment-api">Payment API WSDL</a></li>
+	<li><a href="#methods-for-payments">Methods for payments</a></li>
+		<ul>
+			<li><a href="#sendinvoice">sendInvoice</a></li>
+			<li><a href="#updateinvoice">updateInvoice</a></li>
+			<li><a href="#getpaymentstatus">getPaymentStatus</a></li>
+			<li><a href="#cancelinvoice">cancelInvoice</a></li>
+			<li><a href="#commitreservation">commitReservation</a></li>
+			<li><a href="#submitpaymentreceipt">submitPaymentReceipt</a></li>
+			<li><a href="#refundpayment">refundPayment</a></li>
+		</ul>
+	<li><a href="#methods-specific-for-point-of-sale-terminal-registration">Methods specific for point of sale (terminal) registration</a></li>
+		<ul>
+			<li><a href="#registerterminal">registerTerminal</a></li>
+			<li><a href="#unregisterterminal">unRegisterTerminal</a></li>
+			<li><a href="#assignseqrid">assignSeqrId</a></li>
+		</ul>
+	<li><a href="#methods-for-reconciliation-and-reporting">Methods for reconciliation and reporting</a>
+		<ul>
+			<li><a href="#marktransactionperiod">markTransactionPeriod</a></li>
+			<li><a href="#executereport">executeReport</a></li>
+		</ul>
+	</li>
+	<li><a href="#request-objects-data">Request objects data</a></li>
+		<ul>
+			<li><a href="#clientcontext-data">ClientContext parameter used in all calls</a></li>
+			<li><a href="#invoice-data">Invoice data</a></li>
+			<li><a href="#invoicerow-data">InvoiceRow data</a></li>
+			<li><a href="#receipt-data">Receipt data</a></li>
+		</ul>
+	<li><a href="#result-codes">Result codes</a></li>
+</ol>
 
+# Payment API
 
-This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
-https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl
+This is a description of <span class="seqrhl">SEQR SOAP-WS-API v2.6.0</span> for merchants. 
+<br>Our test environment WSDL is available at: <span class="seqrhl">https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl</span>
 
 ## Methods for payments
 
 <table>
    <tbody>
+   <col width="35%"/>
+   <col width="65%"/>
       <tr>
          <th>Method</th>
          <th>Description</th>
       </tr>
       <tr>
          <td>
-            sendInvoice
+            <a href="#sendinvoice">sendInvoice</a>
             <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
-               <li>Invoice invoice</li>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
+               <li><a href="#invoice-data">Invoice invoice</a></li>
                <li>
                   List
                   <customertoken> tokens</customertoken>
@@ -35,10 +71,10 @@ https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl
       </tr>
       <tr>
          <td>
-            updateInvoice
+            <a href="#updateinvoice">updateInvoice</a>
             <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
-               <li>Invoice invoice</li>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
+               <li><a href="#invoice-data">Invoice invoice</a></li>
                <li>
                   List
                   <customertoken> tokens</customertoken>
@@ -50,9 +86,9 @@ https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl
       </tr>
       <tr>
          <td>
-            getPaymentStatus
+            <a href="#getpaymentstatus">getPaymentStatus</a>
             <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
                <li>String invoiceReference</li>
                <li>int invoiceVersion</li>
             </ul>
@@ -62,20 +98,20 @@ https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl
       </tr>
       <tr>
          <td>
-            cancelInvoice
+            <a href="#cancelinvoice">cancelInvoice</a>
             <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
                <li>String invoiceReference</li>
             </ul>
          </td>
-         <td>Cancels an unpaid invoice
+         <td>Cancels an unpaid invoice.
          </td>
       </tr>
       <tr>
          <td>
-            commitReservation
+            <a href="#commitreservation">commitReservation</a>
             <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
                <li>String invoiceReference</li>
             </ul>
          </td>
@@ -85,9 +121,9 @@ https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl
       </tr>
       <tr>
         <td>
-            submitPaymentReceipt
+            <a href="#submitpaymentreceipt">submitPaymentReceipt</a>
             <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
                <li>String ersReference</li>
                <li>ReceiptDocument receiptDocument</li>
             </ul>
@@ -98,11 +134,11 @@ https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl
       </tr>
       <tr>
          <td>
-            refundPayment
+            <a href="#refundpayment">refundPayment</a>
             <ul>
-               <li><a href="#context-parameter-used-in-all-calls">ClientContext context</a></li>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
                <li>String ersReference</li>
-               <li>Invoice invoice</li>
+               <li><a href="#invoice-data">Invoice invoice</a></li>
             </ul>
          </td>
          <td>Refunds a previous payment, either part of it or the whole sum.
@@ -111,168 +147,671 @@ https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl
    </tbody>
 </table>
 
+## Methods specific for point of sale (terminal) registration 
 
+<table>
+   <tbody>
+   <col width="35%"/>
+   <col width="65%"/>
+      <tr>
+         <th>Method</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td>
+            <a href="#registerterminal">registerTerminal</a>
+            <ul>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
+               <li>String externalTerminalId</li>
+               <li>String password</li>
+               <li>String name</li>
+            </ul>
+         </td>
+         <td>
+				Registers a new terminal in the SEQR service.
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <a href="#unregisterterminal">unRegisterTerminal</a>
+            <ul>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
+            </ul>
+         </td>
+         <td>
+				Unregisters an already registered terminal.
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <a href="#assignseqrid">assignSeqrId</a>
+            <ul>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
+               <li>String seqrId</li>
+            </ul>
+         </td>
+         <td>
+				Assigns a SEQR ID to a terminal.
+         </td>
+      </tr>
+   </tbody>
+</table>
 
+## Methods for reconciliation and reporting 
 
+<table>
+   <tbody>
+   <col width="35%"/>
+   <col width="65%"/>
+      <tr>
+         <th>Method</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td>
+            <a href="#marktransactionperiod">markTransactionPeriod</a>
+            <ul>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
+               <li>Map parameters</li>
+            </ul>
+         </td>
+         <td>
+				Marks the end of one and the beginning of a new transaction period. Used in reporting.
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <a href="#executereport">executeReport</a>
+            <ul>
+               <li><a href="#clientcontext-data">ClientContext context</a></li>
+               <li>String reportId</li>
+               <li>String language</li>
+               <li>Map parameters</li>
+            </ul>
+         </td>
+         <td>
+				Executes a report on the SEQR service.
+         </td>
+      </tr>
+   </tbody>
+</table>
 
+# Request objects data
 
-### Methods specific for point of sale (terminal) registration 
-
-
-|--- | --- |
-|  Method | Description |
-|--- | --- |
-| registerTerminal | Registers a new terminal in the SEQR service |
-| unRegisterTerminal | Unregisters an already registered terminal |
-| assignSeqrId | Assigns a SEQR ID to a terminal |
-| --- | --- |
-
-
-### Method for retrieving user information (valid for Service integration)
-
-
-|--- | --- |
-|  Method | Description |
-|--- | --- |
-| getClientSessionInfo | Retrieves user information |
-| --- | --- |
-
-
-
-### Methods for reconciliation and reporting 
-
-
-|--- | --- |
-|  Method | Description |
-|--- | --- |
-| markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
-| executeReport | Executes a report on the SEQR service |
-| --- | --- |
-
-
-
-
-## Context parameter used in all calls 
-
-<a name="context"></a>
+<h2 id="clientcontext-data">ClientContext parameter used in all calls</h2>
 
 A principal is the main actor in each request to the SEQR service and represents either a seller or a buyer. Each request has at least an initiator principal.
-The ClientContext structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
+The client Context structure is used in all requests to identify, authenticate and authorize the client initiating the transaction. For authentication the credentials of the initiator principal are used. As all transactions take place over a secure channel (typically HTTPS) the ClientContext is sent in clear text.
 
 If no max-length is specified it is unlimited for strings.
 
 <table>
-<tr><th>ClientContext fields</th><th>Description</th><th>Type</th><th>Required</th><th>Max-Length</th><th>Sample value</th></tr>
-<tr><td>clientId </td>
-    <td> Client id identifies the software with which the SEQR service is communicating, for example “CashRegisterManager version 1.3.4."</td>
-    <td> string </td>
-    <td> Y </td>
-    <td> </td>
-    <td>POS Version 3.4.1</td></tr>
-<tr><td>channel </td>
-    <td> The channel used to send a request. Always use ClientWS or WS. </td>
-    <td> string </td>
-    <td> Y </td>
-    <td> 40 </td>
-    <td> ClientWS</td></tr>
-<tr><td>clientRequestTimeout </td>
-    <td> The client side timeout for the request. If the response is not received before the timeout the client will attempt to abort the request. Must be set to 0, so there will not be any client forced timeouts in the SEQR service. </td>
-    <td> long </td>
-    <td> Y </td>
-    <td>  </td>
-    <td>0</td></tr>
-<tr><td>initiatorPrincipalId </td>
-    <td> Used for authentication of the principal and contains the id and type, as well as an optional user id. 
-         Use TERMINALID except when you regsister a new terminal, then you need RESELLERUSER (as provided from Seamless). 
-    </td>
-    <td> string </td>
-    <td> Y </td>
-    <td>  </td>
-   <td>   </td>
-</tr>
-<tr><td>password</td>
-    <td>The password used to authenticate the initiator principal.</td>
-    <td> string </td>
-    <td> Y </td><td>  </td><td> mySecretP455W0RD </td></tr>
-<tr><td>clientReference </td>
-    <td>The client reference for the transaction.
-        Recommended: the clientReference should be unique at least for the specific client id.
-        Note: SEQR service does not check this field. The field has a maximum length of 32 characters. 
-        The field is mandatory for troubleshooting purposes.
-    </td>
-    <td> string </td>
-    <td> Y </td>
-    <td> 32 </td><td> SendInvoice2348287fdsfsd83 </td></tr>
-<tr><td>clientComment </td>
-    <td>Client comment included within the request.</td>
-    <td> string </td>
-    <td> N </td>
-    <td> 80 </td><td>  </td></tr>
+	<tbody>
+	<tr>
+		<th colspan="2">ClientContext</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>channel</td>
+		<td>The channel used to send a request. Always use ClientWS or
+			WS.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Max-Length: <span class="seqrhl">40</span></li>
+				<li>Sample value: <span class="seqrhl">ClientWS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>clientComment</td>
+		<td>Client comment included within the request.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Max-Length: <span class="seqrhl">80</span></li>
+				<li>Sample value: <span class="seqrhl">My comment</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>clientId</td>
+		<td>Client ID identifies the software which the SEQR service is
+			communicating with.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">My POS Version 1.2.3</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>clientReference</td>
+		<td>The client reference for the transaction. Recommendation: the
+			clientReference should be unique at least for the specific clientId.
+			Note: SEQR service does not check this field. The field is mandatory
+			for troubleshooting purposes.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Max-Length: <span class="seqrhl">32</span></li>
+				<li>Sample value: <span class="seqrhl">my_invoice_1234567890</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>clientRequestTimeout</td>
+		<td>The client side timeout for the request. If the response is
+			not received before the timeout the client will attempt to abort the
+			request. Must be set to 0, so there will not be any client forced
+			timeouts in the SEQR service.
+			<ul>
+				<li>Type: <span class="seqrhl">long</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Recommended value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>initiatorPrincipalId</td>
+		<td>Used for authentication of the principal. Contains subfields id, type and optional userId. Use RESELLERUSER type when
+			you register a new terminal with id provided from SEQR and userId with fixed value, otherwise use TERMINALID type with id provided from SEQR.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Samples below:
+{% highlight python %}
+<initiatorPrincipalId>
+    <id>my_terminal_id</id>
+    <type>TERMINALID</type>
+</initiatorPrincipalId>
+{% endhighlight %}
+{% highlight python %}
+<initiatorPrincipalId>
+    <id>my_reseller_id</id>
+    <type>RESELLERUSER</type>
+    <userId>9900</userId>
+</initiatorPrincipalId>
+{% endhighlight %}
+          		</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>password</td>
+		<td>The password used to authenticate the initiator principal.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">my_password</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
 </table>
-
- 
-
 
 ## Invoice data 
 
-
 Invoice is used in sending, updating and receiving status on a payment. What you need to set is: 
 
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">Invoice</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>paymentMode</td>
+		<td>The mode of payment. For standard payments use IMMEDIATE_DEBIT.<br>Modes RESERVATION_DESIRED / RESERVATION_REQUIRED / RESERVATION_REQUIRED_PRELIMINARY_AMOUNT are used in non-standard payments. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">IMMEDIATE_DEBIT</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>acknowledgmentMode</td>
+		<td>Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">NO_ACKNOWLEDGMENT</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>issueDate</td>
+		<td>The date of invoice submit.
+			<ul>
+				<li>Type: <span class="seqrhl">dateTime</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">2015-12-25T12:34:56</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Title displayed on bill and receipt.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">My Sample Store</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>clientInvoiceId</td>
+		<td>This invoice id refers to the identification number from the merchant's shop.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">Merchant34213421</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceRows</td>
+		<td>Contains multiple invoiceRows. See <a href="#invoicerow-data">invoiceRow data description</a>.</td>
+	</tr>
+	<tr>
+		<td>totalAmount</td>
+		<td>Summary amount of invoice/bill. Consists of a value (in pattern #.##) and a currency. Use ISO standard currency of the country you are in. 
+			<ul>
+				<li>Value type: <span class="seqrhl">decimal</span></li>
+				<li>Currency type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample below:
+{% highlight python %}
+<totalAmount>
+    <value>149.99</value>
+    <currency>SEK</currency>
+</totalAmount>
+{% endhighlight %}
+          		</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>cashierId</td>
+		<td>Merchant cashier id.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">John00232</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>footer</td>
+		<td>Footer that you want to display in the users phone receipt.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">RFC:12389234DKJ3</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>backURL</td>
+		<td>A web-site address to where the SEQR mobile application user will be redirected after a successful payment or after pressing cancel.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample value: <span class="seqrhl">http://merchant.com/displayafterpay</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>notificationURL</td>
+		<td>An optional notification/confirmation URL. If set SEQR will access this URL after successful payment by user.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample value: <span class="seqrhl">http://merchant.com/paymentConfirmation?inv=32923423423</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>commitReservationTimeout</td>
+		<td>Time (in seconds) while merchant can make a commit of preliminary payment.
+			<ul>
+				<li>Type: <span class="seqrhl">long</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample value: <span class="seqrhl">3600</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
-| Field | Description | Type | Required | Max-Length | Sample Value
-| --- | --- | --- | --- | --- | --- |
-| acknowledgmentMode | Needs to be set to NO_ACKNOWLEDGMENT unless you provide loyalty flow | string | Y |  | NO_ACKNOWLEDGMENT | 
-| backURL | in a website shop:  This is the link that  the user will be redirected in your site after a succesfull payment or after pressing cancel | string | N | | http://merchant.com/displayafterpay |
-| cashierId | Merchant cashier id | string | Y |  | John00232 |
-| clientInvoiceId | This Invoice ID refers to the Identification number from the Merchant itself | string | Y | | Merchant34213421 | 
-| commitReservationTimeout | Time (in seconds) while Merchant can make a commit of preliminary payment | long | N | | 3600 |
-| footer | Footer that you want to display in the users phone receipt | string | Y | | RFC:12389234DKJ3 |
-| invoiceRows | See [invoiceRow data description](#invoiceRow) | 
-| issueDate | point of sale Date  | dateTime | Y | | 2014-04-05T13:23:53 | 
-| notificationURL | optional notification/confirmation url. If set SEQR will access this url after successful payment by user.| string | N | | http://merchant.com/paymentConfirmation?inv=32923423423 |
-| paymentMode | use IMMEDIATE_DEBIT as RESERVATION_DESIRED / RESERVATION_REQUIRED / RESERVATION_REQUIRED_PRELIMINARY_AMOUNT are limited in use | string | Y | | IMMEDIATE_DEBIT |
-| title | title displayed on bill and receipt | string | Y | | My Store Sample Store |
-| totalAmount:value | full amount of invoice/bill | Decimal | Y | 18 | 112.11 | 
-| totalAmount:currency | Use the currency of the country you are in.  Use the ISO standard | string | Y | | EUR |
-
-
-
-
-## invoiceRow data <a name="invoiceRow"></a>
-
+## InvoiceRow data
 
 Used to present the payment in the app. 
 
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">InvoiceRow</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>itemDescription</td>
+		<td>Description of the item that was sold. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample value: <span class="seqrhl">Coca-Cola</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>itemDiscount</td>
+		<td>Total discount for listed products. Consists of a value (in pattern #.##) and a currency field. Use ISO standard currency signature of the country you are in.
+			<ul>
+				<li>Value type: <span class="seqrhl">decimal</span></li>
+				<li>Currency type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample below:
+{% highlight python %}
+<itemDiscount>
+    <value>2.50</value>
+    <currency>SEK</currency>
+</itemDiscount>
+{% endhighlight %}
+          		</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>itemEAN</td>
+		<td>Product EAN.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample value: <span class="seqrhl">0076232342123</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>itemQuantity</td>
+		<td>Should be 1 or more.
+			<ul>
+				<li>Type: <span class="seqrhl">decimal</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">2</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>itemSKU</td>
+		<td>Product SKU.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample value: <span class="seqrhl">12345-A</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>itemTaxRate</td>
+		<td>Use the tax rate of your country (in decimal format: #.##).
+			<ul>
+				<li>Type: <span class="seqrhl">decimal</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample value: <span class="seqrhl">0.25</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>itemTotalAmount</td>
+		<td>Total value for listed products. Consists of a value (in format #.##) and a currency field. Use ISO standard currency signature of the country you are in.
+			<ul>
+				<li>Value type: <span class="seqrhl">decimal</span></li>
+				<li>Currency type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample below:
+{% highlight python %}
+<itemTotalAmount>
+    <value>44.99</value>
+    <currency>SEK</currency>
+</itemTotalAmount>
+{% endhighlight %}
+          		</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>itemUnit</td>
+		<td>Use the type of unit based on ISO-20022.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample value: <span class="seqrhl">kg</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>itemUnitPrice</td>
+		<td>Unit price for listed products. Consists of a value (in format #.##) and a currency field. Use ISO standard currency signature of the country you are in.
+			<ul>
+				<li>Value type: <span class="seqrhl">decimal</span></li>
+				<li>Currency type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample below:
+{% highlight python %}
+<itemUnitPrice>
+    <value>2.99</value>
+    <currency>SEK</currency>
+</itemUnitPrice>
+{% endhighlight %}
+          	</li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
-| Field | Description | Type | Required | Max-Length | Sample Value
-| --- | --- | --- | --- | --- | --- |
-| itemDescription | description of the item that was sold | string | N | | Coca-Cola | 
-| itemDiscount:value | Total discount for listed products | decimal | N | | 8.44 |
-| itemDiscount:currency|  Use the currency of the country you are in.  Use the ISO standard | string | N | | EUR |
-| itemEAN | product EAN  | string | N | | 0076232342 |
-| itemQuantity | should be 1 or more | decimal | Y | | 2 | 
-| itemTaxRate | use the tax rate of your country | decimal | N | |  0.25 | 
-| itemTotalAmount:value | Total value for listed products | decimal | Y | | 8.44 |
-| itemTotalAmount:currency|  Use the currency of the country you are in.  Use the ISO standard | string | Y | | EUR |
-| itemUnit | Use the type of unit based on ISO 20022| string | N | | Kg |
-| itemUnitPrice:value | Unit price for listed products | decimal | N | | 8.44 |
-| itemUnitPrice:currency|  Use the currency of the country you are in.  Use the ISO standard | string | N | | EUR |
+## Receipt data
 
+Used to receipt information after payment.
+
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">Receipt</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>terminalId</td>
+		<td>The name of the registered terminal. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">my_terminal</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>paymentDate</td>
+		<td>The date of the payment.
+			<ul>
+				<li>Type: <span class="seqrhl">dateTime</span></li>
+				<li>Sample value: <span class="seqrhl">2015-10-29T10:18:48.663+01:00</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceReference</td>
+		<td>The SEQR service reference to the registered invoice.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">20151029186719114</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>paymentReference</td>
+		<td>The SEQR service reference to the registered payment.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">2015102910184861801032678</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>payerTerminalId</td>
+		<td>The id of the terminal registered in SEQR system.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">d613c5b8428d17248751bc101</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>receiverName</td>
+		<td>The name of the receiver.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>invoice</td>
+		<td>Invoice data which contains the amount and other invoice information. See <a href="#invoice-data">invoice description</a>.</td>
+	</tr>
+	</tbody>
+</table>
 
 # Requests and responses
 
 ## sendInvoice 
 
+#### sendInvoice SOAP request fields
+
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">sendInvoice request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>invoice</td>
+		<td>Invoice data which contains the amount and other invoice information. See <a href="#invoice-data">invoice description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>tokens</td>
+		<td>The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc.
+		Consists of following fields: description (that will be presented to a customer after scaning QR code),
+		id, value (such as card value, coupon code, etc.), status (0 - pending, 1 - used when updated by
+		merchant, 90 - blocked or 99 - invalid, unknown).
+		<br>
+		<b>Note!</b> The new token (e.g. name of loyalty card) must be added to SEQR system in advance.
+			<ul>
+				<li>Description type: <span class="seqrhl">string</span></li>
+				<li>Id type: <span class="seqrhl">string</span></li>
+				<li>Value type: <span class="seqrhl">string</span></li>
+				<li>Status type: <span class="seqrhl">integer</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample below (zero or more repetitions):
+{% highlight python %}
+<tokens>
+   <description>Loyalty card name</description>
+   <id>SOME_CARD</id>
+   <status>1</status>
+   <value>2610411111110</value>
+</tokens>
+{% endhighlight %}
+          		</li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
+
 #### sendInvoice SOAP response fields
 
-
-| Field | Description | Type | Max-Length | Sample Value
-| --- | --- | --- | --- | --- |
-| resultCode | Response result code | integer | 2 | 0 |
-| invoiceQRCode | SEQR generated QR Code (used for webshops; not relevant for points of sale) | string | | HTTP://SEQR.SE/R1397240460668 |
-| resultDescription | A textual description of resultCode  | string | | SUCCESS |
-|invoiceReference  | This is the Invoice Reference that the Merchant should use to do the getPaymentStatus | string | |  1397240460668|
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">sendInvoice response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code. 
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceQRCode</td>
+		<td>SEQR generated QR Code (used for webshops; not relevant for points of sale).
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">HTTP://SEQR.SE/R1397240460668</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of the resultCode.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceReference</td>
+		<td>The SEQR service reference to the registered invoice. This is the invoice reference
+			a merchant should use within getPaymentStatus.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">1397240460668</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### sendInvoice SOAP request example
 
@@ -335,12 +874,11 @@ Used to present the payment in the app.
             <value>1500</value>
           </totalAmount>
           <!-- in case you don't want to poll for payment status -->
-          <notificationUrl>http://www.thirdparty.com/notifyMeHere</notificationUrl>          
+          <notificationUrl>http://www.thirdparty.com/notifyMeHere</notificationUrl>
        </invoice>
      </ext:sendInvoice>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
 
 
@@ -359,35 +897,112 @@ Used to present the payment in the app.
       </ns2:sendInvoiceResponse>
    </soap:Body>
 </soap:Envelope>
-
 {% endhighlight %}
-
 
 ## updateInvoice
 
 #### updateInvoice SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| invoice | Invoice data, which contains the amount and other invoice information |  |  |
-| invoiceReference | The SEQR service reference to the registered invoice. | string |  |
-| tokens | The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc. The following parameters:type,value (such as card value, coupon code, status (0 - pending, 1 - used when updated by merchant, 90 - blocked or 99 - invalid, unknown), description. **Note!** The new token (e.g. name of loyalty card) must be added to SEQR system in advance.| list |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">updateInvoice request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>invoice</td>
+		<td>Invoice data which contains the amount and other invoice information. See <a href="#invoice-data">invoice description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceReference</td>
+		<td>The SEQR service reference of the registered invoice.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">1397240460668</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>tokens</td>
+		<td>The customer tokens applied to this invoice. Can be used for loyalty membership, coupons, etc.
+		Contains of: description (that will be presented to a customer after scaning QR code), id, value
+		(such as card value, coupon code, etc.), status (0 - pending, 1 - used when updated by merchant,
+		90 - blocked or 99 - invalid, unknown).
+		<br>
+		<b>Note!</b> The new token (e.g. name of loyalty card) must be added to SEQR system in advance.
+			<ul>
+				<li>Description type: <span class="seqrhl">string</span></li>
+				<li>Id type: <span class="seqrhl">string</span></li>
+				<li>Value type: <span class="seqrhl">string</span></li>
+				<li>Status type: <span class="seqrhl">integer</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample below (zero or more repetitions):
+{% highlight python %}
+<tokens>
+   <description>Loyalty card name</description>
+   <id>SOME_CARD</id>
+   <status>1</status>
+   <value>2610411111110</value>
+</tokens>
+{% endhighlight %}
+          		</li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### updateInvoice SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">updateInvoice response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code. 
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of the resultCode.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Not used, will be null.</td>
+	</tr>
+	</tbody>
+</table>
 
 #### updateInvoice SOAP request example
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -419,9 +1034,7 @@ Used to present the payment in the app.
      </ext:updateInvoice>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### updateInvoice SOAP response example
 
@@ -436,35 +1049,127 @@ Used to present the payment in the app.
       </ns2:updateInvoiceResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 ## getPaymentStatus
 
 #### getPaymentStatus SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| invoiceReference | The SEQR service reference to the registered invoice. | string |  |
-| invoiceVersion | Version of the invoice. The first time that it uses getPaymentStatus method the client sets the invoiceVersion to zero. The SEQR service increments the invoiceVersion in response message when: the state of the payment status changes, or, a new buyer token is provided to be considered in the invoice. In subsequent uses of the getPaymentStatus method, the client must use the latest value of invoiceVersion as an acknowledgement that it has received the latest change. |  |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">getPaymentStatus request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>invoice</td>
+		<td>Invoice data which contains the amount and other invoice information. See <a href="#invoice-data">invoice description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceReference</td>
+		<td>The SEQR service reference of the registered invoice.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">1397240460668</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceVersion</td>
+		<td>Version of the invoice. The first time that it uses
+			getPaymentStatus method the client sets the invoiceVersion to zero.
+			The SEQR service increments the invoiceVersion in response message
+			when: the state of the payment status changes or a new buyer token is
+			provided to be considered in the invoice. In subsequent uses of the
+			getPaymentStatus method, the client must use the latest value of
+			invoiceVersion as an acknowledgement that it has received the latest
+			change.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### getPaymentStatus SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | The unique reference generated by the SEQR service once the invoice has been paid (null for all other invoiceStatus than PAID invoice has been paid). | 
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-| status | Status of the invoice: 0 - Pending usage (when sent from SEQR), ISSUED - Invoice is issued, and waiting for payment, PAID - Invoice is paid, PARTIALLY_PAID - Invoice is partially paid, PENDING_ISSUER_ACKNOWLEDGE - Payment is updated and waiting for issuer acknowledgement, CANCELED - Invoice is canceled, FAILED - Invoice payment has failed, RESERVED - The invoice amount is reserved. **Note!** If getPaymentStatus is not queried after a successful payment, SEQR will assume that cash register is not notified of the successful payment and will reverse the transaction after 20 seconds. |
-| customerTokens | List of customer tokens relevant for this payment, for example loyalty memberships, coupons, etc. |
-| deliveryAddress | If the payment should be delivered automatically, this contains the delivery address to deliver to |
-| resultCode | Receipt of the payment, if the status is PAID |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">getPaymentStatus response</th>
+	</tr>
+	<col width="35%" />
+	<col width="65%" />
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>The unique reference generated by the SEQR service once the invoice has been paid (null for all other invoiceStatus than PAID).
+		</td>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>status</td>
+		<td>Status of the invoice.
+			<ul>
+				<li>0 - pending usage (when sent from SEQR)</li>
+				<li>ISSUED - invoice is issued and waiting for payment</li>
+				<li>PAID - invoice is paid</li>
+				<li>PARTIALLY_PAID - invoice is partially paid</li>
+				<li>PENDING_ISSUER_ACKNOWLEDGE - payment is updated and waiting for issuer acknowledgement</li>
+				<li>CANCELED - invoice is canceled</li>
+				<li>FAILED - invoice payment has failed</li>
+				<li>RESERVED - invoice amount is reserved</li>
+			</ul>
+			<b>Note!</b> If getPaymentStatus is not queried within 20 seconds after a successful payment, SEQR will assume that
+			cash register is not notified of the successful payment and will reverse the transaction.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">ISSUED</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>receipt</td>
+		<td>Receipt information. See <a href="#receipt-data">receipt description</a>.
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### getPaymentStatus SOAP request example
 
@@ -491,9 +1196,7 @@ Used to present the payment in the app.
      </ext:getPaymentStatus>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### getPaymentStatus SOAP response example
 
@@ -510,36 +1213,95 @@ Used to present the payment in the app.
       </ns2:getPaymentStatusResponse>
    </soap:Body>
 </soap:Envelope>
-
 {% endhighlight %}
 
-
-## submitPaymentReciept
+## submitPaymentReceipt
 
 #### submitPaymentReciept SOAP request fields
 
-This method confirms that the payment has been acknowledged and adds a receipt from the points of sale as html. This receipt won't appear in the app automatically. 
+This method confirms that the payment has been acknowledged and adds a receipt from the point of sale as html. This receipt won't appear in the app automatically. 
 Please contact us if you are interested in using a customized receipt in the app. 
 
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| ersReference | Reference of the payment for which the receipt is applicable. |  |  |
-| receiptDocument | Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format. |  |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">submitPaymentReciept request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Reference of the payment for which the receipt is applicable.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">1397240460668</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>receiptDocument</td>
+		<td>Receipt document, containing the full details of the receipt (mimeType, receiptData, receiptType - all mandatory). Preferably in ARTS Receipt XML/HTML format.
+			<ul>
+				<li>MimeType type: <span class="seqrhl">string</span></li>
+				<li>ReceiptData type: <span class="seqrhl">base64Binary</span></li>
+				<li>ReceiptType type: <span class="seqrhl">string</span></li>
+				<li>Sample value: see request example below.</li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### submitPaymentReceipt SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">submitPaymentReciept response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Not used, will be null.
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### submitPaymentReceipt SOAP request example
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -568,9 +1330,7 @@ Please contact us if you are interested in using a customized receipt in the app
      </ext:submitPaymentReceipt>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### submitPaymentReceipt SOAP response example
 
@@ -586,7 +1346,6 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:submitPaymentReceiptResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
 
 
@@ -594,22 +1353,73 @@ Please contact us if you are interested in using a customized receipt in the app
 
 #### cancelInvoice SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| invoiceReference | Reference of the invoice to be canceled. | string |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">cancelInvoice request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceReference</td>
+		<td>Reference of the invoice to be canceled.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">1397240460668</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### cancelInvoice SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">cancelInvoice response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Not used, will be null.
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### cancelInvoice SOAP request example
 
@@ -635,9 +1445,7 @@ Please contact us if you are interested in using a customized receipt in the app
      </ext:cancelInvoice>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### cancelInvoice SOAP response example
 
@@ -652,34 +1460,96 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:cancelInvoiceResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 ## commitReservation
 
 #### commitReservation SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| amount | Commited amount and currency |  |  |
-| invoiceReference | Reference of the invoice that is reserved. | string |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">commitReservation request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>amount</td>
+		<td>Commited amount and currency. Consists of currency (ISO standard currency signature) and value (in format #.##).
+			<ul>
+				<li>Value type: <span class="seqrhl">decimal</span></li>
+				<li>Currency type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">N</span></li>
+				<li>Sample below:
+{% highlight python %}
+<amount>
+    <value>2.99</value>
+    <currency>SEK</currency>
+</amount>
+{% endhighlight %}
+          		</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>invoiceReference</td>
+		<td>Reference of the invoice to be canceled.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">1397240460668</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### commitReservation SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">commitReservation response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### commitReservation SOAP request example
 
- {% highlight python %}
+{% highlight python %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <ns2:commitReservation xmlns:ns2="http://external.interfaces.ers.seamless.com/">
@@ -699,14 +1569,11 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:commitReservation>
    </soap:Body>
 </soap:Envelope>
-
 {% endhighlight %}
-
 
 #### commitReservation SOAP response example
 
 {% highlight python %}
-
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <ns2:commitReservationResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
@@ -717,35 +1584,85 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:commitReservationResponse>
    </soap:Body>
 </soap:Envelope>
-
 {% endhighlight %}
-
 
 ## refundPayment
 
 #### refundPayment SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| ersReference | Reference of the payment to be refunded |  |  |
-| invoice | Invoice data, which contains the amount and other invoice information after products have been removed from the original invoice |  |  |
-
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">refundPayment request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Reference of the payment to be refunded.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">2015050100000000000000002</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>invoice</td>
+		<td>Invoice data which contains the amount and other invoice information. See <a href="#invoice-data">invoice description</a>.</td>
+	</tr>
+	</tbody>
+</table>
 
 #### refundPayment SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | Reference to the payment that is refunded. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">refundPayment response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Reference to the payment that is refunded.
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### refundPayment SOAP request example
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -777,9 +1694,7 @@ Please contact us if you are interested in using a customized receipt in the app
      </ext:refundPayment>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### refundPayment SOAP response example
 
@@ -795,37 +1710,110 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:refundPaymentResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
-
 
 ## registerTerminal
 
 #### registerTerminal SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| externalTerminalId | The identifier of the terminal in the client system, e.g. "Store 111/Till 4". |  |  |
-| password | Password for future communications with the SEQR service. | string |  |
-| name | The name to appear on the buyer’s mobile device, e.g. "My Restaurant, cash register 2". | string |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">registerTerminal request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>externalTerminalId</td>
+		<td>The identifier of the terminal in the client system.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">Store 111/Till 4</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>password</td>
+		<td>Password of the registered terminal for future communications with the SEQR service.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">my_terminal_pass</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>name</td>
+		<td>The name to appear on the buyer’s mobile device.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">My restaurant, cash register 2</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### registerTerminal SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-| terminalId | The newly generated unique identifier for this terminal. This identifier should be used in future communications of this terminal towards the SEQR service. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">registerTerminal response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Not used, will be null.</td>
+	</tr>
+	<tr>
+		<td>terminalId</td>
+		<td>The newly generated unique identifier in SEQR system for this terminal. This identifier should be used in future communications of this terminal towards the SEQR service.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">87e791f9e24148a6892c52aa85bb0331</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### registerTerminal SOAP request example
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -852,9 +1840,7 @@ Please contact us if you are interested in using a customized receipt in the app
      </ext:registerTerminal>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### registerTerminal SOAP response example
 
@@ -870,33 +1856,71 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:registerTerminalResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 ## unregisterTerminal
 
 #### unregisterTerminal SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| TerminalId | Unique ID returned by regiterTerminal associated with POS |  |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">unregisterTerminal request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>. Contains terminalId of the terminal to deregister.
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### unregisterTerminal SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">unregisterTerminal response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Not used, will be null.</td>
+	</tr>
+	</tbody>
+</table>
 
 #### unregisterTerminal SOAP request example
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -922,7 +1946,6 @@ Please contact us if you are interested in using a customized receipt in the app
 
 {% endhighlight %}
 
-
 #### unregisterTerminal SOAP response example
 
 {% highlight python %}
@@ -936,33 +1959,80 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:unregisterTerminalResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 ## assingSeqrId
 
 #### assignSeqrId SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| SeqrId | The SEQR ID of the terminal. |  |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">assignSeqrId request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>. The terminalId within is the terminal to which assign seqrId.
+		</td>
+	</tr>
+	<tr>
+		<td>seqrId</td>
+		<td>An alphanumeric code to assign to a terminal (POS). It is used to generate a static QR code.
+			<ul>
+				<li>Type: <span class="seqrhl">alphanumeric</span></li>
+				<li>Sample value: <span class="seqrhl">my_qr_code_string</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### assignSeqrId SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | Not used, will be null. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">assignSeqrId response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>ersReference</td>
+		<td>Not used, will be null.</td>
+	</tr>
+	</tbody>
+</table>
 
 #### assignSeqrId SOAP request example
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -986,9 +2056,7 @@ Please contact us if you are interested in using a customized receipt in the app
      </ext:assignSeqrId>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### assignSeqrId SOAP response example
 
@@ -1003,120 +2071,84 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:assignSeqrIdResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
-
-## getClientSessionInfo
-
-#### getClientSessionInfo request fields
-
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| key | Authorization token, provided by SEQR server. |  |  |
-
-
-#### getClientSessionInfo response fields
-
-
-| Field | Description |
-| --- | --- |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-| parameters | Set of parameters related to the user of the Service. Will always contain the following: msisdn (the msisdn of SEQR user), subscriberKey (unique identifier of SEQR user). May contain any additional parameters embedded in the QR code: ParameterX, ParameterZ. etc. (can be any number of embedded QR code parameters supplied in the list)|
-
-
-#### getClientSessionInfo SOAP request example
-
-
-{% highlight python %}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ext="http://external.interfaces.ers.seamless.com/">
-   <soapenv:Header/>
-   <soapenv:Body>
-     <ext:getClientSessionInfo>
-       <context>
-          <channel>WEBSERVICE</channel>
-          <clientRequestTimeout>0</clientRequestTimeout>
-          <initiatorPrincipalId>
-            <id>987654321</id>
-            <type>TERMINALID</type>
-          </initiatorPrincipalId>
-          <password>1111</password>
-       </context>
-       <key>0000002012-63506374</key>
-     </ext:getClientSessionInfo>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
-#### getClientSessionInfo SOAP response example
-
-{% highlight python %}
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:getClientSessionInfoResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
-         <return>
-            <resultCode>0</resultCode>
-            <resultDescription>SUCCESS</resultDescription>
-            <parameters>
-               <entry>
-                  <key>f</key>
-                  <value>6</value>
-               </entry>
-               <entry>
-                  <key>e</key>
-                  <value>5</value>
-               </entry>
-               <entry>
-                  <key>authKey</key>
-                  <value>0000002010-51702372</value>
-               </entry>
-               <entry>
-                  <key>msisdn</key>
-                  <value>46700643933</value>
-               </entry>
-               <entry>
-                  <key>subscriberKey</key>
-                  <value>132</value>
-               </entry>
-            </parameters> 
-         </return>
-      </ns2:getClientSessionInfoResponse>
-   </soapenv:Body>
-</soapenv:Envelope>
-
-{% endhighlight %}
-
-
 
 ## markTransactionPeriod
 
 #### markTransactionPeriod request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| parameters | Optional parameters that can be used in processing the request. |  |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">markTransactionPeriod request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>parameters</td>
+		<td>An optional key-value parameter map that can be used in processing the request.
+			<ul>
+				<li>Sample value: see request per terminal reconciliation example.</li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### markTransactionPeriod response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | The reference to this operation. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">markTransactionPeriod response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>transactionPeriodId</td>
+		<td>The reference of this operation.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">2015100916014994401047376</span></li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### markTransactionPeriod SOAP request example, per **shop** reconciliation
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -1140,9 +2172,7 @@ Please contact us if you are interested in using a customized receipt in the app
      </ext:markTransactionPeriod>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### markTransactionPeriod SOAP response example, per **shop** reconciliation
 
@@ -1158,13 +2188,9 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:markTransactionPeriodResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
 
-
-
 #### markTransactionPeriod SOAP request example, per **terminal** reconciliation
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -1196,9 +2222,7 @@ Please contact us if you are interested in using a customized receipt in the app
      </ext:markTransactionPeriod>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### markTransactionPeriod SOAP response example, per **terminal** reconciliation
 
@@ -1214,9 +2238,7 @@ Please contact us if you are interested in using a customized receipt in the app
       </ns2:markTransactionPeriodResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 ## executeReport
 
@@ -1224,28 +2246,99 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
 
 #### executeReport SOAP request fields
 
-
-| Field | Description | Type | Max-Length |
-| --- | --- | --- | --- |
-| context | See [the ClientContext object](#context) |  |  |
-| reportId | The identifier of the report that should be executed/produced. | string |  |
-| language | The report language (null if the default language is to be used). | string |  |
-| parameters | Optional parameters that can be used in processing the request. | parameters |  |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">executeReport request</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>context</td>
+		<td>Request context information. See <a href="#clientcontext-data">context description</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>reportId</td>
+		<td>The identifier of the report that should be executed/produced.
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Required: <span class="seqrhl">Y</span></li>
+				<li>Sample value: <span class="seqrhl">SOME_REPORT</span></li>
+			</ul>
+		</td>
+	</tr>	
+	<tr>
+		<td>language</td>
+		<td>The report language (null if the default language is to be used).
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>parameters</td>
+		<td>An optional key-value parameter map that can be used in processing the request.
+			<ul>
+				<li>Sample value: see markTransactionPeriod request per terminal reconciliation example above.</li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### executeReport SOAP response fields
 
-
-| Field | Description |
-| --- | --- |
-| ersReference | The reference to this operation. |
-| resultCode | see Result codes |
-| resultDescription | A textual description of resultCode. |
-| report | The executed/produced report, in binary and plain text form, if available. |
-
+<table>
+	<tbody>
+	<tr>
+		<th colspan="2">executeReport response</th>
+	</tr>
+   <col width="35%"/>
+   <col width="65%"/>
+	<tr>
+		<th>Fields</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>resultCode</td>
+		<td>Response result code.
+			<ul>
+				<li>Type: <span class="seqrhl">integer</span></li>
+				<li>Max-length: <span class="seqrhl">2</span></li>
+				<li>Sample value: <span class="seqrhl">0</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>resultDescription</td>
+		<td>A textual description of resultCode. 
+			<ul>
+				<li>Type: <span class="seqrhl">string</span></li>
+				<li>Sample value: <span class="seqrhl">SUCCESS</span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>report</td>
+		<td>The executed/produced report, in binary and plain text form, if available. Consists of: content, contentString, mimeType, title. 
+			<ul>
+				<li>Content type: <span class="seqrhl">base64Binary</span></li>
+				<li>ContentString type: <span class="seqrhl">string</span></li>
+				<li>MimeType type: <span class="seqrhl">string</span></li>
+				<li>Title type: <span class="seqrhl">string</span></li>
+				<li>Sample: see response example below.</li>
+			</ul>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 #### executeReport SOAP request example
-
 
 {% highlight python %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -1270,9 +2363,7 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
      </ext:executeReport>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
 
 #### executeReport SOAP response example
 
@@ -1293,15 +2384,11 @@ For SOAP examples of different reports, refer to <a href="/merchant/reference/re
       </ns2:executeReportResponse>
    </soapenv:Body>
 </soapenv:Envelope>
-
 {% endhighlight %}
-
-
 
 ## Result codes
 
 Note that this list points out the responses that are relevant, with the API request(s) that may issue the response. The other response codes are unrelevant but could occur in some cases.
-
 
 | Code | Description |  Detailed description | Request that may issue this response |
 | --- | --- |
@@ -1325,14 +2412,3 @@ Note that this list points out the responses that are relevant, with the API req
 | 97 | RESELLER_NOT_ALLOWED_ TO_DO_REFUND | Refund option is not allowed for that reseller | refundPayment |
 | 98 | SUM_OF_REFUNDS_CAN_NOT_ BE_MORE_THAN_ORIGINAL_ TRANSACTION | Sum of the refunds is more than the original transaction | refundPayment |
 | 99 | RECEIVER_ACCOUNT_DOES_ NOT_ALLOW_REFUNDS | External backend does not allow refund (e.g. receiver's banking system) | refundPayment |
-
-
-
-
-
-
-
-
-
-
-

@@ -131,12 +131,12 @@ h1 {
 
 h2 {
 	font-size: 1.7em;
-	margin-top: 1em;
+	margin-top: 1.2em;
 }
 
 h3 {
 	font-size: 1.5em;
-	margin-top: 0.3em;
+	margin-top: 0.5em;
 }
 
 h4 {
@@ -150,7 +150,7 @@ p {
 
 ol, ul {
 	padding-left: 30px;
-	margin-bottom: 1em;
+	margin-bottom: 0.1em;
 }
 
 b, strong {
@@ -213,15 +213,19 @@ blockquote {
 	border-radius: 7px;
 }
 
+.seqrhl {
+        color: #2EAE9B;
+}
+
 #header {
     	background: #ffffff; /* SEQR TURQUSE */
-		padding: 15px 0;
-		margin-bottom: 80px;
-		color: #afe1da;
+	padding: 15px 0;
+	margin-bottom: 80px;
+	color: #afe1da;
     	position: fixed;
     	width: 100%;
     	z-index: 999;
-		border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid #f1f1f1;
 }
 
 #header a { color: #474747; }
@@ -388,6 +392,7 @@ table {
 	margin: 20px 0px;
 	font-size: 15px;
 	border-collapse:collapse;
+	width: 100%;
 }
 th, td {
 	padding: 6px 13px;
