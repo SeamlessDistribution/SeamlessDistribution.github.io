@@ -120,7 +120,7 @@ In order to put SEQR Instant Checkout QR codes on your pages you will have to:
 |---|---|
 | parameter | description |
 |---|---|
-| selector | id of the html div tag that is going to be wired as the widget |
-| purchaseToken | This is id of the product or product bundle or product SKU which will be used in CreatePurchase call. Acceptable chars: <span class="seqrhl">alphanumeric</span>, '<span class="seqrhl">-</span>', '<span class="seqrhl">_</span>', '<span class="seqrhl">.</span>' |
-| webshopId | This is the id of web-shop recognised by SEQR Instant Checkout service |
+| selector | id of the html div tag that is going to be wired as the widget. |
+| purchaseToken | This is id of the product or product bundle or product SKU which will be used in CreatePurchase call. Acceptable chars: <span class="seqrhl">alphanumeric</span>, '<span class="seqrhl">-</span>', '<span class="seqrhl">_</span>', '<span class="seqrhl">.</span>'. |
+| webshopId | This is the id of web-shop recognised by SEQR Instant Checkout service. |
 |---|---|
