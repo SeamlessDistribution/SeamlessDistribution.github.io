@@ -873,7 +873,6 @@ Used to receipt information after payment.
             <currency>SEK</currency>
             <value>1500</value>
           </totalAmount>
-          <!-- in case you don't want to poll for payment status -->
           <notificationUrl>http://www.thirdparty.com/notifyMeHere</notificationUrl>
        </invoice>
      </ext:sendInvoice>
