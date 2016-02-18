@@ -35,7 +35,7 @@ All starts with user scanning QR code on your web-shop.
 |---| --- | --- | --- |
 | createPurchase | web-shop | [SEQR Instant Checkout](/merchant/reference/instantcheckoutapi.html) | REST service called by SEQR Instant chekout service once user scanned QR Code from web-shop page. URL has to be HTTPS and end with "createPurchase" (for example https://yourdomain.name.com/seqr/createPurchase).  |
 | sendInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop triggered by CreatePurchase request. This method creates invoice on SEQR side and returns it's reference number (invoiceReference). By calling this method web-shop provides also <b>notificationURL</b> to be used for callbacks |
-| notification callback service | web-shop | [SEQR Payment](/merchant/reference/api.html) | <b>notificationURL</b> will be called (empty HTTPS POST) by SEQR once customer confirmed payment.|
+| notification callback service | web-shop | [SEQR Payment](/merchant/reference/api.html) | <b>notificationURL</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed payment |
 | getPaymentStatus | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop after receiving request to <b>notificationURL</b>. This method will return status of payment. If returned status is "PAID" this is also commit of transaction. Once payment is commited you have to take care of product stock level. |
 | refundPayment | SEQR | [SEQR Payment](/merchant/reference/api.html) | Refunds a previous payment, partly or the whole sum |
 |--- | --- | --- | --- |
