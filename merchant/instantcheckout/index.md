@@ -90,7 +90,7 @@ Once your web-shop received such request it should:
 # Put SEQR Instant Checkout QRCodes on product details page (or anyware you like)
 In order to put SEQR Instant Checkout QR codes on your pages you will have to:
 
-* Import our java script qr code generator
+* Import our java script qr code generator:
 
 {% highlight python %}
 <div id="qrcode"></div>
