@@ -5,39 +5,29 @@ description: API reference
 ---
 # Table of content
 
-<ol>
-	<li><a href="#payment-api">Payment API WSDL</a></li>
-	<li><a href="#methods-for-payments">Methods for payments</a></li>
-		<ul>
-			<li><a href="#sendinvoice">sendInvoice</a></li>
-			<li><a href="#updateinvoice">updateInvoice</a></li>
-			<li><a href="#getpaymentstatus">getPaymentStatus</a></li>
-			<li><a href="#cancelinvoice">cancelInvoice</a></li>
-			<li><a href="#commitreservation">commitReservation</a></li>
-			<li><a href="#submitpaymentreceipt">submitPaymentReceipt</a></li>
-			<li><a href="#refundpayment">refundPayment</a></li>
-		</ul>
-	<li><a href="#methods-specific-for-point-of-sale-terminal-registration">Methods specific for point of sale (terminal) registration</a></li>
-		<ul>
-			<li><a href="#registerterminal">registerTerminal</a></li>
-			<li><a href="#unregisterterminal">unRegisterTerminal</a></li>
-			<li><a href="#assignseqrid">assignSeqrId</a></li>
-		</ul>
-	<li><a href="#methods-for-reconciliation-and-reporting">Methods for reconciliation and reporting</a>
-		<ul>
-			<li><a href="#marktransactionperiod">markTransactionPeriod</a></li>
-			<li><a href="#executereport">executeReport</a></li>
-		</ul>
-	</li>
-	<li><a href="#request-objects-data">Request objects data</a></li>
-		<ul>
-			<li><a href="#clientcontext-data">ClientContext parameter used in all calls</a></li>
-			<li><a href="#invoice-data">Invoice data</a></li>
-			<li><a href="#invoicerow-data">InvoiceRow data</a></li>
-			<li><a href="#receipt-data">Receipt data</a></li>
-		</ul>
-	<li><a href="#result-codes">Result codes</a></li>
-</ol>
+1. [Payment API WSDL](#payment-api)
+2. [Methods for payments](#methods-for-payments)
+	* [sendInvoice](#sendinvoice)
+	* [updateInvoice](#updateinvoice)
+	* [getPaymentStatus](#getpaymentstatus)
+	* [cancelInvoice](#cancelinvoice)
+	* [commitReservation](#commitreservation)
+	* [submitPaymentReceipt](#submitpaymentreceipt)
+	* [refundPayment](#refundpayment)
+3. [Methods specific for point of sale (terminal) registration](#methods-specific-for-point-of-sale-terminal-registration)
+	* [registerTerminal](#registerterminal)
+	* [unRegisterTerminal](#unregisterterminal)
+	* [assignSeqrId](#assignseqrid)
+4. [Methods for reconciliation and reporting](#methods-for-reconciliation-and-reporting)
+	* [markTransactionPeriod](#marktransactionperiod)
+	* [executeReport](#executereport)
+4. [Request objects data](#request-objects-data)
+	* [ClientContext parameter used in all calls](#clientcontext-data)
+	* [Invoice data](#invoice-data)
+	* [InvoiceRow data](#invoicerow-data)
+	* [Receipt data](#receipt-data)
+5. [Result codes](#result-codes)
+
 
 # Payment API
 
@@ -473,7 +463,7 @@ Invoice is used in sending, updating and receiving status on a payment. What you
 		</td>
 	</tr>
 	<tr>
-		<td>notificationURL</td>
+		<td>notificationUrl</td>
 		<td>An optional notification/confirmation URL. If set SEQR will access this URL after successful payment by user.
 			<ul>
 				<li>Type: <span class="seqrhl">string</span></li>

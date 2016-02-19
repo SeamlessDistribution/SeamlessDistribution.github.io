@@ -12,35 +12,7 @@ and verify its correct behaviour in different scenarios.
 
 For information about requests and parameters that require verification, please check these documents:
 
-<a href="/downloads/SEQR_certification_process_POS.pdf">Points of sale</a>
-
-<a href="/downloads/SEQR_certification_process_web.pdf">Webshops</a>
+* <a href="/downloads/SEQR_certification_process_POS.pdf">Points of sale</a>
+* <a href="/downloads/SEQR_certification_process_web.pdf">Webshops</a>
 
 Please [contact](/contact) us when you wish to certify your integration.
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
