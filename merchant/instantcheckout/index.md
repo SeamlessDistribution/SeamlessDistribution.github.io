@@ -34,38 +34,36 @@ All starts with user scanning QR code on your web-shop.
 | method/service | exposed by | part of API | description |
 |---| --- | --- | --- |
 | createPurchase | web-shop | [SEQR Instant Checkout](/merchant/reference/instantcheckoutapi.html) | REST service called by SEQR Instant chekout service once user scanned QR Code from web-shop page. URL has to be HTTPS and end with "createPurchase" (for example https://yourdomain.name.com/seqr/createPurchase).  |
-| sendInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop triggered by CreatePurchase request. This method creates invoice on SEQR side and returns it's reference number (invoiceReference). By calling this method web-shop provides also <b>notificationURL</b> to be used for callbacks |
-| notification callback service | web-shop | [SEQR Payment](/merchant/reference/api.html) | <b>notificationURL</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed payment |
-| getPaymentStatus | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop after receiving request to <b>notificationURL</b>. This method will return status of payment. If returned status is "PAID" this is also commit of transaction. Once payment is commited you have to take care of product stock level. |
-| refundPayment | SEQR | [SEQR Payment](/merchant/reference/api.html) | Refunds a previous payment, partly or the whole sum |
+| sendInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop triggered by CreatePurchase request. This method creates invoice on SEQR side and returns it's reference number (invoiceReference). By calling this method web-shop provides also <b>notificationUrl</b> to be used for callbacks. |
+| notification callback service | web-shop | [SEQR Payment](/merchant/reference/api.html) | <b>notificationUrl</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed payment. |
+| getPaymentStatus | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop after receiving request to <b>notificationUrl</b>. This method will return status of payment. If returned status is "PAID" this is also commit of transaction. Once payment is commited you have to take care of product stock level. |
+| refundPayment | SEQR | [SEQR Payment](/merchant/reference/api.html) | Refunds a previous payment, partly or the whole sum. |
 |--- | --- | --- | --- |
 
-<b>All above methods/services are mandatory to implement</b>
+<b>All above methods/services are mandatory to implement.</b>
 
 # Flow description
 
-1. Customer scanns QRCode placed on web-shop page using SEQR app
-2. Delivery address details stored in SEQR are presented to customer
-3. Customer confirms delivery address in SEQR app by pressing "Confirm" button
-4. SEQR Instant Checkout service calls CreatePurchase exposed by web-shop sending JSON with purchesToken (product or productBundle id) and customer's delivery address details.
-5. web-shop calls sendInvoice exposed by SEQR
-6. Purchase details are presented to customer
-7. Customer confirms with PIN number
-8. SEQR calls notificationURL provided in sendInvoice request
-9. web-shop calls getPaymebtStatus exposed by SEQR
-10. Transaction committed. Customer sees confirmation on phone screen
+1. Customer scanns QRCode placed on web-shop page using SEQR app.
+2. Delivery address details stored in SEQR are presented to customer.
+3. Customer confirms delivery address in SEQR app by pressing "Confirm" button.
+4. SEQR Instant Checkout service calls createPurchase exposed by web-shop sending JSON with purchaseToken (product or productBundle id) and customer's delivery address details.
+5. web-shop calls sendInvoice exposed by SEQR.
+6. Purchase details are presented to customer.
+7. Customer confirms purchase with PIN number.
+8. SEQR calls notificationUrl provided in sendInvoice request.
+9. web-shop calls getPaymentStatus exposed by SEQR.
+10. Transaction committed. Customer sees confirmation on phone screen.
 
 
 # Overview of integration steps
 To achieve a full integration between SEQR Instant Chekout and web shoop these steps must be covered:
 
-1. Create and expose REST service implementing SEQR Instant Checkout API (CreatePurchase).
-API details and test endpointURL can be found [here](/merchant/reference/instantcheckoutapi.html)
-2. Implement methods from SEQR Payment API (sendInvoice, getPaymentStatus).
-API details and test endpointURL can be found [here](/merchant/reference/api.html)
-3. Expose service for notifications (notificationURL)
-4. Put SEQR Instant Checkout QRCodes on product details page
-5. Test that integration works
+1. Create and expose REST service implementing SEQR Instant Checkout API (createPurchase). API details can be found [here](/merchant/reference/instantcheckoutapi.html).
+2. Implement methods from SEQR Payment API (sendInvoice, getPaymentStatus). API details and test endpoint URL can be found [here](/merchant/reference/api.html).
+3. Expose service for notifications (notificationUrl).
+4. Put SEQR Instant Checkout QRCodes on product details page.
+5. Test that integration works.
 
 # Create and expose REST service
 SEQR Instant Checkout API description can be found [here](/merchant/reference/instantcheckoutapi.html).
@@ -76,8 +74,8 @@ There have to be two methods of SEQR Payment API implemented on your web-shop's 
 More details you can find [here](/merchant/reference/api.html).
 
 # Expose service for notifications
-<b>notificationURL</b> is one of the parameters of sendInvoice request. This parameter tells SEQR where to send notification once invoice is paid.
-This url has to be unique for diffferent purchases. Let say customer bought product with id 000111222, then your notificationURL can look like this:
+<b>notificationUrl</b> is one of the parameters of sendInvoice request. This parameter tells SEQR where to send notification once invoice is paid.
+This url has to be unique for diffferent purchases. Let say customer bought product with id 000111222, then your notificationUrl can look like this:
 
 {% highlight python %}
    https://your.webshop.domain.com/orderNotif?productId=000111222
@@ -85,26 +83,27 @@ This url has to be unique for diffferent purchases. Let say customer bought prod
 
 Once your web-shop received such request it should:
 
-Call getPaymentStatus and receive status PAID - this is commit of transaction
-Update product stock level.
-It would also be good idea to send email with order confirmation to customer.
+* Call getPaymentStatus and receive status PAID - this is commit of transaction.
+* Update product stock level.
+* It would also be good idea to send email with order confirmation to customer.
 
 # Put SEQR Instant Checkout QRCodes on product details page (or anyware you like)
 In order to put SEQR Instant Checkout QR codes on your pages you will have to:
 
-1. Import our java script qr code generator
+* Import our java script qr code generator
 
 {% highlight python %}
 <div id="qrcode"></div>
+
 <script src="http://cdn.seqr.com/seqr-services-dev/wss-dev/seqrQRCode-0.0.3.min.js">
 </script>
 {% endhighlight %}
 
-2. Put this piece of code on you page:
+* Put this piece of code on you page:
 
 {% highlight python %}
 <div id="qrcode"></div>
-  
+
 <script>
     $(document).ready(function() {
         seqrQRCode.qrCode({
@@ -114,7 +113,6 @@ In order to put SEQR Instant Checkout QR codes on your pages you will have to:
         });
     })
 </script>
-
 {% endhighlight %}
 
 |---|---|
