@@ -23,7 +23,6 @@ description: eProducts API reference
 This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
 http://extdev.kontantkort.nu/extclientproxy/client?wsdl
 
-[Up](#table-of-content)
 
 # 2. Function requests used for POS client integration 
 Below you will find methods used in POS and eProducts integration.
