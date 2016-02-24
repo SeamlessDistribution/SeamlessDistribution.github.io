@@ -59,11 +59,13 @@ description: News and examples for SEQR merchant integrations
    <li><a href="merchant/reference/glossary.html">Glossary</a> - Gives a brief description to the terminology used in our documents and website.</li>
   </ul>
 
-<video width="640" height="480" controls>
-  <source src="downloads/SEQR_McD-demo.webm" type="video/webm">
-  <source src="downloads/SEQR_McD-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div style="text-align: center; padding-top: 30px;">
+	<video width="718" height="403" controls>
+	  <source src="downloads/SEQR_McD-demo.webm" type="video/webm">
+	  <source src="downloads/SEQR_McD-demo.mp4" type="video/mp4">
+	  Your browser does not support the video tag.
+	</video>
+</div>
 
  <!-- iframe title="YouTube video player" class="youtube-player" type="text/html"
 width="320" height="195" src="http://www.youtube.com/embed/qb8Q4fOxqAw" frameborder="0" allowFullScreen></iframe -->

@@ -7,7 +7,7 @@ description: SEQR Merchant, webshop, POS integration
 
 # SEQR payment in a Webshop
 
-If your webshop is based on an eCommerce platform check our [eCommerce plugin page](/plugins)
+If your webshop is based on an eCommerce platform check our [eCommerce plugin page](/plugins).
 
 To integrate your webshop with SEQR, you need to add SEQR payment in your “Check out” process where your customer normally selects between payment methods. This is an example of a checkout that supports SEQR:
 
@@ -20,10 +20,10 @@ To integrate your webshop with SEQR, you need to add SEQR payment in your “Che
 
 Follow these steps to integrate your webshop with SEQR:
 
-1. Implement the required methods
-2. Add SEQR as payment in your webshop
-3. Present the receipt
-4. Verify your integration
+1. Implement the required methods.
+2. Add SEQR as payment in your webshop.
+3. Present the receipt.
+4. Verify your integration.
 5. Go live!
 
 ### Implement the required methods
@@ -85,12 +85,9 @@ implemented; for more information see the webshop plugin referred to below as we
 
 
 **Note!** The web server must check the status each second, to verify that payment is completed.
-Otherwise SEQR server does not receive any notification that transaction is finalized and the payment
-will then be reversed (canceled)!
-This request should be triggered from a javascript timer on the website,
-so when SEQR user closes the window or moves away from the payment page, the polling stops.
-Another benefit is that you do not need to have a polling-loop on your backend,
-which will improve your webshop’s server performance.
+Otherwise SEQR server does not receive any notification that transaction is finalized and the payment will then be reversed (canceled)!
+This request should be triggered from a javascript timer on the website, so when SEQR user closes the window or moves away from the payment page, the polling stops.
+Another benefit is that you do not need to have a polling-loop on your backend, which will improve your webshop’s server performance.
 
 _Tip:_  You can skip polling if you are using our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
 
