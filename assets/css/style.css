@@ -219,6 +219,10 @@ blockquote {
         color: #2EAE9B;
 }
 
+.highlight {
+	margin: 5px 0px;
+}
+
 #header {
     	background: #ffffff; /* SEQR TURQUSE */
 	padding: 15px 0;
