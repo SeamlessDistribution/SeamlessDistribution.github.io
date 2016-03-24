@@ -562,9 +562,9 @@ Used to present the payment in the app.
 		<td>itemTaxRate</td>
 		<td>Use the tax rate of your country (in decimal format: #.##).
 			<ul>
-				<li>Type: <span class="seqrhl">decimal</span></li>
+				<li>Type: <span class="seqrhl">integer</span></li>
 				<li>Required: <span class="seqrhl">N</span></li>
-				<li>Sample value: <span class="seqrhl">0.25</span></li>
+				<li>Sample value: <span class="seqrhl">24</span></li>
 			</ul>
 		</td>
 	</tr>
@@ -832,7 +832,7 @@ Used to receipt information after payment.
               <itemDescription>Laptop Samsung Ultrabook</itemDescription>
               <itemQuantity>2</itemQuantity>
               <itemSKU>16</itemSKU>
-              <itemTaxRate>0.24</itemTaxRate>
+              <itemTaxRate>24</itemTaxRate>
               <itemTotalAmount>
                 <currency>SEK</currency>
                 <value>500</value>
@@ -847,7 +847,7 @@ Used to receipt information after payment.
               <itemDescription>Laptop Apple MacBook Air</itemDescription>
               <itemQuantity>1</itemQuantity>
               <itemSKU>3</itemSKU>
-              <itemTaxRate>0.24</itemTaxRate>
+              <itemTaxRate>24</itemTaxRate>
               <itemTotalAmount>
                 <currency>SEK</currency>
                 <value>1000</value>
