@@ -560,7 +560,7 @@ Used to present the payment in the app.
 	</tr>
 	<tr>
 		<td>itemTaxRate</td>
-		<td>Use the tax rate of your country (in decimal format: #.##).
+		<td>Use the tax rate of your country (in integer format: ##).
 			<ul>
 				<li>Type: <span class="seqrhl">integer</span></li>
 				<li>Required: <span class="seqrhl">N</span></li>
