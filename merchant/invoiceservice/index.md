@@ -229,7 +229,7 @@ Secret code must be encoded using SHA-256 before use. In our example it's value 
 |---|---|---|
 | Encoding type | Encoded value |
 |---|---|---|
-| base64 hash | v7omClW4RuJEC8SUBCaL6E5q7R5wFPbHC7uN/J56U48= |
+| base64 hash | v7omClW4RuJEC8SUBCaL6E5q7R5wFPbHC7uN/J56U48 |
 | hex hash | bfba260a55b846e2440bc49404268be84e6aed1e7014f6c70bbb8dfc9e7a538f |
 |---|---|---|
 
