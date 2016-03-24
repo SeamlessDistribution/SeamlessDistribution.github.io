@@ -7,15 +7,15 @@ import string
 #logging.basicConfig(level=logging.INFO)
 #logging.getLogger('suds.client').setLevel(logging.DEBUG)
 
-client = Client('https://extdev4.seqr.se/soap/merchant/cashregister-2?wsdl')
+client = Client('https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl')
 context = client.factory.create("ns0:clientContext")
 context.clientRequestTimeout = 0
 context.initiatorPrincipalId.type = 'RESELLERUSER'
 
 # the following three parameters are provided by seamless for each shop
-context.initiatorPrincipalId.id = 'public_test_shop'
+context.initiatorPrincipalId.id = '{your_reseller_id}'
 context.initiatorPrincipalId.userId = '9900'
-context.password = '1234'
+context.password = '{your_reseller_password}'
 
 def generatePassword(size):
     return ''.join(random.choice(string.ascii_letters + string.digits) for i in range(size))

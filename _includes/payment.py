@@ -8,15 +8,14 @@ import tempfile
 #logging.basicConfig(level=logging.INFO)
 #logging.getLogger('suds.client').setLevel(logging.DEBUG)
 
-client = Client('https://extdev4.seqr.se/soap/merchant/cashregister-2?wsdl')
+client = Client('https://extdev.seqr.com/soap/merchant/cashregister-2?wsdl')
 context = client.factory.create("ns0:clientContext")
 context.clientRequestTimeout = 0
 
 # see the terminal registration example to know where this value came from
 context.initiatorPrincipalId.type = 'TERMINALID'
-context.initiatorPrincipalId.id = '8609bf533abf4a20816e8bfe76639521'
-context.password = 'N2YFUhKaB1ZSuVF'
-
+context.initiatorPrincipalId.id = '{your_terminal_id}'
+context.password = '{your_terminal_password}'
 
 print "Creating the invoice..."
 
