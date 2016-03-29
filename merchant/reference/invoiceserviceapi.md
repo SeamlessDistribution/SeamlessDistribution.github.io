@@ -88,6 +88,7 @@ Payload of the response details below. Please notice that the same information i
 ### Notification retries
 
 When notifying issuer about new invoice SEQR Invoice requires http response code to be 200. In case of problems with connection or issuer's system malfunction and response other than 200 it will retry several times. First 3 attempts are made right after invoice is paid with about 10 seconds delays. Than retries are scheduled with growing delay length starting from 1 minute, then 3:45, 7:30, 15, 30 minutes and so on (length is two times longer than in previous attempt). It schedules notification 10 times rising delay to 16h in last attempt. This gives around 32h total to deal with any problem regarding notification receiving on issuer's side.
+<br>
 
 
 

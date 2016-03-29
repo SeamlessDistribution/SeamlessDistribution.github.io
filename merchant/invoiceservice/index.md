@@ -448,5 +448,6 @@ Please follow instructions from [SEQR test app](/app) then just scan your QRCode
 For certification purpose we will send you couple sets of parametrs. You should generate SEQR Invoice Service QR codes based on these parameters and send generated QR codes back to us for validation. 
 After validation we will try to use them for payment and will check if your notification service exposed to SEQR Invoice Service returns HTTP 200.
 We will also ask you to get few reports using our API.
+<br>
 
 
