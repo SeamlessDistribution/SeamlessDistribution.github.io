@@ -18,7 +18,7 @@ The instruction below describes how to get access to the development app, that i
 
 In order to be able to use our SEQR test app you have to provide us with your Google Play account email address or Apple ID.
 
-#### 2. Once installed, make sure that "Extdev" is selected as server, and accept the Terms of Service:
+#### 2. Once installed select server coresponding to your currency and accept the Terms of Service:
 
 <img src="/assets/images/devapp_pics/termsOfService.png" width="300px"/>
 
