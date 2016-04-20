@@ -13,7 +13,7 @@ To integrate your webshop with SEQR, you need to add SEQR payment in your “Che
 
 <img src="/assets/images/seqr_webshop.png" />
 
-##[See a live demo!](https://devapi.seqr.com/seqr-webshop-sample/)
+##[See a live demo!](https://extdev.seqr.com/seqr-webshop-sample/)
 
 
 ## Integration procedure
@@ -108,7 +108,7 @@ To go live with your integration, [contact](/contact) Seamless to get [certified
 # Examples
 
 
-Visit [https://devapi.seqr.com/seqr-webshop-sample/](https://devapi.seqr.com/seqr-webshop-sample/) to try the sample webshop.
+Visit [https://extdev.seqr.com/seqr-webshop-sample/](https://extdev.seqr.com/seqr-webshop-sample/) to try the sample webshop.
 
 The source code for sample webshop can be found at [https://github.com/SeamlessDistribution/seqr-webshop-sample](https://github.com/SeamlessDistribution/seqr-webshop-sample).
 
