@@ -1,6 +1,6 @@
 safe: true
 lsi: false
-highlighter: true
+highlighter: pygments
 title: SEQR for Developers
 markdown: kramdown
 exclude: ['Guardfile']
