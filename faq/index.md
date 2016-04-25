@@ -151,8 +151,10 @@ Below you can find answers to the most common questions that may occur during th
               Constant part is <b><font color="red">HTTP://SEQR.SE/Q</font></b> and dynamic part is <b>seqrId</b> of your choice.
               Example: Let say you've chosen <b><font color="green">0039394857311223</font></b> to be your seqrId.
               The URL based on which you will generate QRCode will be <b><font color="red">HTTP://SEQR.SE/Q</font><font color="green">0039394857311223</font></b></li>
-          <li>To generate QRCode you can use any generator you like for instance:
-              http://seqr.com/se-qr-web/qrgenerator?code=HTTP://SEQR.SE/Q0039394857311223</li></ol></div>
+          <li>To generate QRCode you can use any generator you like for instance: <br>
+              <span class="seqrhl"><a href="https://extdev.seqr.com/se-qr-web/qrgenerator?code=HTTP://SEQR.SE/Q0039394857311223" target="_blank">
+              https://extdev.seqr.com/se-qr-web/qrgenerator?code=HTTP://SEQR.SE/Q0039394857311223</a></span>
+          </li></ol></div>
     </div>
   </div>
 </div>
@@ -168,8 +170,10 @@ Below you can find answers to the most common questions that may occur during th
               Constant part is <b><font color="red">HTTP://SEQR.SE/Q</font></b> and dynamic part is <b>seqrId</b> of your choice.
               Example: Let say you've chosen <b><font color="green">0039394857311223</font></b> to be your seqrId.
               The URL based on which you will generate QRCode will be <b><font color="red">HTTP://SEQR.SE/Q</font><font color="green">0039394857311223</font></b></li>
-          <li>To generate QRCode you can use any generator you like for instance:
-              http://seqr.com/se-qr-web/qrgenerator?code=HTTP://SEQR.SE/Q0039394857311223</li>
+          <li>To generate QRCode you can use any generator you like for instance:<br>
+              <span class="seqrhl"><a href="https://extdev.seqr.com/se-qr-web/qrgenerator?code=HTTP://SEQR.SE/Q0039394857311223" target="_blank">
+              https://extdev.seqr.com/se-qr-web/qrgenerator?code=HTTP://SEQR.SE/Q0039394857311223</a></span>
+          </li>
         </ol></div>
     </div>
   </div>
