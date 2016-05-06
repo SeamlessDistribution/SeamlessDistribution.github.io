@@ -63,7 +63,7 @@ The rules governing the creation of a QR code are summarized in a table below.
    </tbody>
 </table>
 
-This parameter is so called JSON Web Token (JWT). More on that standard can be obtained from website: <a href="http://jwt.io/">http://jwt.io/</a>. Value of this parameter must conform to JWT standard. Usage of one of many implementations proposed on <a href="http://jwt.io/">jwt.io</a> website is suggested.
+This parameter is so called JSON Web Token (JWT). More on that standard can be obtained from website: <a href="http://jwt.io/">http://jwt.io</a>. Value of this parameter must conform to JWT standard. Usage of one of many implementations proposed on <a href="http://jwt.io/">jwt.io</a> website is suggested.
 
 JWT contains 2 parts that must be taken care of: header and payload. Both should be prepared as JSON data with following fields.
 
@@ -199,6 +199,16 @@ Let's assume our issuer name and secret are:
 | Issuer Name | example |
 | Secret | 5ecr3t |
 |---|---|---|
+
+Our header should be represented by JSON like:
+
+{% highlight python %}
+{
+  "alg": "HS256",
+  "typ": "JWT",
+  "iss": "example"
+}
+{% endhighlight %}
 
 We want to issue invoice with following data:
 

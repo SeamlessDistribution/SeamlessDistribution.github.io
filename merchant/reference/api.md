@@ -1491,7 +1491,7 @@ Please contact us if you are interested in using a customized receipt in the app
 	</tr>
 	<tr>
 		<td>invoiceReference</td>
-		<td>Reference of the invoice to be canceled.
+		<td>Reference of the invoice that refers to the commitment.
 			<ul>
 				<li>Type: <span class="seqrhl">string</span></li>
 				<li>Sample value: <span class="seqrhl">1397240460668</span></li>
