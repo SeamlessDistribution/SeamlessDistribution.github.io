@@ -18,32 +18,32 @@ Issuer is expected to expose a URL which will be called by SEQR Invoice service 
 | invoiceId | Unique identifier of an invoice in SEQR Invoice service. |
 |---|---|---|
 
-### Request example:
+### Notification request example:
 
 {% highlight python %}
 	{"invoiceId": 25153}
 {% endhighlight %}
 
-That id can be used to fetch invoice from our system. It may be fetched from following url:
+That invoiceId can be used then to fetch invoice details from SEQR system. It may be fetched from following invoice details URL:
 
 {% highlight python %}
-	https://<host_name>/api/invoice/<id>?issuer=<issuer_name>
+	https://<host_name>/api/invoice/{invoiceId}?issuer={issuer_name}
 {% endhighlight %}
 
-With following headers:
+The request should also contain following headers:
 
 |---|---|---|
 | Header | Content |
 |---|---|---|
-| X-AUTH-TOKEN | sha256 sum of issuer name concatenated with issuer secret. |
+| X-Auth-Token | sha256 sum of issuer name concatenated with issuer secret. |
 | Accept | application/json |
 |---|---|---|
 
-Query param 'issuer' and X-AUTH-TOKEN are required for authentication. It is impossible to fetch an invoice from another issuer.
+Query param <span class="seqrhl">issuer</span> and <span class="seqrhl">X-Auth-Token</span> are required for authentication. It is impossible to fetch an invoice from another issuer.
 
 Payload of the response details below. Please notice that the same information is available in a report which can be fetched by an issuer on demand.
 
-### Response example:
+### Invoice details response example:
 
 {% highlight python %}
 {
@@ -87,9 +87,5 @@ Payload of the response details below. Please notice that the same information i
 
 ### Notification retries
 
-When notifying issuer about new invoice SEQR Invoice requires http response code to be 200. In case of problems with connection or issuer's system malfunction and response other than 200 it will retry several times. First 3 attempts are made right after invoice is paid with about 10 seconds delays. Than retries are scheduled with growing delay length starting from 1 minute, then 3:45, 7:30, 15, 30 minutes and so on (length is two times longer than in previous attempt). It schedules notification 10 times rising delay to 16h in last attempt. This gives around 32h total to deal with any problem regarding notification receiving on issuer's side.
-<br>
-
-
-
-
+When notifying issuer about new invoice SEQR Invoice Service requires HTTP 200 response.
+<br>In case of problems with connection or issuer's system malfunction and response other than 200 it will retry several times. First 3 attempts are made right after invoice is paid with about 10 seconds delays. Than retries are scheduled with growing delay length starting from 1 minute, then 3:45, 7:30, 15, 30 minutes and so on (length is two times longer than in previous attempt). It schedules notification 10 times rising delay to 16h in last attempt. This gives around 32h total to deal with any problem regarding notification receiving on issuer's side.
