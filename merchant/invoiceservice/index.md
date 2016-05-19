@@ -259,9 +259,6 @@ And finally URL in QRCode:
 HTTP://SEQR.SE/000/invoice?j=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImlzcyI6ImV4YW1wbGUifQ.eyJhIjoiMjkuOTkiLCJjIjoiU0VLIiwiZCI6IlRlc3QgaW52b2ljZSIsInIiOiJSODIwOTE5IiwibyI6ImZhbHNlIn0.PwBs2SXHLMC3sofiSWayX180XM7i3wANOdZTjmXHmLg
 {% endhighlight %}
 
-Use this QR code generator to verify your implementation:
-<br><a href="http://cdn.seqr.com/seqr-services-dev/invite-service-qr-generator/single_qr.html">http://cdn.seqr.com/seqr-services-dev/invite-service-qr-generator/single_qr.html</a>.
-
 Below we present implementations in some popular programming languages using one of libraries suggested on <a href="http://jwt.io/">jwt.io</a> website.
 
 #### JavaScript with jsrsasign
