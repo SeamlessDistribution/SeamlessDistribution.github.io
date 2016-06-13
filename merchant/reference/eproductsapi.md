@@ -21,7 +21,7 @@ description: eProducts API reference
 # 1. eProducts API
 
 This is a description of our SOAP-WS-API for merchants, our test WSDL is available at: 
-http://extdev.kontantkort.nu/extclientproxy/client?wsdl
+<br><span class="seqrhl">http://extdev.kontantkort.nu/extclientproxy/client?wsdl</span>
 
 
 # 2. Function requests used for POS client integration 
@@ -128,8 +128,7 @@ Used for purchasing a voucher in a two-phase commit manner. ERS will only keep t
 |--- | --- | --- | --- | --- | 
 | channel | yes | String | WS | Needs to be set to WS|
 | clientId | yes | String | reseller123 | clientId provided by Seamless or from [here](/merchant/reference/signup.html) |
-|clientRequestTimeout | yes | decimal | 0 | Timeout requested from the client´s side.
-We highly recommend to leave it to zero for an immediate response. Use different than 0 only if it´s a special situation. |
+|clientRequestTimeout | yes | decimal | 0 | Timeout requested from the client´s side. We highly recommend to leave it to zero for an immediate response. Use different than 0 only if it´s a special situation. |
 | clientUserId | yes | decimal | 9900 | Use 9900 unless provided with different clientUserId |
 | password | yes | String | p@55w0Rd | password provided by Seamless or from [here](/merchant/reference/signup.html) |
 | clientComment | no | String | Some comment | Can be used to add additional information from the client system |
@@ -536,7 +535,6 @@ Allows to generate reports.
                   <align=3><left>Product<center>Count<right>Amount
                   <line>
                   <br>
-                  
                   <line>
                   <align=3><left>Total<center>0<right>0,00 SEK
                   <line>
@@ -602,15 +600,12 @@ Allows to generate reports.
                <content>Cgo8YnI+Cj...</content>
                <contentString><![CDATA[<br>
                   <img=seamless.bmp><br><br>
-                  
                   <center><large>Reseller Information
                   <line><normal>
-                  
                   <br><align=2><left>Reseller ID<right>DIST1
                   <br><align=2><left>Terminal ID<right>?terminalId(terminalId)?
                   <br><align=2><left>A/C status<right>Active
                   <br>
-                  
                   <line>
                   <br><align=2><left>Balance<right>0,00 SEK
                   <br>
@@ -685,7 +680,6 @@ Allows to generate reports.
                <content>Cgo8YnI+...</content>
                <contentString><![CDATA[<br>
                   <img=seamless.bmp><br><br>
-                  
                   <center><large>Sales Summary over period
                   <line><normal>
                   <br>
@@ -698,7 +692,6 @@ Allows to generate reports.
                   <align=3><left>Product<center>Count<right>Amount
                   <line>
                   <br>
-                  
                   <line>
                   <align=3><left>Total<center>0<right>0,00 SEK
                   <line>
