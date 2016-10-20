@@ -16,6 +16,9 @@ description: eProducts API reference
 	* [cancelTransaction](#canceltransaction)
 4. [Optional Methods](#optional-methods)
 	* [executeReport](#executereport)
+	* [getProductsListCount](#getProductsListCount)
+	* [getProductListBySequence](#getProductListBySequence)
+	* [getReceipt](#getReceipt)
 5. [Response Codes](#response-codes)
 
 # 1. eProducts API
@@ -551,7 +554,6 @@ Allows to generate reports.
 
 [Up](#table-of-content)
 
-
 #### executeReport RESELLER_INFO example
 
 {% highlight python %}
@@ -702,6 +704,259 @@ Allows to generate reports.
             </reportData>
          </return>
       </ns2:executeReportResponse>
+   </soap:Body>
+</soap:Envelope>
+{% endhighlight %}
+
+[Up](#table-of-content)
+
+### getProductListCount 
+Returns number of active product available in EVD system.
+
+#### getProductListCount request
+
+|--- | --- | --- | --- | --- | 
+|  Field 					| Required | Type | Sample Value | Description |
+|--- | --- | --- | --- | --- | 
+| context/channel			| yes | String | WS | Needs to be set to WS|
+| clientId 					| yes | String | reseller123 | clientId provided by Seamless or from [here](/merchant/reference/signup.html) |
+| clientRequestTimeout 	| yes | decimal | 0 | Timeout requested from the client´s side. We highly recommend to leave it to zero for an immediate response. Use different than 0 only if it´s a special situation. |
+| clientUserId 			| yes | decimal | 9900 | Use 9900 unless provided with different clientUserId |
+| password 					| yes | String | p@55w0Rd | password provided by Seamless or from [here](/merchant/reference/signup.html) |
+|--- | --- | --- | --- | --- | 
+
+#### getProductListCount response
+
+|--- | --- | --- | --- |
+| Field | Type | Sample value | Description |
+|--- | --- | --- | --- |
+| errorDescription | String | SUCCESS | Description of the status of the response |
+| resultCode | decimal | 0 | Response result code. See posible result codes at the bottom of this page |
+| ersReference | String | 2016082314483437301000028 | Trackable number for the request in EVD System |
+| totalCount | decimal | 28 | Number of total active products in EVD System |
+|--- | --- | --- | --- | 
+
+[Up](#table-of-content)
+
+#### getProductListCount example
+
+{% highlight python %}
+<!--REQUEST-->
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ext="http://externalws.client.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ext:getProductListCount>         
+         <context>           
+            <channel>WS</channel>           
+            <clientId>LAT_DIST1</clientId>
+            <clientRequestTimeout>0</clientRequestTimeout>           
+            <clientUserId>webuser</clientUserId>            
+            <password>20162016</password>
+         </context>
+      </ext:getProductListCount>
+   </soapenv:Body>
+</soapenv:Envelope>
+{% endhighlight %}
+
+
+{% highlight python %}
+<!--RESPOSNE-->
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getProductListCountResponse xmlns:ns2="http://externalws.client.ers.seamless.com/">
+         <return>
+            <errorDescription>Success</errorDescription>
+            <ersReference>2016082312414101201000020</ersReference>
+            <resultCode>0</resultCode>
+            <totalCount>28</totalCount>
+         </return>
+      </ns2:getProductListCountResponse>
+   </soap:Body>
+</soap:Envelope>
+{% endhighlight %}
+
+[Up](#table-of-content)
+
+### getProductListBySequence 
+Returns list of available product as per valid start sequence and end sequence.
+
+#### getProductListBySequence request
+
+|--- | --- | --- | --- | --- | 
+|  Field 					| Required | Type | Sample Value | Description |
+|--- | --- | --- | --- | --- | 
+| context/channel			| yes | String | WS | Needs to be set to WS|
+| clientId 					| yes | String | reseller123 | clientId provided by Seamless or from [here](/merchant/reference/signup.html) |
+| clientRequestTimeout 	| yes | decimal | 0 | Timeout requested from the client´s side. We highly recommend to leave it to zero for an immediate response. Use different than 0 only if it´s a special situation. |
+| clientUserId 			| yes | decimal | 9900 | Use 9900 unless provided with different clientUserId |
+| password 					| yes | String | p@55w0Rd | password provided by Seamless or from [here](/merchant/reference/signup.html) |
+| startSeq 					| yes | decimal | 0 |  Zero or Valid positive number less than getProductListCount return value |
+| endSeq 					| yes | decimal | 10 | Zero or Valid positive number less than getProductListCount return value |
+|--- | --- | --- | --- | --- | 
+
+#### getProductListBySequence response
+
+|--- | --- | --- | --- |
+| Field | Type | Sample value | Description |
+|--- | --- | --- | --- |
+| errorDescription | String | SUCCESS | Description of the status of the response |
+| resultCode | decimal | 0 | Response result code. See posible result codes at the bottom of this page |
+| ersReference | String | 2016082314483437301000028 | Trackable number for the request in EVD System |
+| suppliers/name | String | BITE | Supplier Name |
+| products/customerPrice/currency | String | EUR | Currency Code |
+| products/customerPrice/value | decimal | 1.42 | Product Price |
+| products/ean | String | 4751022250015 | Product EAN |
+| products/name | String | Bites papildināšanas kods 1.42 EUR | Product Name |
+| products/sku | String | 450104 | Product SKU |
+|--- | --- | --- | --- | 
+
+[Up](#table-of-content)
+
+#### getProductListBySequence example
+
+{% highlight python %}
+<!--REQUEST-->
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ext="http://externalws.client.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ext:getProductListBySequence>
+        <context>
+            <channel>WEB</channel>
+            <clientId>LAT_DIST1</clientId>
+            <clientRequestTimeout>30000</clientRequestTimeout>
+            <clientUserId>webuser</clientUserId>
+            <password>20162016</password>
+         </context>
+         <startSeq>0</startSeq>
+         <endSeq>2</endSeq>
+      </ext:getProductListBySequence>
+   </soapenv:Body>
+</soapenv:Envelope>
+{% endhighlight %}
+
+
+{% highlight python %}
+<!--RESPOSNE-->
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getProductListBySequenceResponse xmlns:ns2="http://externalws.client.ers.seamless.com/">
+         <return>
+            <errorDescription>Success</errorDescription>
+            <ersReference>2016082314483437301000028</ersReference>
+            <resultCode>0</resultCode>
+            <suppliers>
+               <name>BITE</name>
+               <products>
+                  <customerPrice>
+                     <currency>EUR</currency>
+                     <value>1.42</value>
+                  </customerPrice>
+                  <ean>4751022250015</ean>
+                  <name>Bites papildināšanas kods 1.42 EUR</name>
+                  <sku>450104</sku>
+               </products>
+               <products>
+                  <customerPrice>
+                     <currency>EUR</currency>
+                     <value>3</value>
+                  </customerPrice>
+                  <ean>4751022250022</ean>
+                  <name>Bites papildināšanas kods 3 EUR</name>
+                  <sku>450105</sku>
+               </products>
+               <products>
+                  <customerPrice>
+                     <currency>EUR</currency>
+                     <value>5</value>
+                  </customerPrice>
+                  <ean>4751022250039</ean>
+                  <name>Bites papildināšanas kods 5 EUR</name>
+                  <sku>450106</sku>
+               </products>
+            </suppliers>
+         </return>
+      </ns2:getProductListBySequenceResponse>
+   </soap:Body>
+</soap:Envelope>
+{% endhighlight %}
+
+[Up](#table-of-content)
+
+### getReceipt 
+Return a receipt for reseller or subscriber based on "receiptType" param.
+
+#### getReceipt request
+
+|--- | --- | --- | --- | --- | 
+|  Field 					| Required | Type | Sample Value | Description |
+|--- | --- | --- | --- | --- | 
+| context/channel			| yes | String | WS | Needs to be set to WS|
+| clientId 					| yes | String | reseller123 | clientId provided by Seamless or from [here](/merchant/reference/signup.html) |
+| clientRequestTimeout 	| yes | decimal | 0 | Timeout requested from the client´s side. We highly recommend to leave it to zero for an immediate response. Use different than 0 only if it´s a special situation. |
+| clientUserId 			| yes | decimal | 9900 | Use 9900 unless provided with different clientUserId |
+| password 					| yes | String | p@55w0Rd | password provided by Seamless or from [here](/merchant/reference/signup.html) |
+| ersReference				| yes | String | 2016082312381671501000013 |  Trackable number for the request in EVD System. This number actually is a transaction number, buyVoucher was called |
+| receiptType				| yes | String | RESELLER | The value of this should be 'RESELLER' or 'SUBSCRIBER'. In case of other input no receipt will return |
+|--- | --- | --- | --- | --- | 
+
+#### getReceipt response
+
+|--- | --- | --- | --- |
+| Field | Type | Sample value | Description |
+|--- | --- | --- | --- |
+| errorDescription | String | SUCCESS | Description of the status of the response |
+| resultCode | decimal | 0 | Response result code. See posible result codes at the bottom of this page |
+| ersReference | String | 2016082314483437301000028 | Trackable number for the request in EVD System |
+| receipt | String | BITE | The actual receipt text for reseller or subscriber |
+|--- | --- | --- | --- | 
+
+[Up](#table-of-content)
+
+#### getReceipt example
+
+{% highlight python %}
+<!--REQUEST-->
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ext="http://externalws.client.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ext:getReceipt>
+         <context>
+            <channel>WS</channel>
+            <clientId>LAT_DIST1</clientId>
+            <clientRequestTimeout>30000</clientRequestTimeout>
+            <clientUserId>webuser</clientUserId>
+            <password>20162016</password>
+         </context>
+         <ersReference>2016082312381671501000013</ersReference>
+         <receiptType>RESELLER</receiptType>
+      </ext:getReceipt>
+   </soapenv:Body>
+</soapenv:Envelope>
+{% endhighlight %}
+
+
+{% highlight python %}
+<!--RESPOSNE-->
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getReceiptResponse xmlns:ns2="http://externalws.client.ers.seamless.com/">
+         <return>
+            <errorDescription>SUCCESS</errorDescription>
+            <resultCode>0</resultCode>
+            <receipt>lat_dist1
+				Bites papildināšanas kods 8 EUR
+				BITE
+				2016/08/23 10:08:18
+				1340001
+			</receipt>
+         </return>
+      </ns2:getReceiptResponse>
    </soap:Body>
 </soap:Envelope>
 {% endhighlight %}
