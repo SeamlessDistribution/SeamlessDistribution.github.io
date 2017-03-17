@@ -25,7 +25,7 @@ On this page you will find information how to set up integration of SEQR Instant
 
 All starts with user scanning QR code on your web-shop.
 
-<img src="/assets/images/ups/ups_diagram.png" width="500px"/>
+<img src="/assets/images/ups/ups_diagram.png" />
 
 |---| --- | --- | --- |
 | method/service | exposed by | part of API | description |
