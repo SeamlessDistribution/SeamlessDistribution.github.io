@@ -39,7 +39,7 @@ All starts with user scanning QR code on your unattended POS.
 # Flow description
 
 1. Customer scanns QRCode placed on sel-service machine using SEQR app.
-2. SEQR Unattended Payments service calls createPurchase exposed by reseller sending JSON with purchaseToken (machine id).
+2. SEQR Unattended Payments service calls createPurchase exposed by reseller sending JSON with token (machine id).
 3. Reseller calls sendInvoice exposed by SEQR and returns the invoice reference to SEQR Unattended Payments service.
 4. Reservation details are presented to customer.
 5. Customer confirms reservation with PIN number.
@@ -74,8 +74,8 @@ Body:
 |--|---|
 | parameter | description |
 |--|---|
-| reservationToken | This is identifier of self-service machine or purchase. |
-| reservationAmount | Max reservation amount for which invoice should be created by reseller. |
+| token | This is identifier of self-service machine or purchase. |
+| amount | Max reservation amount for which invoice should be created by reseller. |
 | currency | Currency of reservation amount. |
 | msisdn | Customer's phone number. |
 |--|---|
@@ -119,7 +119,7 @@ Body:
 |--|---|
 | parameter | description |
 |--|---|
-| INSUFFICIENT_FUNDS | reservationAmount is to low to start the payment flow on reseller's side. Eg. reservationAmount is lower than cheapest product in self-service machine. |
+| INSUFFICIENT_FUNDS | amount is to low to start the payment flow on reseller's side. Eg. reservationAmount is lower than cheapest product in self-service machine. |
 | DEVICE_IN_USE | Device is already used by another customer. Someone else scanned qrCode, agreed for purchase but didn't choose the product yet. |
 | DEVICE_UNAVAILABLE | Self-service machine is out of service. |
 | INVOICING_ERROR | Error occurred while calling sendInvoice exposed by SEQR (SEQR Payment API). |
