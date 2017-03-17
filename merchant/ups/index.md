@@ -32,8 +32,8 @@ All starts with user scanning QR code on your web-shop.
 |---| --- | --- | --- |
 | createPurchase | reseller | [SEQR Instant Checkout](/merchant/reference/instantcheckoutapi.html) | REST service called by SEQR Instant chekout service once user scanned QR Code from web-shop page. URL has to be HTTPS and end with "createPurchase" (for example https://yourdomain.name.com/seqr/createPurchase).  |
 | sendInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop triggered by createPurchase request. This method creates invoice on SEQR side and returns it's reference number (invoiceReference). By calling this method web-shop provides also <b>notificationUrl</b> to be used for callbacks. |
-| notification callback service | web-shop | [SEQR Payment](/merchant/reference/api.html) | <b>notificationUrl</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed payment. |
-| updateInvoice | SEQR | SOAP method called by reseller after user choose products from self-service machine to update rows and totalAmount of final invoice. |
+| notification callback service | reseller | [SEQR Payment](/merchant/reference/api.html) | <b>notificationUrl</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed payment. |
+| updateInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller after user choose products from self-service machine to update rows and totalAmount of final invoice. |
 | commitReservation | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller to finalise payment process. |
 |--- | --- | --- | --- |
 
@@ -68,7 +68,7 @@ Headers: "Accept: application/json;Content-Type: application/json;charset=UTF-8"
 Body:
 {
     "reservationToken": "29834231890234",
-    "reservationAmount": "20.0",
+    "reservationAmount": "20.00",
     "currency": "EUR",
     "msisdn": "483344323423"
 }
