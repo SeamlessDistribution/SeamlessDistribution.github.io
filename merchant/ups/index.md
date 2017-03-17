@@ -8,7 +8,7 @@ description: SEQR Unattended Payments Service
 
 SEQR Unattended Payments Service (UPS) is service that allows your unattended POS to integrate with SEQR.
 
-On this page you will find information how to proceed the integration with UPS.
+On this page you will find information how to proceed with UPS integration.
 
 # Actors
 
