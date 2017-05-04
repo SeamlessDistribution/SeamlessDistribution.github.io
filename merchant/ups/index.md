@@ -51,14 +51,14 @@ All starts with user scanning QR code on your unattended POS.
 
 # SEQR Unattended Payment Service QR code scheme
 
-Qr code should have schema:
+Qr code should have scheme:
 
 {% highlight python %}
 HTTP://SEQR.SE/000/ups?w=merchantId&t=123456
 {% endhighlight %}
 where:
-* w - <b>merchantId</b> sent in start-up kit (usually the same as resellerId)
-* t - <b>token</b> (machine id) that will be passed in createPurchase request to merchant
+* <b>w</b> - merchantId sent in start-up kit (usually the same as resellerId)
+* <b>t</b> - token (machine id) that will be passed in createPurchase request to merchant
 
 # SEQR Unattended Payment Service API
 
