@@ -76,7 +76,7 @@ Headers: "Accept: application/json;Content-Type: application/json;charset=UTF-8"
 Body:
 {
     "token": "29834231890234",
-    "amount": "20.00",
+    "amount": 20.00,
     "currency": "EUR",
     "msisdn": "483344323423"
 }
