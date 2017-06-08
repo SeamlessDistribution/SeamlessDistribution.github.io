@@ -22,7 +22,7 @@ On this page you will find information how to proceed with UPS integration.
 
 All starts with user scanning QR code on your unattended POS.
 
-<img src="/assets/images/ups/ups_diagram.png" />
+<img src="/assets/images/ups/UPS_diagram.png" />
 
 |---| --- | --- | --- |
 | method/service | exposed by | part of API | description |
