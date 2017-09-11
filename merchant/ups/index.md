@@ -29,7 +29,8 @@ All starts with user scanning QR code on your unattended POS.
 |---| --- | --- | --- |
 | createPurchase | reseller | [SEQR Unattended Payment Service](#seqr-unattended-payment-service-api) | REST service called by SEQR Unattended Payment Service once user scanned QR Code on unattended POS. URL has to be HTTPS and end with "createPurchase" (for example https://yourdomain.name.com/seqr/createPurchase).  |
 | sendInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller backend triggered by createPurchase request. This method creates invoice on SEQR side and returns it's reference number (invoiceReference). By calling this method reseller provides also <b>notificationUrl</b> to be used for callbacks. |
-| notification callback service | reseller | [SEQR Payment](/merchant/reference/api.html) | <b>notificationUrl</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed payment. |
+| notification callback service | reseller | [SEQR Payment](/merchant/reference/api.html) | <b>notificationUrl</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed or cancelled payment. |
+| getPaymentStatus | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller backend triggered by notification callback. Returns payment status - RESERVED or CANCELLED. |
 | updateInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller after user choose products from self-service machine to update rows and totalAmount of final invoice. |
 | commitReservation | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller to finalise payment process. |
 |--- | --- | --- | --- |
@@ -42,10 +43,11 @@ All starts with user scanning QR code on your unattended POS.
 2. SEQR Unattended Payments service calls createPurchase exposed by reseller sending JSON with token (machine id).
 3. Reseller calls sendInvoice exposed by SEQR and returns the invoice reference to SEQR Unattended Payments service.
 4. Reservation details are presented to customer.
-5. Customer confirms reservation with PIN number.
+5. Customer confirms or cancels reservation with PIN number.
 6. SEQR calls notificationUrl provided in sendInvoice request.
+6. Reseller calls getPaymentStatus and retrieves reservation status. If RESERVED merchants proceeds to next steps.
 7. Reseller unlocks self-service machine allowing user to choose the products.
-8. Customer choose products from self-service machine.
+8. Customer chooses products from self-service machine.
 9. Reseller calls updateInvoice exposed by SEQR to change details of invoice that user will see in SEQR app.
 10. Reseller calls commitReservation to commit transaction with final amount.
 
