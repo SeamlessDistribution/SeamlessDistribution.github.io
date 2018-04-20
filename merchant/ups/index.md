@@ -52,6 +52,17 @@ All starts with user scanning QR code on your web-shop.
 9. Reseller calls updateInvoice exposed by SEQR to change details of invoice that user will see in SEQR app.
 10. Reseller calls commitReservation to commit transaction with final amount.
 
+# SEQR Unattended Payment Service QR code scheme
+
+Qr code should have scheme:
+
+{% highlight python %}
+HTTP://SEQR.SE/000/ups?w=merchantId&t=123456
+{% endhighlight %}
+where:
+* <b>w</b> - merchantId sent in start-up kit (usually the same as resellerId)
+* <b>t</b> - token (machine id) that will be passed in createPurchase request to merchant
+
 # SEQR Unattended Payment Service API
 
 At this point our SEQR Unattended Payment Service API is based on one REST method - createPurchase which is required to be exposed by reseller.
@@ -68,7 +79,7 @@ Headers: "Accept: application/json;Content-Type: application/json;charset=UTF-8"
 Body:
 {
     "reservationToken": "29834231890234",
-    "reservationAmount": "20.0",
+    "reservationAmount": "20.00",
     "currency": "EUR",
     "msisdn": "483344323423"
 }
