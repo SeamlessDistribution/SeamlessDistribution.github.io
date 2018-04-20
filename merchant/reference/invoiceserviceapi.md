@@ -1,21 +1,21 @@
 ---
 layout: default
-title: SEQR Invoice Service
-description: SEQR Invoice Service API
+title: Glase Invoice Service
+description: Glase Invoice Service API
 ---
 
-# SEQR Invoice Service API
+# Glase Invoice Service API
 
-At this point our SEQR Invoice Service API is based on one REST method  -  which is required to be exposed by invoice issuer.
+At this point our Glase Invoice Service API is based on one REST method  -  which is required to be exposed by invoice issuer.
 
 # Notification Service
 
-Issuer is expected to expose a URL which will be called by SEQR Invoice service using HTTP POST with JSON payload about an invoice which has just been paid. The description of JSON request payload is presented in a table below:
+Issuer is expected to expose a URL which will be called by Glase Invoice service using HTTP POST with JSON payload about an invoice which has just been paid. The description of JSON request payload is presented in a table below:
 
 |---|---|---|
 | Parameter name | Description |
 |---|---|---|
-| invoiceId | Unique identifier of an invoice in SEQR Invoice service. |
+| invoiceId | Unique identifier of an invoice in Glase Invoice service. |
 |---|---|---|
 
 ### Notification request example:
@@ -24,7 +24,7 @@ Issuer is expected to expose a URL which will be called by SEQR Invoice service 
 	{"invoiceId": 25153}
 {% endhighlight %}
 
-That invoiceId can be used then to fetch invoice details from SEQR system. It may be fetched from following invoice details URL:
+That invoiceId can be used then to fetch invoice details from Glase system. It may be fetched from following invoice details URL:
 
 {% highlight python %}
 	https://<host_name>/api/invoice/{invoiceId}?issuer={issuer_name}

@@ -1,15 +1,15 @@
 ---
 layout: default
-title: SEQR Webshop Payments
+title: Glase Webshop Payments
 description: SEQR Merchant, webshop, POS integration
 ---
 
 
-# SEQR payment in a Webshop
+# Glase payment in a Webshop
 
 If your webshop is based on an eCommerce platform check our [eCommerce plugin page](/plugins).
 
-To integrate your webshop with SEQR, you need to add SEQR payment in your “Check out” process where your customer normally selects between payment methods. This is an example of a checkout that supports SEQR:
+To integrate your webshop with Glase, you need to add Glase payment in your “Check out” process where your customer normally selects between payment methods. This is an example of a checkout that supports Glase:
 
 <img src="/assets/images/seqr_webshop.png" />
 
@@ -18,20 +18,20 @@ To integrate your webshop with SEQR, you need to add SEQR payment in your “Che
 
 ## Integration procedure
 
-Follow these steps to integrate your webshop with SEQR:
+Follow these steps to integrate your webshop with Glase:
 
 1. Implement the required methods.
-2. Add SEQR as payment in your webshop.
+2. Add Glase as payment in your webshop.
 3. Present the receipt.
 4. Verify your integration.
 5. Go live!
 
 ### Implement the required methods
 
-The flow for a webshop SEQR payment is very similar to [Basic SEQR
+The flow for a webshop Glase payment is very similar to [Basic Glase
 payment](/merchant/payment), with the **sendInvoice** request.
 The difference is that polling for payment status is handled by a payment view,
-which also handles showing the QR code to the SEQR user. You still need to request
+which also handles showing the QR code to the Glase user. You still need to request
 the status of the payment after the payment view returns, but only once to find
 out the final status of the invoice.
 
@@ -40,7 +40,7 @@ The methods required in a basic integration are:
 |--- | --- |
 |  Method | Description |
 |--- | --- |
-| sendInvoice | Sends an invoice to SEQR server |
+| sendInvoice | Sends an invoice to Glase server |
 | getPaymentStatus | Obtains status of a previously submitted invoice |
 | refundPayment | Refunds a previous payment, partly or the whole sum |
 | --- | --- |
@@ -54,39 +54,39 @@ For an extended integration, also these methods can be used:
 | updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
 | cancelInvoice | Cancels an unpaid invoice. Can be triggered after defined timeout |
 | markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
-| executeReport | Executes a report on SEQR server |
+| executeReport | Executes a report on Glase server |
 | --- | --- |
 
 
 Refer to section [API](/merchant/reference/api.html) for detailed description.
 
 
-### Add SEQR as payment in your webshop  
+### Add Glase as payment in your webshop  
 
 #### 1. Send the invoice
 
-Start by creating an invoice and sending it to the SEQR server using sendInvoice.
+Start by creating an invoice and sending it to the Glase server using sendInvoice.
 
 _Tip:_ Have a look at our [example webshop api](https://github.com/SeamlessDistribution/seqr-webshop-api) to see how sendInvoice or getPaymentStatus using PHP.
 
 #### 2. Get payment status
 
-Use the sendInvoice response to present a QR code. For mobile browsers (e.g. on smartphones) make a redirection (button, link or clickable QRCode) in your webshop, which launches the SEQR app, using the QR code URL returned from the sendInvoice request: Replace the “HTTP:” header with “seqr:” that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use seqr://SEQR.SE/R12345. The reason for that is that you can’t scan QRCode from page that is being browsed on your phone using the same phone.
+Use the sendInvoice response to present a QR code. For mobile browsers (e.g. on smartphones) make a redirection (button, link or clickable QRCode) in your webshop, which launches the Glase app, using the QR code URL returned from the sendInvoice request: Replace the “HTTP:” header with “seqr:” that is, if sendInvoice returns HTTP://SEQR.SE/R12345, the button/link should instead use seqr://SEQR.SE/R12345. The reason for that is that you can’t scan QRCode from page that is being browsed on your phone using the same phone.
 
 _Tip:_ To easily add a QR code or button you can use our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
 
 #### 3. Poll payment status
 
 Once the payment is completed, your webshop should query the status of the invoice
-from SEQR by calling **getPaymentStatus**. On a mobile browser, this request is triggered by the user
-leaving SEQR app and returning to the webshop app, but if the user does not return to the webshop app,
+from Glase by calling **getPaymentStatus**. On a mobile browser, this request is triggered by the user
+leaving Glase app and returning to the webshop app, but if the user does not return to the webshop app,
 then the payment will be canceled (see also the Note below). To avoid this, a notificationURL can be
-implemented; for more information see the webshop plugin referred to below as well as the use case below: [Use Case 2: SEQR payment using mobile browser](#UseCase2).
+implemented; for more information see the webshop plugin referred to below as well as the use case below: [Use Case 2: Glase payment using mobile browser](#UseCase2).
 
 
 **Note!** The web server must check the status each second, to verify that payment is completed.
-Otherwise SEQR server does not receive any notification that transaction is finalized and the payment will then be reversed (canceled)!
-This request should be triggered from a javascript timer on the website, so when SEQR user closes the window or moves away from the payment page, the polling stops.
+Otherwise Glase server does not receive any notification that transaction is finalized and the payment will then be reversed (canceled)!
+This request should be triggered from a javascript timer on the website, so when Glase user closes the window or moves away from the payment page, the polling stops.
 Another benefit is that you do not need to have a polling-loop on your backend, which will improve your webshop’s server performance.
 
 _Tip:_  You can skip polling if you are using our [webshop plugin](https://github.com/SeamlessDistribution/seqr-webshop-plugin).
@@ -94,16 +94,16 @@ _Tip:_  You can skip polling if you are using our [webshop plugin](https://githu
 ### Present the receipt
 
 If the invoice was successfully paid, a reference number (ersReference) is obtained from
-SEQR. Save the reference number for follow-ups and for print on the SEQR user's
+Glase. Save the reference number for follow-ups and for print on the Glase user's
 online confirmation receipt.
 
 ### Verify your integration
 
-Verify that your integration works and run validation tests towards SEQR servers. [Contact](/contact) Seamless for more information.
+Verify that your integration works and run validation tests towards Glase servers. [Contact](/contact) Glase for more information.
 
 ### Go live!
 
-To go live with your integration, [contact](/contact) Seamless to get [certified](/merchant/reference/certification.html).
+To go live with your integration, [contact](/contact) Glase to get [certified](/merchant/reference/certification.html).
 
 # Examples
 
@@ -118,7 +118,7 @@ The source code for the webshop plugin can be found at [https://github.com/Seaml
 
 # Common use cases
 
-## Use Case 1: SEQR payment using browser
+## Use Case 1: Glase payment using browser
 
 <div class="diagram">
 @startuml
@@ -213,7 +213,7 @@ Payment status must be called immediately when the notificationUrl is called. Fa
 
 The customer's session must be updated with the payment status from step 30. This payment status is returned to the web browser using the mechanism from step 12.
 
-## Use Case 2: SEQR payment using mobile browser <a name="UseCase2"></a>
+## Use Case 2: Glase payment using mobile browser <a name="UseCase2"></a>
 
 <div class="diagram">
 @startuml
@@ -283,7 +283,7 @@ WebServer->Browser: Receipt page
 
 ### Step 9. sendInvoice
 
-A backURL parameter is optional. If it is provided the SEQR application will load the URL in a browser when the customer has confirmed payment (step 27).
+A backURL parameter is optional. If it is provided the Glase application will load the URL in a browser when the customer has confirmed payment (step 27).
 
 ### Step 23. getPaymentStatus
 

@@ -1,14 +1,14 @@
 ---
 layout: default
-title: SEQR Reporting and Reconciliation
-description: SEQR Reporting Reconciliation
+title: Glase Reporting and Reconciliation
+description: Glase Reporting Reconciliation
 ---
 
 # Reporting and reconciliation
 
 To check and confirm that cash register/shop has the same number of transactions
-as SEQR service, merchants can integrate towards the reconciliation feature of
-SEQR service.
+as Glase service, merchants can integrate towards the reconciliation feature of
+Glase service.
 
 Reconciliation is provided with the following calls:
 
@@ -20,24 +20,24 @@ transaction period; used in reporting.
 <div class="diagram">
 @startuml
 skinparam monochrome true
-Cashregister->SEQR: markTransactionPeriod
-SEQR-->Cashregister: ersReference
-Cashregister->SEQR: executeReport (ersReference)
-SEQR-->Cashregister: REPORT_NOT_READY
-Cashregister->SEQR: executeReport (ersReference)
-SEQR-->Cashregister: XML report contents
+Cashregister->Glase: markTransactionPeriod
+Glase-->Cashregister: ersReference
+Cashregister->Glase: executeReport (ersReference)
+Glase-->Cashregister: REPORT_NOT_READY
+Cashregister->Glase: executeReport (ersReference)
+Glase-->Cashregister: XML report contents
 @enduml
 </div>
 
 ## Procedure to reconcile transactions and create report
 
-The following are steps to perform reconciliation against SEQR from points of sale:
+The following are steps to perform reconciliation against Glase from points of sale:
 
 1. At the end of a working shift or shop hour, a cashier presses a button 'Close & Reconcile' on a point of sale.
-The cash register sends **markTransactionPeriod** request to SEQR to mark end of transactions list for this period. SEQR returns with a unique reference number, ersReference.
+The cash register sends **markTransactionPeriod** request to Glase to mark end of transactions list for this period. Glase returns with a unique reference number, ersReference.
 2. The point of sale waits for a couple of seconds (around 3 seconds) in order to make sure that all transactions are ready to process for reconciliation report.
 3. The point of sale calls **executeReport** using ersReference from step 1 to fetch reconciliation report representing transaction summary since the previous reconciliation until the end of transaction list for this period. The report to be specified, using executeReport, depends on whether it is per shop or per terminal reconciliation, see below.
-4. In case the reconciliation report is not ready, SEQR will return with result code 2
+4. In case the reconciliation report is not ready, Glase will return with result code 2
 (REPORT_NOT_READY). The cashier should wait for couple seconds (around 3 seconds) more and repeat
 step 3 again.
 

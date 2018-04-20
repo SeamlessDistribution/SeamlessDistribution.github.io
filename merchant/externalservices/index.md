@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SEQR External Service Payment
+title: Glase External Service Payment
 description: SEQR Merchant, webshop, Service integration
 ---
 

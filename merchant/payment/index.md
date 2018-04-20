@@ -6,12 +6,12 @@ description: SEQR Merchant, webshop, POS integration
 
 <img src="/assets/images/cash_register_bw.png" align="right" width="200px"/>
 
-# Basic SEQR payment
+# Basic Glase payment
 
 Make a test purchase:
 
 1. Create a bill and publish it to the app
-2. Pay using SEQR app
+2. Pay using Glase app
 3. Check the payment status
 
 The example uses [public credentials](../reference/signup.html) that you can use for testing. 
@@ -62,9 +62,9 @@ invoiceResponse = client.service.sendInvoice(context, invoice)
 {% endhighlight %}
 
 
-## Pay using SEQR app
+## Pay using Glase app
 
-Download and install SEQR app, refer to [Get SEQR app](../../app/).
+Download and install Glase app, refer to [Get Glase app](../../app/).
 
 
 ## Check for payment status
@@ -80,7 +80,7 @@ while response.resultCode == 0 and response.status == "ISSUED":
 
 
 **Note!** 
-The point of sale must check the status each second, to verify that payment is completed. Otherwise the SEQR server does not receive any notification that transaction is finalized and the purchase will then be reversed!
+The point of sale must check the status each second, to verify that payment is completed. Otherwise the Glase server does not receive any notification that transaction is finalized and the purchase will then be reversed!
 
 
 
@@ -89,5 +89,5 @@ The point of sale must check the status each second, to verify that payment is c
 
 
 ## Try more functions
-So this is the core of SEQR payments. The same flow, more or less, can be used
+So this is the core of Glase payments. The same flow, more or less, can be used
 in all the payment scenarios you see in the next section.

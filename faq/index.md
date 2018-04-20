@@ -36,7 +36,7 @@ Below you can find answers to the most common questions that may occur during th
     display: inline-block;
     cursor: pointer;
     font-weight: bold;
-    color: #2EAE9B;
+    color: #2D7AA9;
 }
  
 .faq_answer_container {
@@ -55,7 +55,7 @@ Below you can find answers to the most common questions that may occur during th
 <ul>
 <div class="faq_container">
   <div class="faq">
-      <div class="faq_question"><li>I've been using /extclientproxy/service?wsdl and now I'm trying to use /soap/merchant/cashregister-2?wsdl but after scanning QR code in SEQR app there is still “waiting for amount...” info even after calling sendInvoice by my point of sale. Why?</li></div>
+      <div class="faq_question"><li>I've been using /extclientproxy/service?wsdl and now I'm trying to use /soap/merchant/cashregister-2?wsdl but after scanning QR code in Glase app there is still “waiting for amount...” info even after calling sendInvoice by my point of sale. Why?</li></div>
       <div class="faq_answer_container">
         <div class="faq_answer">Probably the reason is missing
           <pre>
@@ -109,7 +109,7 @@ Below you can find answers to the most common questions that may occur during th
 </div>
 <div class="faq_container">
   <div class="faq">
-    <div class="faq_question"><li>I've downloaded SEQR Android application, and registered but I can't pay in my store. Why?</li></div>
+    <div class="faq_question"><li>I've downloaded Glase Android application, and registered but I can't pay in my store. Why?</li></div>
     <div class="faq_answer_container">
       <div class="faq_answer">Make sure you have chosen <b>Extdev</b> server from the list during registration.</div>
     </div>
@@ -117,7 +117,7 @@ Below you can find answers to the most common questions that may occur during th
 </div>
 <div class="faq_container">
   <div class="faq">
-    <div class="faq_question"><li>I want to integrate my webshop with SEQR - do I have to implement all methods on my own?</li></div>
+    <div class="faq_question"><li>I want to integrate my webshop with Glase - do I have to implement all methods on my own?</li></div>
     <div class="faq_answer_container">
       <div class="faq_answer">You can implement all methods on your own the way you like. You can also use our <a href="https://github.com/SeamlessDistribution/seqr-webshop-plugin">plugin</a> which will simplify generating QR code and calling getPaymentStatus.</div>        
     </div>
@@ -127,7 +127,7 @@ Below you can find answers to the most common questions that may occur during th
   <div class="faq">
     <div class="faq_question"><li>I have certified webshop/POS system but want to implement method that wasn't implemented before. Should my webshop/POS system be recertified?</li></div>
     <div class="faq_answer_container">
-      <div class="faq_answer">Yes. Every change made in SEQR API implementation should be recertified in order to avoid regression errors.</div>
+      <div class="faq_answer">Yes. Every change made in Glase API implementation should be recertified in order to avoid regression errors.</div>
     </div>
   </div>
 </div>
@@ -141,7 +141,7 @@ Below you can find answers to the most common questions that may occur during th
 </div>
 <div class="faq_container">
   <div class="faq">
-    <div class="faq_question"><li>Where can I get seqrID to be used with assignSeqrId?</li></div>
+    <div class="faq_question"><li>Where can I get glaseID to be used with assignSeqrId?</li></div>
     <div class="faq_answer_container">
       <div class="faq_answer">
         <ol>

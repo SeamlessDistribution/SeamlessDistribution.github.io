@@ -1,13 +1,13 @@
 ---
 layout: default
-title: SEQR Integration Certification
-description: SEQR Integration Certification
+title: Glase Integration Certification
+description: Glase Integration Certification
 ---
 
-# SEQR integration certification
+# Glase integration certification
 
 To provide merchants with a higher level of confidence in their integration with
-SEQR, Seamless offers a certification process to observe their integration
+Glase offers a certification process to observe their integration
 and verify its correct behaviour in different scenarios.
 
 For information about requests and parameters that require verification, please check these documents:

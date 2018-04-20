@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SEQR Unattended Payments Service
+title: Glase Unattended Payments Service
 description: SEQR Unattended Payments Service
 ---
 
