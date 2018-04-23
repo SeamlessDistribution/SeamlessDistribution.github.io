@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SEQR Developer Site - Contact
+title: Glase Developer Site - Contact
 description: Contact us
 ---
 
@@ -8,5 +8,5 @@ description: Contact us
 
 # Contact us
 
-To contact Seamless, please send an email to **integrations@seamless.se**. We're here to help with any questions and comments.
+To contact Glase, please send an email to **integrations@glase.se**. We're here to help with any questions and comments.
 

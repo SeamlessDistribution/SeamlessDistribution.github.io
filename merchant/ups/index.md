@@ -1,14 +1,16 @@
 ---
 layout: default
-title: SEQR Unattended Payments Service
+title: Glase Unattended Payments Service
 description: SEQR Unattended Payments Service
 ---
 
 # SEQR Unattended Payments Service introduction
 
-SEQR Unattended Payments Service (UPS) is service that allows your unattended POS to integrate with SEQR.
+SEQR Unattended Payments Service is service that allows your unattended POS to integrate with SEQR.
 
-On this page you will find information how to proceed with UPS integration.
+<img src="/assets/images/instantcheckout/productdetailssample.png" width="600px"/>
+
+On this page you will find information how to set up integration of SEQR Instant Chekout system with your web-shop.
 
 # Actors
 
@@ -18,20 +20,20 @@ On this page you will find information how to proceed with UPS integration.
 * <b>SEQR</b> - SEQR backend 
 * <b>SEQR app</b> - SEQR mobile application
 
+
 # Flow diagram
 
-All starts with user scanning QR code on your unattended POS.
+All starts with user scanning QR code on your web-shop.
 
-<img src="/assets/images/ups/UPS_diagram.png" />
+<img src="/assets/images/ups/ups_diagram.png" width="500px"/>
 
 |---| --- | --- | --- |
 | method/service | exposed by | part of API | description |
 |---| --- | --- | --- |
-| createPurchase | reseller | [SEQR Unattended Payment Service](#seqr-unattended-payment-service-api) | REST service called by SEQR Unattended Payment Service once user scanned QR Code on unattended POS. URL has to be HTTPS and end with "createPurchase" (for example https://yourdomain.name.com/seqr/createPurchase).  |
-| sendInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller backend triggered by createPurchase request. This method creates invoice on SEQR side and returns it's reference number (invoiceReference). By calling this method reseller provides also <b>notificationUrl</b> to be used for callbacks. |
-| notification callback service | reseller | [SEQR Payment](/merchant/reference/api.html) | <b>notificationUrl</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed or cancelled payment. |
-| getPaymentStatus | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller backend triggered by notification callback. Returns payment status - RESERVED or CANCELLED. |
-| updateInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller after user choose products from self-service machine to update rows and totalAmount of final invoice. |
+| createPurchase | reseller | [SEQR Instant Checkout](/merchant/reference/instantcheckoutapi.html) | REST service called by SEQR Instant chekout service once user scanned QR Code from web-shop page. URL has to be HTTPS and end with "createPurchase" (for example https://yourdomain.name.com/seqr/createPurchase).  |
+| sendInvoice | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by web-shop triggered by createPurchase request. This method creates invoice on SEQR side and returns it's reference number (invoiceReference). By calling this method web-shop provides also <b>notificationUrl</b> to be used for callbacks. |
+| notification callback service | web-shop | [SEQR Payment](/merchant/reference/api.html) | <b>notificationUrl</b> will be called (empty HTTPS POST responded with HTTP 200 OK code) by SEQR once customer confirmed payment. |
+| updateInvoice | SEQR | SOAP method called by reseller after user choose products from self-service machine to update rows and totalAmount of final invoice. |
 | commitReservation | SEQR | [SEQR Payment](/merchant/reference/api.html) | SOAP method called by reseller to finalise payment process. |
 |--- | --- | --- | --- |
 
@@ -40,27 +42,15 @@ All starts with user scanning QR code on your unattended POS.
 # Flow description
 
 1. Customer scanns QRCode placed on sel-service machine using SEQR app.
-2. SEQR Unattended Payments service calls createPurchase exposed by reseller sending JSON with token (machine id).
+2. SEQR Unattended Payments service calls createPurchase exposed by reseller sending JSON with purchaseToken (machine id).
 3. Reseller calls sendInvoice exposed by SEQR and returns the invoice reference to SEQR Unattended Payments service.
 4. Reservation details are presented to customer.
-5. Customer confirms or cancels reservation with PIN number.
+5. Customer confirms reservation with PIN number.
 6. SEQR calls notificationUrl provided in sendInvoice request.
-6. Reseller calls getPaymentStatus and retrieves reservation status. If RESERVED merchants proceeds to next steps.
 7. Reseller unlocks self-service machine allowing user to choose the products.
-8. Customer chooses products from self-service machine.
+8. Customer choose products from self-service machine.
 9. Reseller calls updateInvoice exposed by SEQR to change details of invoice that user will see in SEQR app.
 10. Reseller calls commitReservation to commit transaction with final amount.
-
-# SEQR Unattended Payment Service QR code scheme
-
-Qr code should have scheme:
-
-{% highlight python %}
-HTTP://SEQR.SE/000/ups?w=merchantId&t=123456
-{% endhighlight %}
-where:
-* <b>w</b> - merchantId sent in start-up kit (usually the same as resellerId)
-* <b>t</b> - token (machine id) that will be passed in createPurchase request to merchant
 
 # SEQR Unattended Payment Service API
 
@@ -77,8 +67,8 @@ HTTP method: POST
 Headers: "Accept: application/json;Content-Type: application/json;charset=UTF-8"
 Body:
 {
-    "token": "29834231890234",
-    "amount": 20.00,
+    "reservationToken": "29834231890234",
+    "reservationAmount": "20.0",
     "currency": "EUR",
     "msisdn": "483344323423"
 }
@@ -87,8 +77,8 @@ Body:
 |--|---|
 | parameter | description |
 |--|---|
-| token | This is identifier of self-service machine or purchase. |
-| amount | Max reservation amount for which invoice should be created by reseller. |
+| reservationToken | This is identifier of self-service machine or purchase. |
+| reservationAmount | Max reservation amount for which invoice should be created by reseller. |
 | currency | Currency of reservation amount. |
 | msisdn | Customer's phone number. |
 |--|---|
@@ -132,7 +122,7 @@ Body:
 |--|---|
 | parameter | description |
 |--|---|
-| INSUFFICIENT_FUNDS | amount is to low to start the payment flow on reseller's side. Eg. reservationAmount is lower than cheapest product in self-service machine. |
+| INSUFFICIENT_FUNDS | reservationAmount is to low to start the payment flow on reseller's side. Eg. reservationAmount is lower than cheapest product in self-service machine. |
 | DEVICE_IN_USE | Device is already used by another customer. Someone else scanned qrCode, agreed for purchase but didn't choose the product yet. |
 | DEVICE_UNAVAILABLE | Self-service machine is out of service. |
 | INVOICING_ERROR | Error occurred while calling sendInvoice exposed by SEQR (SEQR Payment API). |

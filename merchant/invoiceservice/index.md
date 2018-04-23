@@ -1,22 +1,22 @@
 ---
 layout: default
-title: SEQR Invoice Service
+title: Glase Invoice Service
 description: SEQR Invoice Service
 ---
 
-# SEQR Invoice Service introduction
+# Glase Invoice Service introduction
 
-This page describes how QR codes for SEQR Invoice Service should be constructed by issuers. Issuer is a company who wishes to distribute QR codes in an invoice among their consumers scanning of which starts the payment process of an invoice associated with the QR code.
+This page describes how QR codes for Glase Invoice Service should be constructed by issuers. Issuer is a company who wishes to distribute QR codes in an invoice among their consumers scanning of which starts the payment process of an invoice associated with the QR code.
 
-Please become familiar with guidelines for printing SEQR QR codes attached to [this document](/downloads/seqr-qrcode-print-guidelines.pdf).
+Please become familiar with guidelines for printing Glase QR codes attached to [this document](/downloads/seqr-qrcode-print-guidelines.pdf).
 
-<b>Before integrating with SEQR Invoice service contact Seamless to obtain:</b>
+<b>Before integrating with Glase Invoice service contact Glase to obtain:</b>
 
 * Issuer name
 * Secret key for the issuer
 
 
-# SEQR Invoice Service QR code
+# Glase Invoice Service QR code
 
 An example QR code for Invoice Service looks as follows:
 
@@ -109,7 +109,7 @@ JWT contains 2 parts that must be taken care of: header and payload. Both should
 				Y
          </td>
          <td>
-				Issuer name provided by SEQR.
+				Issuer name provided by Glase.
          </td>
       </tr>
    </tbody>
@@ -407,7 +407,7 @@ curl
 Report consists of the following fields in the specified order: 
 
 <ul>
-	<li>ID - unique identifier of an invoice in SEQR</li>
+	<li>ID - unique identifier of an invoice in Glase</li>
 	<li>DESCRIPTION - description of an invoice provided by an issuer.
 		Double quotes and new lines are escaped.</li>
 	<li>AMOUNT - amount paid, format 123.45 ('.' as a decimal
@@ -416,7 +416,7 @@ Report consists of the following fields in the specified order:
 	<li>STATUS - status of invoice; at the moment only PAID invoices
 		are returned</li>
 	<li>REFERENCE - identifier of an invoice provided by an issuer</li>
-	<li>ERS_REFERENCE - identifier of a transaction in SEQR which paid
+	<li>ERS_REFERENCE - identifier of a transaction in Glase which paid
 		the invoice</li>
 	<li>PURCHASE_TIME - datetime when invoice was paid, format:&nbsp;<span
 		style="line-height: 1.4285715;">YYYY-MM-DDThh:mm:ssTZD</span>,
@@ -442,18 +442,18 @@ Report consists of the following fields in the specified order:
 
 # Notifications
 
-After successfull payment SEQR Invoice Service will call RESTful API exposed by issuer.
-Please check <a href="/merchant/reference/invoiceserviceapi.html">SEQR Invoice Service API</a> for more details.
+After successfull payment Glase Invoice Service will call RESTful API exposed by issuer.
+Please check <a href="/merchant/reference/invoiceserviceapi.html">Glase Invoice Service API</a> for more details.
 
 # Verification
 
-The easiest way to verify your QRCodes is downloading and setting SEQR app up.
-Please follow instructions from [SEQR test app](/app) then just scan your QRCode to find out whether it is valid or not.
+The easiest way to verify your QRCodes is downloading and setting Glase app up.
+Please follow instructions from [Glase test app](/app) then just scan your QRCode to find out whether it is valid or not.
 
 # Certification
 
-For certification purpose we will send you couple sets of parametrs. You should generate SEQR Invoice Service QR codes based on these parameters and send generated QR codes back to us for validation. 
-After validation we will try to use them for payment and will check if your notification service exposed to SEQR Invoice Service returns HTTP 200.
+For certification purpose we will send you couple sets of parametrs. You should generate Glase Invoice Service QR codes based on these parameters and send generated QR codes back to us for validation. 
+After validation we will try to use them for payment and will check if your notification service exposed to Glase Invoice Service returns HTTP 200.
 We will also ask you to get few reports using our API.
 <br>
 

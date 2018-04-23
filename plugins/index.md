@@ -1,13 +1,13 @@
 ---
 layout: default
-title: SEQR eCommerce plugins
-description: SEQR Merchant, webshop, POS integration
+title: Glase eCommerce plugins
+description: Glase Merchant, webshop, POS integration
 ---
 
 
-# SEQR eCommerce plugins
+# Glase eCommerce plugins
 
-If your webshop is based on one of the eCommerce platforms from the list below all you have to do is use our SEQR plugin.
+If your webshop is based on one of the eCommerce platforms from the list below all you have to do is use our Glase plugin.
 
 |--- | --- | --- |
 |  eCommerce platform | compatible versions | plugin GitHub link |

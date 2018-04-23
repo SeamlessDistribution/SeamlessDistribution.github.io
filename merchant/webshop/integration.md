@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SEQR In-app Payments
+title: Glase In-app Payments
 description: How to integrate with your website
 ---
 

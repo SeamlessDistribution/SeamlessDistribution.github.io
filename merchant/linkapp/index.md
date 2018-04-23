@@ -1,28 +1,28 @@
 ---
 layout: default
-title: Link your app to SEQR payment
-description: SEQR Merchant, link your app to SEQR payment
+title: Link your app to Glase payment
+description: Glase Merchant, link your app to SEQR payment
 ---
 
 
 # Support your customers - Link your app to SEQR payment
 
-A mobile integration with SEQR would contain the following items:
+A mobile integration with Glase would contain the following items:
 
-* A page with brief information about SEQR (optional)
-* A button to pay with SEQR
-* When button is pressed, SEQR app should be launched if customer already installed it, otherwise customer should be redirected to download page
+* A page with brief information about Glase (optional)
+* A button to pay with Glase
+* When button is pressed, Glase app should be launched if customer already installed it, otherwise customer should be redirected to download page
 
 
 ## URLs and labels to use
 
-Link to SEQR app:
+Link to Glase app:
 
 |--- |  --- | --- |
-|  OS | Link to SEQR app | Button label |
+|  OS | Link to Glase app | Button label |
 |--- | --- |
-| iOS | seqr:// | Betala med SEQR/Pay with SEQR |
-| Android | open:com.seamless.seqr | Betala med SEQR/Pay with SEQR |
+| iOS | seqr:// | Betala med Glase/Pay with Glase |
+| Android | open:com.seamless.seqr | Betala med Glase/Pay with Glase |
 | --- | --- | --- |
 
 
@@ -39,27 +39,27 @@ Link to download store:
 
 ## Customer stories
 
-### Customer with SEQR app installed already
+### Customer with Glase app installed already
 
-This scenario illustrates payment when the customer already has SEQR app installed:
+This scenario illustrates payment when the customer already has Glase app installed:
 
 1.	Customer opens your app.
-2.	Customer gets information that SEQR can be used to pay at your checkouts.
-3.	Customer presses the **Betala med SEQR/Pay with SEQR** link in your app.
-4.	SEQR app is launched and customer pays with SEQR.
+2.	Customer gets information that Glase can be used to pay at your checkouts.
+3.	Customer presses the **Betala med Glase/Pay with Glase** link in your app.
+4.	Glase app is launched and customer pays with Glase.
 5.	Customer gets the receipt in the mobile device and a standard receipt.
 
 
 
-### Customer does not have SEQR app installed yet
+### Customer does not have Glase app installed yet
 
-This scenario illustrates payment when the customer does not have SEQR app installed yet:
+This scenario illustrates payment when the customer does not have Glase app installed yet:
 
 1.	Customer opens your app.
-2.	Customer gets information that SEQR can be used to pay at your checkouts.
-3.	Customer presses the **Skaffa SEQR-appen/Get SEQR app** link in your app.
+2.	Customer gets information that Glase can be used to pay at your checkouts.
+3.	Customer presses the **Skaffa Glase-appen/Get Glase app** link in your app.
 4.	Customer is sent to the download store.
-5.	Customer downloads and launches SEQR app. 
-6.	Customer connects a payment account and pays with SEQR.
+5.	Customer downloads and launches Glase app. 
+6.	Customer connects a payment account and pays with Glase.
 7.	Customer gets the receipt in the mobile device and a standard receipt.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SEQR Merchant API flows
+title: Glase Merchant API flows
 description: API reference
 ---
 

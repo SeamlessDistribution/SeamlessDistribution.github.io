@@ -1,17 +1,17 @@
 ---
 layout: default
-title: SEQR Instant Checkout
-description: SEQR Instant Checkout API
+title: Glase Instant Checkout
+description: Glase Instant Checkout API
 ---
 
-# SEQR Instant Chekout API
+# Glase Instant Chekout API
 
-At this point our SEQR Instant Chekout API is base on one REST method  - createPurchase wchich is required to be exposed by web-shop.
+At this point our Glase Instant Chekout API is base on one REST method  - createPurchase wchich is required to be exposed by web-shop.
 
 # createPurchase
 
-This method will be called by SEQR Instant Checkout service once customer scanned SEQR QRCode on product details page.
-SEQR Instant Checkout service will sent below values to web-shop
+This method will be called by Glase Instant Checkout service once customer scanned Glase QRCode on product details page.
+Glase Instant Checkout service will sent below values to web-shop
 
 
 <b>sample createPurchase JSON request</b>
@@ -55,7 +55,7 @@ SEQR Instant Checkout service will sent below values to web-shop
 |---|---|
 | parameter | description |
 |---|---|
-| invoiceReferenceId | invoiceReference from  sendInvoice response ([SEQR Payment API](/merchant/reference/api.html)) |
+| invoiceReferenceId | invoiceReference from  sendInvoice response ([Glase Payment API](/merchant/reference/api.html)) |
 |---|---|
 
 # Testing

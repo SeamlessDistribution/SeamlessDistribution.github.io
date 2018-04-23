@@ -16,9 +16,9 @@ description: eProducts API reference
 	* [cancelTransaction](#canceltransaction)
 4. [Optional Methods](#optional-methods)
 	* [executeReport](#executereport)
-	* [getProductsListCount](#getProductsListCount)
-	* [getProductListBySequence](#getProductListBySequence)
-	* [getReceipt](#getReceipt)
+	* [getProductsListCount](#getproductslistcount)
+	* [getProductListBySequence](#getproductlistbysequence)
+	* [getReceipt](#getreceipt)
 5. [Response Codes](#response-codes)
 
 # 1. eProducts API

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SEQR Instant Checkout
+title: Glase Instant Checkout
 description: SEQR Instant Checkout
 ---
 

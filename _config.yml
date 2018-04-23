@@ -1,6 +1,6 @@
 safe: true
 lsi: false
 highlighter: rouge
-title: SEQR for Developers
+title: Glase for Developers
 markdown: kramdown
 exclude: ['Guardfile']

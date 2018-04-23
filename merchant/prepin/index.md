@@ -4,9 +4,9 @@ title: Preliminary Payments
 description: SEQR Merchant, webshop, POS integration
 ---
 
-# SEQR preliminary payments
+# Glase preliminary payments
 
-SEQR Preliminary Payment allows you to reserve some amount on customer's account for future payment when exact amount is unknown at the beginning of payment flow.
+Glase Preliminary Payment allows you to reserve some amount on customer's account for future payment when exact amount is unknown at the beginning of payment flow.
 
 # Integration procedure
 
@@ -25,10 +25,10 @@ The methods required in a basic integration are:
 |--- | --- |
 |  Method | Description |
 |--- | --- |
-| registerTerminal | Registers a new terminal in SEQR server (required in POS systems) |
+| registerTerminal | Registers a new terminal in Glase server (required in POS systems) |
 | unregisterTerminal | Unregisters an already registered terminal (required in POS systems) |
-| assignSeqrId | Assigns a SEQR ID to a terminal (required in POS systems) |
-| sendInvoice | Sends an invoice to SEQR server |
+| assignSeqrId | Assigns a Glase ID to a terminal (required in POS systems) |
+| sendInvoice | Sends an invoice to Glase server |
 | getPaymentStatus | Obtains status of a previously submitted invoice |
 | updateInvoice | Updates an already sent invoice with new set of invoice rows or attributes |
 | commitReservation | commits reservation with final amount to be taken from customer's account |
@@ -43,7 +43,7 @@ For an extended integration, also these methods can be used:
 |--- | --- |
 | refundPayment | Refunds a previous payment, partly or the whole sum |
 | markTransactionPeriod | Marks the end of one and the beginning of a new transaction period; used in reporting |
-| executeReport | Executes a report on SEQR server |
+| executeReport | Executes a report on Glase server |
 | --- | --- |
 
 
@@ -61,9 +61,9 @@ Other differences are:
 
 # Flow description
 
-1. Merchant send sendInvoice request to SEQR backend.
+1. Merchant send sendInvoice request to Glase backend.
 2. If OK starts polling with getPaymentStatus requests. Payment status is ISSUED at this moment.
-3. User scan QR code and confirm payment (or just confirm if SEQR app was open from merchant's app).
+3. User scan QR code and confirm payment (or just confirm if Glase app was open from merchant's app).
 4. Merchant gets RESERVED in response to getPaymentStatus and stops polling.
 5. After service/shopping is complete merchant update informations about order with updateInvoice request.
 6. Merchant end payment flow with commitReservation request with final transaction amount.  

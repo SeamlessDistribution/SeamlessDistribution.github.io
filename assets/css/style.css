@@ -98,14 +98,14 @@ select:focus {
 /* Main Styles
 /*---------------------------------------------*/
 body {
-	font: 13px/1.8em 'Droid Sans','Open Sans', Helvetica, Arial, Helvetica, sans-serif;
-	color: #666666;
+	font: 13px/1.8em Lato, Arial, Tahoma, 'Lucida Grande', Trebuchet, sans-serif;
+	color: #091523;
 	background: #F9F9F9;
 	-webkit-font-smoothing: antialiased;
 }
 
 a, a:visited {
-	color: #2EAE9B;
+	color: #2D7AA9;
 	text-decoration: none;
 	-webkit-transition: all 0.4s linear;
 	-moz-transition: all 0.4s linear;
@@ -216,7 +216,7 @@ blockquote {
 }
 
 .seqrhl {
-        color: #2EAE9B;
+        color: #1D6795;
 }
 
 .highlight {
@@ -224,8 +224,8 @@ blockquote {
 }
 
 #header {
-    	background: #ffffff; /* SEQR TURQUSE */
-	padding: 15px 0;
+    	background: #040C15; /* SEQR TURQUSE */
+	padding: 12px 0;
 	margin-bottom: 80px;
 	color: #afe1da;
     	position: fixed;
@@ -234,9 +234,9 @@ blockquote {
 	border-bottom: 1px solid #f1f1f1;
 }
 
-#header a { color: #474747; }
+#header a { color: #fff2c1; }
 #header h1 a,
-#header a:hover { color: #474747; }
+#header a:hover { color: #C9BB7F; }
 #header h1 { 
 	font-weight: bold;
 	margin: 0; 
@@ -246,7 +246,7 @@ blockquote {
 	float: right;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 20px 0%;
 }
 #header nav ul {
 	margin: 0px;
@@ -254,7 +254,7 @@ blockquote {
 #header nav li { display: inline; list-style: none;}
 #header nav a {
 	text-transform: uppercase;
-	padding: 20px 20px;
+	padding: 40px 20px;
 }
 .header-clearfix {
 	padding-top: 80px;
@@ -276,12 +276,12 @@ blockquote {
 }
 .footer-nav ul li a {
 	padding: 10px 20px;
-	color: #00a391 !important;
+	color: #2D7AA9 !important;
 }
 
 #content {
 	width: 940px;
-	margin: 0 auto; 
+	margin: 0 auto;
 }
 
 #content .inner {
@@ -297,7 +297,7 @@ blockquote {
 #content .inner-nomargin {
 	background: #ffffff;
 	padding: 0px;
-	border: 1px solid #dddddd;
+	border: 1px solid #707070 ;
 	width: auto;
 	min-height: 350px;
 	float: left;
@@ -425,6 +425,9 @@ tr:nth-child(odd)	{ background-color:#fff; }
        width: 74%;
        position: relative;
 }
+.imageborder {
+	border: 1px solid;
+}
 
 .navigation ul {
 	padding: 0px;
@@ -441,7 +444,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
 	text-align: center;
 }
 .boxes {
-	border-bottom: 1px solid #e3e3e3;
+	border-bottom: 1px solid #707070 ;
 	float: left;
 	width: 100%;
 	background: #FCFCFC;
@@ -453,7 +456,7 @@ tr:nth-child(odd)	{ background-color:#fff; }
     width: 27%;
     min-width: 7em;
 	padding: 2em;
-	border-right: 1px solid #e3e3e3;
+	border-right: 1px solid #707070 ;
 	min-height: 210px;
 	text-align: center;
 }

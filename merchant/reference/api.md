@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SEQR Merchant API
+title: Glase Merchant API
 description: API reference
 ---
 # Table of content
@@ -2386,11 +2386,11 @@ Note that this list points out the responses that are relevant, with the API req
 | 21 | ACCESS_DENIED | Password assigned to terminalId is less than 4 characters | unregisterTerminal, sendInvoice, getPaymentStatus |
 | 23 | INVALID_ERS_REFERENCE | Given ERS reference number cannot be found | refundPayment |
 | 29 | INVALID_INITIATOR_ PRINCIPAL_ID | Given id for TERMINALID in initiatorPrincipalId cannot be found | All requests |
-| 37 | INITIATOR_PRINCIPAL_ NOT_FOUND | Given id or userId for RESELLERUSER in initiatorPrincipalId section not found in SEQR | All requests |
+| 37 | INITIATOR_PRINCIPAL_ NOT_FOUND | Given id or userId for RESELLERUSER in initiatorPrincipalId section not found in Glase | All requests |
 | 49 | INVALID_INVOICE_ DATA | For example wrong currency | sendInvoice, updateInvoice |
 | 50 | CANNOT_CANCEL_PAID_ INVOICE | Invoice with given reference number has already been paid | cancelInvoice |
 | 51 | CANNOT_CANCEL_INVOICE_ IN_PROGRESS | | cancelInvoice |
-| 53 | INVALID_SEQR_ID | Not alphanumeric string has been used or given seqrID has already been assigned to other terminal. Tip: use your own unique prefix for seqrID. Example mymerchantname31231231 | assignSeqrId |
+| 53 | INVALID_SEQR_ID | Not alphanumeric string has been used or given glaseID has already been assigned to other terminal. Tip: use your own unique prefix for glaseID. Example mymerchantname31231231 | assignSeqrId |
 | 54 | INVALID_INVOICE_ REFERENCE | Invoice with given reference number can't be found for given terminal id | getPaymentStatus |
 | 64 | INVALID_NOTIFICATION_ URL | Not valid notificationUrl (e.g not starting with http://) | sendInvoice, updateInvoice, refundPayment |
 | 90 | SYSTEM_ERROR | Unclassified errors | All requests |
