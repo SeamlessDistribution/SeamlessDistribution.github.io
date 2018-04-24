@@ -15,6 +15,7 @@ On this page you will find information how to proceed with UPS integration.
 # Flow diagram
 All starts with user scanning QR code on your unattended POS.
 <img src="/assets/images/ups/UPS_diagram.png" />
+
 |---| --- | --- | --- |
 | method/service | exposed by | part of API | description |
 |---| --- | --- | --- |
@@ -25,6 +26,7 @@ All starts with user scanning QR code on your unattended POS.
 | updateInvoice | Glase | [Glase Payment](/merchant/reference/api.html) | SOAP method called by reseller after user choose products from self-service machine to update rows and totalAmount of final invoice. |
 | commitReservation | Glase | [Glase Payment](/merchant/reference/api.html) | SOAP method called by reseller to finalise payment process. |
 |--- | --- | --- | --- |
+
 <b>All above methods/services are mandatory to implement.</b>
 # Flow description
 1. Customer scanns QRCode placed on sel-service machine using Glase app.
@@ -63,6 +65,7 @@ Body:
     "msisdn": "483344323423"
 }
 {% endhighlight %}
+
 |--|---|
 | parameter | description |
 |--|---|
@@ -71,6 +74,7 @@ Body:
 | currency | Currency of reservation amount. |
 | msisdn | Customer's phone number. |
 |--|---|
+
 ### createPurchase response
 {% highlight python %}
 Status Code: 200
@@ -80,11 +84,13 @@ Body:
    "invoiceReferenceId":"20170315072260070"
 }
 {% endhighlight %}
+
 |--|---|
 | parameter | description |
 |--|---|
 | invoiceReferenceId | invoiceReference from sendInvoice response [see Glase Payment API](/merchant/reference/api.html). |
 |--|---|
+
 ### Error createPurchase response
 {% highlight python %}
 Status Code: 200
@@ -94,12 +100,15 @@ Body:
    "errorCode":"SYSTEM_ERROR"
 }
 {% endhighlight %}
+
 |--|---|
 | parameter | description |
 |--|---|
 | errorCode | Error code specifying the error on reseller's backend. |
 |--|---|
+
 ### Possible values of error code
+
 |--|---|
 | parameter | description |
 |--|---|
