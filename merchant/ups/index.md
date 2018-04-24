@@ -4,15 +4,20 @@ title: Glase Unattended Payments Service
 description: Glase Unattended Payments Service
 ---
 # Glase Unattended Payments Service introduction
+
 Glase Unattended Payments Service (UPS) is service that allows your unattended POS to integrate with Glase.
 On this page you will find information how to proceed with UPS integration.
+
 # Actors
+
 * <b>Glase user</b> - Glase's and self-service machine user
 * <b>reseller</b> - your backend maintaining self-service machines
 * <b>Glase Unattended Payments service</b> - Glase service that will initiate purchase process on reseller side 
 * <b>Glase</b> - Glase backend 
 * <b>Glase app</b> - Glase mobile application
+
 # Flow diagram
+
 All starts with user scanning QR code on your unattended POS.
 <img src="/assets/images/ups/UPS_diagram.png" />
 
@@ -28,7 +33,9 @@ All starts with user scanning QR code on your unattended POS.
 |--- | --- | --- | --- |
 
 <b>All above methods/services are mandatory to implement.</b>
+
 # Flow description
+
 1. Customer scanns QRCode placed on sel-service machine using Glase app.
 2. Glase Unattended Payments service calls createPurchase exposed by reseller sending JSON with token (machine id).
 3. Reseller calls sendInvoice exposed by Glase and returns the invoice reference to Glase Unattended Payments service.
@@ -40,7 +47,9 @@ All starts with user scanning QR code on your unattended POS.
 8. Customer chooses products from self-service machine.
 9. Reseller calls updateInvoice exposed by Glase to change details of invoice that user will see in Glase app.
 10. Reseller calls commitReservation to commit transaction with final amount.
+
 # Glase Unattended Payment Service QR code scheme
+
 Qr code should have scheme:
 {% highlight python %}
 HTTP://SEQR.SE/000/ups?w=merchantId&t=123456
@@ -48,11 +57,17 @@ HTTP://SEQR.SE/000/ups?w=merchantId&t=123456
 where:
 * <b>w</b> - merchantId sent in start-up kit (usually the same as resellerId)
 * <b>t</b> - token (machine id) that will be passed in createPurchase request to merchant
+
 # Glase Unattended Payment Service API
+
 At this point our Glase Unattended Payment Service API is based on one REST method - createPurchase which is required to be exposed by reseller.
+
 ## createPurchase method
+
 This method will be called by Glase Unattended Payment Service once customer scanned Glase QR Code on unattended POS. Glase Unattended Payment Service service will sent below values to reseller's backend.
+
 ### createPurchase request
+
 {% highlight python %}
 URL: https://yourdomain.name.com/seqr/createPurchase
 HTTP method: POST
