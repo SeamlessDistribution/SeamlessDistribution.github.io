@@ -25,6 +25,7 @@ description: News and examples for Glase merchant integrations
 	   <li><a href="merchant/pos">Point of sale</a> - Payments in your store</li>
 	   <li><a href="merchant/webshop">Webshop</a> - Payments on your e-commerce</li>
 	   <li><a href="merchant/invoiceservice">Glase Invoice Service</a> - Pay for invoice with Glase</li>
+	   <li><a href="merchant/ups">Glase Unattended Payment Service</a> - Unattended POS payments</li>
 	   <li><a href="merchant/prepin">Pre-Pin</a> - Preliminary payments</li>
 	  </ul>
 	 </div>
