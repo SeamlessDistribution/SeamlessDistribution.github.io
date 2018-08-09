@@ -14,6 +14,7 @@ description: API reference
 	* [commitReservation](#commitreservation)
 	* [submitPaymentReceipt](#submitpaymentreceipt)
 	* [refundPayment](#refundpayment)
+	* [creditUser](#credituser)
 3. [Methods specific for point of sale (terminal) registration](#methods-specific-for-point-of-sale-terminal-registration)
 	* [registerTerminal](#registerterminal)
 	* [unRegisterTerminal](#unregisterterminal)
@@ -1700,6 +1701,94 @@ Please contact us if you are interested in using a customized receipt in the app
    </soapenv:Body>
 </soapenv:Envelope>
 {% endhighlight %}
+
+## creditUser
+
+### creditUser SOAP request field
+
+
+|--- | --- | --- |
+|  Parameter name | Required | Description |
+|--- | --- | --- |
+| userId | Y | 	Unique identifier of Glase user on partner's (iGaming) platform. That Id has no meaning in any other contexts.Alphanumeric string up to 36 digits   |
+| description | N | optional string that will be visible on user's receipt. If not specified we will apply default one i.e "Credit from Merchant" / "Withdrawal from iGaming". It may be specific for given partner. Alphanumeric, dot and comma allowed - up to 160 characters. |
+| currency | Y | currency of a credit. |
+| clientContext | Y | the same context as used in all other calls - identifies calling principal [http://developer.seqr.com/merchant/reference/api.html#clientcontext-data](http://developer.seqr.com/merchant/reference/api.html#clientcontext-data) |
+| amount | Y | credit amount |
+|--- | --- | --- |
+
+#### Notes:
+
+#### 1.userId
+
+You can find  it (value) in getPaymentStatusResponse for payment of specific user
+{% highlight python %}
+<customerTokens>
+    <token>
+        <description>I_GAMING_INTEGRATION</description>
+        <id>I_GAMING_INTEGRATION</id>
+        <status>0</status>
+        <value>jfJhO6XipEktpy2BryxV010001152594ssss587</value>
+    </token>
+</customerTokens>
+{% endhighlight %}
+#### 2.Description
+
+Not always merchant's have context of user's country / language. We have such information so we can provide default description which is displayed in our clients language.
+
+#### 3. Currency
+
+If currency will be different from currency of Glase user account we will make conversion.
+
+### creditUser SOAP request example
+
+{% highlight python %}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ext:creditUser>
+         <context>
+            <channel>WS</channel>
+            <clientRequestTimeout>0</clientRequestTimeout>
+            <initiatorPrincipalId>
+               <id>some_terminal_id</id>
+               <type>TERMINALID</type>
+            </initiatorPrincipalId>
+            <password>terminal_password</password>
+         </context>
+         <creditUserRequest>
+            <userId>some_glase_user_id</userId>
+            <amount>
+               <currency>EUR</currency>
+               <value>100.00</value>
+            </amount>
+            <description>user credit</description>
+            <correlationId>1234567890</correlationId>
+         </creditUserRequest>
+      </ext:creditUser>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+{% endhighlight %}
+
+### creditUser SOAP response  example
+
+{% highlight python %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:creditUserResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+         <return>
+            <ersReference>201708181204490000000001</ersReference>
+            <resultCode>0</resultCode>
+            <resultDescription>SUCCESS</resultDescription>
+            <correlationId>1234567890</correlationId>
+         </return>
+      </ns2:creditUserResponse>
+   </soap:Body>
+</soap:Envelope>
+{% endhighlight %}
+
+
 
 ## registerTerminal
 
